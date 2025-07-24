@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qaid Travel Sdn Bhd</title>
+  
+</head>
+<body>
+  <header>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <img src="images/QaidLogo.png" alt="Qaid Travel Logo" width="80" height="80" />
+      <div class="welcome-box">
+        <h1>Selamat Datang ke Qaid Travel</h1>
+        <p>Ingat Melancong, Ingat Qaid Travel. "Keperluan Anda Kami Sempurnakan."</p>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about.php">About</a></li>
+        <li><a href="services.php">Services</a></li>
+        <li><a href="experience.php">Experience</a></li>
+        <li><a href="contact.php">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="slider" id="slider">
+      <div class="slide-container active">
+        <img src="images/Korea.jpg" alt="Korea" />
+        <div class="slide-label">Korea</div>
+      </div>
+      <div class="slide-container">
+        <img src="images/Japan.jpg" alt="Japan" />
+        <div class="slide-label">Japan</div>
+      </div>
+      <div class="slide-container">
+        <img src="images/Umrah.jpg" alt="Umrah" />
+        <div class="slide-label">Umrah</div>
+      </div>
+      <div class="slide-container">
+        <img src="images/Turki.jpg" alt="Turki" />
+        <div class="slide-label">Turki</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Welcome to Qaid Travel</h2>
+      <p>Your trusted Muslim-friendly travel agency since 2019.</p>
+    </section>
+
+    <section>
+      <h2>Latest Updates</h2>
+      <p>We offer packages for Umrah, international corporate travel, and government programs to destinations like Korea, Japan, and more.</p>
+    </section>
+  </main>
+
+  <script>
+    const slides = document.querySelectorAll('.slide-container');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }, 3000); // changes slide every 3 seconds
+  </script>
+</body>
+</html>
