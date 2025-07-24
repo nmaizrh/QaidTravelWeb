@@ -408,7 +408,7 @@
                 "<strong>Penginapan</strong> di lokasi berdekatan Masjidil Haram (Makkah) dan Masjid Nabawi (Madinah)",
                 "<strong>Lawatan penuh ke tempat bersejarah</strong> di Mekah seperti Jabal Nur, Jabal Thur, Arafah, Muzdalifah, Mina, Ja'ranah, dan Hudaibiyah.",
                 "<strong>Lawatan penuh ke tempat bersejarah</strong> di Madinah seperti Masjid Quba', Jabal Uhud, Masjid Qiblatain, dan Ladang Kurma.",
-                "<strong>Makanan halal</strong> yang sedap dan menyelerakan sepanjang perjalanan",
+                "<strong>Makanan</strong> yang sedap dan menyelerakan sepanjang perjalanan",
                 "<strong>Pemandu pelancong berpengalaman</strong> yang akan menemani sepanjang perjalanan (Mutawwif & Mutawwifah)",
                 "Kursus Umrah Intensif (sebelum keberangkatan)",
                 "Bimbingan Ibadah sepanjang Umrah",
@@ -429,7 +429,7 @@
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel Muslim-friendly terpilih",
                 "<strong>Lawatan penuh ke tempat menarik</strong> seperti Tokyo, Kyoto, Osaka, dan Nara.",
-                "<strong>Makanan halal</strong> yang disahkan atau ramah Muslim",
+                "<strong>Makanan</strong> yang disahkan atau ramah Muslim",
                 "<strong>Pemandu pelancong berpengalaman</strong> yang mesra Muslim",
                 "Pengangkutan awam yang efisien (termasuk Shinkansen/Bullet train)"
             ],
@@ -448,7 +448,7 @@
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel selesa",
                 "<strong>Lawatan penuh ke tempat menarik</strong> seperti Nami Island, Gyeongbokgung Palace, Seoul Tower, dan banyak lagi",
-                "<strong>Makanan halal</strong> yang lazat dan pelbagai",
+                "<strong>Makanan</strong> yang lazat dan pelbagai",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan disediakan"
             ],
@@ -467,7 +467,7 @@
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel-hotel berkualiti",
                 "<strong>Lawatan penuh ke tempat menarik</strong> di Istanbul (Hagia Sophia, Blue Mosque, Topkapi Palace), Cappadocia (Hot Air Balloon optional), Pamukkale, Ephesus, dan Bursa.",
-                "<strong>Makanan halal</strong> tempatan yang otentik",
+                "<strong>Makanan</strong> tempatan yang otentik",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan domestik (penerbangan domestik/bas)"
             ],
@@ -486,7 +486,7 @@
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel-hotel terpilih",
                 "<strong>Lawatan penuh ke tempat menarik</strong> seperti Monumen Nasional (Monas), Masjid Istiqlal, Kota Tua Jakarta, dan pusat membeli-belah terkemuka.",
-                "<strong>Makanan </strong> tempatan yang pelbagai",
+                "<strong>Makanan</strong> tempatan yang pelbagai",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan persendirian sepanjang lawatan"
             ],
@@ -505,7 +505,7 @@
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel-hotelselesa",
                 "<strong>Lawatan penuh ke tempat menarik</strong> di Hanoi (Old Quarter, Hoan Kiem Lake), Halong Bay (cruise), dan Ho Chi Minh City (Cu Chi Tunnels, Ben Thanh Market).",
-                "<strong>Makanan halal</strong> tempatan yang otentik",
+                "<strong>Makanan</strong> tempatan yang otentik",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan domestik (penerbangan domestik/bas)"
             ],
@@ -524,7 +524,7 @@
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel-hotel berkualiti",
                 "<strong>Lawatan penuh ke tempat menarik</strong> di Bangkok (Grand Palace, floating markets), Phuket (beaches, islands), Chiang Mai (temples, elephants).",
-                "<strong>Makanan halal</strong> yang mudah didapati dan sedap",
+                "<strong>Makanan</strong> yang mudah didapati dan sedap",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan domestik (penerbangan domestik/bas)"
             ],
@@ -543,7 +543,7 @@
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel pusat bandar",
                 "<strong>Lawatan penuh ke tempat menarik</strong> di London (Big Ben, Tower Bridge, British Museum, Buckingham Palace), dan pilihan ke bandar lain seperti Manchester atau Edinburgh.",
-                "Pilihan <strong>restoran halal</strong> yang pelbagai",
+                "Pilihan <strong>restoran</strong> yang pelbagai",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan awam (kereta api, bas) dan pengangkutan persendirian untuk lawatan tertentu"
             ],
