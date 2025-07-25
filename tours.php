@@ -625,8 +625,8 @@
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/placeholder.jpg", name: "Bintan Beach", description: "White sand beaches and clear waters." },
-                { src: "images/placeholder.jpg", name: "Tanjung Pinang City", description: "Explore the capital city's historical sites." }
+                { src: "images/tanjungPinang_gallery/BintanBeach.jpg", name: "Bintan Beach", description: "White sand beaches and clear waters." },
+                { src: "images/tanjungPinang_gallery/PinangCity.jpg", name: "Tanjung Pinang City", description: "Explore the capital city's historical sites." }
             ]
         },
         karimun_island: {
@@ -641,8 +641,8 @@
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/placeholder.jpg", name: "Karimun Beach", description: "Relax on secluded beaches." },
-                { src: "images/placeholder.jpg", name: "Snorkeling", description: "Discover the vibrant marine life." }
+                { src: "images/karimun_gallery/TanjungGelam.jpg", name: "Tanjung Gelam Beach", description: "Relax on secluded beaches." },
+                { src: "images/karimun_gallery/karimunSnorkelling.jpg", name: "Snorkeling", description: "Discover the vibrant marine life." }
             ]
         },
         sabah: {
@@ -658,8 +658,8 @@
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/placeholder.jpg", name: "Mount Kinabalu", description: "Malaysia's highest peak." },
-                { src: "images/placeholder.jpg", name: "Orangutan Sanctuary", description: "Meet the iconic orangutans." }
+                { src: "images/sabah_gallery/Kinabalu.jpg", name: "Mount Kinabalu", description: "Malaysia's highest peak." },
+                { src: "images/sabah_gallery/orangUtan.jpg", name: "Orangutan Sanctuary", description: "Meet the iconic orangutans." }
             ]
         },
         sarawak: {
