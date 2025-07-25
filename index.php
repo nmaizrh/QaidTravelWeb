@@ -227,25 +227,6 @@
                 { src: "images/jakarta_gallery/JakartaFood.jpg", name: "Halal Indonesian Food", description: "Savoring traditional halal Indonesian dishes." },
             ]
         },
-        united_arab_emirates: {
-            title: "Dubai Luxury & Adventure Tour",
-            intro: "Indulge in the extravagance and unique experiences of Dubai and the United Arab Emirates, from stunning skyscrapers to thrilling desert safaris.",
-            image: "images/Dubai.jpg",
-            packages: [
-                "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel mewah",
-                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Burj Khalifa, The Dubai Mall, Palm Jumeirah, dan Desert Safari",
-                "<strong>Makanan halal</strong> yang lazat di restoran terpilih",
-                "<strong>Pemandu pelancong berpengalaman</strong>",
-                "Pengangkutan mewah"
-            ],
-            gallery: [
-                { src: "images/dubai_gallery/BurjKhalifa.jpg", name: "Burj Khalifa", description: "The world's tallest building, offering breathtaking views." },
-                { src: "images/dubai_gallery/DesertSafari.jpg", name: "Desert Safari", description: "Thrilling dune bashing and desert activities." },
-                { src: "images/dubai_gallery/DubaiMarina.jpg", name: "Dubai Marina", description: "A stunning artificial canal city with skyscrapers and promenades." },
-                { src: "images/dubai_gallery/DubaiMall.jpg", name: "The Dubai Mall", description: "One of the world's largest shopping malls." },
-            ]
-        },
         vietnam: {
             title: "Vietnam Cultural & Scenic Journey",
             intro: "Uncover the rich history, vibrant culture, and breathtaking natural beauty of Vietnam, with an itinerary that includes Muslim-friendly dining and experiences.",
