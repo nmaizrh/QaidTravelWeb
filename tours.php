@@ -349,7 +349,63 @@
                     halal-friendly options around the city.</p>
             </div>
         </div>
-    </div>
+        <div class="tour-card" data-id="batam" data-destination="Batam" data-topics="Island,Nature">
+            <img src="images/placeholder.jpg" alt="Batam"/>
+            <div class="info">
+                <h4>Batam Island Escape</h4>
+                <p>Discover Batam's beaches, shopping, and vibrant nightlife.</p>
+            </div>
+        </div>
+        <div class="tour-card" data-id="tanjung_pinang_bintan" data-destination="Tanjung Pinang Bintan" data-topics="Island,Nature">
+            <img src="images/placeholder.jpg" alt="Tanjung Pinang Bintan"/>
+            <div class="info">
+                <h4>Tanjung Pinang & Bintan Retreat</h4>
+                <p>Relax on Bintan's pristine beaches and explore Tanjung Pinang's charm.</p>
+            </div>
+        </div>
+        <div class="tour-card" data-id="karimun_island" data-destination="Karimun Island" data-topics="Island,Nature">
+            <img src="images/placeholder.jpg" alt="Karimun Island"/>
+            <div class="info">
+                <h4>Karimun Island Adventure</h4>
+                <p>Experience the untouched beauty and serene atmosphere of Karimun Island.</p>
+            </div>
+        </div>
+        <div class="tour-card" data-id="sabah" data-destination="Sabah" data-topics="Nature,Culture">
+            <img src="images/placeholder.jpg" alt="Sabah"/>
+            <div class="info">
+                <h4>Explore Wild Sabah</h4>
+                <p>Journey through Sabah's rainforests, mountains, and cultural heritage.</p>
+            </div>
+        </div>
+        <div class="tour-card" data-id="sarawak" data-destination="Sarawak" data-topics="Nature,Culture">
+            <img src="images/placeholder.jpg" alt="Sarawak"/>
+            <div class="info">
+                <h4>Sarawak Cultural Discovery</h4>
+                <p>Uncover Sarawak's indigenous cultures and natural wonders.</p>
+            </div>
+        </div>
+        <div class="tour-card" data-id="kuching" data-destination="Kuching" data-topics="Culture,Food">
+            <img src="images/placeholder.jpg" alt="Kuching"/>
+            <div class="info">
+                <h4>Kuching City Charm</h4>
+                <p>Discover Kuching's historical sites, vibrant markets, and local cuisine.</p>
+            </div>
+        </div>
+        <div class="tour-card" data-id="langkawi" data-destination="Langkawi" data-topics="Island,Nature">
+            <img src="images/placeholder.jpg" alt="Langkawi"/>
+            <div class="info">
+                <h4>Langkawi Island Paradise</h4>
+                <p>Enjoy Langkawi's stunning beaches, geological wonders, and duty-free shopping.</p>
+            </div>
+        </div>
+        <div class="tour-card" data-id="hat_yai" data-destination="Hat Yai" data-topics="Culture,Food">
+            <img src="images/placeholder.jpg" alt="Hat Yai"/>
+            <div class="info">
+                <h4>Hat Yai City Delights</h4>
+                <p>Explore Hat Yai's bustling markets, temples, and delicious street food.</p>
+            </div>
+        </div>
+        </div>
 </div>
 
 <div class="modal-overlay" id="tourDetailModal">
@@ -477,7 +533,7 @@
             image: "images/Jakarta.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel-hotel terpilih",
+                "<strong>Penginapan</strong> di hotel-hotels terpilih",
                 "<strong>Lawatan penuh ke tempat menarik</strong> seperti Monumen Nasional (Monas), Masjid Istiqlal, Kota Tua Jakarta, dan pusat membeli-belah terkemuka.",
                 "<strong>Makanan</strong> tempatan yang pelbagai",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
@@ -546,8 +602,139 @@
                 { src: "images/london_gallery/BuckinghamPalace.jpg", name: "Buckingham Palace", description: "The official residence of the Monarch of the United Kingdom." },
                 { src: "images/london_gallery/LondonEye.jpg", name: "London Eye", description: "A giant Ferris wheel on the South Bank of the River Thames." },
             ]
+        },
+        // New tour data added below
+        batam: {
+            title: "Batam Island Escape",
+            intro: "Discover the vibrant island of Batam, known for its beautiful beaches, duty-free shopping, and lively entertainment.",
+            image: "images/placeholder.jpg",
+            packages: [
+                "<strong>Tiket feri pergi balik</strong>",
+                "<strong>Penginapan</strong> di resort atau hotel pilihan",
+                "<strong>Lawatan bandar</strong> termasuk nagoya hill, enggal batam",
+                "<strong>Makanan</strong> tempatan yang lazat",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/placeholder.jpg", name: "Batam Beach", description: "Relax on the sandy beaches of Batam." },
+                { src: "images/placeholder.jpg", name: "Nagoya Hill Shopping Mall", description: "Enjoy duty-free shopping and entertainment." }
+            ]
+        },
+        tanjung_pinang_bintan: {
+            title: "Tanjung Pinang & Bintan Retreat",
+            intro: "Experience the serene beauty of Bintan's pristine beaches and the historical charm of Tanjung Pinang, Indonesia.",
+            image: "images/placeholder.jpg",
+            packages: [
+                "<strong>Tiket feri pergi balik</strong>",
+                "<strong>Penginapan</strong> di resort mewah",
+                "<strong>Lawatan tempat bersejarah</strong> seperti candi 1000 patung",
+                "<strong>Makanan</strong> yang lazat dan pelbagai",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/placeholder.jpg", name: "Bintan Beach", description: "White sand beaches and clear waters." },
+                { src: "images/placeholder.jpg", name: "Tanjung Pinang City", description: "Explore the capital city's historical sites." }
+            ]
+        },
+        karimun_island: {
+            title: "Karimun Island Adventure",
+            intro: "Uncover the untouched natural beauty and serene atmosphere of Karimun Island, a hidden gem in Indonesia.",
+            image: "images/placeholder.jpg",
+            packages: [
+                "<strong>Tiket feri pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel yang selesa",
+                "<strong>Aktiviti pantai</strong> seperti snorkeling dan menyelam",
+                "<strong>Makanan</strong> laut segar",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/placeholder.jpg", name: "Karimun Beach", description: "Relax on secluded beaches." },
+                { src: "images/placeholder.jpg", name: "Snorkeling", description: "Discover the vibrant marine life." }
+            ]
+        },
+        sabah: {
+            title: "Explore Wild Sabah",
+            intro: "Journey through the lush rainforests, majestic mountains, and rich cultural heritage of Sabah, Malaysian Borneo.",
+            image: "images/placeholder.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel dan resort",
+                "<strong>Lawatan ke Taman Negara Kinabalu</strong>, Lok Kawi Wildlife Park",
+                "<strong>Makanan</strong> tempatan",
+                "Pemandu pelancong berpengalaman",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/placeholder.jpg", name: "Mount Kinabalu", description: "Malaysia's highest peak." },
+                { src: "images/placeholder.jpg", name: "Orangutan Sanctuary", description: "Meet the iconic orangutans." }
+            ]
+        },
+        sarawak: {
+            title: "Sarawak Cultural Discovery",
+            intro: "Uncover the diverse indigenous cultures and breathtaking natural wonders of Sarawak, the largest state in Malaysia.",
+            image: "images/placeholder.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel dan homestay",
+                "<strong>Lawatan ke Kampung Budaya Sarawak</strong>, Gua Mulu (optional)",
+                "<strong>Makanan</strong> tradisi Sarawak",
+                "Pemandu pelancong berpengalaman",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/placeholder.jpg", name: "Sarawak Cultural Village", description: "Experience Sarawak's diverse ethnic groups." },
+                { src: "images/placeholder.jpg", name: "Mulu Caves", description: "Explore magnificent cave systems." }
+            ]
+        },
+        kuching: {
+            title: "Kuching City Charm",
+            intro: "Discover the historical sites, vibrant markets, and delicious local cuisine of Kuching, the capital city of Sarawak.",
+            image: "images/placeholder.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel pusat bandar",
+                "<strong>Lawatan ke Waterfront Kuching</strong>, Astana, Muzium Sarawak",
+                "<strong>Makanan</strong> tempatan yang terkenal",
+                "Pemandu pelancong tempatan",
+                "Pengangkutan dalam bandar"
+            ],
+            gallery: [
+                { src: "images/placeholder.jpg", name: "Kuching Waterfront", description: "Stroll along the picturesque Sarawak River." },
+                { src: "images/placeholder.jpg", name: "Sarawak Museum", description: "Discover the rich history and culture of Sarawak." }
+            ]
+        },
+        langkawi: {
+            title: "Langkawi Island Paradise",
+            intro: "Indulge in the stunning beaches, geological wonders, and duty-free shopping of Langkawi, Malaysia's jewel of Kedah.",
+            image: "images/placeholder.jpg",
+            packages: [
+                "<strong>Tiket penerbangan/feri pergi balik</strong>",
+                "<strong>Penginapan</strong> di resort atau hotel pilihan",
+                "<strong>Lawatan ke Langkawi Sky Bridge</strong>, Underwater World Langkawi",
+                "<strong>Makanan</strong> laut segar",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/placeholder.jpg", name: "Langkawi Sky Bridge", description: "Walk on a suspended bridge with panoramic views." },
+                { src: "images/placeholder.jpg", name: "Eagle Square", description: "Iconic landmark of Langkawi." }
+            ]
+        },
+        hat_yai: {
+            title: "Hat Yai City Delights",
+            intro: "Explore the bustling markets, ornate temples, and delicious street food that make Hat Yai a vibrant city in Southern Thailand.",
+            image: "images/placeholder.jpg",
+            packages: [
+                "<strong>Pengangkutan</strong> (bas/kereta api)",
+                "<strong>Penginapan</strong> di hotel pusat bandar",
+                "<strong>Lawatan ke Pasaran Terapung Khlong Hae</strong>, Wat Hat Yai Nai (sleeping Buddha)",
+                "<strong>Makanan</strong> jalanan Thai yang autentik",
+                "Pemandu pelancong tempatan"
+            ],
+            gallery: [
+                { src: "images/placeholder.jpg", name: "Khlong Hae Floating Market", description: "Experience unique market shopping on water." },
+                { src: "images/placeholder.jpg", name: "Wat Hat Yai Nai", description: "Visit the temple with a giant reclining Buddha." }
+            ]
         }
-        // Add more tour data here following the same structure
     };
 
       function filterTours() {
