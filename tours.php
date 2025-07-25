@@ -325,13 +325,6 @@
                 <p>Explore Jakarta’s vibrant culture, landmarks, and halal-friendly attractions.</p>
             </div>
         </div>
-        <div class="tour-card" data-id="united_arab_emirates" data-destination="United Arab Emirates" data-topics="Island,Nature">
-            <img src="images/Dubai.jpg" alt="United Arab Emirates"/>
-            <div class="info">
-                <h4>Dubai Luxury Tour</h4>
-                <p>Experience Dubai’s iconic skyline, desert adventures, and world-class shopping.</p>
-            </div>
-        </div>
         <div class="tour-card" data-id="vietnam" data-destination="Vietnam" data-topics="Nature,Food,Culture">
             <img src="images/Vietnam.jpg" alt="Vietnam"/>
             <div class="info">
