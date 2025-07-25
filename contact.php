@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <section>
             <h2 class="section-title">Contact Us</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
-                Have a question, need assistance, or ready to book your next adventure? Fill out the form below and we'll get back to you promptly.
+                <strong>Have a question, need assistance or ready to book your next adventure?</strong> Fill out the form below and we'll get back to you promptly.
             </p>
 
             <div class="contact-form">
