@@ -7,12 +7,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Basic form validation and processing
     $name = htmlspecialchars($_POST['name'] ?? '');
     $email = htmlspecialchars($_POST['email'] ?? '');
+    $phone = htmlspecialchars($_POST['phone'] ?? ''); // Added phone number
     $subject = htmlspecialchars($_POST['subject'] ?? '');
     $message_content = htmlspecialchars($_POST['message'] ?? '');
 
-    if (empty($name) || empty($email) || empty($message_content)) {
+    // Validation
+    if (empty($name) || empty($email) || empty($phone) || empty($message_content)) {
         $message = '<p style="color: red;">Please fill in all required fields.</p>';
-    } else {
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $message = '<p style="color: red;">Please enter a valid email address.</p>';
+    } elseif (!preg_match('/^[0-9]{7,15}$/', $phone)) { // Updated: Only allows digits
+        $message = '<p style="color: red;">Please enter a valid phone number (7-15 digits only, no spaces or symbols).</p>';
+    }
+    else {
         // Here you would add code to send an email or save to a database
         // For demonstration, we'll just show a success message
         $message = '<p style="color: green;">Thank you for your inquiry, ' . $name . '! We will get back to you soon.</p>';
@@ -45,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         .contact-form input[type="text"],
         .contact-form input[type="email"],
+        .contact-form input[type="tel"], /* Retained input[type="tel"] */
         .contact-form textarea {
             width: calc(100% - 20px);
             padding: 10px;
@@ -100,6 +108,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label for="email">Your Email:</label>
                     <input type="email" id="email" name="email" required value="<?php echo $_POST['email'] ?? ''; ?>">
                     
+                    <label for="phone">Your Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{7,15}" title="Phone number must contain only 7 to 15 digits." required value="<?php echo $_POST['phone'] ?? ''; ?>">
+                    
                     <label for="subject">Subject:</label>
                     <input type="text" id="subject" name="subject" value="<?php echo $_GET['tour'] ?? ($_POST['subject'] ?? ''); ?>">
 
@@ -114,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <section>
             <h2 class="section-title">Our Contact Details</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
-                You can also reach us directly via phone, email, or visit our office during business hours.
+                You can also reach us directly via phone, email or visit our office during business hours.
             </p>
             <div class="contact-info">
                 <p><strong>Address:</strong></p>
