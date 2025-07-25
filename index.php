@@ -130,7 +130,7 @@
     // Define detailed tour data here (copied from tours.php)
     const tourData = {
         umrah: {
-            title: "Umrah Journey",
+            title: "Umrah Journey: Spiritual Pilgrimage & Guidance",
             intro: "Embark on a blessed spiritual journey to the Holy Land with Qaid Travel's comprehensive Umrah packages, designed for comfort and peace of mind.",
             image: "images/Umrah.jpg",
             packages: [
@@ -171,7 +171,7 @@
             ]
         },
         korea: {
-            title: "Korea Autumn Tour: A Scenic Halal Experience",
+            title: "Korea Autumn Tour: A Scenic Experience",
             intro: "Experience the vibrant autumn colors and rich cultural heritage of South Korea, with specially curated itineraries that cater to Muslim travelers.",
             image: "images/Korea.jpg",
             packages: [
