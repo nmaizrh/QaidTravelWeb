@@ -11,7 +11,7 @@
     <main>
         <section class="intro">
             <h2 class="section-title">About Qaid Travel</h2>
-            <p>Welcome to Qaid Travel, your trusted partner for memorable and enriching journeys. Established on <strong>December 17, 2019</strong>, we are proud to be a <strong>100% Bumiputera-owned company</strong>, officially registered with the Ministry of Tourism Malaysia (MOTAC) and the Ministry of Finance Malaysia (MOF). </p>
+            <p>Established on <strong>December 17, 2019</strong>, we are proud to be a <strong>100% Bumiputera-owned company</strong>, officially registered with the Ministry of Tourism Malaysia (MOTAC) and the Ministry of Finance Malaysia (MOF). </p>
             <p>At Qaid Travel, we are committed to providing exceptional travel experiences with a special focus on Muslim-friendly tourism products and education.</p>
         </section>
 
