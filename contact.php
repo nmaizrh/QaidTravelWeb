@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-                <p><strong>Phone:</strong> +6012-363 4527</p>
+                <p><strong>Phone:</strong> +06-2312300</p>
                 <p><strong>Email:</strong> qaidtravelsb@gmail.com</p>
                 <p><strong>Operating Hours:</strong> Monday - Friday, 9:00 AM - 5:30 PM</p>
             </div>
