@@ -262,6 +262,37 @@
         color: #666;
     }
 
+    /* --- Pagination Styles --- */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .pagination a {
+        color: #b62626;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        border-radius: 5px;
+        margin: 0 5px;
+        font-weight: bold;
+    }
+
+    .pagination a.active {
+        background-color: #b62626;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .pagination a:hover:not(.active) {
+        background-color: #ddd;
+    }
 </style>
 </head>
 <body>
@@ -289,116 +320,119 @@
         <button class="show-all-btn" onclick="resetFilters()">Show All</button>
     </div>
 
-    <div class="tour-list" id="tourList">
-        <div class="tour-card" data-id="umrah" data-destination="Umrah" data-topics="Culture">
-            <img src="images/Umrah.jpg" alt="Umrah"/>
-            <div class="info">
-                <h4>Umrah Journey</h4>
-                <p>Complete Umrah package with religious guidance.</p>
+    <div style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div class="tour-list" id="tourList">
+            <div class="tour-card" data-id="umrah" data-destination="Umrah" data-topics="Culture">
+                <img src="images/Umrah.jpg" alt="Umrah"/>
+                <div class="info">
+                    <h4>Umrah Journey</h4>
+                    <p>Complete Umrah package with religious guidance.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="japan" data-destination="Japan" data-topics="Food,Culture">
+                <img src="images/Japan.jpg" alt="Japan"/>
+                <div class="info">
+                    <h4>Discover Japan</h4>
+                    <p>Visit Kyoto with halal dining and cultural beauty.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="korea" data-destination="Korea" data-topics="Culture,Nature">
+                <img src="images/Korea.jpg" alt="Korea"/>
+                <div class="info">
+                    <h4>Korea Autumn Tour</h4>
+                    <p>Enjoy Korea's seasons with curated group trips.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="turki" data-destination="Turki" data-topics="Culture,Food">
+                <img src="images/Turki.jpg" alt="Turki"/>
+                <div class="info">
+                    <h4>Travel to Turkiye</h4>
+                    <p>Explore Istanbul, Cappadocia, and historical sites.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="jakarta" data-destination="Jakarta" data-topics="Culture,Nature">
+                <img src="images/Jakarta.jpg" alt="Jakarta"/>
+                <div class="info">
+                    <h4>Jakarta City Tour</h4>
+                    <p>Explore Jakarta’s vibrant culture, landmarks, and halal-friendly attractions.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="vietnam" data-destination="Vietnam" data-topics="Nature,Food,Culture">
+                <img src="images/Vietnam.jpg" alt="Vietnam"/>
+                <div class="info">
+                    <h4>Vietnam Cultural Journey</h4>
+                    <p>Discover Vietnam’s rich heritage, scenic landscapes and halal-friendly 
+                        experiences across Hanoi and Ho Chi Minh City.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="thailand" data-destination="Thailand" data-topics="Food,Culture">
+                <img src="images/Thailand.jpg" alt="Thailand"/>
+                <div class="info">
+                    <h4>Thailand Explorer Tour</h4>
+                    <p>Enjoy bustling markets, island getaways
+                        and halal-friendly cuisine across Bangkok, Phuket, and beyond.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="england" data-destination="England" data-topics="Food,Culture">
+                <img src="images/London.jpg" alt="England"/>
+                <div class="info">
+                    <h4>London Heritage Tour</h4>
+                    <p>Explore Big Ben, Tower Bridge, and rich British history with
+                        halal-friendly options around the city.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="batam" data-destination="Batam" data-topics="Island,Nature">
+                <img src="images/Batam.jpeg" alt="Batam"/>
+                <div class="info">
+                    <h4>Batam Island Escape</h4>
+                    <p>Discover Batam's beaches, shopping, and vibrant nightlife.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="tanjung_pinang_bintan" data-destination="Tanjung Pinang Bintan" data-topics="Island,Nature">
+                <img src="images/TanjungPinang.jpg" alt="Tanjung Pinang Bintan"/>
+                <div class="info">
+                    <h4>Tanjung Pinang & Bintan Retreat</h4>
+                    <p>Relax on Bintan's pristine beaches and explore Tanjung Pinang's charm.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="karimun_island" data-destination="Karimun Island" data-topics="Island,Nature">
+                <img src="images/KarimunIsland.jpg" alt="Karimun Island"/>
+                <div class="info">
+                    <h4>Karimun Island Adventure</h4>
+                    <p>Experience the untouched beauty and serene atmosphere of Karimun Island.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="sabah" data-destination="Sabah" data-topics="Nature,Culture">
+                <img src="images/Sabah.jpg" alt="Sabah"/>
+                <div class="info">
+                    <h4>Explore Wild Sabah</h4>
+                    <p>Journey through Sabah's rainforests, mountains, and cultural heritage.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="sarawak" data-destination="Sarawak" data-topics="Nature,Culture">
+                <img src="images/Sarawak.jpg" alt="Sarawak"/>
+                <div class="info">
+                    <h4>Sarawak Cultural Discovery</h4>
+                    <p>Uncover Sarawak's indigenous cultures and natural wonders.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="langkawi" data-destination="Langkawi" data-topics="Island,Nature">
+                <img src="images/Langkawi.jpg" alt="Langkawi"/>
+                <div class="info">
+                    <h4>Langkawi Island Paradise</h4>
+                    <p>Enjoy Langkawi's stunning beaches, geological wonders, and duty-free shopping.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="hat_yai" data-destination="Hat Yai" data-topics="Culture,Food">
+                <img src="images/Hatyai.png" alt="Hat Yai"/>
+                <div class="info">
+                    <h4>Hat Yai City Delights</h4>
+                    <p>Explore Hat Yai's bustling markets, temples, and delicious street food.</p>
+                </div>
             </div>
         </div>
-        <div class="tour-card" data-id="japan" data-destination="Japan" data-topics="Food,Culture">
-            <img src="images/Japan.jpg" alt="Japan"/>
-            <div class="info">
-                <h4>Discover Japan</h4>
-                <p>Visit Kyoto with halal dining and cultural beauty.</p>
-            </div>
-        </div>
-        <div class="tour-card" data-id="korea" data-destination="Korea" data-topics="Culture,Nature">
-            <img src="images/Korea.jpg" alt="Korea"/>
-            <div class="info">
-                <h4>Korea Autumn Tour</h4>
-                <p>Enjoy Korea's seasons with curated group trips.</p>
-            </div>
-        </div>
-        <div class="tour-card" data-id="turki" data-destination="Turki" data-topics="Culture,Food">
-            <img src="images/Turki.jpg" alt="Turki"/>
-            <div class="info">
-                <h4>Travel to Turkiye</h4>
-                <p>Explore Istanbul, Cappadocia, and historical sites.</p>
-            </div>
-        </div>
-        <div class="tour-card" data-id="jakarta" data-destination="Jakarta" data-topics="Culture,Nature">
-            <img src="images/Jakarta.jpg" alt="Jakarta"/>
-            <div class="info">
-                <h4>Jakarta City Tour</h4>
-                <p>Explore Jakarta’s vibrant culture, landmarks, and halal-friendly attractions.</p>
-            </div>
-        </div>
-        <div class="tour-card" data-id="vietnam" data-destination="Vietnam" data-topics="Nature,Food,Culture">
-            <img src="images/Vietnam.jpg" alt="Vietnam"/>
-            <div class="info">
-                <h4>Vietnam Cultural Journey</h4>
-                <p>Discover Vietnam’s rich heritage, scenic landscapes and halal-friendly 
-                    experiences across Hanoi and Ho Chi Minh City.</p>
-            </div>
-        </div>
-        <div class="tour-card" data-id="thailand" data-destination="Thailand" data-topics="Food,Culture">
-            <img src="images/Thailand.jpg" alt="Thailand"/>
-            <div class="info">
-                <h4>Thailand Explorer Tour</h4>
-                <p>Enjoy bustling markets, island getaways
-                    and halal-friendly cuisine across Bangkok, Phuket, and beyond.</p>
-            </div>
-        </div>
-        <div class="tour-card" data-id="england" data-destination="England" data-topics="Food,Culture">
-            <img src="images/London.jpg" alt="England"/>
-            <div class="info">
-                <h4>London Heritage Tour</h4>
-                <p>Explore Big Ben, Tower Bridge, and rich British history with
-                    halal-friendly options around the city.</p>
-            </div>
-        </div>
-        <div class="tour-card" data-id="batam" data-destination="Batam" data-topics="Island,Nature">
-            <img src="images/Batam.jpeg" alt="Batam"/>
-            <div class="info">
-                <h4>Batam Island Escape</h4>
-                <p>Discover Batam's beaches, shopping, and vibrant nightlife.</p>
-            </div>
-        </div>
-        <div class="tour-card" data-id="tanjung_pinang_bintan" data-destination="Tanjung Pinang Bintan" data-topics="Island,Nature">
-            <img src="images/TanjungPinang.jpg" alt="Tanjung Pinang Bintan"/>
-            <div class="info">
-                <h4>Tanjung Pinang & Bintan Retreat</h4>
-                <p>Relax on Bintan's pristine beaches and explore Tanjung Pinang's charm.</p>
-            </div>
-        </div>
-        <div class="tour-card" data-id="karimun_island" data-destination="Karimun Island" data-topics="Island,Nature">
-            <img src="images/KarimunIsland.jpg" alt="Karimun Island"/>
-            <div class="info">
-                <h4>Karimun Island Adventure</h4>
-                <p>Experience the untouched beauty and serene atmosphere of Karimun Island.</p>
-            </div>
-        </div>
-        <div class="tour-card" data-id="sabah" data-destination="Sabah" data-topics="Nature,Culture">
-            <img src="images/Sabah.jpg" alt="Sabah"/>
-            <div class="info">
-                <h4>Explore Wild Sabah</h4>
-                <p>Journey through Sabah's rainforests, mountains, and cultural heritage.</p>
-            </div>
-        </div>
-        <div class="tour-card" data-id="sarawak" data-destination="Sarawak" data-topics="Nature,Culture">
-            <img src="images/Sarawak.jpg" alt="Sarawak"/>
-            <div class="info">
-                <h4>Sarawak Cultural Discovery</h4>
-                <p>Uncover Sarawak's indigenous cultures and natural wonders.</p>
-            </div>
-        </div>
-        <div class="tour-card" data-id="langkawi" data-destination="Langkawi" data-topics="Island,Nature">
-            <img src="images/Langkawi.jpg" alt="Langkawi"/>
-            <div class="info">
-                <h4>Langkawi Island Paradise</h4>
-                <p>Enjoy Langkawi's stunning beaches, geological wonders, and duty-free shopping.</p>
-            </div>
-        </div>
-        <div class="tour-card" data-id="hat_yai" data-destination="Hat Yai" data-topics="Culture,Food">
-            <img src="images/Hatyai.png" alt="Hat Yai"/>
-            <div class="info">
-                <h4>Hat Yai City Delights</h4>
-                <p>Explore Hat Yai's bustling markets, temples, and delicious street food.</p>
-            </div>
-        </div>
-        </div>
+        <div class="pagination" id="pagination"></div>
+    </div>
 </div>
 
 <div class="modal-overlay" id="tourDetailModal">
@@ -425,8 +459,9 @@
 <script>
     const destinationFilter = document.getElementById('destination');
     const topicCheckboxes = document.querySelectorAll('.filter-group input[type="checkbox"]');
-    const tourCards = document.querySelectorAll('.tour-card');
-    
+    const allTourCards = document.querySelectorAll('.tour-card'); // Use a new name for the original list
+    const paginationContainer = document.getElementById('pagination');
+
     // Modal Elements
     const tourDetailModal = document.getElementById('tourDetailModal');
     const modalCloseBtn = tourDetailModal.querySelector('.modal-close-btn');
@@ -437,6 +472,10 @@
     const modalGallery = document.getElementById('modalGallery');
     const modalInquireBtn = document.getElementById('modalInquireBtn');
 
+    // Pagination variables
+    const toursPerPage = 6; // Number of tours to display per page
+    let currentPage = 1;
+    let filteredTourCards = []; // Stores the currently filtered tour cards
 
     // 🌟 Define detailed tour data here 🌟
     // This can be fetched from a database in a more complex setup
@@ -664,107 +703,64 @@
         },
         sarawak: {
             title: "Sarawak Cultural Discovery",
-            intro: "Uncover the diverse indigenous cultures and breathtaking natural wonders of Sarawak, the largest state in Malaysia.",
+            intro: "Uncover Sarawak's indigenous cultures and natural wonders.",
             image: "images/Sarawak.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel dan homestay",
-                "<strong>Lawatan ke Kampung Budaya Sarawak</strong>, Gua Mulu (optional)",
-                "<strong>Makanan</strong> tradisi Sarawak",
+                "<strong>Penginapan</strong> di hotel dan resort",
+                "<strong>Lawatan ke Kuching Waterfront</strong>, Sarawak Cultural Village, Bako National Park",
+                "<strong>Makanan</strong> tempatan",
                 "Pemandu pelancong berpengalaman",
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/sarawak_gallery/CulturalVillage.jpg", name: "Sarawak Cultural Village", description: "Experience Sarawak's diverse ethnic groups." },
-                { src: "images/sarawak_gallery/muluCaves.jpeg", name: "Mulu Caves", description: "Explore magnificent cave systems." }
-            ]
-        },
-        kuching: {
-            title: "Kuching City Charm",
-            intro: "Discover the historical sites, vibrant markets, and delicious local cuisine of Kuching, the capital city of Sarawak.",
-            image: "images/Langkawi2.jpg",
-            packages: [
-                "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel pusat bandar",
-                "<strong>Lawatan ke Waterfront Kuching</strong>, Astana, Muzium Sarawak",
-                "<strong>Makanan</strong> tempatan yang terkenal",
-                "Pemandu pelancong tempatan",
-                "Pengangkutan dalam bandar"
-            ],
-            gallery: [
-                { src: "images/langkawi_gallery/SkyBridge.jpg", name: "Kuching Waterfront", description: "Stroll along the picturesque Sarawak River." },
-                { src: "images/langkawi_gallery/EagleSquarer.jpg", name: "Sarawak Museum", description: "Discover the rich history and culture of Sarawak." }
+                { src: "images/sarawak_gallery/SarawakCulturalVillage.jpg", name: "Sarawak Cultural Village", description: "A living museum showcasing Sarawak's diverse ethnic groups." },
+                { src: "images/sarawak_gallery/OrangutanSarawak.jpg", name: "Semenggoh Wildlife Centre", description: "Rehabilitation centre for semi-wild orangutans." }
             ]
         },
         langkawi: {
             title: "Langkawi Island Paradise",
-            intro: "Indulge in the stunning beaches, geological wonders, and duty-free shopping of Langkawi, Malaysia's jewel of Kedah.",
+            intro: "Enjoy Langkawi's stunning beaches, geological wonders, and duty-free shopping.",
             image: "images/Langkawi.jpg",
             packages: [
-                "<strong>Tiket penerbangan/feri pergi balik</strong>",
-                "<strong>Penginapan</strong> di resort atau hotel pilihan",
-                "<strong>Lawatan ke Langkawi Sky Bridge</strong>, Underwater World Langkawi",
-                "<strong>Makanan</strong> laut segar",
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di resort pilihan",
+                "<strong>Lawatan ke Langkawi Sky Bridge</strong>, Underwater World Langkawi, Eagle Square",
+                "<strong>Makanan</strong> yang lazat",
+                "Pemandu pelancong berpengalaman",
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/langkawi_gallery/SkyBridge.jpg", name: "Langkawi Sky Bridge", description: "Walk on a suspended bridge with panoramic views." },
-                { src: "images/langkawi_gallery/EagleSquare.jpg", name: "Eagle Square", description: "Iconic landmark of Langkawi." }
+                { src: "images/langkawi_gallery/SkyBridge.jpg", name: "Langkawi Sky Bridge", description: "A pedestrian bridge 660 meters above sea level." },
+                { src: "images/langkawi_gallery/EagleSquare.jpg", name: "Eagle Square (Dataran Lang)", description: "Langkawi's iconic eagle statue." }
             ]
         },
         hat_yai: {
             title: "Hat Yai City Delights",
-            intro: "Explore the bustling markets, ornate temples, and delicious street food that make Hat Yai a vibrant city in Southern Thailand.",
+            intro: "Explore Hat Yai's bustling markets, temples, and delicious street food.",
             image: "images/Hatyai.png",
             packages: [
-                "<strong>Pengangkutan</strong> (bas/kereta api)",
+                "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel pusat bandar",
-                "<strong>Lawatan ke Pasaran Terapung Khlong Hae</strong>, Wat Hat Yai Nai (sleeping Buddha)",
-                "<strong>Makanan</strong> jalanan Thai yang autentik",
-                "Pemandu pelancong tempatan"
+                "<strong>Lawatan ke Wat Hat Yai Nai</strong> (Reclining Buddha), Kim Yong Market, Floating Market (weekend)",
+                "<strong>Makanan</strong> halal Thai yang autentik",
+                "Pemandu pelancong berpengalaman",
+                "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/hatyai_gallery/KhlongHaeFloating.jpg", name: "Khlong Hae Floating Market", description: "Experience unique market shopping on water." },
-                { src: "images/hatyai_gallery/WatHatYaiNai.jpg", name: "Wat Hat Yai Nai", description: "Visit the temple with a giant reclining Buddha." }
+                { src: "images/hatyai_gallery/HatyaiMarket.jpg", name: "Kim Yong Market", description: "A bustling market for local goods and snacks." },
+                { src: "images/hatyai_gallery/SleepingBuddha.jpg", name: "Wat Hat Yai Nai", description: "Home to a large reclining Buddha statue." }
             ]
         }
     };
 
-      function filterTours() {
-        const selectedDestination = destinationFilter.value;
-        const selectedTopics = Array.from(topicCheckboxes)
-            .filter(cb => cb.checked)
-            .map(cb => cb.value);
 
-        tourCards.forEach(card => {
-            const matchesDestination = !selectedDestination || card.dataset.destination === selectedDestination;
-            const cardTopics = card.dataset.topics.split(',');
-            const matchesTopics = selectedTopics.length === 0 || selectedTopics.some(topic => cardTopics.includes(topic));
-            
-            // Corrected line: Setting display to empty string lets CSS rules apply
-            card.style.display = matchesDestination && matchesTopics ? '' : 'none'; 
+    function populateDestinations() {
+        const destinations = new Set();
+        allTourCards.forEach(card => {
+            destinations.add(card.dataset.destination);
         });
-    }
-
-    destinationFilter.addEventListener('change', filterTours);
-    topicCheckboxes.forEach(cb => cb.addEventListener('change', filterTours));
-
-    function resetFilters() {
-        destinationFilter.value = '';
-        topicCheckboxes.forEach(cb => cb.checked = false);
-        filterTours();
-    }
-
-    function generateDestinationOptions() {
-        const destinationsSet = new Set();
-        tourCards.forEach(card => {
-            const destination = card.dataset.destination;
-            if (destination) destinationsSet.add(destination);
-        });
-
-        const sortedDestinations = Array.from(destinationsSet).sort();
-
-        sortedDestinations.forEach(dest => {
+        destinations.forEach(dest => {
             const option = document.createElement('option');
             option.value = dest;
             option.textContent = dest;
@@ -772,73 +768,152 @@
         });
     }
 
-    generateDestinationOptions(); // Call on load
+    // Function to display tours based on current filters and pagination
+    function displayTours() {
+        const selectedDestination = destinationFilter.value;
+        const selectedTopics = Array.from(topicCheckboxes)
+                                  .filter(checkbox => checkbox.checked)
+                                  .map(checkbox => checkbox.value);
 
-    // --- Modal Logic ---
-    tourCards.forEach(card => {
+        filteredTourCards = Array.from(allTourCards).filter(card => {
+            const cardDestination = card.dataset.destination;
+            const cardTopics = card.dataset.topics ? card.dataset.topics.split(',') : [];
+
+            const matchesDestination = selectedDestination === '' || cardDestination === selectedDestination;
+            const matchesTopics = selectedTopics.length === 0 || selectedTopics.every(topic => cardTopics.includes(topic));
+
+            return matchesDestination && matchesTopics;
+        });
+
+        // Hide all cards first
+        allTourCards.forEach(card => {
+            card.style.display = 'none';
+        });
+
+        // Calculate start and end index for current page
+        const startIndex = (currentPage - 1) * toursPerPage;
+        const endIndex = startIndex + toursPerPage;
+
+        // Display only the cards for the current page
+        for (let i = startIndex; i < endIndex && i < filteredTourCards.length; i++) {
+            filteredTourCards[i].style.display = 'block';
+        }
+
+        setupPagination(); // Update pagination links after filtering and displaying tours
+    }
+
+    // Function to set up pagination links
+    function setupPagination() {
+        paginationContainer.innerHTML = ''; // Clear previous pagination links
+        const totalPages = Math.ceil(filteredTourCards.length / toursPerPage);
+
+        if (totalPages > 1) { // Only show pagination if there's more than one page
+            for (let i = 1; i <= totalPages; i++) {
+                const pageLink = document.createElement('a');
+                pageLink.href = '#';
+                pageLink.textContent = i;
+                if (i === currentPage) {
+                    pageLink.classList.add('active');
+                }
+                pageLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage = i;
+                    displayTours(); // Redisplay tours for the new page
+                });
+                paginationContainer.appendChild(pageLink);
+            }
+        }
+    }
+
+    // Event Listeners for filters
+    destinationFilter.addEventListener('change', () => {
+        currentPage = 1; // Reset to first page on filter change
+        displayTours();
+    });
+
+    topicCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            currentPage = 1; // Reset to first page on filter change
+            displayTours();
+        });
+    });
+
+    function resetFilters() {
+        destinationFilter.value = '';
+        topicCheckboxes.forEach(checkbox => checkbox.checked = false);
+        currentPage = 1; // Reset to first page
+        displayTours(); // Re-display all tours
+    }
+
+    // Modal functionality
+    allTourCards.forEach(card => {
         card.addEventListener('click', () => {
             const tourId = card.dataset.id;
             const tour = tourData[tourId];
 
             if (tour) {
                 modalTourImage.src = tour.image;
-                modalTourImage.alt = tour.title;
                 modalTourTitle.textContent = tour.title;
                 modalTourIntro.textContent = tour.intro;
 
-                // Clear previous packages and add new ones
+                // Clear previous packages
                 modalPackageList.innerHTML = '';
                 tour.packages.forEach(pkg => {
                     const li = document.createElement('li');
-                    li.innerHTML = pkg; // Use innerHTML to allow bold tags
+                    li.innerHTML = pkg;
                     modalPackageList.appendChild(li);
                 });
 
-                // Clear previous gallery images and add new ones
+                // Clear previous gallery items
                 modalGallery.innerHTML = '';
-                tour.gallery.forEach(imgData => {
+                tour.gallery.forEach(item => {
                     const galleryItemDiv = document.createElement('div');
                     galleryItemDiv.classList.add('modal-gallery-item');
-
+                    
                     const img = document.createElement('img');
-                    img.src = imgData.src;
-                    img.alt = imgData.name;
+                    img.src = item.src;
+                    img.alt = item.name;
                     galleryItemDiv.appendChild(img);
 
-                    const namePara = document.createElement('p');
-                    namePara.classList.add('name');
-                    namePara.textContent = imgData.name;
-                    galleryItemDiv.appendChild(namePara);
+                    const name = document.createElement('div');
+                    name.classList.add('name');
+                    name.textContent = item.name;
+                    galleryItemDiv.appendChild(name);
 
-                    const descPara = document.createElement('p');
-                    descPara.classList.add('description');
-                    descPara.textContent = imgData.description;
-                    galleryItemDiv.appendChild(descPara);
+                    const description = document.createElement('div');
+                    description.classList.add('description');
+                    description.textContent = item.description;
+                    galleryItemDiv.appendChild(description);
 
                     modalGallery.appendChild(galleryItemDiv);
                 });
 
-                // Update "Inquire About This Tour" button link
+                // Set inquire button link
                 modalInquireBtn.href = `contact.php?tour=${encodeURIComponent(tour.title)}`;
 
-                tourDetailModal.classList.add('active'); // Show the modal
+                tourDetailModal.classList.add('active');
             }
         });
     });
 
     modalCloseBtn.addEventListener('click', () => {
-        tourDetailModal.classList.remove('active'); // Hide the modal
+        tourDetailModal.classList.remove('active');
     });
 
-    // Close modal if clicked outside content
+    // Close modal if clicking outside content
     tourDetailModal.addEventListener('click', (e) => {
         if (e.target === tourDetailModal) {
             tourDetailModal.classList.remove('active');
         }
     });
 
-</script>
+    // Initial load
+    document.addEventListener('DOMContentLoaded', () => {
+        populateDestinations();
+        displayTours(); // Initial display and pagination setup
+    });
 
+</script>
 </body>
-<?php include 'footer.php'; ?>
+<?php include "footer.php" ?>
 </html>
