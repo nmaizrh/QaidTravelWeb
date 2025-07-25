@@ -580,7 +580,7 @@
             gallery: [
                 { src: "images/thailand_gallery/BangkokTemple.jpg", name: "Wat Arun (Bangkok)", description: "The Temple of Dawn, a stunning riverside temple." },
                 { src: "images/thailand_gallery/PhuketBeach.jpeg", name: "Phuket Beach", description: "Enjoy the beautiful beaches and turquoise waters." },
-                { src: "images/thailand_gallery/FloatingMarket.jpg", name: "Floating Market", description: "Experience traditional Thai commerce on water." },
+                { src: "images/thailand_gallery/FloatMarket.jpg", name: "Floating Market", description: "Experience traditional Thai commerce on water." },
                 { src: "images/thailand_gallery/ChiangMai.jpg", name: "Chiang Mai", description: "Explore ancient temples and elephant sanctuaries." },
             ]
         },
@@ -607,7 +607,7 @@
         batam: {
             title: "Batam Island Escape",
             intro: "Discover the vibrant island of Batam, known for its beautiful beaches, duty-free shopping, and lively entertainment.",
-            image: "images/placeholder.jpg",
+            image: "images/Batam.jpeg",
             packages: [
                 "<strong>Tiket feri pergi balik</strong>",
                 "<strong>Penginapan</strong> di resort atau hotel pilihan",
@@ -616,8 +616,8 @@
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/placeholder.jpg", name: "Batam Beach", description: "Relax on the sandy beaches of Batam." },
-                { src: "images/placeholder.jpg", name: "Nagoya Hill Shopping Mall", description: "Enjoy duty-free shopping and entertainment." }
+                { src: "images/batam_gallery/BatamBeach.jpg", name: "Nongsa Beach and Coast", description: "Relax on the sandy beaches of Batam." },
+                { src: "images/batam_gallery/NagoyaHillShoppingMall.jpg", name: "Nagoya Hill Shopping Mall", description: "Enjoy duty-free shopping and entertainment." }
             ]
         },
         tanjung_pinang_bintan: {
