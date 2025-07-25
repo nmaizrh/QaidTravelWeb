@@ -675,8 +675,8 @@
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/placeholder.jpg", name: "Sarawak Cultural Village", description: "Experience Sarawak's diverse ethnic groups." },
-                { src: "images/placeholder.jpg", name: "Mulu Caves", description: "Explore magnificent cave systems." }
+                { src: "images/sarawak_gallery/CulturalVillage.jpg", name: "Sarawak Cultural Village", description: "Experience Sarawak's diverse ethnic groups." },
+                { src: "images/sarawak_gallery/muluCaves.jpeg", name: "Mulu Caves", description: "Explore magnificent cave systems." }
             ]
         },
         kuching: {
@@ -692,8 +692,8 @@
                 "Pengangkutan dalam bandar"
             ],
             gallery: [
-                { src: "images/placeholder.jpg", name: "Kuching Waterfront", description: "Stroll along the picturesque Sarawak River." },
-                { src: "images/placeholder.jpg", name: "Sarawak Museum", description: "Discover the rich history and culture of Sarawak." }
+                { src: "images/langkawi_gallery/SkyBridge.jpg", name: "Kuching Waterfront", description: "Stroll along the picturesque Sarawak River." },
+                { src: "images/langkawi_gallery/EagleSquarer.jpg", name: "Sarawak Museum", description: "Discover the rich history and culture of Sarawak." }
             ]
         },
         langkawi: {
@@ -708,8 +708,8 @@
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/placeholder.jpg", name: "Langkawi Sky Bridge", description: "Walk on a suspended bridge with panoramic views." },
-                { src: "images/placeholder.jpg", name: "Eagle Square", description: "Iconic landmark of Langkawi." }
+                { src: "images/langkawi_gallery/SkyBridge.jpg", name: "Langkawi Sky Bridge", description: "Walk on a suspended bridge with panoramic views." },
+                { src: "images/langkawi_gallery/EagleSquare.jpg", name: "Eagle Square", description: "Iconic landmark of Langkawi." }
             ]
         },
         hat_yai: {
@@ -724,8 +724,8 @@
                 "Pemandu pelancong tempatan"
             ],
             gallery: [
-                { src: "images/placeholder.jpg", name: "Khlong Hae Floating Market", description: "Experience unique market shopping on water." },
-                { src: "images/placeholder.jpg", name: "Wat Hat Yai Nai", description: "Visit the temple with a giant reclining Buddha." }
+                { src: "images/hatyai_gallery/KhlongHaeFloating.jpg", name: "Khlong Hae Floating Market", description: "Experience unique market shopping on water." },
+                { src: "images/hatyai_gallery/WatHatYaiNai.jpg", name: "Wat Hat Yai Nai", description: "Visit the temple with a giant reclining Buddha." }
             ]
         }
     };
