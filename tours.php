@@ -350,56 +350,49 @@
             </div>
         </div>
         <div class="tour-card" data-id="batam" data-destination="Batam" data-topics="Island,Nature">
-            <img src="images/placeholder.jpg" alt="Batam"/>
+            <img src="images/Batam.jpeg" alt="Batam"/>
             <div class="info">
                 <h4>Batam Island Escape</h4>
                 <p>Discover Batam's beaches, shopping, and vibrant nightlife.</p>
             </div>
         </div>
         <div class="tour-card" data-id="tanjung_pinang_bintan" data-destination="Tanjung Pinang Bintan" data-topics="Island,Nature">
-            <img src="images/placeholder.jpg" alt="Tanjung Pinang Bintan"/>
+            <img src="images/TanjungPinang.jpg" alt="Tanjung Pinang Bintan"/>
             <div class="info">
                 <h4>Tanjung Pinang & Bintan Retreat</h4>
                 <p>Relax on Bintan's pristine beaches and explore Tanjung Pinang's charm.</p>
             </div>
         </div>
         <div class="tour-card" data-id="karimun_island" data-destination="Karimun Island" data-topics="Island,Nature">
-            <img src="images/placeholder.jpg" alt="Karimun Island"/>
+            <img src="images/KarimunIsland.jpg" alt="Karimun Island"/>
             <div class="info">
                 <h4>Karimun Island Adventure</h4>
                 <p>Experience the untouched beauty and serene atmosphere of Karimun Island.</p>
             </div>
         </div>
         <div class="tour-card" data-id="sabah" data-destination="Sabah" data-topics="Nature,Culture">
-            <img src="images/placeholder.jpg" alt="Sabah"/>
+            <img src="images/Sabah.jpg" alt="Sabah"/>
             <div class="info">
                 <h4>Explore Wild Sabah</h4>
                 <p>Journey through Sabah's rainforests, mountains, and cultural heritage.</p>
             </div>
         </div>
         <div class="tour-card" data-id="sarawak" data-destination="Sarawak" data-topics="Nature,Culture">
-            <img src="images/placeholder.jpg" alt="Sarawak"/>
+            <img src="images/Sarawak.jpg" alt="Sarawak"/>
             <div class="info">
                 <h4>Sarawak Cultural Discovery</h4>
                 <p>Uncover Sarawak's indigenous cultures and natural wonders.</p>
             </div>
         </div>
-        <div class="tour-card" data-id="kuching" data-destination="Kuching" data-topics="Culture,Food">
-            <img src="images/placeholder.jpg" alt="Kuching"/>
-            <div class="info">
-                <h4>Kuching City Charm</h4>
-                <p>Discover Kuching's historical sites, vibrant markets, and local cuisine.</p>
-            </div>
-        </div>
         <div class="tour-card" data-id="langkawi" data-destination="Langkawi" data-topics="Island,Nature">
-            <img src="images/placeholder.jpg" alt="Langkawi"/>
+            <img src="images/Langkawi.jpg" alt="Langkawi"/>
             <div class="info">
                 <h4>Langkawi Island Paradise</h4>
                 <p>Enjoy Langkawi's stunning beaches, geological wonders, and duty-free shopping.</p>
             </div>
         </div>
         <div class="tour-card" data-id="hat_yai" data-destination="Hat Yai" data-topics="Culture,Food">
-            <img src="images/placeholder.jpg" alt="Hat Yai"/>
+            <img src="images/Hatyai.png" alt="Hat Yai"/>
             <div class="info">
                 <h4>Hat Yai City Delights</h4>
                 <p>Explore Hat Yai's bustling markets, temples, and delicious street food.</p>
