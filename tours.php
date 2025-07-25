@@ -616,7 +616,7 @@
         tanjung_pinang_bintan: {
             title: "Tanjung Pinang & Bintan Retreat",
             intro: "Experience the serene beauty of Bintan's pristine beaches and the historical charm of Tanjung Pinang, Indonesia.",
-            image: "images/placeholder.jpg",
+            image: "images/TanjungPinang.jpg",
             packages: [
                 "<strong>Tiket feri pergi balik</strong>",
                 "<strong>Penginapan</strong> di resort mewah",
@@ -632,7 +632,7 @@
         karimun_island: {
             title: "Karimun Island Adventure",
             intro: "Uncover the untouched natural beauty and serene atmosphere of Karimun Island, a hidden gem in Indonesia.",
-            image: "images/placeholder.jpg",
+            image: "images/KarimunIsland.jpg",
             packages: [
                 "<strong>Tiket feri pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel yang selesa",
@@ -648,7 +648,7 @@
         sabah: {
             title: "Explore Wild Sabah",
             intro: "Journey through the lush rainforests, majestic mountains, and rich cultural heritage of Sabah, Malaysian Borneo.",
-            image: "images/placeholder.jpg",
+            image: "images/Sabah.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel dan resort",
@@ -665,7 +665,7 @@
         sarawak: {
             title: "Sarawak Cultural Discovery",
             intro: "Uncover the diverse indigenous cultures and breathtaking natural wonders of Sarawak, the largest state in Malaysia.",
-            image: "images/placeholder.jpg",
+            image: "images/Sarawak.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel dan homestay",
@@ -682,7 +682,7 @@
         kuching: {
             title: "Kuching City Charm",
             intro: "Discover the historical sites, vibrant markets, and delicious local cuisine of Kuching, the capital city of Sarawak.",
-            image: "images/placeholder.jpg",
+            image: "images/Langkawi2.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel pusat bandar",
@@ -699,7 +699,7 @@
         langkawi: {
             title: "Langkawi Island Paradise",
             intro: "Indulge in the stunning beaches, geological wonders, and duty-free shopping of Langkawi, Malaysia's jewel of Kedah.",
-            image: "images/placeholder.jpg",
+            image: "images/Langkawi.jpg",
             packages: [
                 "<strong>Tiket penerbangan/feri pergi balik</strong>",
                 "<strong>Penginapan</strong> di resort atau hotel pilihan",
@@ -715,7 +715,7 @@
         hat_yai: {
             title: "Hat Yai City Delights",
             intro: "Explore the bustling markets, ornate temples, and delicious street food that make Hat Yai a vibrant city in Southern Thailand.",
-            image: "images/placeholder.jpg",
+            image: "images/Hatyai.png",
             packages: [
                 "<strong>Pengangkutan</strong> (bas/kereta api)",
                 "<strong>Penginapan</strong> di hotel pusat bandar",
