@@ -63,10 +63,79 @@
         margin-bottom: 20px;
     }
 
-    .filter-group label {
-        display: block;
-        margin-bottom: 10px;
+ .filter-group label {
+     display: block;
+     margin-bottom: 10px;
     }
+
+.filter-group #searchFilter { /* Targeting the search input itself */
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 2px solid #b62626; /* Matches your select border color */
+    background-color: #fff;
+    color: #333; /* Color of the text typed inside the search box */
+    width: 1000px; /* Adjust width as needed */
+    max-width: 100%; /* Ensure it's responsive */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-btn {
+    background-color: #b62626; /* Matches your primary red color */
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 10px; /* Space from the input field */
+}
+
+.search-btn:hover {
+    background-color: #7c1919; /* Darker red on hover */
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments for the filter group with the button */
+@media (max-width: 768px) {
+    .filter-group {
+        flex-direction: column; /* Stack label, input, and button on small screens */
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .filter-group .search-btn {
+        margin-top: 10px; /* Space from input when stacked */
+        margin-left: 0; /* Remove left margin when stacked */
+        width: 100%; /* Full width button on small screens */
+    }
+}
+
+.filter-group #searchFilter:focus {
+    outline: none;
+    border-color: #5d0c0c;
+    box-shadow: 0 0 5px rgba(182, 38, 38, 0.5);
+}
+
+/* Specific styling for the search input's LABEL */
+label[for="searchFilter"] {
+    color: white; /* Explicitly set the search label text to white */
+    /* You can add or override other properties here if needed for just this label */
+}
+
+/* Responsive adjustments for the search filter */
+@media (max-width: 768px) {
+    .filter-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .filter-group #searchFilter {
+        width: 100%;
+    }
+}
 
     @media (max-width: 900px) {
         .tours-container {
@@ -300,8 +369,11 @@
 <?php include 'header.php'; ?>
 
 <div class="filter-group">
-    <label for="searchFilter">Cari Destinasi:</label>
-    <input type="text" id="searchFilter" placeholder="Cari..." />
+    <h3><label for="searchFilter">Cari Destinasi:</label></h3>
+<input type="text" id="searchFilter" placeholder="Cari..." />
+<button id="searchButton" class="search-btn">Cari</button> <div id="noResultsMessage" style="display: none; text-align: center; color: #ffffffff; margin-top: 20px; font-weight: bold;">
+    Tiada destinasi ditemui untuk carian anda.
+</div>
 </div>
 
 <div class="tours-container">
@@ -478,6 +550,8 @@
     const modalGallery = document.getElementById('modalGallery');
     const modalInquireBtn = document.getElementById('modalInquireBtn');
     const searchFilter = document.getElementById('searchFilter');
+    const searchButton = document.getElementById('searchButton'); // Get the new search button
+    const noResultsMessage = document.getElementById('noResultsMessage');
 
     // Pagination variables
     const toursPerPage = 6; // Number of tours to display per page
@@ -775,46 +849,38 @@
         });
     }
 
-    // Function to display tours based on current filters and pagination
-    function populateDestinations() {
-    const destinations = new Set();
-    allTourCards.forEach(card => {
-        destinations.add(card.dataset.destination);
-    });
-    destinations.forEach(dest => {
-        const option = document.createElement('option');
-        option.value = dest;
-        option.textContent = dest;
-        destinationFilter.appendChild(option);
-    });
-}
-
-// Function to display tours based on current filters, search, and pagination
+    // Function to display tours based on current filters, search, and pagination
     function displayTours() {
         const selectedDestination = destinationFilter.value;
         const selectedTopics = Array.from(topicCheckboxes)
-                                        .filter(checkbox => checkbox.checked)
-                                        .map(checkbox => checkbox.value);
-        const searchTerm = searchFilter.value.toLowerCase(); // Get search term and convert to lowercase
+                                                .filter(checkbox => checkbox.checked)
+                                                .map(checkbox => checkbox.value);
+        const searchTerm = searchFilter.value.toLowerCase().trim(); // Get search term, convert to lowercase, and trim whitespace
 
         filteredTourCards = Array.from(allTourCards).filter(card => {
             const cardDestination = card.dataset.destination;
             const cardTopics = card.dataset.topics ? card.dataset.topics.split(',') : [];
-            const cardTitle = tourData[card.dataset.id].title.toLowerCase(); // Get tour title for searching
-            const cardIntro = tourData[card.dataset.id].intro.toLowerCase(); // Get tour intro for searching
+            const cardTitle = tourData[card.dataset.id].title.toLowerCase();
+            const cardIntro = tourData[card.dataset.id].intro.toLowerCase();
 
             const matchesDestination = selectedDestination === '' || cardDestination === selectedDestination;
             const matchesTopics = selectedTopics.length === 0 || selectedTopics.every(topic => cardTopics.includes(topic));
-            // Check if the search term is found in the title or intro
             const matchesSearch = searchTerm === '' || cardTitle.includes(searchTerm) || cardIntro.includes(searchTerm);
 
-            return matchesDestination && matchesTopics && matchesSearch; // Combine all filter conditions
+            return matchesDestination && matchesTopics && matchesSearch;
         });
 
         // Hide all cards first
         allTourCards.forEach(card => {
             card.style.display = 'none';
         });
+
+        // Handle "No results found" message
+        if (filteredTourCards.length === 0 && searchTerm !== '') {
+            noResultsMessage.style.display = 'block';
+        } else {
+            noResultsMessage.style.display = 'none';
+        }
 
         // Calculate start and end index for current page
         const startIndex = (currentPage - 1) * toursPerPage;
@@ -864,63 +930,78 @@
         });
     });
 
+    // Event Listener for the search button click
+    searchButton.addEventListener('click', () => {
+        currentPage = 1; // Reset to first page on search
+        displayTours();
+    });
+
+    // Event Listener for real-time search as user types (optional, remove if only button search is desired)
+    searchFilter.addEventListener('input', () => {
+        currentPage = 1;
+        displayTours();
+    });
+
+
     function resetFilters() {
         destinationFilter.value = '';
         topicCheckboxes.forEach(checkbox => checkbox.checked = false);
+        searchFilter.value = ''; // Clear search input on reset
         currentPage = 1; // Reset to first page
+        noResultsMessage.style.display = 'none'; // Hide no results message on reset
         displayTours(); // Re-display all tours
     }
 
     // Modal functionality
-allTourCards.forEach(card => {
-    card.addEventListener('click', () => {
-        const tourId = card.dataset.id;
-        const tour = tourData[tourId];
+    allTourCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const tourId = card.dataset.id;
+            const tour = tourData[tourId];
 
-        if (tour) {
-            modalTourImage.src = tour.image;
-            modalTourTitle.textContent = tour.title;
-            modalTourIntro.textContent = tour.intro;
+            if (tour) {
+                modalTourImage.src = tour.image;
+                modalTourTitle.textContent = tour.title;
+                modalTourIntro.textContent = tour.intro;
 
-            // Clear previous packages
-            modalPackageList.innerHTML = '';
-            tour.packages.forEach(pkg => {
-                const li = document.createElement('li');
-                li.innerHTML = pkg;
-                modalPackageList.appendChild(li);
-            });
+                // Clear previous packages
+                modalPackageList.innerHTML = '';
+                tour.packages.forEach(pkg => {
+                    const li = document.createElement('li');
+                    li.innerHTML = pkg;
+                    modalPackageList.appendChild(li);
+                });
 
-            // Clear previous gallery items
-            modalGallery.innerHTML = '';
-            tour.gallery.forEach(item => {
-                const galleryItemDiv = document.createElement('div');
-                galleryItemDiv.classList.add('modal-gallery-item');
+                // Clear previous gallery items
+                modalGallery.innerHTML = '';
+                tour.gallery.forEach(item => {
+                    const galleryItemDiv = document.createElement('div');
+                    galleryItemDiv.classList.add('modal-gallery-item');
 
-                const img = document.createElement('img');
-                img.src = item.src;
-                img.alt = item.name;
-                galleryItemDiv.appendChild(img);
+                    const img = document.createElement('img');
+                    img.src = item.src;
+                    img.alt = item.name;
+                    galleryItemDiv.appendChild(img);
 
-                const name = document.createElement('div');
-                name.classList.add('name');
-                name.textContent = item.name;
-                galleryItemDiv.appendChild(name);
+                    const name = document.createElement('div');
+                    name.classList.add('name');
+                    name.textContent = item.name;
+                    galleryItemDiv.appendChild(name);
 
-                const description = document.createElement('div');
-                description.classList.add('description');
-                description.textContent = item.description;
-                galleryItemDiv.appendChild(description);
+                    const description = document.createElement('div');
+                    description.classList.add('description');
+                    description.textContent = item.description;
+                    galleryItemDiv.appendChild(description);
 
-                modalGallery.appendChild(galleryItemDiv);
-            });
+                    modalGallery.appendChild(galleryItemDiv);
+                });
 
-            // Set inquire button link
-            modalInquireBtn.href = `contact.php?tour=${encodeURIComponent(tour.title)}`;
+                // Set inquire button link
+                modalInquireBtn.href = `contact.php?tour=${encodeURIComponent(tour.title)}`;
 
-            tourDetailModal.classList.add('active');
-        }
+                tourDetailModal.classList.add('active');
+            }
+        });
     });
-});
 
     modalCloseBtn.addEventListener('click', () => {
         tourDetailModal.classList.remove('active');
