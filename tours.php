@@ -370,7 +370,7 @@ label[for="searchFilter"] {
 
 <div class="filter-group">
     <h3><label for="searchFilter">Cari Destinasi:</label></h3>
-<input type="text" id="searchFilter" placeholder="Cari..." />
+<input type="text" id="searchFilter" placeholder="Sila cari destinasi yang anda ingin lawati..." />
 <button id="searchButton" class="search-btn">Cari</button> <div id="noResultsMessage" style="display: none; text-align: center; color: #ffffffff; margin-top: 20px; font-weight: bold;">
     Tiada destinasi ditemui untuk carian anda.
 </div>
