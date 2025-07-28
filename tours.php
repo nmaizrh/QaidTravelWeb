@@ -483,53 +483,53 @@
     const tourData = {
         umrah: {
             title: "Perjalanan Umrah",
-            intro: "Mulakan perjalanan rohani yang diberkati ke Tanah Suci dengan pakej Umrah komprehensif Qaid Travel, direka untuk keselesaan dan ketenangan fikiran.",
+            intro: "Mulakan perjalanan rohani yang diberkati ke Tanah Suci dengan pakej Umrah komprehensif Qaid Travel yang direka untuk keselesaan dan ketenangan fikiran.",
             image: "images/Umrah.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di lokasi berdekatan Masjidil Haram (Makkah) dan Masjid Nabawi (Madinah)",
-                "<strong>Lawatan penuh ke tempat bersejarah</strong> di Mekah seperti Jabal Nur, Jabal Thur, Arafah, Muzdalifah, Mina, Ja'ranah, dan Hudaibiyah.",
-                "<strong>Lawatan penuh ke tempat bersejarah</strong> di Madinah seperti Masjid Quba', Jabal Uhud, Masjid Qiblatain, dan Ladang Kurma.",
+                "<strong>Lawatan penuh ke tempat bersejarah</strong> di Mekah seperti Jabal Nur, Jabal Thur, Arafah, Muzdalifah, Mina, Ja'ranah dan Hudaibiyah.",
+                "<strong>Lawatan penuh ke tempat bersejarah</strong> di Madinah seperti Masjid Quba', Jabal Uhud, Masjid Qiblatain dan Ladang Kurma.",
                 "<strong>Makanan</strong> yang sedap dan menyelerakan sepanjang perjalanan",
                 "<strong>Pemandu pelancong berpengalaman</strong> yang akan menemani sepanjang perjalanan (Mutawwif & Mutawwifah)",
                 "Kursus Umrah Intensif (sebelum keberangkatan)",
                 "Bimbingan Ibadah sepanjang Umrah",
-                "Troli bagasi, beg sandang, beg silang & buku panduan Umrah"
+                "Troli bagasi, beg sandang, beg silang dan buku panduan Umrah"
             ],
             gallery: [
                 { src: "images/umrah_gallery/masjidQuba.jpg", name: "Masjid Quba", description: "Masjid pertama yang dibina oleh Nabi Muhammad (SAW)." },
-                { src: "images/umrah_gallery/madinah.png", name: "Madinah", description: "Kota yang diterangi, tapak suci kedua dalam Islam." },
-                { src: "images/umrah_gallery/JabalRahmah.jpg", name: "Jabal Rahmah", description: "Gunung Rahmat di Arafah, tapak khutbah terakhir Nabi Muhammad." },
-                { src: "images/umrah_gallery/masjidNabawi.jpg", name: "Masjid Nabawi", description: "Masjid Nabi di Madinah, mengandungi makam Nabi Muhammad." },
+                { src: "images/umrah_gallery/madinah.png", name: "Madinah", description: "Kota yang diterangi dengan tapak suci kedua dalam Islam." },
+                { src: "images/umrah_gallery/JabalRahmah.jpg", name: "Jabal Rahmah", description: "Gunung Rahmat di Arafah dan tapak khutbah terakhir Nabi Muhammad." },
+                { src: "images/umrah_gallery/masjidNabawi.jpg", name: "Masjid Nabawi", description: "Masjid Nabi di Madinah serta mengandungi makam Nabi Muhammad." },
             ]
         },
         japan: {
-            title: "Jelajahi Jepun: Lawatan Bunga Sakura & Budaya",
-            intro: "Selami gabungan mempesona budaya tradisional dan keajaiban moden Jepun, dengan tumpuan khas pada pengalaman mesra Muslim.",
+            title: "Jelajahi Jepun: Lawatan Bunga Sakura dan Budaya",
+            intro: "Selami gabungan mempesona budaya tradisional dan keajaiban moden Jepun dengan tumpuan khas pada pengalaman mesra Muslim.",
             image: "images/Japan.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel mesra Muslim terpilih",
-                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Tokyo, Kyoto, Osaka, dan Nara.",
+                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Tokyo, Kyoto, Osaka dan Nara.",
                 "<strong>Makanan</strong> yang disahkan atau ramah Muslim",
                 "<strong>Pemandu pelancong berpengalaman</strong> yang mesra Muslim",
                 "Pengangkutan awam yang efisien (termasuk Shinkansen/Kereta api laju)"
             ],
             gallery: [
                 { src: "images/japan_gallery/Fuji.jpg", name: "Gunung Fuji", description: "Gunung suci ikonik Jepun." },
-                { src: "images/japan_gallery/KyotoTemple.jpg", name: "Kuil Kinkaku-ji (Kyoto)", description: "Pavilion Emas, kuil Buddha Zen yang menakjubkan." },
+                { src: "images/japan_gallery/KyotoTemple.jpg", name: "Kuil Kinkaku-ji (Kyoto)", description: "Pavilion Emas dan kuil Buddha Zen yang menakjubkan." },
                 { src: "images/japan_gallery/Shibuya.jpg", name: "Lintasan Shibuya (Tokyo)", description: "Salah satu persimpangan paling sibuk di dunia." },
-                { src: "images/japan_gallery/Arashiyama.jpg", name: "Hutan Buluh Arashiyama (Kyoto)", description: "Hutan buluh yang tenang, keajaiban alam." },
+                { src: "images/japan_gallery/Arashiyama.jpg", name: "Hutan Buluh Arashiyama (Kyoto)", description: "Hutan buluh yang tenang serta keajaiban alam." },
             ]
         },
         korea: {
             title: "Lawatan Musim Luruh Korea: Pengalaman Halal yang Indah",
-            intro: "Alami warna musim luruh yang meriah dan warisan budaya yang kaya di Korea Selatan, dengan jadual perjalanan yang direka khas untuk pelancong Muslim.",
+            intro: "Alami warna musim luruh yang meriah dan warisan budaya yang kaya di Korea Selatan dengan jadual perjalanan yang direka khas untuk pelancong Muslim.",
             image: "images/Korea.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel selesa",
-                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Pulau Nami, Istana Gyeongbokgung, Menara Seoul, dan banyak lagi",
+                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Pulau Nami, Istana Gyeongbokgung, Menara Seoul dan banyak lagi",
                 "<strong>Makanan</strong> yang lazat dan pelbagai",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan disediakan"
@@ -548,26 +548,26 @@
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel-hotel berkualiti",
-                "<strong>Lawatan penuh ke tempat menarik</strong> di Istanbul (Hagia Sophia, Masjid Biru, Istana Topkapi), Cappadocia (Belon Udara Panas pilihan), Pamukkale, Ephesus, dan Bursa.",
+                "<strong>Lawatan penuh ke tempat menarik</strong> di Istanbul (Hagia Sophia, Masjid Biru, Istana Topkapi), Cappadocia (Belon Udara Panas pilihan), Pamukkale, Ephesus dan Bursa.",
                 "<strong>Makanan</strong> tempatan yang otentik",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan domestik (penerbangan domestik/bas)"
             ],
             gallery: [
                 { src: "images/turki_gallery/Cappadocia.jpg", name: "Cappadocia", description: "Terkenal dengan formasi batuan 'cerobong pari-pari' yang unik dan menaiki belon udara panas." },
-                { src: "images/turki_gallery/HagiaSophia.jpg", name: "Hagia Sophia (Istanbul)", description: "Keajaiban seni bina yang hebat, asalnya gereja, kemudian masjid, kini masjid semula." },
+                { src: "images/turki_gallery/HagiaSophia.jpg", name: "Hagia Sophia (Istanbul)", description: "Keajaiban seni bina yang hebat dan asal gereja." },
                 { src: "images/turki_gallery/BlueMosque.jpg", name: "Masjid Biru (Istanbul)", description: "Terkenal dengan jubin biru yang menakjubkan dan enam menara." },
-                { src: "images/turki_gallery/Pamukkale.jpg", name: "Pamukkale", description: "Teres air panas kaya mineral putih." },
+                { src: "images/turki_gallery/Pamukkale.jpg", name: "Pamukkale", description: "Teres air panas yang kaya dengan mineral putih." },
             ]
         },
         jakarta: {
             title: "Lawatan Bandar Jakarta & Pengalaman Budaya",
-            intro: "Temui ibu kota dinamik Indonesia, Jakarta, sebuah bandar yang penuh dengan sejarah, seni bina moden, dan kehidupan tempatan yang bersemangat, dengan tumpuan pada tempat-tempat mesra Muslim.",
+            intro: "Temui ibu kota dinamik Indonesia, Jakarta iaitu sebuah bandar yang penuh dengan sejarah, seni bina moden dan kehidupan tempatan yang bersemangat dengan tumpuan pada tempat-tempat mesra Muslim.",
             image: "images/Jakarta.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel-hotel terpilih",
-                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Monumen Nasional (Monas), Masjid Istiqlal, Kota Tua Jakarta, dan pusat membeli-belah terkemuka.",
+                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Monumen Nasional (Monas), Masjid Istiqlal, Kota Tua Jakarta dan pusat membeli-belah terkemuka.",
                 "<strong>Makanan</strong> tempatan yang pelbagai",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan persendirian sepanjang lawatan"
@@ -581,50 +581,50 @@
         },
         vietnam: {
             title: "Perjalanan Budaya & Pemandangan Vietnam",
-            intro: "Temui sejarah kaya, budaya yang bersemangat, dan keindahan alam semula jadi Vietnam yang memukau, dengan jadual perjalanan yang merangkumi hidangan dan pengalaman mesra Muslim.",
+            intro: "Temui sejarah yang kaya dengan budaya bersemangat dan keindahan alam semula jadi Vietnam yang memukau. Jadual perjalanan yang merangkumi hidangan dan pengalaman mesra Muslim.",
             image: "images/Vietnam.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel-hotel selesa",
-                "<strong>Lawatan penuh ke tempat menarik</strong> di Hanoi (Kawasan Lama, Tasik Hoan Kiem), Teluk Halong (pelayaran), dan Ho Chi Minh City (Terowong Cu Chi, Pasar Ben Thanh).",
+                "<strong>Lawatan penuh ke tempat menarik</strong> di Hanoi (Kawasan Lama, Tasik Hoan Kiem), Teluk Halong (pelayaran) dan Ho Chi Minh City (Terowong Cu Chi, Pasar Ben Thanh).",
                 "<strong>Makanan</strong> tempatan yang otentik",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan domestik (penerbangan domestik/bas)"
             ],
             gallery: [
                 { src: "images/vietnam_gallery/HalongBay.jpg", name: "Teluk Halong", description: "Tapak Warisan Dunia UNESCO yang terkenal dengan air zamrud dan pulau-pulau batu kapur yang menjulang tinggi." },
-                { src: "images/vietnam_gallery/HanoiOldQuarter.jpg", name: "Kawasan Lama Hanoi", description: "Jantung bersejarah Hanoi, sibuk dengan pasar dan jalan-jalan purba." },
+                { src: "images/vietnam_gallery/HanoiOldQuarter.jpg", name: "Kawasan Lama Hanoi", description: "Jantung bersejarah Hanoi yang sibuk dengan pasar dan jalan-jalan purba." },
                 { src: "images/vietnam_gallery/BenThanhMarket.jpg", name: "Pasar Ben Thanh (Ho Chi Minh)", description: "Pasar yang meriah menawarkan barangan tempatan dan makanan jalanan." },
                 { src: "images/vietnam_gallery/CuChiTunnels.jpg", name: "Terowong Cu Chi", description: "Rangkaian bawah tanah yang rumit yang digunakan semasa Perang Vietnam." },
             ]
         },
         thailand: {
             title: "Lawatan Penerokaan Thailand: Kuil & Pulau Tropika",
-            intro: "Terokai pelbagai keajaiban Thailand, dari jalan-jalan Bangkok yang sibuk hingga keindahan tenang pulaunya, semuanya dengan pertimbangan mesra Muslim.",
+            intro: "Terokai pelbagai keajaiban Thailand dari jalan-jalan Bangkok yang sibuk hingga keindahan tenang pulaunya.",
             image: "images/Thailand.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel-hotel berkualiti",
-                "<strong>Lawatan penuh ke tempat menarik</strong> di Bangkok (Grand Palace, pasar terapung), Phuket (pantai, pulau), Chiang Mai (kuil, gajah).",
+                "<strong>Lawatan penuh ke tempat menarik</strong> di Bangkok (Grand Palace, pasar terapung), Phuket (pantai, pulau) dan Chiang Mai (kuil, gajah).",
                 "<strong>Makanan</strong> yang mudah didapati dan sedap",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan domestik (penerbangan domestik/bas)"
             ],
             gallery: [
-                { src: "images/thailand_gallery/BangkokTemple.jpg", name: "Wat Arun (Bangkok)", description: "Kuil Fajar, kuil tepi sungai yang menakjubkan." },
+                { src: "images/thailand_gallery/BangkokTemple.jpg", name: "Wat Arun (Bangkok)", description: "Kuil Fajar dan kuil tepi sungai yang menakjubkan." },
                 { src: "images/thailand_gallery/PhuketBeach.jpeg", name: "Pantai Phuket", description: "Nikmati pantai yang indah dan perairan biru kehijauan." },
-                { src: "images/thailand_gallery/FloatMarket.jpg", name: "Pasar Terapung", description: "Alami perdagangan tradisional Thai di atas air." },
+                { src: "images/thailand_gallery/FloatMarket.jpg", name: "Pasar Terapung", description: "Alami perdagangan tradisional Thailand di atas air." },
                 { src: "images/thailand_gallery/ChiangMai.jpg", name: "Chiang Mai", description: "Terokai kuil-kuil purba dan tempat perlindungan gajah." },
             ]
         },
         england: {
             title: "Lawatan Warisan London & UK",
-            intro: "Temui mercu tanda ikonik dan sejarah kaya London dan sekitarnya, menawarkan perjalanan budaya dengan pilihan untuk hidangan dan kemudahan mesra Muslim.",
+            intro: "Temui mercu tanda ikonik dan sejarah kaya London dan sekitarnya. Menawarkan perjalanan budaya dengan pilihan untuk hidangan yang bersesuaian.",
             image: "images/London.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel pusat bandar",
-                "<strong>Lawatan penuh ke tempat menarik</strong> di London (Big Ben, Tower Bridge, Muzium British, Istana Buckingham), dan pilihan ke bandar lain seperti Manchester atau Edinburgh.",
+                "<strong>Lawatan penuh ke tempat menarik</strong> di London (Big Ben, Tower Bridge, Muzium British, Istana Buckingham) dan pilihan ke bandar lain seperti Manchester atau Edinburgh.",
                 "Pilihan <strong>restoran</strong> yang pelbagai",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan awam (kereta api, bas) dan pengangkutan persendirian untuk lawatan tertentu"
@@ -639,12 +639,12 @@
         // New tour data added below
         batam: {
             title: "Percutian Pulau Batam",
-            intro: "Temui pulau Batam yang meriah, terkenal dengan pantai-pantai indah, membeli-belah bebas cukai, dan hiburan yang rancak.",
+            intro: "Temui pulau Batam yang meriah dan terkenal dengan pantai-pantai indah, membeli-belah bebas cukai dan hiburan.",
             image: "images/Batam.jpeg",
             packages: [
                 "<strong>Tiket feri pergi balik</strong>",
                 "<strong>Penginapan</strong> di resort atau hotel pilihan",
-                "<strong>Lawatan bandar</strong> termasuk nagoya hill, enggal batam",
+                "<strong>Lawatan bandar</strong> termasuk Nagoya Hill dan Enggal Batam",
                 "<strong>Makanan</strong> tempatan yang lazat",
                 "Pengangkutan disediakan"
             ],
@@ -659,7 +659,7 @@
             image: "images/TanjungPinang.jpg",
             packages: [
                 "<strong>Tiket feri pergi balik</strong>",
-                "<strong>Penginapan</strong> di resort mewah",
+                "<strong>Penginapan</strong> di resort disediakan",
                 "<strong>Lawatan tempat bersejarah</strong> seperti candi 1000 patung",
                 "<strong>Makanan</strong> yang lazat dan pelbagai",
                 "Pengangkutan disediakan"
@@ -671,7 +671,7 @@
         },
         karimun_island: {
             title: "Pengembaraan Pulau Karimun",
-            intro: "Temui keindahan alam semula jadi yang belum terusik dan suasana tenang Pulau Karimun, permata tersembunyi di Indonesia.",
+            intro: "Temui keindahan alam semula jadi dan suasana tenang Pulau Karimun serta permata tersembunyi di Indonesia.",
             image: "images/KarimunIsland.jpg",
             packages: [
                 "<strong>Tiket feri pergi balik</strong>",
@@ -687,13 +687,13 @@
         },
         sabah: {
             title: "Terokai Sabah Yang Liar",
-            intro: "Jelajahi hutan hujan yang subur, gunung-ganang yang megah, dan warisan budaya yang kaya di Sabah, Borneo Malaysia.",
+            intro: "Jelajahi hutan hujan yang subur, gunung-ganang yang megah dan warisan budaya yang kaya di Sabah, Borneo Malaysia.",
             image: "images/Sabah.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel dan resort",
-                "<strong>Lawatan ke Taman Negara Kinabalu</strong>, Taman Hidupan Liar Lok Kawi",
-                "<strong>Makanan</strong> tempatan",
+                "<strong>Lawatan ke Taman Negara Kinabalu</strong>seperti Taman Hidupan Liar Lok Kawi",
+                "<strong>Makanan</strong> tempatan disediakan",
                 "Pemandu pelancong berpengalaman",
                 "Pengangkutan disediakan"
             ],
@@ -709,7 +709,7 @@
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel dan resort",
-                "<strong>Lawatan ke Tebingan Kuching</strong>, Kampung Budaya Sarawak, Taman Negara Bako",
+                "<strong>Lawatan ke Tebingan Kuching</strong>, Kampung Budaya Sarawak dan Taman Negara Bako",
                 "<strong>Makanan</strong> tempatan",
                 "Pemandu pelancong berpengalaman",
                 "Pengangkutan disediakan"
@@ -721,13 +721,13 @@
         },
         langkawi: {
             title: "Syurga Pulau Langkawi",
-            intro: "Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi, dan membeli-belah bebas cukai.",
+            intro: "Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi dan membeli-belah bebas cukai.",
             image: "images/Langkawi.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di resort pilihan",
-                "<strong>Lawatan ke Jambatan Gantung Langkawi</strong>, Underwater World Langkawi, Dataran Helang",
-                "<strong>Makanan</strong> yang lazat",
+                "<strong>Lawatan ke Jambatan Gantung Langkawi</strong>, Underwater World Langkawi dan Dataran Helang",
+                "<strong>Pelbagai makanan</strong> yang lazat",
                 "Pemandu pelancong berpengalaman",
                 "Pengangkutan disediakan"
             ],
@@ -738,19 +738,19 @@
         },
         hat_yai: {
             title: "Keindahan Bandar Hat Yai",
-            intro: "Terokai pasar Hat Yai yang sibuk, kuil, dan makanan jalanan yang lazat.",
+            intro: "Terokai pasar Hat Yai yang sibuk, kuil dan makanan jalanan yang lazat.",
             image: "images/Hatyai.png",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel pusat bandar",
-                "<strong>Lawatan ke Wat Hat Yai Nai</strong> (Buddha Berbaring), Pasar Kim Yong, Pasar Terapung (hujung minggu)",
-                "<strong>Makanan</strong> halal Thai yang autentik",
+                "<strong>Lawatan ke Wat Hat Yai Nai</strong> (Buddha Berbaring), Pasar Kim Yong dan Pasar Terapung (hujung minggu)",
+                "<strong>Makanan</strong> halal Thailand.",
                 "Pemandu pelancong berpengalaman",
                 "Pengangkutan disediakan"
             ],
             gallery: [
                 { src: "images/hatyai_gallery/HatyaiMarket.jpg", name: "Pasar Kim Yong", description: "Pasar yang sibuk untuk barangan dan makanan ringan tempatan." },
-                { src: "images/hatyai_gallery/SleepingBuddha.jpg", name: "Wat Hat Yai Nai", description: "Tempat patung Buddha berbaring yang besar." }
+                { src: "images/hatyai_gallery/SleepingBuddha.jpg", name: "Wat Hat Yai Nai", description: "Mempunyai tempat patung Buddha terbaring yang besar." }
             ]
         }
     };
