@@ -4,29 +4,29 @@
   <div class="slide active">
     <img src="images/Korea.jpg" alt="Korea">
     <div class="overlay">
-      <h3>Explore Korea</h3>
-      <p>📍National Museum Of Korea, Seoul</p>
+      <h3>Jelajahi Korea</h3>
+      <p>📍Muzium Nasional Korea, Seoul</p>
     </div>
   </div>
   <div class="slide">
     <img src="images/Japan.jpg" alt="Japan">
     <div class="overlay">
-      <h3>Discover Japan</h3>
+      <h3>Temui Jepun</h3>
       <p>📍Arashiyama, Kyoto</p>
     </div>
   </div>
   <div class="slide">
     <img src="images/Umrah.jpg" alt="Umrah">
     <div class="overlay">
-      <h3>Umrah Journey</h3>
-      <p>📍Station of Ibrahim, Mecca</p>
+      <h3>Perjalanan Umrah</h3>
+      <p>📍Maqam Ibrahim, Mekah</p>
     </div>
   </div>
   <div class="slide">
     <img src="images/Turki.jpg" alt="Turki">
     <div class="overlay">
-      <h3>Travel to Turkiye</h3>
-      <p>📍Hagia Sophia Grand Mosque, Istanbul</p>
+      <h3>Melancong ke Turki</h3>
+      <p>📍Masjid Besar Hagia Sophia, Istanbul</p>
     </div>
   </div>
 
@@ -35,45 +35,44 @@
 </section>
 
 <section class="intro">
-  <h2>Welcome to Qaid Travel</h2>
-  <p>Since 2019, we’ve been your trusted Muslim-friendly travel partner. Let us make your travel dreams come true — from Umrah to global adventures.</p>
+  <p>Sejak 2019, kami telah menjadi rakan kongsi pelancongan mesra Muslim anda yang dipercayai. Biarkan kami merealisasikan impian perjalanan anda, dari Umrah hingga pengembaraan global.</p>
 </section>
 
 <section class="popular-destination">
-  <h2 class="section-title">POPULAR DESTINATION</h2>
+  <h2 class="section-title">DESTINASI POPULAR</h2>
 </section>
 
 <section class="highlights">
   <div class="card" data-id="umrah"> <img src="images/Umrah.jpg" alt="Umrah Package">
-    <h3>Umrah Packages</h3>
-    <p>Affordable and complete Umrah solutions with guidance</p>
+    <h3>Pakej Umrah</h3>
+    <p>Penyelesaian Umrah yang berpatutan dan lengkap dengan bimbingan</p>
   </div>
   <div class="card" data-id="korea"> <img src="images/Korea.jpg" alt="Korea Trip">
-    <h3>Korea Tour</h3>
-    <p>Group tours and packages to Korea for students & corporates</p>
+    <h3>Lawatan Korea</h3>
+    <p>Lawatan berkumpulan dan pakej ke Korea untuk pelajar & korporat</p>
   </div>
   <div class="card" data-id="japan"> <img src="images/Japan.jpg" alt="Japan Tour">
-    <h3>Japan Tour</h3>
-    <p>Customized travel experience with halal options</p>
+    <h3>Lawatan Jepun</h3>
+    <p>Pengalaman perjalanan yang disesuaikan dengan pilihan halal</p>
   </div>
 
   <div class="show-all-container">
-  <a href="tours.php" class="show-all-btn">Show All Tours</a>
+  <a href="tours.php" class="show-all-btn">Tunjukkan Semua Lawatan</a>
 </div>
 </section>
 
 <div class="modal-overlay" id="tourDetailModal">
     <div class="modal-content">
         <button class="modal-close-btn">&times;</button>
-        <img src="" alt="Tour Image" class="modal-image" id="modalTourImage">
+        <img src="" alt="Imej Lawatan" class="modal-image" id="modalTourImage">
         <h3 id="modalTourTitle"></h3>
         <p id="modalTourIntro"></p>
         
-        <h4>Packages We Provide:</h4>
+        <h4>Pakej Yang Kami Sediakan:</h4>
         <ul id="modalPackageList" class="modal-package-list">
         </ul>
 
-        <h4>Gallery:</h4>
+        <h4>Galeri:</h4>
         <div id="modalGallery" class="modal-gallery">
         </div>
 
@@ -130,162 +129,161 @@
     // Define detailed tour data here (copied from tours.php)
     const tourData = {
         umrah: {
-            title: "Umrah Journey: Spiritual Pilgrimage & Guidance",
-            intro: "Embark on a blessed spiritual journey to the Holy Land with Qaid Travel's comprehensive Umrah packages, designed for comfort and peace of mind.",
-            image: "images/Umrah.jpg",
-            packages: [
-                "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di lokasi berdekatan Masjidil Haram (Makkah) dan Masjid Nabawi (Madinah)",
-                "<strong>Lawatan penuh ke tempat bersejarah</strong> di Mekah seperti Jabal Nur, Jabal Thur, Arafah, Muzdalifah, Mina, Ja'ranah, dan Hudaibiyah.",
-                "<strong>Lawatan penuh ke tempat bersejarah</strong> di Madinah seperti Masjid Quba', Jabal Uhud, Masjid Qiblatain, dan Ladang Kurma.",
-                "<strong>Makanan halal</strong> yang sedap dan menyelerakan sepanjang perjalanan",
-                "<strong>Pemandu pelancong berpengalaman</strong> yang akan menemani sepanjang perjalanan (Mutawwif & Mutawwifah)",
-                "Kursus Umrah Intensif (sebelum keberangkatan)",
-                "Bimbingan Ibadah sepanjang Umrah",
-                "Troli bagasi, beg sandang, beg silang & buku panduan Umrah"
-            ],
-            gallery: [
-                { src: "images/umrah_gallery/masjidQuba.jpg", name: "Masjid Quba", description: "The first mosque built by Prophet Muhammad (PBUH)." },
-                { src: "images/umrah_gallery/madinah.png", name: "Madinah", description: "The illuminated city, second holiest site in Islam." },
-                { src: "images/umrah_gallery/JabalRahmah.jpg", name: "Jabal Rahmah", description: "The Mount of Mercy in Arafat, site of Prophet Muhammad's last sermon." },
-                { src: "images/umrah_gallery/masjidNabawi.jpg", name: "Masjid Nabawi", description: "The Prophet's Mosque in Madinah, containing Prophet Muhammad's tomb." },
-            ]
+        title: "Perjalanan Umrah: Ziarah Rohani & Bimbingan",
+        intro: "Mulakan perjalanan rohani yang diberkati ke Tanah Suci dengan pakej Umrah komprehensif Qaid Travel, direka untuk keselesaan dan ketenangan fikiran.",
+        image: "images/Umrah.jpg",
+        packages: [
+            "<strong>Tiket penerbangan pergi balik</strong>",
+            "<strong>Penginapan</strong> di lokasi berdekatan Masjidil Haram (Makkah) dan Masjid Nabawi (Madinah)",
+            "<strong>Lawatan penuh ke tempat bersejarah</strong> di Mekah seperti Jabal Nur, Jabal Thur, Arafah, Muzdalifah, Mina, Ja'ranah, dan Hudaibiyah.",
+            "<strong>Lawatan penuh ke tempat bersejarah</strong> di Madinah seperti Masjid Quba', Jabal Uhud, Masjid Qiblatain, dan Ladang Kurma.",
+            "<strong>Makanan halal</strong> yang sedap dan menyelerakan sepanjang perjalanan",
+            "<strong>Pemandu pelancong berpengalaman</strong> yang akan menemani sepanjang perjalanan (Mutawwif & Mutawwifah)",
+            "Kursus Umrah Intensif (sebelum keberangkatan)",
+            "Bimbingan Ibadah sepanjang Umrah",
+            "Troli bagasi, beg sandang, beg silang & buku panduan Umrah"
+        ],
+        gallery: [
+            { src: "images/umrah_gallery/masjidQuba.jpg", name: "Masjid Quba", description: "Masjid pertama yang dibina oleh Nabi Muhammad (SAW)." },
+            { src: "images/umrah_gallery/madinah.png", name: "Madinah", description: "Kota yang bercahaya, tapak kedua tersuci dalam Islam." },
+            { src: "images/umrah_gallery/JabalRahmah.jpg", name: "Jabal Rahmah", description: "Gunung Rahmat di Arafah, tapak khutbah terakhir Nabi Muhammad." },
+            { src: "images/umrah_gallery/masjidNabawi.jpg", name: "Masjid Nabawi", description: "Masjid Nabi di Madinah, mengandungi makam Nabi Muhammad." },
+        ]
         },
         japan: {
-            title: "Discover Japan: Cherry Blossom & Culture Tour",
-            intro: "Immerse yourself in the captivating blend of traditional culture and modern marvels of Japan, with a special focus on Muslim-friendly experiences.",
-            image: "images/Japan.jpg",
-            packages: [
-                "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel Muslim-friendly terpilih",
-                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Tokyo, Kyoto, Osaka, dan Nara.",
-                "<strong>Makanan halal</strong> yang disahkan atau ramah Muslim",
-                "<strong>Pemandu pelancong berpengalaman</strong> yang mesra Muslim",
-                "Pengangkutan awam yang efisien (termasuk Shinkansen/Bullet train)"
-            ],
-            gallery: [
-                { src: "images/japan_gallery/Fuji.jpg", name: "Mount Fuji", description: "Japan's iconic sacred mountain." },
-                { src: "images/japan_gallery/KyotoTemple.jpg", name: "Kinkaku-ji Temple (Kyoto)", description: "The Golden Pavilion, a stunning Zen Buddhist temple." },
-                { src: "images/japan_gallery/Shibuya.jpg", name: "Shibuya Crossing (Tokyo)", description: "One of the world's busiest intersections." },
-                { src: "images/japan_gallery/Arashiyama.jpg", name: "Arashiyama Bamboo Grove (Kyoto)", description: "Serene bamboo forest, a natural wonder." },
-            ]
+        title: "Temui Jepun: Lawatan Bunga Sakura & Budaya",
+        intro: "Benamkan diri anda dalam gabungan budaya tradisional dan keajaiban moden Jepun yang menawan, dengan tumpuan khusus kepada pengalaman mesra Muslim.",
+        image: "images/Japan.jpg",
+        packages: [
+            "<strong>Tiket penerbangan pergi balik</strong>",
+            "<strong>Penginapan</strong> di hotel Muslim-friendly terpilih",
+            "<strong>Lawatan penuh ke tempat menarik</strong> seperti Tokyo, Kyoto, Osaka, dan Nara.",
+            "<strong>Makanan halal</strong> yang disahkan atau ramah Muslim",
+            "<strong>Pemandu pelancong berpengalaman</strong> yang mesra Muslim",
+            "Pengangkutan awam yang efisien (termasuk Shinkansen/Bullet train)"
+        ],
+        gallery: [
+            { src: "images/japan_gallery/Fuji.jpg", name: "Gunung Fuji", description: "Gunung suci ikonik Jepun." },
+            { src: "images/japan_gallery/KyotoTemple.jpg", name: "Kuil Kinkaku-ji (Kyoto)", description: "Pavilion Emas, sebuah kuil Buddha Zen yang menakjubkan." },
+            { src: "images/japan_gallery/Shibuya.jpg", name: "Persimpangan Shibuya (Tokyo)", description: "Salah satu persimpangan paling sibuk di dunia." },
+            { src: "images/japan_gallery/Arashiyama.jpg", name: "Hutan Buluh Arashiyama (Kyoto)", description: "Hutan buluh yang tenang, keajaiban alam." },
+        ]
         },
         korea: {
-            title: "Korea Autumn Tour: A Scenic Experience",
-            intro: "Experience the vibrant autumn colors and rich cultural heritage of South Korea, with specially curated itineraries that cater to Muslim travelers.",
-            image: "images/Korea.jpg",
-            packages: [
-                "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel selesa",
-                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Nami Island, Gyeongbokgung Palace, Seoul Tower, dan banyak lagi",
-                "<strong>Makanan halal</strong> yang lazat dan pelbagai",
-                "<strong>Pemandu pelancong berpengalaman</strong>",
-                "Pengangkutan disediakan"
-            ],
-            gallery: [
-                { src: "images/korea_gallery/NamiIsland.jpg", name: "Nami Island", description: "A beautiful, half-moon shaped island known for its natural beauty." },
-                { src: "images/korea_gallery/SeoulTower.jpg", name: "N Seoul Tower", description: "An iconic landmark offering panoramic views of Seoul." },
-                { src: "images/korea_gallery/Gyeongbokgung.jpg", name: "Gyeongbokgung Palace", description: "The largest of the Five Grand Palaces built during the Joseon Dynasty." },
-                { src: "images/korea_gallery/KoreanFood.jpg", name: "Halal Korean Cuisine", description: "Savoring delicious and diverse halal dishes in Korea." },
-            ]
+        title: "Lawatan Musim Luruh Korea: Pengalaman Pemandangan Indah",
+        intro: "Alami warna-warni musim luruh yang ceria dan warisan budaya Korea Selatan yang kaya, dengan jadual perjalanan yang direka khas untuk pelancong Muslim.",
+        image: "images/Korea.jpg",
+        packages: [
+            "<strong>Tiket penerbangan pergi balik</strong>",
+            "<strong>Penginapan</strong> di hotel selesa",
+            "<strong>Lawatan penuh ke tempat menarik</strong> seperti Nami Island, Gyeongbokgung Palace, Seoul Tower, dan banyak lagi",
+            "<strong>Makanan halal</strong> yang lazat dan pelbagai",
+            "<strong>Pemandu pelancong berpengalaman</strong>",
+            "Pengangkutan disediakan"
+        ],
+        gallery: [
+            { src: "images/korea_gallery/NamiIsland.jpg", name: "Pulau Nami", description: "Sebuah pulau indah berbentuk separuh bulan yang terkenal dengan keindahan semula jadi." },
+            { src: "images/korea_gallery/SeoulTower.jpg", name: "Menara N Seoul", description: "Mercu tanda ikonik yang menawarkan pemandangan panorama Seoul." },
+            { src: "images/korea_gallery/Gyeongbokgung.jpg", name: "Istana Gyeongbokgung", description: "Istana terbesar dari Lima Istana Agung yang dibina semasa Dinasti Joseon." },
+            { src: "images/korea_gallery/KoreanFood.jpg", name: "Masakan Halal Korea", description: "Menikmati hidangan halal yang lazat dan pelbagai di Korea." },
+        ]
         },
         turki: {
-            title: "Travel to Turkiye: Where East Meets West",
-            intro: "Explore the majestic landscapes and ancient wonders of Turkiye, a country rich in Islamic history and breathtaking beauty.",
-            image: "images/Turki.jpg",
-            packages: [
-                "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel-hotel berkualiti",
-                "<strong>Lawatan penuh ke tempat menarik</strong> di Istanbul (Hagia Sophia, Blue Mosque, Topkapi Palace), Cappadocia (Hot Air Balloon optional), Pamukkale, Ephesus, dan Bursa.",
-                "<strong>Makanan halal</strong> tempatan yang otentik",
-                "<strong>Pemandu pelancong berpengalaman</strong>",
-                "Pengangkutan domestik (penerbangan domestik/bas)"
-            ],
-            gallery: [
-                { src: "images/turki_gallery/Cappadocia.jpg", name: "Cappadocia", description: "Famous for its unique 'fairy chimney' rock formations and hot air balloon rides." },
-                { src: "images/turki_gallery/HagiaSophia.jpg", name: "Hagia Sophia (Istanbul)", description: "A grand architectural marvel, originally a church, then a mosque, now a mosque again." },
-                { src: "images/turki_gallery/BlueMosque.jpg", name: "Blue Mosque (Istanbul)", description: "Known for its stunning blue tiles and six minarets." },
-                { src: "images/turki_gallery/Pamukkale.jpg", name: "Pamukkale", description: "Terraces of white mineral-rich thermal waters." },
-            ]
+        title: "Melancong ke Turki: Di Mana Timur Bertemu Barat",
+        intro: "Terokai landskap megah dan keajaiban purba Turki, sebuah negara yang kaya dengan sejarah Islam dan keindahan yang menakjubkan.",
+        image: "images/Turki.jpg",
+        packages: [
+            "<strong>Tiket penerbangan pergi balik</strong>",
+            "<strong>Penginapan</strong> di hotel-hotel berkualiti",
+            "<strong>Lawatan penuh ke tempat menarik</strong> di Istanbul (Hagia Sophia, Blue Mosque, Topkapi Palace), Cappadocia (Hot Air Balloon optional), Pamukkale, Ephesus, dan Bursa.",
+            "<strong>Makanan halal</strong> tempatan yang otentik",
+            "<strong>Pemandu pelancong berpengalaman</strong>",
+            "Pengangkutan domestik (penerbangan domestik/bas)"
+        ],
+        gallery: [
+            { src: "images/turki_gallery/Cappadocia.jpg", name: "Cappadocia", description: "Terkenal dengan formasi batuan 'cerobong pari-pari' yang unik dan menaiki belon udara panas." },
+            { src: "images/turki_gallery/HagiaSophia.jpg", name: "Hagia Sophia (Istanbul)", description: "Keajaiban seni bina yang agung, asalnya gereja, kemudian masjid, kini masjid semula." },
+            { src: "images/turki_gallery/BlueMosque.jpg", name: "Masjid Biru (Istanbul)", description: "Terkenal dengan jubin biru yang menakjubkan dan enam menara." },
+            { src: "images/turki_gallery/Pamukkale.jpg", name: "Pamukkale", description: "Teres air terma kaya mineral putih." },
+        ]
         },
         jakarta: {
-            title: "Jakarta City Tour & Cultural Experience",
-            intro: "Discover the dynamic capital of Indonesia, Jakarta, a city brimming with history, modern architecture, and vibrant local life, with a focus on Muslim-friendly spots.",
-            image: "images/Jakarta.jpg",
-            packages: [
-                "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel-hotel terpilih",
-                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Monumen Nasional (Monas), Masjid Istiqlal, Kota Tua Jakarta, dan pusat membeli-belah terkemuka.",
-                "<strong>Makanan halal</strong> tempatan yang pelbagai",
-                "<strong>Pemandu pelancong berpengalaman</strong>",
-                "Pengangkutan persendirian sepanjang lawatan"
-            ],
-            gallery: [
-                { src: "images/jakarta_gallery/Monas.jpg", name: "Monas (National Monument)", description: "The iconic symbol of Indonesia's independence." },
-                { src: "images/jakarta_gallery/IstiqlalMosque.jpeg", name: "Istiqlal Mosque", description: "The largest mosque in Southeast Asia." },
-                { src: "images/jakarta_gallery/KotaTua.jpg", name: "Kota Tua (Old Town)", description: "Historic colonial district with museums and cafes." },
-                { src: "images/jakarta_gallery/JakartaFood.jpg", name: "Halal Indonesian Food", description: "Savoring traditional halal Indonesian dishes." },
-            ]
+        title: "Lawatan Bandar & Pengalaman Budaya Jakarta",
+        intro: "Temui ibu kota dinamik Indonesia, Jakarta, sebuah bandar yang kaya dengan sejarah, seni bina moden, dan kehidupan tempatan yang bersemangat, dengan tumpuan pada tempat-tempat mesra Muslim.",
+        image: "images/Jakarta.jpg",
+        packages: [
+            "<strong>Tiket penerbangan pergi balik</strong>",
+            "<strong>Penginapan</strong> di hotel-hotel terpilih",
+            "<strong>Lawatan penuh ke tempat menarik</strong> seperti Monumen Nasional (Monas), Masjid Istiqlal, Kota Tua Jakarta, dan pusat membeli-belah terkemuka.",
+            "<strong>Makanan halal</strong> tempatan yang pelbagai",
+            "<strong>Pemandu pelancong berpengalaman</strong>",
+            "Pengangkutan persendirian sepanjang lawatan"
+        ],
+        gallery: [
+            { src: "images/jakarta_gallery/Monas.jpg", name: "Monas (Monumen Nasional)", description: "Simbol ikonik kemerdekaan Indonesia." },
+            { src: "images/jakarta_gallery/IstiqlalMosque.jpeg", name: "Masjid Istiqlal", description: "Masjid terbesar di Asia Tenggara." },
+            { src: "images/jakarta_gallery/KotaTua.jpg", name: "Kota Tua", description: "Daerah kolonial bersejarah dengan muzium dan kafe." },
+            { src: "images/jakarta_gallery/JakartaFood.jpg", name: "Makanan Halal Indonesia", description: "Menikmati hidangan tradisional halal Indonesia." },
+        ]
         },
         vietnam: {
-            title: "Vietnam Cultural & Scenic Journey",
-            intro: "Uncover the rich history, vibrant culture, and breathtaking natural beauty of Vietnam, with an itinerary that includes Muslim-friendly dining and experiences.",
-            image: "images/Vietnam.jpg",
-            packages: [
-                "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel-hotelselesa",
-                "<strong>Lawatan penuh ke tempat menarik</strong> di Hanoi (Old Quarter, Hoan Kiem Lake), Halong Bay (cruise), dan Ho Chi Minh City (Cu Chi Tunnels, Ben Thanh Market).",
-                "<strong>Makanan halal</strong> tempatan yang otentik",
-                "<strong>Pemandu pelancong berpengalaman</strong>",
-                "Pengangkutan domestik (penerbangan domestik/bas)"
-            ],
-            gallery: [
-                { src: "images/vietnam_gallery/HalongBay.jpg", name: "Halong Bay", description: "A UNESCO World Heritage site known for its emerald waters and towering limestone islands." },
-                { src: "images/vietnam_gallery/HanoiOldQuarter.jpg", name: "Hanoi Old Quarter", description: "The historic heart of Hanoi, bustling with markets and ancient streets." },
-                { src: "images/vietnam_gallery/BenThanhMarket.jpg", name: "Ben Thanh Market (Ho Chi Minh)", description: "A vibrant market offering local goods and street food." },
-                { src: "images/vietnam_gallery/CuChiTunnels.jpg", name: "Cu Chi Tunnels", description: "An intricate underground network used during the Vietnam War." },
-            ]
+        title: "Perjalanan Budaya & Pemandangan Vietnam",
+        intro: "Temui sejarah yang kaya, budaya yang rancak, dan keindahan alam semula jadi Vietnam yang menakjubkan, dengan jadual perjalanan yang merangkumi pilihan makanan dan pengalaman mesra Muslim.",
+        image: "images/Vietnam.jpg",
+        packages: [
+            "<strong>Tiket penerbangan pergi balik</strong>",
+            "<strong>Penginapan</strong> di hotel-hotelselesa",
+            "<strong>Lawatan penuh ke tempat menarik</strong> di Hanoi (Old Quarter, Hoan Kiem Lake), Halong Bay (cruise), dan Ho Chi Minh City (Cu Chi Tunnels, Ben Thanh Market).",
+            "<strong>Makanan halal</strong> tempatan yang otentik",
+            "<strong>Pemandu pelancong berpengalaman</strong>",
+            "Pengangkutan domestik (penerbangan domestik/bas)"
+        ],
+        gallery: [
+            { src: "images/vietnam_gallery/HalongBay.jpg", name: "Teluk Halong", description: "Tapak Warisan Dunia UNESCO yang terkenal dengan air zamrud dan pulau batu kapur menjulang tinggi." },
+            { src: "images/vietnam_gallery/HanoiOldQuarter.jpg", name: "Kota Lama Hanoi", description: "Jantung bersejarah Hanoi, sibuk dengan pasar dan jalan-jalan purba." },
+            { src: "images/vietnam_gallery/BenThanhMarket.jpg", name: "Pasar Ben Thanh (Ho Chi Minh)", description: "Sebuah pasar yang meriah menawarkan barangan tempatan dan makanan jalanan." },
+            { src: "images/vietnam_gallery/CuChiTunnels.jpg", name: "Terowong Cu Chi", description: "Rangkaian bawah tanah yang rumit digunakan semasa Perang Vietnam." },
+        ]
         },
         thailand: {
-            title: "Thailand Explorer Tour: Temples & Tropical Islands",
-            intro: "Explore the diverse wonders of Thailand, from the bustling streets of Bangkok to the serene beauty of its islands, all with Muslim-friendly considerations.",
-            image: "images/Thailand.jpg",
-            packages: [
-                "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel-hotelselesa",
-                "<strong>Lawatan penuh ke tempat menarik</strong> di Bangkok (Grand Palace, floating markets), Phuket (beaches, islands), Chiang Mai (temples, elephants).",
-                "<strong>Makanan halal</strong> yang mudah didapati dan sedap",
-                "<strong>Pemandu pelancong berpengalaman</strong>",
-                "Pengangkutan domestik (penerbangan domestik/bas)"
-            ],
-            gallery: [
-                { src: "images/thailand_gallery/BangkokTemple.jpg", name: "Wat Arun (Bangkok)", description: "The Temple of Dawn, a stunning riverside temple." },
-                { src: "images/thailand_gallery/PhuketBeach.jpeg", name: "Phuket Beach", description: "Enjoy the beautiful beaches and turquoise waters." },
-                { src: "images/thailand_gallery/FloatingMarket.jpg", name: "Floating Market", description: "Experience traditional Thai commerce on water." },
-                { src: "images/thailand_gallery/ChiangMai.jpg", name: "Chiang Mai", description: "Explore ancient temples and elephant sanctuaries." },
-            ]
+        title: "Lawatan Penerokaan Thailand: Kuil & Pulau Tropika",
+        intro: "Terokai keajaiban Thailand yang pelbagai, dari jalan-jalan sibuk Bangkok hingga keindahan pulau-pulau yang tenang, semuanya dengan pertimbangan mesra Muslim.",
+        image: "images/Thailand.jpg",
+        packages: [
+            "<strong>Tiket penerbangan pergi balik</strong>",
+            "<strong>Penginapan</strong> di hotel-hotelselesa",
+            "<strong>Lawatan penuh ke tempat menarik</strong> di Bangkok (Grand Palace, floating markets), Phuket (beaches, islands), Chiang Mai (temples, elephants).",
+            "<strong>Makanan halal</strong> yang mudah didapati dan sedap",
+            "<strong>Pemandu pelancong berpengalaman</strong>",
+            "Pengangkutan domestik (penerbangan domestik/bas)"
+        ],
+        gallery: [
+            { src: "images/thailand_gallery/BangkokTemple.jpg", name: "Wat Arun (Bangkok)", description: "Kuil Fajar, sebuah kuil tepi sungai yang menakjubkan." },
+            { src: "images/thailand_gallery/PhuketBeach.jpeg", name: "Pantai Phuket", description: "Nikmati pantai-pantai indah dan air biru kehijauan." },
+            { src: "images/thailand_gallery/FloatingMarket.jpg", name: "Pasar Terapung", description: "Alami perdagangan tradisional Thai di atas air." },
+            { src: "images/thailand_gallery/ChiangMai.jpg", name: "Chiang Mai", description: "Terokai kuil-kuil purba dan tempat perlindungan gajah." },
+        ]
         },
         england: {
-            title: "London & UK Heritage Tour",
-            intro: "Discover the iconic landmarks and rich history of London and beyond, offering a cultural journey with options for Muslim-friendly dining and facilities.",
-            image: "images/London.jpg",
-            packages: [
-                "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel pusat bandar",
-                "<strong>Lawatan penuh ke tempat menarik</strong> di London (Big Ben, Tower Bridge, British Museum, Buckingham Palace), dan pilihan ke bandar lain seperti Manchester atau Edinburgh.",
-                "Pilihan <strong>restoran halal</strong> yang pelbagai",
-                "<strong>Pemandu pelancong berpengalaman</strong>",
-                "Pengangkutan awam (kereta api, bas) dan pengangkutan persendirian untuk lawatan tertentu"
-            ],
-            gallery: [
-                { src: "images/london_gallery/BigBen.jpg", name: "Big Ben", description: "The iconic clock tower next to the Houses of Parliament." },
-                { src: "images/london_gallery/TowerBridge.jpg", name: "Tower Bridge", description: "A famous landmark bridge over the River Thames." },
-                { src: "images/london_gallery/BuckinghamPalace.jpg", name: "Buckingham Palace", description: "The official residence of the Monarch of the United Kingdom." },
-                { src: "images/london_gallery/LondonEye.jpg", name: "London Eye", description: "A giant Ferris wheel on the South Bank of the River Thames." },
-            ]
+        title: "Lawatan Warisan London & UK",
+        intro: "Temui mercu tanda ikonik dan sejarah kaya London dan kawasan sekitarnya, menawarkan perjalanan budaya dengan pilihan makanan dan kemudahan mesra Muslim.",
+        image: "images/London.jpg",
+        packages: [
+            "<strong>Tiket penerbangan pergi balik</strong>",
+            "<strong>Penginapan</strong> di hotel pusat bandar",
+            "<strong>Lawatan penuh ke tempat menarik</strong> di London (Big Ben, Tower Bridge, British Museum, Buckingham Palace), dan pilihan ke bandar lain seperti Manchester atau Edinburgh.",
+            "Pilihan <strong>restoran halal</strong> yang pelbagai",
+            "<strong>Pemandu pelancong berpengalaman</strong>",
+            "Pengangkutan awam (kereta api, bas) dan pengangkutan persendirian untuk lawatan tertentu"
+        ],
+        gallery: [
+            { src: "images/london_gallery/BigBen.jpg", name: "Big Ben", description: "Menara jam ikonik di sebelah Bangunan Parlimen." },
+            { src: "images/london_gallery/TowerBridge.jpg", name: "Tower Bridge", description: "Jambatan mercu tanda terkenal di atas Sungai Thames." },
+            { src: "images/london_gallery/BuckinghamPalace.jpg", name: "Istana Buckingham", description: "Kediaman rasmi Raja United Kingdom." },
+            { src: "images/london_gallery/LondonEye.jpg", name: "London Eye", description: "Roda Ferris gergasi di Tebing Selatan Sungai Thames." },
+        ]
         }
     };
-
 
     // --- Modal Logic for Service Cards ---
     serviceCards.forEach(card => {
