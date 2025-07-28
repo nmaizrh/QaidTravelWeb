@@ -3,35 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Qaid Travel</title>
+    <title>Mengenai Kami - Qaid Travel</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <?php include "header.php" ?>
     <main>
         <section class="intro">
-            <h2 class="section-title">About Qaid Travel</h2>
-            <p>Established on <strong>December 17, 2019</strong>, we are proud to be a <strong>100% Bumiputera-owned company</strong>, officially registered with the Ministry of Tourism Malaysia (MOTAC) and the Ministry of Finance Malaysia (MOF). </p>
-            <p>At Qaid Travel, we are committed to providing exceptional travel experiences with a special focus on Muslim-friendly tourism products and education.</p>
+            <h2 class="section-title">Mengenai Qaid Travel</h2>
+            <p>Ditubuhkan pada <strong>17 Disember 2019</strong>, kami bangga menjadi <strong>syarikat milik 100% Bumiputera</strong> yang berdaftar secara rasmi dengan Kementerian Pelancongan Malaysia (MOTAC) dan Kementerian Kewangan Malaysia (MOF). </p>
+            <p>Di Qaid Travel, kami komited untuk menyediakan pengalaman perjalanan yang luar biasa dengan tumpuan khusus kepada produk pelancongan mesra Muslim dan pendidikan.</p>
         </section>
 
         <section>
-            <h2>Our Mission</h2>
-            <p>To prioritize <strong>customer satisfaction</strong> and remain responsive to current trends and demands for Muslim-friendly tourism. We leverage technology to optimize convenience for our clients, ensuring a smooth and enjoyable travel planning process.</p>
+            <h2>Misi Kami</h2>
+            <p>Untuk mengutamakan <strong>kepuasan pelanggan</strong> dan sentiasa responsif terhadap isu semasa dan permintaan semasa untuk pelancongan mesra Muslim. Kami memanfaatkan teknologi untuk mengoptimumkan kemudahan bagi pelanggan kami dengan memastikan proses perancangan perjalanan yang lancar dan menyeronokkan.</p>
         </section>
 
         <section>
-            <h2>Our Vision</h2>
-            <p>To become a leading and highly competitive provider of both group and private tourism services within the travel industry. We aim to develop a dynamic, comprehensive, and competitive Muslim tourism and education agency, offering diverse packages and services to meet every traveler's needs.</p>
+            <h2>Visi Kami</h2>
+            <p>Untuk menjadi penyedia perkhidmatan pelancongan berkumpulan dan persendirian yang terkemuka dan sangat berdaya saing dalam industri pelancongan. Kami berhasrat untuk membangunkan agensi pelancongan dan pendidikan Muslim yang dinamik, komprehensif dan berdaya saing dalam menawarkan pelbagai pakej dan perkhidmatan untuk memenuhi setiap keperluan pengembara.</p>
         </section>
 
         <section>
-            <h2>Why Choose Us?</h2>
+            <h2>Mengapa Memilih Kami?</h2>
             <ul>
-                <li><strong>Muslim-Friendly Focus:</strong> We specialize in ensuring your travel respects Islamic principles, from Halal food to prayer facilities.</li>
-                <li><strong>Experienced Team:</strong> Our dedicated professionals are passionate about travel and committed to your satisfaction.</li>
-                <li><strong>Personalized Service:</strong> We tailor experiences to meet your unique preferences and needs.</li>
-                <li><strong>Trusted & Registered:</strong> Fully compliant with Malaysian tourism regulations, giving you peace of mind.</li>
+                <li><strong>Tumpuan Mesra Muslim:</strong> Kami pakar dalam memastikan perjalanan anda mematuhi prinsip Islam daripada makanan Halal hingga kemudahan solat.</li>
+                <li><strong>Pasukan Berpengalaman:</strong> Kakitangan profesional kami yang berdedikasi bersemangat tentang perjalanan dan komited terhadap kepuasan anda.</li>
+                <li><strong>Perkhidmatan Peribadi:</strong> Kami menyesuaikan pengalaman untuk memenuhi pilihan dan keperluan unik anda.</li>
+                <li><strong>Dipercayai & Berdaftar:</strong> Sepenuhnya mematuhi peraturan pelancongan Malaysia serta memberikan anda ketenangan fikiran.</li>
             </ul>
             </section>
     </main>
