@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Qaid Travel</title>
+    <title>Hubungi Kami - Qaid Travel</title>
     <link rel="stylesheet" href="style.css">
     <style>
         .contact-form {
@@ -94,41 +94,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <main>
         <section>
-            <h2 class="section-title">Contact Us</h2>
+            <h2 class="section-title">Hubungi Kami</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
-                <strong>Have a question, need assistance or ready to book your next adventure?</strong> Fill out the form below and we'll get back to you promptly.
+                <strong>Terdapat soalan, perlukan bantuan atau bersedia untuk menempah pengembaraan seterusnya?</strong> Isikan borang di bawah dan kami akan menghubungi anda dengan segera.
             </p>
 
             <div class="contact-form">
                 <?php echo $message; // Display messages here ?>
                 <form action="contact.php" method="POST">
-                    <label for="name">Your Name:</label>
+                    <label for="name">Nama:</label>
                     <input type="text" id="name" name="name" required value="<?php echo $_POST['name'] ?? ''; ?>">
 
-                    <label for="email">Your Email:</label>
+                    <label for="email">Emel:</label>
                     <input type="email" id="email" name="email" required value="<?php echo $_POST['email'] ?? ''; ?>">
                     
-                    <label for="phone">Your Phone Number:</label>
+                    <label for="phone">Nombor Telefon:</label>
                     <input type="tel" id="phone" name="phone" pattern="[0-9]{7,15}" title="Phone number must contain only 7 to 15 digits." required value="<?php echo $_POST['phone'] ?? ''; ?>">
                     
-                    <label for="subject">Subject:</label>
+                    <label for="subject">Subjek:</label>
                     <input type="text" id="subject" name="subject" value="<?php echo $_GET['tour'] ?? ($_POST['subject'] ?? ''); ?>">
 
-                    <label for="message_content">Message:</label>
+                    <label for="message_content">Mesej:</label>
                     <textarea id="message_content" name="message" required><?php echo $_POST['message'] ?? ''; ?></textarea>
 
-                    <button type="submit">Send Message</button>
+                    <button type="submit">Hantar Mesej</button>
                 </form>
             </div>
         </section>
 
         <section>
-            <h2 class="section-title">Our Contact Details</h2>
+            <h2 class="section-title">Butiran untuk Hubungan Kami</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
-                You can also reach us directly via phone, email or visit our office during business hours.
+                Anda juga boleh menghubungi kami secara terus melalui telefon, emel atau melawat pejabat kami semasa waktu perniagaan.
             </p>
             <div class="contact-info">
-                <p><strong>Address:</strong></p>
+                <p><strong>Alamat Qaid Travel:</strong></p>
                 <div style="flex: 1; min-width: 300px;">
                     <iframe 
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.685283828871!2d102.27992237348866!3d2.270765157927067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1e50d415e3df7%3A0x4c2dc8bdcf420076!2sQAID%20TRAVEL%20SDN%20BHD!5e0!3m2!1sen!2smy!4v1753171441663!5m2!1sen!2smy" 
@@ -140,9 +140,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-                <p><strong>Phone:</strong> +06-2312300</p>
-                <p><strong>Email:</strong> qaidtravelsb@gmail.com</p>
-                <p><strong>Operating Hours:</strong> Monday - Friday, 9:00 AM - 5:30 PM</p>
+                <p><strong>Telefon:</strong> +06-2312300</p>
+                <p><strong>Emel:</strong> qaidtravelsb@gmail.com</p>
+                <p><strong>Waktu Operasi:</strong> Isnin - Jumaat, 9:00 AM - 5:30 PM</p>
             </div>
         </section>
     </main>
