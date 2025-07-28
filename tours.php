@@ -299,6 +299,11 @@
 <body>
 <?php include 'header.php'; ?>
 
+<div class="filter-group">
+    <label for="searchFilter">Cari Destinasi:</label>
+    <input type="text" id="searchFilter" placeholder="Cari..." />
+</div>
+
 <div class="tours-container">
     <div class="filter-panel">
         <h3>Filter</h3>
@@ -472,6 +477,7 @@
     const modalPackageList = document.getElementById('modalPackageList');
     const modalGallery = document.getElementById('modalGallery');
     const modalInquireBtn = document.getElementById('modalInquireBtn');
+    const searchFilter = document.getElementById('searchFilter');
 
     // Pagination variables
     const toursPerPage = 6; // Number of tours to display per page
@@ -770,20 +776,39 @@
     }
 
     // Function to display tours based on current filters and pagination
+    function populateDestinations() {
+    const destinations = new Set();
+    allTourCards.forEach(card => {
+        destinations.add(card.dataset.destination);
+    });
+    destinations.forEach(dest => {
+        const option = document.createElement('option');
+        option.value = dest;
+        option.textContent = dest;
+        destinationFilter.appendChild(option);
+    });
+}
+
+// Function to display tours based on current filters, search, and pagination
     function displayTours() {
         const selectedDestination = destinationFilter.value;
         const selectedTopics = Array.from(topicCheckboxes)
-                                  .filter(checkbox => checkbox.checked)
-                                  .map(checkbox => checkbox.value);
+                                        .filter(checkbox => checkbox.checked)
+                                        .map(checkbox => checkbox.value);
+        const searchTerm = searchFilter.value.toLowerCase(); // Get search term and convert to lowercase
 
         filteredTourCards = Array.from(allTourCards).filter(card => {
             const cardDestination = card.dataset.destination;
             const cardTopics = card.dataset.topics ? card.dataset.topics.split(',') : [];
+            const cardTitle = tourData[card.dataset.id].title.toLowerCase(); // Get tour title for searching
+            const cardIntro = tourData[card.dataset.id].intro.toLowerCase(); // Get tour intro for searching
 
             const matchesDestination = selectedDestination === '' || cardDestination === selectedDestination;
             const matchesTopics = selectedTopics.length === 0 || selectedTopics.every(topic => cardTopics.includes(topic));
+            // Check if the search term is found in the title or intro
+            const matchesSearch = searchTerm === '' || cardTitle.includes(searchTerm) || cardIntro.includes(searchTerm);
 
-            return matchesDestination && matchesTopics;
+            return matchesDestination && matchesTopics && matchesSearch; // Combine all filter conditions
         });
 
         // Hide all cards first
@@ -847,55 +872,55 @@
     }
 
     // Modal functionality
-    allTourCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const tourId = card.dataset.id;
-            const tour = tourData[tourId];
+allTourCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const tourId = card.dataset.id;
+        const tour = tourData[tourId];
 
-            if (tour) {
-                modalTourImage.src = tour.image;
-                modalTourTitle.textContent = tour.title;
-                modalTourIntro.textContent = tour.intro;
+        if (tour) {
+            modalTourImage.src = tour.image;
+            modalTourTitle.textContent = tour.title;
+            modalTourIntro.textContent = tour.intro;
 
-                // Clear previous packages
-                modalPackageList.innerHTML = '';
-                tour.packages.forEach(pkg => {
-                    const li = document.createElement('li');
-                    li.innerHTML = pkg;
-                    modalPackageList.appendChild(li);
-                });
+            // Clear previous packages
+            modalPackageList.innerHTML = '';
+            tour.packages.forEach(pkg => {
+                const li = document.createElement('li');
+                li.innerHTML = pkg;
+                modalPackageList.appendChild(li);
+            });
 
-                // Clear previous gallery items
-                modalGallery.innerHTML = '';
-                tour.gallery.forEach(item => {
-                    const galleryItemDiv = document.createElement('div');
-                    galleryItemDiv.classList.add('modal-gallery-item');
-                    
-                    const img = document.createElement('img');
-                    img.src = item.src;
-                    img.alt = item.name;
-                    galleryItemDiv.appendChild(img);
+            // Clear previous gallery items
+            modalGallery.innerHTML = '';
+            tour.gallery.forEach(item => {
+                const galleryItemDiv = document.createElement('div');
+                galleryItemDiv.classList.add('modal-gallery-item');
 
-                    const name = document.createElement('div');
-                    name.classList.add('name');
-                    name.textContent = item.name;
-                    galleryItemDiv.appendChild(name);
+                const img = document.createElement('img');
+                img.src = item.src;
+                img.alt = item.name;
+                galleryItemDiv.appendChild(img);
 
-                    const description = document.createElement('div');
-                    description.classList.add('description');
-                    description.textContent = item.description;
-                    galleryItemDiv.appendChild(description);
+                const name = document.createElement('div');
+                name.classList.add('name');
+                name.textContent = item.name;
+                galleryItemDiv.appendChild(name);
 
-                    modalGallery.appendChild(galleryItemDiv);
-                });
+                const description = document.createElement('div');
+                description.classList.add('description');
+                description.textContent = item.description;
+                galleryItemDiv.appendChild(description);
 
-                // Set inquire button link
-                modalInquireBtn.href = `contact.php?tour=${encodeURIComponent(tour.title)}`;
+                modalGallery.appendChild(galleryItemDiv);
+            });
 
-                tourDetailModal.classList.add('active');
-            }
-        });
+            // Set inquire button link
+            modalInquireBtn.href = `contact.php?tour=${encodeURIComponent(tour.title)}`;
+
+            tourDetailModal.classList.add('active');
+        }
     });
+});
 
     modalCloseBtn.addEventListener('click', () => {
         tourDetailModal.classList.remove('active');
