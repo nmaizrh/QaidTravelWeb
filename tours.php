@@ -7,11 +7,32 @@
     <link rel="stylesheet" href="style.css" />
 <style>
     /* Existing CSS from your file */
-    body {
+        body {
         font-family: 'Segoe UI', sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #fff;
+        background-color: #f0f0f0; /* Keeping the light grey background from previous step */
+    }
+
+    .tour-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: flex-start; /* Ensures cards are aligned to the left */
+        flex-grow: 1;
+    }
+
+    .tour-card {
+        flex-basis: calc(33.333% - 20px); /* Preferred width for 3 cards per row */
+        flex-grow: 0;   /* Changed from 1 to 0: Prevents cards from growing and filling extra space */
+        flex-shrink: 0; /* Prevents cards from shrinking */
+        max-width: 350px; /* Caps the maximum width of a single card, adjust as needed */
+        background-color: #fff; /* Keeping cards white as they are content containers */
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: transform 0.3s;
+        cursor: pointer;
     }
 
     .tours-container {
@@ -45,26 +66,6 @@
     .filter-group label {
         display: block;
         margin-bottom: 10px;
-    }
-
-    .tour-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        justify-content: flex-start; /* Aligns cards to the left within the tour-list */
-        flex-grow: 1; /* Allows tour-list to take up all available space next to the filter panel */
-    }
-
-    .tour-card {
-        flex-basis: calc(33.333% - 20px); /* Preferred width for 3 cards per row */
-        flex-grow: 1; /* Allows the card to grow and fill available space if fewer items */
-        max-width: 350px; /* Caps the maximum width of a single card, adjust as needed */
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        overflow: hidden;
-        transition: transform 0.3s;
-        cursor: pointer; /* Indicate it's clickable */
     }
 
     @media (max-width: 900px) {
@@ -269,13 +270,13 @@
         align-items: center;
         margin-top: 40px;
         padding: 10px;
-        background-color: #f5f5f5;
+        background-color: transparent;
         border-radius: 8px;
         box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
     .pagination a {
-        color: #b62626;
+        color: #ffffff;
         padding: 8px 16px;
         text-decoration: none;
         transition: background-color 0.3s;
@@ -291,7 +292,7 @@
     }
 
     .pagination a:hover:not(.active) {
-        background-color: #ddd;
+        background-color: #ddd; /* Changed from #b62626 to #ddd for a distinct hover effect */
     }
 </style>
 </head>
@@ -303,21 +304,21 @@
         <h3>Filter</h3>
 
         <div class="filter-group">
-            <label for="destination">Destination</label>
+            <label for="destination">Destinasi</label>
             <select id="destination">
-                <option value="">All Destinations</option>
+                <option value="">Semua Destinasi</option>
             </select>
         </div>
 
         <div class="filter-group">
-            <h4>Topics</h4>
-            <label><input type="checkbox" value="Culture"> Culture & Heritage</label>
-            <label><input type="checkbox" value="Nature"> Nature & Adventure</label>
-            <label><input type="checkbox" value="Food"> Food & Drinks</label>
-            <label><input type="checkbox" value="Island"> Island & Beaches</label>
+            <h4>Topik</h4>
+            <label><input type="checkbox" value="Culture"> Budaya & Warisan</label>
+            <label><input type="checkbox" value="Nature"> Alam Semula Jadi & Pengembaraan</label>
+            <label><input type="checkbox" value="Food"> Makanan & Minuman</label>
+            <label><input type="checkbox" value="Island"> Pulau & Pantai</label>
         </div>
 
-        <button class="show-all-btn" onclick="resetFilters()">Show All</button>
+        <button class="show-all-btn" onclick="resetFilters()">Tunjuk Semua</button>
     </div>
 
     <div style="display: flex; flex-direction: column; flex-grow: 1;">
@@ -325,109 +326,109 @@
             <div class="tour-card" data-id="umrah" data-destination="Umrah" data-topics="Culture">
                 <img src="images/Umrah.jpg" alt="Umrah"/>
                 <div class="info">
-                    <h4>Umrah Journey</h4>
-                    <p>Complete Umrah package with religious guidance.</p>
+                    <h4>Perjalanan Umrah</h4>
+                    <p>Pakej Umrah lengkap dengan bimbingan keagamaan.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="japan" data-destination="Japan" data-topics="Food,Culture">
                 <img src="images/Japan.jpg" alt="Japan"/>
                 <div class="info">
-                    <h4>Discover Japan</h4>
-                    <p>Visit Kyoto with halal dining and cultural beauty.</p>
+                    <h4>Jelajahi Jepun</h4>
+                    <p>Lawati Kyoto dengan hidangan halal dan keindahan budaya.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="korea" data-destination="Korea" data-topics="Culture,Nature">
                 <img src="images/Korea.jpg" alt="Korea"/>
                 <div class="info">
-                    <h4>Korea Autumn Tour</h4>
-                    <p>Enjoy Korea's seasons with curated group trips.</p>
+                    <h4>Lawatan Musim Luruh Korea</h4>
+                    <p>Nikmati musim Korea dengan perjalanan kumpulan terpilih.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="turki" data-destination="Turki" data-topics="Culture,Food">
                 <img src="images/Turki.jpg" alt="Turki"/>
                 <div class="info">
-                    <h4>Travel to Turkiye</h4>
-                    <p>Explore Istanbul, Cappadocia, and historical sites.</p>
+                    <h4>Melancong ke Turki</h4>
+                    <p>Terokai Istanbul, Cappadocia, dan tapak bersejarah.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="jakarta" data-destination="Jakarta" data-topics="Culture,Nature">
                 <img src="images/Jakarta.jpg" alt="Jakarta"/>
                 <div class="info">
-                    <h4>Jakarta City Tour</h4>
-                    <p>Explore Jakarta’s vibrant culture, landmarks, and halal-friendly attractions.</p>
+                    <h4>Lawatan Bandar Jakarta</h4>
+                    <p>Terokai budaya Jakarta yang bersemangat, mercu tanda, dan tarikan mesra halal.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="vietnam" data-destination="Vietnam" data-topics="Nature,Food,Culture">
                 <img src="images/Vietnam.jpg" alt="Vietnam"/>
                 <div class="info">
-                    <h4>Vietnam Cultural Journey</h4>
-                    <p>Discover Vietnam’s rich heritage, scenic landscapes and halal-friendly 
-                        experiences across Hanoi and Ho Chi Minh City.</p>
+                    <h4>Perjalanan Budaya Vietnam</h4>
+                    <p>Temui warisan kaya Vietnam, pemandangan indah dan pengalaman mesra halal
+                        di seluruh Hanoi dan Ho Chi Minh City.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="thailand" data-destination="Thailand" data-topics="Food,Culture">
                 <img src="images/Thailand.jpg" alt="Thailand"/>
                 <div class="info">
-                    <h4>Thailand Explorer Tour</h4>
-                    <p>Enjoy bustling markets, island getaways
-                        and halal-friendly cuisine across Bangkok, Phuket, and beyond.</p>
+                    <h4>Lawatan Penerokaan Thailand</h4>
+                    <p>Nikmati pasar yang sibuk, percutian pulau
+                        dan masakan mesra halal di Bangkok, Phuket, dan sekitarnya.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="england" data-destination="England" data-topics="Food,Culture">
                 <img src="images/London.jpg" alt="England"/>
                 <div class="info">
-                    <h4>London Heritage Tour</h4>
-                    <p>Explore Big Ben, Tower Bridge, and rich British history with
-                        halal-friendly options around the city.</p>
+                    <h4>Lawatan Warisan London</h4>
+                    <p>Terokai Big Ben, Tower Bridge, dan sejarah British yang kaya dengan
+                        pilihan mesra halal di sekitar bandar.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="batam" data-destination="Batam" data-topics="Island,Nature">
                 <img src="images/Batam.jpeg" alt="Batam"/>
                 <div class="info">
-                    <h4>Batam Island Escape</h4>
-                    <p>Discover Batam's beaches, shopping, and vibrant nightlife.</p>
+                    <h4>Percutian Pulau Batam</h4>
+                    <p>Temui pantai Batam, membeli-belah, dan kehidupan malam yang meriah.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="tanjung_pinang_bintan" data-destination="Tanjung Pinang Bintan" data-topics="Island,Nature">
                 <img src="images/TanjungPinang.jpg" alt="Tanjung Pinang Bintan"/>
                 <div class="info">
-                    <h4>Tanjung Pinang & Bintan Retreat</h4>
-                    <p>Relax on Bintan's pristine beaches and explore Tanjung Pinang's charm.</p>
+                    <h4>Percutian Tanjung Pinang & Bintan</h4>
+                    <p>Bersantai di pantai-pantai bersih Bintan dan terokai daya tarikan Tanjung Pinang.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="karimun_island" data-destination="Karimun Island" data-topics="Island,Nature">
                 <img src="images/KarimunIsland.jpg" alt="Karimun Island"/>
                 <div class="info">
-                    <h4>Karimun Island Adventure</h4>
-                    <p>Experience the untouched beauty and serene atmosphere of Karimun Island.</p>
+                    <h4>Pengembaraan Pulau Karimun</h4>
+                    <p>Alami keindahan semula jadi yang belum terusik dan suasana tenang Pulau Karimun.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="sabah" data-destination="Sabah" data-topics="Nature,Culture">
                 <img src="images/Sabah.jpg" alt="Sabah"/>
                 <div class="info">
-                    <h4>Explore Wild Sabah</h4>
-                    <p>Journey through Sabah's rainforests, mountains, and cultural heritage.</p>
+                    <h4>Terokai Sabah Yang Liar</h4>
+                    <p>Jelajahi hutan hujan, gunung-ganang dan warisan budaya yang kaya di Sabah.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="sarawak" data-destination="Sarawak" data-topics="Nature,Culture">
                 <img src="images/Sarawak.jpg" alt="Sarawak"/>
                 <div class="info">
-                    <h4>Sarawak Cultural Discovery</h4>
-                    <p>Uncover Sarawak's indigenous cultures and natural wonders.</p>
+                    <h4>Penemuan Budaya Sarawak</h4>
+                    <p>Temui budaya asli dan keajaiban semula jadi Sarawak.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="langkawi" data-destination="Langkawi" data-topics="Island,Nature">
                 <img src="images/Langkawi.jpg" alt="Langkawi"/>
                 <div class="info">
-                    <h4>Langkawi Island Paradise</h4>
-                    <p>Enjoy Langkawi's stunning beaches, geological wonders, and duty-free shopping.</p>
+                    <h4>Syurga Pulau Langkawi</h4>
+                    <p>Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi, dan membeli-belah bebas cukai.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="hat_yai" data-destination="Hat Yai" data-topics="Culture,Food">
                 <img src="images/Hatyai.png" alt="Hat Yai"/>
                 <div class="info">
-                    <h4>Hat Yai City Delights</h4>
-                    <p>Explore Hat Yai's bustling markets, temples, and delicious street food.</p>
+                    <h4>Keindahan Bandar Hat Yai</h4>
+                    <p>Terokai pasar Hat Yai yang sibuk, kuil, dan makanan jalanan yang lazat.</p>
                 </div>
             </div>
         </div>
@@ -438,15 +439,15 @@
 <div class="modal-overlay" id="tourDetailModal">
     <div class="modal-content">
         <button class="modal-close-btn">&times;</button>
-        <img src="" alt="Tour Image" class="modal-image" id="modalTourImage">
+        <img src="" alt="Imej Pelancongan" class="modal-image" id="modalTourImage">
         <h3 id="modalTourTitle"></h3>
         <p id="modalTourIntro"></p>
         
-        <h4>Packages We Provide:</h4>
+        <h4>Pakej yang Kami Sediakan:</h4>
         <ul id="modalPackageList" class="modal-package-list">
             </ul>
 
-        <h4>Gallery:</h4>
+        <h4>Galeri:</h4>
         <div id="modalGallery" class="modal-gallery">
             </div>
 
@@ -481,8 +482,8 @@
     // This can be fetched from a database in a more complex setup
     const tourData = {
         umrah: {
-            title: "Umrah Journey",
-            intro: "Embark on a blessed spiritual journey to the Holy Land with Qaid Travel's comprehensive Umrah packages, designed for comfort and peace of mind.",
+            title: "Perjalanan Umrah",
+            intro: "Mulakan perjalanan rohani yang diberkati ke Tanah Suci dengan pakej Umrah komprehensif Qaid Travel, direka untuk keselesaan dan ketenangan fikiran.",
             image: "images/Umrah.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
@@ -496,149 +497,149 @@
                 "Troli bagasi, beg sandang, beg silang & buku panduan Umrah"
             ],
             gallery: [
-                { src: "images/umrah_gallery/masjidQuba.jpg", name: "Masjid Quba", description: "The first mosque built by Prophet Muhammad (PBUH)." },
-                { src: "images/umrah_gallery/madinah.png", name: "Madinah", description: "The illuminated city, second holiest site in Islam." },
-                { src: "images/umrah_gallery/JabalRahmah.jpg", name: "Jabal Rahmah", description: "The Mount of Mercy in Arafat, site of Prophet Muhammad's last sermon." },
-                { src: "images/umrah_gallery/masjidNabawi.jpg", name: "Masjid Nabawi", description: "The Prophet's Mosque in Madinah, containing Prophet Muhammad's tomb." },
+                { src: "images/umrah_gallery/masjidQuba.jpg", name: "Masjid Quba", description: "Masjid pertama yang dibina oleh Nabi Muhammad (SAW)." },
+                { src: "images/umrah_gallery/madinah.png", name: "Madinah", description: "Kota yang diterangi, tapak suci kedua dalam Islam." },
+                { src: "images/umrah_gallery/JabalRahmah.jpg", name: "Jabal Rahmah", description: "Gunung Rahmat di Arafah, tapak khutbah terakhir Nabi Muhammad." },
+                { src: "images/umrah_gallery/masjidNabawi.jpg", name: "Masjid Nabawi", description: "Masjid Nabi di Madinah, mengandungi makam Nabi Muhammad." },
             ]
         },
         japan: {
-            title: "Discover Japan: Cherry Blossom & Culture Tour",
-            intro: "Immerse yourself in the captivating blend of traditional culture and modern marvels of Japan, with a special focus on Muslim-friendly experiences.",
+            title: "Jelajahi Jepun: Lawatan Bunga Sakura & Budaya",
+            intro: "Selami gabungan mempesona budaya tradisional dan keajaiban moden Jepun, dengan tumpuan khas pada pengalaman mesra Muslim.",
             image: "images/Japan.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel Muslim-friendly terpilih",
+                "<strong>Penginapan</strong> di hotel mesra Muslim terpilih",
                 "<strong>Lawatan penuh ke tempat menarik</strong> seperti Tokyo, Kyoto, Osaka, dan Nara.",
                 "<strong>Makanan</strong> yang disahkan atau ramah Muslim",
                 "<strong>Pemandu pelancong berpengalaman</strong> yang mesra Muslim",
-                "Pengangkutan awam yang efisien (termasuk Shinkansen/Bullet train)"
+                "Pengangkutan awam yang efisien (termasuk Shinkansen/Kereta api laju)"
             ],
             gallery: [
-                { src: "images/japan_gallery/Fuji.jpg", name: "Mount Fuji", description: "Japan's iconic sacred mountain." },
-                { src: "images/japan_gallery/KyotoTemple.jpg", name: "Kinkaku-ji Temple (Kyoto)", description: "The Golden Pavilion, a stunning Zen Buddhist temple." },
-                { src: "images/japan_gallery/Shibuya.jpg", name: "Shibuya Crossing (Tokyo)", description: "One of the world's busiest intersections." },
-                { src: "images/japan_gallery/Arashiyama.jpg", name: "Arashiyama Bamboo Grove (Kyoto)", description: "Serene bamboo forest, a natural wonder." },
+                { src: "images/japan_gallery/Fuji.jpg", name: "Gunung Fuji", description: "Gunung suci ikonik Jepun." },
+                { src: "images/japan_gallery/KyotoTemple.jpg", name: "Kuil Kinkaku-ji (Kyoto)", description: "Pavilion Emas, kuil Buddha Zen yang menakjubkan." },
+                { src: "images/japan_gallery/Shibuya.jpg", name: "Lintasan Shibuya (Tokyo)", description: "Salah satu persimpangan paling sibuk di dunia." },
+                { src: "images/japan_gallery/Arashiyama.jpg", name: "Hutan Buluh Arashiyama (Kyoto)", description: "Hutan buluh yang tenang, keajaiban alam." },
             ]
         },
         korea: {
-            title: "Korea Autumn Tour: A Scenic Halal Experience",
-            intro: "Experience the vibrant autumn colors and rich cultural heritage of South Korea, with specially curated itineraries that cater to Muslim travelers.",
+            title: "Lawatan Musim Luruh Korea: Pengalaman Halal yang Indah",
+            intro: "Alami warna musim luruh yang meriah dan warisan budaya yang kaya di Korea Selatan, dengan jadual perjalanan yang direka khas untuk pelancong Muslim.",
             image: "images/Korea.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel selesa",
-                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Nami Island, Gyeongbokgung Palace, Seoul Tower, dan banyak lagi",
+                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Pulau Nami, Istana Gyeongbokgung, Menara Seoul, dan banyak lagi",
                 "<strong>Makanan</strong> yang lazat dan pelbagai",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/korea_gallery/NamiIsland.jpg", name: "Nami Island", description: "A beautiful, half-moon shaped island known for its natural beauty." },
-                { src: "images/korea_gallery/SeoulTower.jpg", name: "N Seoul Tower", description: "An iconic landmark offering panoramic views of Seoul." },
-                { src: "images/korea_gallery/Gyeongbokgung.jpg", name: "Gyeongbokgung Palace", description: "The largest of the Five Grand Palaces built during the Joseon Dynasty." },
-                { src: "images/korea_gallery/KoreanFood.jpg", name: "Halal Korean Cuisine", description: "Savoring delicious and diverse halal dishes in Korea." },
+                { src: "images/korea_gallery/NamiIsland.jpg", name: "Pulau Nami", description: "Sebuah pulau berbentuk separuh bulan yang indah yang terkenal dengan keindahan semula jadi." },
+                { src: "images/korea_gallery/SeoulTower.jpg", name: "Menara N Seoul", description: "Mercu tanda ikonik yang menawarkan pemandangan panorama Seoul." },
+                { src: "images/korea_gallery/Gyeongbokgung.jpg", name: "Istana Gyeongbokgung", description: "Istana terbesar dari Lima Istana Besar yang dibina semasa Dinasti Joseon." },
+                { src: "images/korea_gallery/KoreanFood.jpg", name: "Masakan Halal Korea", description: "Menikmati hidangan halal yang lazat dan pelbagai di Korea." },
             ]
         },
         turki: {
-            title: "Travel to Turkiye: Where East Meets West",
-            intro: "Explore the majestic landscapes and ancient wonders of Turkiye, a country rich in Islamic history and breathtaking beauty.",
+            title: "Melancong ke Turki: Di Mana Timur Bertemu Barat",
+            intro: "Terokai landskap megah dan keajaiban purba Turki, sebuah negara yang kaya dengan sejarah Islam dan keindahan yang memukau.",
             image: "images/Turki.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel-hotel berkualiti",
-                "<strong>Lawatan penuh ke tempat menarik</strong> di Istanbul (Hagia Sophia, Blue Mosque, Topkapi Palace), Cappadocia (Hot Air Balloon optional), Pamukkale, Ephesus, dan Bursa.",
+                "<strong>Lawatan penuh ke tempat menarik</strong> di Istanbul (Hagia Sophia, Masjid Biru, Istana Topkapi), Cappadocia (Belon Udara Panas pilihan), Pamukkale, Ephesus, dan Bursa.",
                 "<strong>Makanan</strong> tempatan yang otentik",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan domestik (penerbangan domestik/bas)"
             ],
             gallery: [
-                { src: "images/turki_gallery/Cappadocia.jpg", name: "Cappadocia", description: "Famous for its unique 'fairy chimney' rock formations and hot air balloon rides." },
-                { src: "images/turki_gallery/HagiaSophia.jpg", name: "Hagia Sophia (Istanbul)", description: "A grand architectural marvel, originally a church, then a mosque, now a mosque again." },
-                { src: "images/turki_gallery/BlueMosque.jpg", name: "Blue Mosque (Istanbul)", description: "Known for its stunning blue tiles and six minarets." },
-                { src: "images/turki_gallery/Pamukkale.jpg", name: "Pamukkale", description: "Terraces of white mineral-rich thermal waters." },
+                { src: "images/turki_gallery/Cappadocia.jpg", name: "Cappadocia", description: "Terkenal dengan formasi batuan 'cerobong pari-pari' yang unik dan menaiki belon udara panas." },
+                { src: "images/turki_gallery/HagiaSophia.jpg", name: "Hagia Sophia (Istanbul)", description: "Keajaiban seni bina yang hebat, asalnya gereja, kemudian masjid, kini masjid semula." },
+                { src: "images/turki_gallery/BlueMosque.jpg", name: "Masjid Biru (Istanbul)", description: "Terkenal dengan jubin biru yang menakjubkan dan enam menara." },
+                { src: "images/turki_gallery/Pamukkale.jpg", name: "Pamukkale", description: "Teres air panas kaya mineral putih." },
             ]
         },
         jakarta: {
-            title: "Jakarta City Tour & Cultural Experience",
-            intro: "Discover the dynamic capital of Indonesia, Jakarta, a city brimming with history, modern architecture, and vibrant local life, with a focus on Muslim-friendly spots.",
+            title: "Lawatan Bandar Jakarta & Pengalaman Budaya",
+            intro: "Temui ibu kota dinamik Indonesia, Jakarta, sebuah bandar yang penuh dengan sejarah, seni bina moden, dan kehidupan tempatan yang bersemangat, dengan tumpuan pada tempat-tempat mesra Muslim.",
             image: "images/Jakarta.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel-hotels terpilih",
+                "<strong>Penginapan</strong> di hotel-hotel terpilih",
                 "<strong>Lawatan penuh ke tempat menarik</strong> seperti Monumen Nasional (Monas), Masjid Istiqlal, Kota Tua Jakarta, dan pusat membeli-belah terkemuka.",
                 "<strong>Makanan</strong> tempatan yang pelbagai",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan persendirian sepanjang lawatan"
             ],
             gallery: [
-                { src: "images/jakarta_gallery/Monas.jpg", name: "Monas (National Monument)", description: "The iconic symbol of Indonesia's independence." },
-                { src: "images/jakarta_gallery/IstiqlalMosque.jpeg", name: "Istiqlal Mosque", description: "The largest mosque in Southeast Asia." },
-                { src: "images/jakarta_gallery/KotaTua.jpg", name: "Kota Tua (Old Town)", description: "Historic colonial district with museums and cafes." },
-                { src: "images/jakarta_gallery/JakartaFood.jpg", name: "Halal Indonesian Food", description: "Savoring traditional halal Indonesian dishes." },
+                { src: "images/jakarta_gallery/Monas.jpg", name: "Monas (Monumen Nasional)", description: "Simbol ikonik kemerdekaan Indonesia." },
+                { src: "images/jakarta_gallery/IstiqlalMosque.jpeg", name: "Masjid Istiqlal", description: "Masjid terbesar di Asia Tenggara." },
+                { src: "images/jakarta_gallery/KotaTua.jpg", name: "Kota Tua (Bandar Lama)", description: "Daerah kolonial bersejarah dengan muzium dan kafe." },
+                { src: "images/jakarta_gallery/JakartaFood.jpg", name: "Makanan Halal Indonesia", description: "Menikmati hidangan halal tradisional Indonesia." },
             ]
         },
         vietnam: {
-            title: "Vietnam Cultural & Scenic Journey",
-            intro: "Uncover the rich history, vibrant culture, and breathtaking natural beauty of Vietnam, with an itinerary that includes Muslim-friendly dining and experiences.",
+            title: "Perjalanan Budaya & Pemandangan Vietnam",
+            intro: "Temui sejarah kaya, budaya yang bersemangat, dan keindahan alam semula jadi Vietnam yang memukau, dengan jadual perjalanan yang merangkumi hidangan dan pengalaman mesra Muslim.",
             image: "images/Vietnam.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel-hotelselesa",
-                "<strong>Lawatan penuh ke tempat menarik</strong> di Hanoi (Old Quarter, Hoan Kiem Lake), Halong Bay (cruise), dan Ho Chi Minh City (Cu Chi Tunnels, Ben Thanh Market).",
+                "<strong>Penginapan</strong> di hotel-hotel selesa",
+                "<strong>Lawatan penuh ke tempat menarik</strong> di Hanoi (Kawasan Lama, Tasik Hoan Kiem), Teluk Halong (pelayaran), dan Ho Chi Minh City (Terowong Cu Chi, Pasar Ben Thanh).",
                 "<strong>Makanan</strong> tempatan yang otentik",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan domestik (penerbangan domestik/bas)"
             ],
             gallery: [
-                { src: "images/vietnam_gallery/HalongBay.jpg", name: "Halong Bay", description: "A UNESCO World Heritage site known for its emerald waters and towering limestone islands." },
-                { src: "images/vietnam_gallery/HanoiOldQuarter.jpg", name: "Hanoi Old Quarter", description: "The historic heart of Hanoi, bustling with markets and ancient streets." },
-                { src: "images/vietnam_gallery/BenThanhMarket.jpg", name: "Ben Thanh Market (Ho Chi Minh)", description: "A vibrant market offering local goods and street food." },
-                { src: "images/vietnam_gallery/CuChiTunnels.jpg", name: "Cu Chi Tunnels", description: "An intricate underground network used during the Vietnam War." },
+                { src: "images/vietnam_gallery/HalongBay.jpg", name: "Teluk Halong", description: "Tapak Warisan Dunia UNESCO yang terkenal dengan air zamrud dan pulau-pulau batu kapur yang menjulang tinggi." },
+                { src: "images/vietnam_gallery/HanoiOldQuarter.jpg", name: "Kawasan Lama Hanoi", description: "Jantung bersejarah Hanoi, sibuk dengan pasar dan jalan-jalan purba." },
+                { src: "images/vietnam_gallery/BenThanhMarket.jpg", name: "Pasar Ben Thanh (Ho Chi Minh)", description: "Pasar yang meriah menawarkan barangan tempatan dan makanan jalanan." },
+                { src: "images/vietnam_gallery/CuChiTunnels.jpg", name: "Terowong Cu Chi", description: "Rangkaian bawah tanah yang rumit yang digunakan semasa Perang Vietnam." },
             ]
         },
         thailand: {
-            title: "Thailand Explorer Tour: Temples & Tropical Islands",
-            intro: "Explore the diverse wonders of Thailand, from the bustling streets of Bangkok to the serene beauty of its islands, all with Muslim-friendly considerations.",
+            title: "Lawatan Penerokaan Thailand: Kuil & Pulau Tropika",
+            intro: "Terokai pelbagai keajaiban Thailand, dari jalan-jalan Bangkok yang sibuk hingga keindahan tenang pulaunya, semuanya dengan pertimbangan mesra Muslim.",
             image: "images/Thailand.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel-hotel berkualiti",
-                "<strong>Lawatan penuh ke tempat menarik</strong> di Bangkok (Grand Palace, floating markets), Phuket (beaches, islands), Chiang Mai (temples, elephants).",
+                "<strong>Lawatan penuh ke tempat menarik</strong> di Bangkok (Grand Palace, pasar terapung), Phuket (pantai, pulau), Chiang Mai (kuil, gajah).",
                 "<strong>Makanan</strong> yang mudah didapati dan sedap",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan domestik (penerbangan domestik/bas)"
             ],
             gallery: [
-                { src: "images/thailand_gallery/BangkokTemple.jpg", name: "Wat Arun (Bangkok)", description: "The Temple of Dawn, a stunning riverside temple." },
-                { src: "images/thailand_gallery/PhuketBeach.jpeg", name: "Phuket Beach", description: "Enjoy the beautiful beaches and turquoise waters." },
-                { src: "images/thailand_gallery/FloatMarket.jpg", name: "Floating Market", description: "Experience traditional Thai commerce on water." },
-                { src: "images/thailand_gallery/ChiangMai.jpg", name: "Chiang Mai", description: "Explore ancient temples and elephant sanctuaries." },
+                { src: "images/thailand_gallery/BangkokTemple.jpg", name: "Wat Arun (Bangkok)", description: "Kuil Fajar, kuil tepi sungai yang menakjubkan." },
+                { src: "images/thailand_gallery/PhuketBeach.jpeg", name: "Pantai Phuket", description: "Nikmati pantai yang indah dan perairan biru kehijauan." },
+                { src: "images/thailand_gallery/FloatMarket.jpg", name: "Pasar Terapung", description: "Alami perdagangan tradisional Thai di atas air." },
+                { src: "images/thailand_gallery/ChiangMai.jpg", name: "Chiang Mai", description: "Terokai kuil-kuil purba dan tempat perlindungan gajah." },
             ]
         },
         england: {
-            title: "London & UK Heritage Tour",
-            intro: "Discover the iconic landmarks and rich history of London and beyond, offering a cultural journey with options for Muslim-friendly dining and facilities.",
+            title: "Lawatan Warisan London & UK",
+            intro: "Temui mercu tanda ikonik dan sejarah kaya London dan sekitarnya, menawarkan perjalanan budaya dengan pilihan untuk hidangan dan kemudahan mesra Muslim.",
             image: "images/London.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel pusat bandar",
-                "<strong>Lawatan penuh ke tempat menarik</strong> di London (Big Ben, Tower Bridge, British Museum, Buckingham Palace), dan pilihan ke bandar lain seperti Manchester atau Edinburgh.",
+                "<strong>Lawatan penuh ke tempat menarik</strong> di London (Big Ben, Tower Bridge, Muzium British, Istana Buckingham), dan pilihan ke bandar lain seperti Manchester atau Edinburgh.",
                 "Pilihan <strong>restoran</strong> yang pelbagai",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan awam (kereta api, bas) dan pengangkutan persendirian untuk lawatan tertentu"
             ],
             gallery: [
-                { src: "images/london_gallery/BigBen.jpg", name: "Big Ben", description: "The iconic clock tower next to the Houses of Parliament." },
-                { src: "images/london_gallery/TowerBridge.jpg", name: "Tower Bridge", description: "A famous landmark bridge over the River Thames." },
-                { src: "images/london_gallery/BuckinghamPalace.jpg", name: "Buckingham Palace", description: "The official residence of the Monarch of the United Kingdom." },
-                { src: "images/london_gallery/LondonEye.jpg", name: "London Eye", description: "A giant Ferris wheel on the South Bank of the River Thames." },
+                { src: "images/london_gallery/BigBen.jpg", name: "Big Ben", description: "Menara jam ikonik di sebelah Bangunan Parlimen." },
+                { src: "images/london_gallery/TowerBridge.jpg", name: "Tower Bridge", description: "Jambatan mercu tanda terkenal di atas Sungai Thames." },
+                { src: "images/london_gallery/BuckinghamPalace.jpg", name: "Istana Buckingham", description: "Kediaman rasmi Raja United Kingdom." },
+                { src: "images/london_gallery/LondonEye.jpg", name: "London Eye", description: "Roda Ferris gergasi di South Bank Sungai Thames." },
             ]
         },
         // New tour data added below
         batam: {
-            title: "Batam Island Escape",
-            intro: "Discover the vibrant island of Batam, known for its beautiful beaches, duty-free shopping, and lively entertainment.",
+            title: "Percutian Pulau Batam",
+            intro: "Temui pulau Batam yang meriah, terkenal dengan pantai-pantai indah, membeli-belah bebas cukai, dan hiburan yang rancak.",
             image: "images/Batam.jpeg",
             packages: [
                 "<strong>Tiket feri pergi balik</strong>",
@@ -648,13 +649,13 @@
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/batam_gallery/BatamBeach.jpg", name: "Nongsa Beach and Coast", description: "Relax on the sandy beaches of Batam." },
-                { src: "images/batam_gallery/NagoyaHillShoppingMall.jpg", name: "Nagoya Hill Shopping Mall", description: "Enjoy duty-free shopping and entertainment." }
+                { src: "images/batam_gallery/BatamBeach.jpg", name: "Pantai dan Pesisir Nongsa", description: "Bersantai di pantai berpasir Batam." },
+                { src: "images/batam_gallery/NagoyaHillShoppingMall.jpg", name: "Pusat Beli-belah Nagoya Hill", description: "Nikmati membeli-belah bebas cukai dan hiburan." }
             ]
         },
         tanjung_pinang_bintan: {
-            title: "Tanjung Pinang & Bintan Retreat",
-            intro: "Experience the serene beauty of Bintan's pristine beaches and the historical charm of Tanjung Pinang, Indonesia.",
+            title: "Percutian Tanjung Pinang & Bintan",
+            intro: "Alami keindahan tenang pantai-pantai bersih Bintan dan daya tarikan bersejarah Tanjung Pinang, Indonesia.",
             image: "images/TanjungPinang.jpg",
             packages: [
                 "<strong>Tiket feri pergi balik</strong>",
@@ -664,13 +665,13 @@
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/tanjungPinang_gallery/BintanBeach.jpg", name: "Bintan Beach", description: "White sand beaches and clear waters." },
-                { src: "images/tanjungPinang_gallery/PinangCity.jpg", name: "Tanjung Pinang City", description: "Explore the capital city's historical sites." }
+                { src: "images/tanjungPinang_gallery/BintanBeach.jpg", name: "Pantai Bintan", description: "Pantai berpasir putih dan air jernih." },
+                { src: "images/tanjungPinang_gallery/PinangCity.jpg", name: "Bandar Tanjung Pinang", description: "Terokai tapak bersejarah ibu kota." }
             ]
         },
         karimun_island: {
-            title: "Karimun Island Adventure",
-            intro: "Uncover the untouched natural beauty and serene atmosphere of Karimun Island, a hidden gem in Indonesia.",
+            title: "Pengembaraan Pulau Karimun",
+            intro: "Temui keindahan alam semula jadi yang belum terusik dan suasana tenang Pulau Karimun, permata tersembunyi di Indonesia.",
             image: "images/KarimunIsland.jpg",
             packages: [
                 "<strong>Tiket feri pergi balik</strong>",
@@ -680,76 +681,76 @@
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/karimun_gallery/TanjungGelam.jpg", name: "Tanjung Gelam Beach", description: "Relax on secluded beaches." },
-                { src: "images/karimun_gallery/karimunSnorkelling.jpg", name: "Snorkeling", description: "Discover the vibrant marine life." }
+                { src: "images/karimun_gallery/TanjungGelam.jpg", name: "Pantai Tanjung Gelam", description: "Bersantai di pantai terpencil." },
+                { src: "images/karimun_gallery/karimunSnorkelling.jpg", name: "Snorkeling", description: "Temui kehidupan marin yang meriah." }
             ]
         },
         sabah: {
-            title: "Explore Wild Sabah",
-            intro: "Journey through the lush rainforests, majestic mountains, and rich cultural heritage of Sabah, Malaysian Borneo.",
+            title: "Terokai Sabah Yang Liar",
+            intro: "Jelajahi hutan hujan yang subur, gunung-ganang yang megah, dan warisan budaya yang kaya di Sabah, Borneo Malaysia.",
             image: "images/Sabah.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel dan resort",
-                "<strong>Lawatan ke Taman Negara Kinabalu</strong>, Lok Kawi Wildlife Park",
+                "<strong>Lawatan ke Taman Negara Kinabalu</strong>, Taman Hidupan Liar Lok Kawi",
                 "<strong>Makanan</strong> tempatan",
                 "Pemandu pelancong berpengalaman",
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/sabah_gallery/Kinabalu.jpg", name: "Mount Kinabalu", description: "Malaysia's highest peak." },
-                { src: "images/sabah_gallery/orangUtan.jpg", name: "Orangutan Sanctuary", description: "Meet the iconic orangutans." }
+                { src: "images/sabah_gallery/Kinabalu.jpg", name: "Gunung Kinabalu", description: "Puncak tertinggi di Malaysia." },
+                { src: "images/sabah_gallery/orangUtan.jpg", name: "Tempat Perlindungan Orangutan", description: "Temui orangutan ikonik." }
             ]
         },
         sarawak: {
-            title: "Sarawak Cultural Discovery",
-            intro: "Uncover Sarawak's indigenous cultures and natural wonders.",
+            title: "Penemuan Budaya Sarawak",
+            intro: "Temui budaya asli dan keajaiban semula jadi Sarawak.",
             image: "images/Sarawak.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel dan resort",
-                "<strong>Lawatan ke Kuching Waterfront</strong>, Sarawak Cultural Village, Bako National Park",
+                "<strong>Lawatan ke Tebingan Kuching</strong>, Kampung Budaya Sarawak, Taman Negara Bako",
                 "<strong>Makanan</strong> tempatan",
                 "Pemandu pelancong berpengalaman",
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/sarawak_gallery/SarawakCulturalVillage.jpg", name: "Sarawak Cultural Village", description: "A living museum showcasing Sarawak's diverse ethnic groups." },
-                { src: "images/sarawak_gallery/OrangutanSarawak.jpg", name: "Semenggoh Wildlife Centre", description: "Rehabilitation centre for semi-wild orangutans." }
+                { src: "images/sarawak_gallery/SarawakCulturalVillage.jpg", name: "Kampung Budaya Sarawak", description: "Muzium hidup yang mempamerkan pelbagai kumpulan etnik Sarawak." },
+                { src: "images/sarawak_gallery/OrangutanSarawak.jpg", name: "Pusat Hidupan Liar Semenggoh", description: "Pusat rehabilitasi untuk orangutan separa liar." }
             ]
         },
         langkawi: {
-            title: "Langkawi Island Paradise",
-            intro: "Enjoy Langkawi's stunning beaches, geological wonders, and duty-free shopping.",
+            title: "Syurga Pulau Langkawi",
+            intro: "Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi, dan membeli-belah bebas cukai.",
             image: "images/Langkawi.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di resort pilihan",
-                "<strong>Lawatan ke Langkawi Sky Bridge</strong>, Underwater World Langkawi, Eagle Square",
+                "<strong>Lawatan ke Jambatan Gantung Langkawi</strong>, Underwater World Langkawi, Dataran Helang",
                 "<strong>Makanan</strong> yang lazat",
                 "Pemandu pelancong berpengalaman",
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/langkawi_gallery/SkyBridge.jpg", name: "Langkawi Sky Bridge", description: "A pedestrian bridge 660 meters above sea level." },
-                { src: "images/langkawi_gallery/EagleSquare.jpg", name: "Eagle Square (Dataran Lang)", description: "Langkawi's iconic eagle statue." }
+                { src: "images/langkawi_gallery/SkyBridge.jpg", name: "Jambatan Gantung Langkawi", description: "Jambatan pejalan kaki 660 meter di atas paras laut." },
+                { src: "images/langkawi_gallery/EagleSquare.jpg", name: "Dataran Helang", description: "Patung helang ikonik Langkawi." }
             ]
         },
         hat_yai: {
-            title: "Hat Yai City Delights",
-            intro: "Explore Hat Yai's bustling markets, temples, and delicious street food.",
+            title: "Keindahan Bandar Hat Yai",
+            intro: "Terokai pasar Hat Yai yang sibuk, kuil, dan makanan jalanan yang lazat.",
             image: "images/Hatyai.png",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel pusat bandar",
-                "<strong>Lawatan ke Wat Hat Yai Nai</strong> (Reclining Buddha), Kim Yong Market, Floating Market (weekend)",
+                "<strong>Lawatan ke Wat Hat Yai Nai</strong> (Buddha Berbaring), Pasar Kim Yong, Pasar Terapung (hujung minggu)",
                 "<strong>Makanan</strong> halal Thai yang autentik",
                 "Pemandu pelancong berpengalaman",
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/hatyai_gallery/HatyaiMarket.jpg", name: "Kim Yong Market", description: "A bustling market for local goods and snacks." },
-                { src: "images/hatyai_gallery/SleepingBuddha.jpg", name: "Wat Hat Yai Nai", description: "Home to a large reclining Buddha statue." }
+                { src: "images/hatyai_gallery/HatyaiMarket.jpg", name: "Pasar Kim Yong", description: "Pasar yang sibuk untuk barangan dan makanan ringan tempatan." },
+                { src: "images/hatyai_gallery/SleepingBuddha.jpg", name: "Wat Hat Yai Nai", description: "Tempat patung Buddha berbaring yang besar." }
             ]
         }
     };
