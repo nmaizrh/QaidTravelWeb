@@ -17,11 +17,11 @@
       </div>
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="tours.php">Tours</a></li>
-                <li><a href="about.php">About Us</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <li><a href="testimonials.php">Testimonials</a></li>
+                <li><a href="index.php">Laman Utama</a></li>
+                <li><a href="tours.php">Lawatan</a></li>
+                <li><a href="about.php">Mengenai Kami</a></li>
+                <li><a href="contact.php">Hubungi Kami</a></li>
+                <li><a href="testimonials.php">Testimoni</a></li>
             </ul>
         </nav>
   </header>
