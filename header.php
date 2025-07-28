@@ -19,6 +19,7 @@
             <ul>
                 <li><a href="index.php">Laman Utama</a></li>
                 <li><a href="tours.php">Lawatan</a></li>
+                <li><a href="corporate.php">Korporat</a></li>
                 <li><a href="about.php">Mengenai Kami</a></li>
                 <li><a href="contact.php">Hubungi Kami</a></li>
                 <li><a href="testimonials.php">Testimoni</a></li>
