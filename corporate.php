@@ -1,642 +1,1034 @@
-<?php
-// PHP logic for handling corporate tours
-
-// In a real application, you would fetch corporate tours from a database
-// or a specific data source. For demonstration, we'll use a simple array.
-
-// This array mimics your tour structure but specifically for corporate/VIP tours.
-// You would populate this with actual corporate tour data.
-$corporateTours = [
-    [
-        'id' => 'corp1',
-        'image' => 'images/corporate_melaka.jpg', // Placeholder image
-        'title' => 'Lawatan Korporat Melaka Bersejarah',
-        'description' => 'Pakej eksklusif untuk delegasi korporat ke tapak warisan Melaka dengan kemudahan premium.',
-        'destination' => 'Melaka',
-        'topic' => ['Budaya & Warisan'],
-        'details' => [
-            'overview' => 'Lawatan khas yang direka untuk kumpulan korporat yang ingin menikmati sejarah dan budaya Melaka dalam suasana yang selesa dan eksklusif. Termasuk penginapan 5 bintang, makan malam gala, dan akses VVIP.',
-            'packages' => [
-                'Pakej Platinum: 3 Hari 2 Malam',
-                'Pakej Emas: 2 Hari 1 Malam',
-            ],
-            'gallery' => [
-                ['img' => 'images/corp_melaka_gala.jpg', 'name' => 'Makan Malam Gala', 'description' => 'Majlis makan malam eksklusif di lokasi bersejarah.'],
-                ['img' => 'images/corp_melaka_meeting.jpg', 'name' => 'Kemudahan Mesyuarat', 'description' => 'Bilik mesyuarat dilengkapi sepenuhnya untuk keperluan korporat.'],
-            ]
-        ]
-    ],
-    [
-        'id' => 'corp2',
-        'image' => 'images/corporate_langkawi.jpg', // Placeholder image
-        'title' => 'Retret Korporat Langkawi & Pembinaan Pasukan',
-        'description' => 'Retret mewah dengan aktiviti pembinaan pasukan di pulau Langkawi yang indah, sesuai untuk eksekutif.',
-        'destination' => 'Langkawi',
-        'topic' => ['Alam Semula Jadi & Pengembaraan'],
-        'details' => [
-            'overview' => 'Program retret korporat yang komprehensif di Langkawi, menggabungkan rehat, keseronokan, dan aktiviti pembinaan pasukan yang berkesan. Termasuk penginapan di resort terkemuka dan aktiviti sukan air peribadi.',
-            'packages' => [
-                'Pakej Eksekutif: 4 Hari 3 Malam',
-                'Pakej Premium: 3 Hari 2 Malam',
-            ],
-            'gallery' => [
-                ['img' => 'images/corp_langkawi_yacht.jpg', 'name' => 'Pelayaran Yacht Peribadi', 'description' => 'Pengalaman pelayaran mewah sekitar pulau.'],
-                ['img' => 'images/corp_langkawi_team.jpg', 'name' => 'Aktiviti Pembinaan Pasukan', 'description' => 'Sesi pembinaan pasukan di tepi pantai.'],
-            ]
-        ]
-    ],
-    [
-        'id' => 'corp3',
-        'image' => 'images/corporate_kualalumpur.jpg', // Placeholder image
-        'title' => 'Lawatan Eksekutif Kuala Lumpur',
-        'description' => 'Lawatan khas ke mercu tanda utama Kuala Lumpur dengan pengangkutan dan perkhidmatan VVIP.',
-        'destination' => 'Kuala Lumpur',
-        'topic' => ['Bandar & Gaya Hidup'],
-        'details' => [
-            'overview' => 'Terokai Kuala Lumpur dengan cara yang paling eksklusif. Lawatan ini menawarkan akses pantas ke tarikan utama, pengalaman membeli-belah peribadi, dan makan malam di restoran bertaraf Michelin.',
-            'packages' => [
-                'Pakej Bandar Elit: 2 Hari 1 Malam',
-                'Pakej Premium KL: 1 Hari Penuh',
-            ],
-            'gallery' => [
-                ['img' => 'images/corp_kl_skyline.jpg', 'name' => 'Pemandangan Bandar', 'description' => 'Pemandangan eksklusif dari bangunan tertinggi.'],
-                ['img' => 'images/corp_kl_dining.jpg', 'name' => 'Santapan Mewah', 'description' => 'Pengalaman makan di restoran terbaik.'],
-            ]
-        ]
-    ],
-];
-
-
-// Filter logic (similar to tours.php, but applied to corporateTours)
-$filteredTours = $corporateTours; // Start with all corporate tours
-$destinationFilter = $_GET['destination'] ?? '';
-$topicFilters = $_GET['topic'] ?? [];
-$searchQuery = $_GET['search'] ?? '';
-
-// Apply destination filter
-if (!empty($destinationFilter)) {
-    $filteredTours = array_filter($filteredTours, function($tour) use ($destinationFilter) {
-        return $tour['destination'] === $destinationFilter;
-    });
-}
-
-// Apply topic filters
-if (!empty($topicFilters)) {
-    $filteredTours = array_filter($filteredTours, function($tour) use ($topicFilters) {
-        foreach ($topicFilters as $topic) {
-            if (in_array($topic, $tour['topic'])) {
-                return true;
-            }
-        }
-        return false;
-    });
-}
-
-// Apply search query filter
-if (!empty($searchQuery)) {
-    $searchQuery = strtolower($searchQuery);
-    $filteredTours = array_filter($filteredTours, function($tour) use ($searchQuery) {
-        return str_contains(strtolower($tour['title']), $searchQuery) ||
-               str_contains(strtolower($tour['description']), $searchQuery);
-    });
-}
-
-// Pagination logic
-$itemsPerPage = 6; // Number of corporate tours per page
-$totalItems = count($filteredTours);
-$totalPages = ceil($totalItems / $itemsPerPage);
-$currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$currentPage = max(1, min($currentPage, $totalPages > 0 ? $totalPages : 1)); // Ensure current page is within bounds
-
-$startIndex = ($currentPage - 1) * $itemsPerPage;
-$currentItems = array_slice($filteredTours, $startIndex, $itemsPerPage);
-
-// Unique destinations and topics for filters (from ALL corporate tours)
-$allDestinations = array_unique(array_column($corporateTours, 'destination'));
-$allTopics = [];
-foreach ($corporateTours as $tour) {
-    $allTopics = array_merge($allTopics, $tour['topic']);
-}
-$allTopics = array_unique($allTopics);
-sort($allDestinations);
-sort($allTopics);
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Korporat - Qaid Travel</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* CSS styles here (copy from tours.php's style block, adjust as needed) */
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tours | Qaid Travel</title>
+    <link rel="stylesheet" href="style.css" />
+<style>
+    /* Existing CSS from your file */
         body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0; /* Keeping the light grey background from previous step */
+    }
 
-        .tour-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: flex-start;
-            flex-grow: 1;
-        }
+    .tour-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: flex-start; /* Ensures cards are aligned to the left */
+        flex-grow: 1;
+    }
 
-        .tour-card {
-            flex-basis: calc(33.333% - 20px);
-            flex-grow: 0;
-            flex-shrink: 0;
-            max-width: 350px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
+    .tour-card {
+        flex-basis: calc(33.333% - 20px); /* Preferred width for 3 cards per row */
+        flex-grow: 0;   /* Changed from 1 to 0: Prevents cards from growing and filling extra space */
+        flex-shrink: 0; /* Prevents cards from shrinking */
+        max-width: 350px; /* Caps the maximum width of a single card, adjust as needed */
+        background-color: #fff; /* Keeping cards white as they are content containers */
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: transform 0.3s;
+        cursor: pointer;
+    }
 
+    .tours-container {
+        display: flex;
+        padding: 40px;
+        gap: 30px;
+        max-width: 1200px; /* Sets the maximum width of the main content area */
+        margin: auto;
+        align-items: flex-start;
+    }
+
+    .filter-panel {
+        flex-shrink: 0; /* Prevents the filter panel from shrinking */
+        width: 320px; /* Fixed width for the filter box */
+        padding: 25px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        background-color: #fafafa;
+        box-sizing: border-box;
+    }
+
+    .filter-panel h3 {
+        margin-top: 0;
+        color: #b62626;
+    }
+
+    .filter-group {
+        margin-bottom: 20px;
+    }
+
+ .filter-group label {
+     display: block;
+     margin-bottom: 10px;
+    }
+
+.filter-group #searchFilter { /* Targeting the search input itself */
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 2px solid #b62626; /* Matches your select border color */
+    background-color: #fff;
+    color: #333; /* Color of the text typed inside the search box */
+    width: 1000px; /* Adjust width as needed */
+    max-width: 100%; /* Ensure it's responsive */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-btn {
+    background-color: #b62626; /* Matches your primary red color */
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 10px; /* Space from the input field */
+}
+
+.search-btn:hover {
+    background-color: #7c1919; /* Darker red on hover */
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments for the filter group with the button */
+@media (max-width: 768px) {
+    .filter-group {
+        flex-direction: column; /* Stack label, input, and button on small screens */
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .filter-group .search-btn {
+        margin-top: 10px; /* Space from input when stacked */
+        margin-left: 0; /* Remove left margin when stacked */
+        width: 100%; /* Full width button on small screens */
+    }
+}
+
+.filter-group #searchFilter:focus {
+    outline: none;
+    border-color: #5d0c0c;
+    box-shadow: 0 0 5px rgba(182, 38, 38, 0.5);
+}
+
+/* Specific styling for the search input's LABEL */
+label[for="searchFilter"] {
+    color: white; /* Explicitly set the search label text to white */
+    /* You can add or override other properties here if needed for just this label */
+}
+
+/* Responsive adjustments for the search filter */
+@media (max-width: 768px) {
+    .filter-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .filter-group #searchFilter {
+        width: 100%;
+    }
+}
+
+    @media (max-width: 900px) {
         .tours-container {
-            display: flex;
-            padding: 40px;
-            gap: 30px;
-            max-width: 1200px;
-            margin: auto;
-            align-items: flex-start;
-            background-color: #b62626; /* Changed background for 'Korporat' page */
-            border-radius: 15px;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            flex-direction: column; /* Stack filter and tour list on smaller screens */
+            align-items: center;
         }
-
         .filter-panel {
-            flex-shrink: 0;
-            width: 320px;
-            padding: 25px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            background-color: #fafafa;
-            box-sizing: border-box;
+            width: 100%; /* Make filter panel full width */
+            margin-bottom: 30px;
         }
+        .tour-card {
+            flex-basis: calc(50% - 20px); /* For screens up to 900px, display 2 cards per row */
+            max-width: 450px; /* Adjust max-width for single card in 2-column layout */
+        }
+    }
 
-        .filter-panel h3 {
-            margin-top: 0;
-            color: #b62626;
+    @media (max-width: 600px) {
+        .tour-card {
+            flex-basis: 100%; /* For screens up to 600px, display 1 card per row */
+            max-width: unset; /* Remove max-width when card should take full available width */
         }
+    }
 
-        .filter-group {
-            margin-bottom: 20px;
-        }
+    .tour-card:hover {
+        transform: translateY(-5px);
+    }
 
-        .filter-group label {
-            display: block;
-            margin-bottom: 10px;
-            color: #b62626; /* Label color for filters */
-        }
+    .tour-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
 
-        .filter-group select,
-        .filter-group input[type="text"] { /* Added input[type="text"] for search filter */
-            width: 100%;
-            padding: 10px;
-            font-size: 1rem;
-            box-sizing: border-box;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            min-width: 100%;
-            margin-bottom: 10px; /* Spacing for search input */
-        }
+    .tour-card .info {
+        padding: 15px;
+    }
 
-        .filter-group input[type="checkbox"] {
-            margin-right: 8px;
-        }
+    .tour-card h4 {
+        color: #b62626;
+        margin: 0 0 10px;
+    }
 
-        .show-all-btn {
-            display: block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #b62626;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            text-align: center;
-        }
+    .tour-card p {
+        font-size: 0.9rem;
+        color: #555;
+    }
 
-        .show-all-btn:hover {
-            background-color: #8e1d1d;
-        }
+    .show-all-btn {
+        display: block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #b62626;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        text-align: center;
+    }
 
-        /* Search input specific styles */
-        .filter-group #searchFilter {
-            padding: 8px 12px;
-            font-size: 1rem;
-            border-radius: 5px;
-            border: 2px solid #b62626;
-            background-color: #fff;
-            color: #333;
-            width: calc(100% - 100px); /* Adjust width to make space for button */
-            box-sizing: border-box;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-            display: inline-block; /* For side-by-side with button */
-            vertical-align: middle;
-        }
+    .show-all-btn:hover {
+        background-color: #8e1d1d;
+    }
 
-        .search-btn {
-            background-color: #b62626;
-            color: #fff;
-            padding: 8px 12px; /* Adjusted padding */
-            font-size: 0.9rem; /* Adjusted font size */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-left: 5px; /* Smaller margin */
-            display: inline-block; /* For side-by-side with input */
-            vertical-align: middle;
-        }
+    .filter-group select {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        box-sizing: border-box;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        min-width: 100%;
+    }
 
-        .search-btn:hover {
-            background-color: #7c1919;
-            transform: scale(1.02);
-        }
+    .filter-group select,
+    .filter-group input[type="checkbox"] {
+        margin-right: 8px;
+    }
 
-        /* No results message */
-        #noResultsMessage {
-            display: none; /* Controlled by JS */
-            text-align: center;
-            color: #ffffff; /* White text for no results message */
-            margin-top: 20px;
-            font-weight: bold;
-            flex-basis: 100%; /* Make it take full width in flex container */
-            padding: 20px;
-            background-color: rgba(0,0,0,0.2); /* Slightly transparent background */
-            border-radius: 8px;
-        }
+    /* --- Modal Styles --- */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
 
-        /* Tour card specifics */
-        .tour-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
+    .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
 
-        .tour-card .info {
-            padding: 15px;
-        }
+    .modal-content {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        max-width: 800px;
+        width: 90%;
+        max-height: 90vh; /* Limit height to viewport */
+        overflow-y: auto; /* Enable scrolling for long content */
+        position: relative;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+    }
 
-        .tour-card h4 {
-            color: #b62626;
-            margin: 0 0 10px;
-        }
+    .modal-overlay.active .modal-content {
+        transform: translateY(0);
+    }
 
-        .tour-card p {
-            font-size: 0.9rem;
-            color: #555;
-        }
+    .modal-close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #888;
+    }
 
-        /* Pagination styles */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 40px;
-            padding: 10px;
-            background-color: transparent; /* Changed background for pagination */
-            border-radius: 8px;
-            box-shadow: none; /* No shadow for pagination */
-        }
+    .modal-close-btn:hover {
+        color: #333;
+    }
 
-        .pagination a {
-            color: #ffffff; /* White text for pagination links */
-            padding: 8px 16px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-            border-radius: 5px;
-            margin: 0 5px;
-            font-weight: bold;
-        }
+    .modal-content h3 {
+        color: #b62626;
+        margin-top: 0;
+        font-size: 1.8rem;
+    }
 
-        .pagination a.active {
-            background-color: #b62626;
-            color: white;
-        }
+    .modal-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
 
-        .pagination a:hover:not(.active) {
-            background-color: #ddd;
-        }
+    .modal-package-list li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+        list-style: disc; /* Or your preferred list style */
+        margin-left: 20px;
+    }
+    .modal-package-list strong {
+        color: #b62626; /* Highlight package points */
+    }
 
-        /* Modal styles (copy and paste from tours.php if it's external) */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
+    /* Updated Gallery Styles */
+    .modal-gallery {
+        display: flex; /* Changed to flexbox */
+        flex-direction: column; /* Stack items vertically */
+        gap: 20px; /* Increased gap between items */
+        margin-top: 20px;
+    }
+    
+    /* Styles for the new gallery item structure */
+    .modal-gallery-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 15px; /* Increased padding */
+        box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    }
+    .modal-gallery-item img {
+        width: auto; /* Allow image to scale */
+        max-width: 100%; /* Ensure image doesn't overflow container */
+        height: auto; /* Allow image to scale */
+        max-height: 300px; /* Set a max height for larger display */
+        object-fit: contain; /* Ensure image is fully visible without cropping */
+        border-radius: 5px;
+        margin-bottom: 10px; /* Increased margin */
+    }
+    .modal-gallery-item .name {
+        font-weight: bold;
+        color: #333;
+        font-size: 1.1em; /* Slightly larger font */
+        margin-bottom: 5px;
+    }
+    .modal-gallery-item .description {
+        font-size: 0.9em; /* Slightly larger font */
+        color: #666;
+    }
 
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
+    /* --- Pagination Styles --- */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        padding: 10px;
+        background-color: transparent;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
 
-        .modal-content {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            max-width: 800px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-        }
+    .pagination a {
+        color: #ffffff;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        border-radius: 5px;
+        margin: 0 5px;
+        font-weight: bold;
+    }
 
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
+    .pagination a.active {
+        background-color: #b62626;
+        color: white;
+        border-radius: 5px;
+    }
 
-        .modal-close-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #888;
-        }
+    .pagination a:hover:not(.active) {
+        background-color: #ddd; /* Changed from #b62626 to #ddd for a distinct hover effect */
+    }
 
-        .modal-close-btn:hover {
-            color: #333;
-        }
-
-        .modal-content h3 {
-            color: #b62626;
-            margin-top: 0;
-            font-size: 1.8rem;
-        }
-
-        .modal-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .modal-package-list li {
-            margin-bottom: 8px;
-            line-height: 1.5;
-            list-style: disc;
-            margin-left: 20px;
-        }
-        .modal-package-list strong {
-            color: #b62626;
-        }
-
-        .modal-gallery {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .modal-gallery-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-        }
-        .modal-gallery-item img {
-            width: auto;
-            max-width: 100%;
-            height: auto;
-            max-height: 300px;
-            object-fit: contain;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        .modal-gallery-item .name {
-            font-weight: bold;
-            color: #333;
-            font-size: 1.1em;
-            margin-bottom: 5px;
-        }
-        .modal-gallery-item .description {
-            font-size: 0.9em;
-            color: #666;
-        }
-    </style>
+    .center-text {
+        text-align: center;
+        color:#b62626;
+    }
+</style>
 </head>
 <body>
-<?php include "header.php"; ?>
+<?php include 'header.php'; ?>
+<section class="popular-destination">
+<h1 class="center-text">LAWATAN UNTUK KORPORAT</h1>
+</section>
 
-<main>
-    <div class="tours-container">
-        <div class="filter-panel">
-            <h3>Tapis</h3>
-            <form id="filterForm" action="korporat.php" method="GET">
-                <div class="filter-group">
-                    <label for="destination">Destinasi:</label>
-                    <select id="destination" name="destination" onchange="document.getElementById('filterForm').submit()">
-                        <option value="">Semua Destinasi</option>
-                        <?php foreach ($allDestinations as $dest): ?>
-                            <option value="<?php echo htmlspecialchars($dest); ?>"
-                                <?php echo ($destinationFilter === $dest) ? 'selected' : ''; ?>>
-                                <?php echo htmlspecialchars($dest); ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
+<div class="filter-group">
+    <h3><label for="searchFilter">Cari Destinasi:</label></h3>
+<input type="text" id="searchFilter" placeholder="Sila cari destinasi yang anda ingin lawati..." />
+<button id="searchButton" class="search-btn">Cari</button> <div id="noResultsMessage" style="display: none; text-align: center; color: #ffffffff; margin-top: 20px; font-weight: bold;">
+    Tiada destinasi ditemui untuk carian anda.
+</div>
+</div>
 
-                <div class="filter-group">
-                    <label>Topik:</label>
-                    <?php
-                    $topicsMap = [
-                        'Budaya & Warisan' => 'Budaya & Warisan',
-                        'Alam Semula Jadi & Pengembaraan' => 'Alam Semulajadi & Kembara',
-                        'Makanan & Minuman' => 'Makanan & Minuman',
-                        'Pulau & Pantai' => 'Pulau & Pantai',
-                        'Bandar & Gaya Hidup' => 'Bandar & Gaya Hidup' // Added for corporate tours
-                    ];
-                    foreach ($allTopics as $topic): ?>
-                        <div>
-                            <input type="checkbox" id="topic_<?php echo str_replace(' ', '_', $topic); ?>"
-                                   name="topic[]" value="<?php echo htmlspecialchars($topic); ?>"
-                                <?php echo in_array($topic, $topicFilters) ? 'checked' : ''; ?>
-                                   onchange="document.getElementById('filterForm').submit()">
-                            <label for="topic_<?php echo str_replace(' ', '_', $topic); ?>"><?php echo htmlspecialchars($topicsMap[$topic] ?? $topic); ?></label>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+<div class="tours-container">
+    <div class="filter-panel">
+        <h3>Filter</h3>
 
-                <div class="filter-group">
-                    <label for="searchFilter">Cari Destinasi:</label>
-                    <input type="text" id="searchFilter" name="search" placeholder="Cari lawatan..." value="<?php echo htmlspecialchars($searchQuery); ?>">
-                    <button type="submit" class="search-btn">Cari</button>
-                </div>
-
-                <button type="button" class="show-all-btn" onclick="window.location.href='korporat.php'">Tunjuk Semua</button>
-            </form>
+        <div class="filter-group">
+            <label for="destination">Destinasi</label>
+            <select id="destination">
+                <option value="">Semua Destinasi</option>
+            </select>
         </div>
 
-        <div class="tour-list">
-            <?php if (empty($currentItems)): ?>
-                <div id="noResultsMessage">
-                    Tiada destinasi ditemui untuk carian anda.
-                </div>
-            <?php else: ?>
-                <?php foreach ($currentItems as $tour): ?>
-                    <div class="tour-card" data-tour-id="<?php echo htmlspecialchars($tour['id']); ?>">
-                        <img src="<?php echo htmlspecialchars($tour['image']); ?>" alt="<?php echo htmlspecialchars($tour['title']); ?>">
-                        <div class="info">
-                            <h4><?php echo htmlspecialchars($tour['title']); ?></h4>
-                            <p><?php echo htmlspecialchars($tour['description']); ?></p>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php endif; ?>
+        <div class="filter-group">
+            <h4>Topik</h4>
+            <label><input type="checkbox" value="Culture"> Budaya & Warisan</label>
+            <label><input type="checkbox" value="Nature"> Alam Semula Jadi & Pengembaraan</label>
+            <label><input type="checkbox" value="Food"> Makanan & Minuman</label>
+            <label><input type="checkbox" value="Island"> Pulau & Pantai</label>
         </div>
+
+        <button class="show-all-btn" onclick="resetFilters()">Tunjuk Semua</button>
     </div>
 
-    <?php if ($totalPages > 1): ?>
-        <div class="pagination">
-            <?php if ($currentPage > 1): ?>
-                <a href="?page=<?php echo $currentPage - 1; ?>&destination=<?php echo htmlspecialchars($destinationFilter); ?>&<?php echo http_build_query(['topic' => $topicFilters]); ?>&search=<?php echo htmlspecialchars($searchQuery); ?>">&laquo;</a>
-            <?php endif; ?>
-
-            <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-                <a href="?page=<?php echo $i; ?>&destination=<?php echo htmlspecialchars($destinationFilter); ?>&<?php echo http_build_query(['topic' => $topicFilters]); ?>&search=<?php echo htmlspecialchars($searchQuery); ?>"
-                   class="<?php echo ($i === $currentPage) ? 'active' : ''; ?>">
-                    <?php echo $i; ?>
-                </a>
-            <?php endfor; ?>
-
-            <?php if ($currentPage < $totalPages): ?>
-                <a href="?page=<?php echo $currentPage + 1; ?>&destination=<?php echo htmlspecialchars($destinationFilter); ?>&<?php echo http_build_query(['topic' => $topicFilters]); ?>&search=<?php echo htmlspecialchars($searchQuery); ?>">&raquo;</a>
-            <?php endif; ?>
+    <div style="display: flex; flex-direction: column; flex-grow: 1;">
+        <div class="tour-list" id="tourList">
+            <div class="tour-card" data-id="umrah" data-destination="Umrah" data-topics="Culture">
+                <img src="images/Umrah.jpg" alt="Umrah"/>
+                <div class="info">
+                    <h4>Lawatan Korporat Melaka Bersejarah</h4>
+                    <p>Pakej eksklusif untuk delegasi korporat ke tapak warisan Melaka dengan kemudahan premium.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="japan" data-destination="Japan" data-topics="Food,Culture">
+                <img src="images/Japan.jpg" alt="Japan"/>
+                <div class="info">
+                    <h4>Jelajahi Jepun</h4>
+                    <p>Lawati Kyoto dengan hidangan halal dan keindahan budaya.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="korea" data-destination="Korea" data-topics="Culture,Nature">
+                <img src="images/Korea.jpg" alt="Korea"/>
+                <div class="info">
+                    <h4>Lawatan Musim Luruh Korea</h4>
+                    <p>Nikmati musim Korea dengan perjalanan kumpulan terpilih.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="turki" data-destination="Turki" data-topics="Culture,Food">
+                <img src="images/Turki.jpg" alt="Turki"/>
+                <div class="info">
+                    <h4>Melancong ke Turki</h4>
+                    <p>Terokai Istanbul, Cappadocia, dan tapak bersejarah.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="jakarta" data-destination="Jakarta" data-topics="Culture,Nature">
+                <img src="images/Jakarta.jpg" alt="Jakarta"/>
+                <div class="info">
+                    <h4>Lawatan Bandar Jakarta</h4>
+                    <p>Terokai budaya Jakarta yang bersemangat, mercu tanda, dan tarikan mesra halal.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="vietnam" data-destination="Vietnam" data-topics="Nature,Food,Culture">
+                <img src="images/Vietnam.jpg" alt="Vietnam"/>
+                <div class="info">
+                    <h4>Perjalanan Budaya Vietnam</h4>
+                    <p>Temui warisan kaya Vietnam, pemandangan indah dan pengalaman mesra halal
+                        di seluruh Hanoi dan Ho Chi Minh City.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="thailand" data-destination="Thailand" data-topics="Food,Culture">
+                <img src="images/Thailand.jpg" alt="Thailand"/>
+                <div class="info">
+                    <h4>Lawatan Penerokaan Thailand</h4>
+                    <p>Nikmati pasar yang sibuk, percutian pulau
+                        dan masakan mesra halal di Bangkok, Phuket, dan sekitarnya.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="england" data-destination="England" data-topics="Food,Culture">
+                <img src="images/London.jpg" alt="England"/>
+                <div class="info">
+                    <h4>Lawatan Warisan London</h4>
+                    <p>Terokai Big Ben, Tower Bridge, dan sejarah British yang kaya dengan
+                        pilihan mesra halal di sekitar bandar.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="batam" data-destination="Batam" data-topics="Island,Nature">
+                <img src="images/Batam.jpeg" alt="Batam"/>
+                <div class="info">
+                    <h4>Percutian Pulau Batam</h4>
+                    <p>Temui pantai Batam, membeli-belah, dan kehidupan malam yang meriah.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="tanjung_pinang_bintan" data-destination="Tanjung Pinang Bintan" data-topics="Island,Nature">
+                <img src="images/TanjungPinang.jpg" alt="Tanjung Pinang Bintan"/>
+                <div class="info">
+                    <h4>Percutian Tanjung Pinang & Bintan</h4>
+                    <p>Bersantai di pantai-pantai bersih Bintan dan terokai daya tarikan Tanjung Pinang.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="karimun_island" data-destination="Karimun Island" data-topics="Island,Nature">
+                <img src="images/KarimunIsland.jpg" alt="Karimun Island"/>
+                <div class="info">
+                    <h4>Pengembaraan Pulau Karimun</h4>
+                    <p>Alami keindahan semula jadi yang belum terusik dan suasana tenang Pulau Karimun.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="sabah" data-destination="Sabah" data-topics="Nature,Culture">
+                <img src="images/Sabah.jpg" alt="Sabah"/>
+                <div class="info">
+                    <h4>Terokai Sabah Yang Liar</h4>
+                    <p>Jelajahi hutan hujan, gunung-ganang dan warisan budaya yang kaya di Sabah.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="sarawak" data-destination="Sarawak" data-topics="Nature,Culture">
+                <img src="images/Sarawak.jpg" alt="Sarawak"/>
+                <div class="info">
+                    <h4>Penemuan Budaya Sarawak</h4>
+                    <p>Temui budaya asli dan keajaiban semula jadi Sarawak.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="langkawi" data-destination="Langkawi" data-topics="Island,Nature">
+                <img src="images/Langkawi.jpg" alt="Langkawi"/>
+                <div class="info">
+                    <h4>Syurga Pulau Langkawi</h4>
+                    <p>Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi, dan membeli-belah bebas cukai.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="hat_yai" data-destination="Hat Yai" data-topics="Culture,Food">
+                <img src="images/Hatyai.png" alt="Hat Yai"/>
+                <div class="info">
+                    <h4>Keindahan Bandar Hat Yai</h4>
+                    <p>Terokai pasar Hat Yai yang sibuk, kuil, dan makanan jalanan yang lazat.</p>
+                </div>
+            </div>
         </div>
-    <?php endif; ?>
+        <div class="pagination" id="pagination"></div>
+    </div>
+</div>
 
-    <div id="tourModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close-btn">&times;</button>
-            <img src="" alt="" class="modal-image">
-            <h3 class="modal-title"></h3>
-            <p class="modal-overview"></p>
-            <h4>Pakej Tersedia:</h4>
-            <ul class="modal-package-list"></ul>
-            <div class="modal-gallery"></div>
+<div class="modal-overlay" id="tourDetailModal">
+    <div class="modal-content">
+        <button class="modal-close-btn">&times;</button>
+        <img src="" alt="Imej Pelancongan" class="modal-image" id="modalTourImage">
+        <h3 id="modalTourTitle"></h3>
+        <p id="modalTourIntro"></p>
+        
+        <h4>Pakej yang Kami Sediakan:</h4>
+        <ul id="modalPackageList" class="modal-package-list">
+            </ul>
+
+        <h4>Galeri:</h4>
+        <div id="modalGallery" class="modal-gallery">
+            </div>
+
+        <div class="show-all-container" style="margin-top: 30px;">
+            <a href="contact.php" class="show-all-btn" id="modalInquireBtn">Inquire About This Tour</a>
         </div>
     </div>
-
-</main>
+</div>
 
 <script>
-    // JavaScript for Modal (copy from tours.php if it's external)
-    document.addEventListener('DOMContentLoaded', function() {
-        const tourCards = document.querySelectorAll('.tour-card');
-        const modalOverlay = document.getElementById('tourModal');
-        const closeModalBtn = document.querySelector('.modal-close-btn');
-        const modalImage = document.querySelector('.modal-image');
-        const modalTitle = document.querySelector('.modal-title');
-        const modalOverview = document.querySelector('.modal-overview');
-        const modalPackageList = document.querySelector('.modal-package-list');
-        const modalGallery = document.querySelector('.modal-gallery');
+    const destinationFilter = document.getElementById('destination');
+    const topicCheckboxes = document.querySelectorAll('.filter-group input[type="checkbox"]');
+    const allTourCards = document.querySelectorAll('.tour-card'); // Use a new name for the original list
+    const paginationContainer = document.getElementById('pagination');
 
-        const corporateToursData = <?php echo json_encode($corporateTours); ?>;
+    // Modal Elements
+    const tourDetailModal = document.getElementById('tourDetailModal');
+    const modalCloseBtn = tourDetailModal.querySelector('.modal-close-btn');
+    const modalTourImage = document.getElementById('modalTourImage');
+    const modalTourTitle = document.getElementById('modalTourTitle');
+    const modalTourIntro = document.getElementById('modalTourIntro');
+    const modalPackageList = document.getElementById('modalPackageList');
+    const modalGallery = document.getElementById('modalGallery');
+    const modalInquireBtn = document.getElementById('modalInquireBtn');
+    const searchFilter = document.getElementById('searchFilter');
+    const searchButton = document.getElementById('searchButton'); // Get the new search button
+    const noResultsMessage = document.getElementById('noResultsMessage');
 
-        tourCards.forEach(card => {
-            card.addEventListener('click', function() {
-                const tourId = this.dataset.tourId;
-                const tour = corporateToursData.find(t => t.id === tourId);
+    // Pagination variables
+    const toursPerPage = 6; // Number of tours to display per page
+    let currentPage = 1;
+    let filteredTourCards = []; // Stores the currently filtered tour cards
 
-                if (tour) {
-                    modalImage.src = tour.image;
-                    modalImage.alt = tour.title;
-                    modalTitle.textContent = tour.title;
-                    modalOverview.textContent = tour.details.overview;
-
-                    // Clear previous packages
-                    modalPackageList.innerHTML = '';
-                    tour.details.packages.forEach(pkg => {
-                        const li = document.createElement('li');
-                        li.innerHTML = `<strong>${pkg}</strong>`;
-                        modalPackageList.appendChild(li);
-                    });
-
-                    // Clear previous gallery items
-                    modalGallery.innerHTML = '';
-                    if (tour.details.gallery && tour.details.gallery.length > 0) {
-                        tour.details.gallery.forEach(item => {
-                            const galleryItemDiv = document.createElement('div');
-                            galleryItemDiv.classList.add('modal-gallery-item');
-
-                            const img = document.createElement('img');
-                            img.src = item.img;
-                            img.alt = item.name;
-                            galleryItemDiv.appendChild(img);
-
-                            const name = document.createElement('div');
-                            name.classList.add('name');
-                            name.textContent = item.name;
-                            galleryItemDiv.appendChild(name);
-
-                            const description = document.createElement('div');
-                            description.classList.add('description');
-                            description.textContent = item.description;
-                            galleryItemDiv.appendChild(description);
-
-                            modalGallery.appendChild(galleryItemDiv);
-                        });
-                    }
-
-                    modalOverlay.classList.add('active');
-                }
-            });
-        });
-
-        closeModalBtn.addEventListener('click', function() {
-            modalOverlay.classList.remove('active');
-        });
-
-        modalOverlay.addEventListener('click', function(e) {
-            if (e.target === modalOverlay) {
-                modalOverlay.classList.remove('active');
-            }
-        });
-
-        // Handle no results message visibility
-        const noResultsMessage = document.getElementById('noResultsMessage');
-        if (corporateToursData.length === 0) { // Check the full data array, not just currentItems for initial load
-             // No, this should check if filteredTours is empty, not corporateToursData
-             // Let's refine this to check $currentItems directly as it reflects the paginated and filtered result
+    // 🌟 Define detailed tour data here 🌟
+    // This can be fetched from a database in a more complex setup
+    const tourData = {
+        Melaka: {
+            title: "Lawatan Korporat Melaka Bersejarah",
+            intro: "Mulakan perjalanan rohani yang diberkati ke Tanah Suci dengan pakej Umrah komprehensif Qaid Travel yang direka untuk keselesaan dan ketenangan fikiran.",
+            image: "images/Umrah.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di lokasi berdekatan Masjidil Haram (Makkah) dan Masjid Nabawi (Madinah)",
+                "<strong>Lawatan penuh ke tempat bersejarah</strong> di Mekah seperti Jabal Nur, Jabal Thur, Arafah, Muzdalifah, Mina, Ja'ranah dan Hudaibiyah.",
+                "<strong>Lawatan penuh ke tempat bersejarah</strong> di Madinah seperti Masjid Quba', Jabal Uhud, Masjid Qiblatain dan Ladang Kurma.",
+                "<strong>Makanan</strong> yang sedap dan menyelerakan sepanjang perjalanan",
+                "<strong>Pemandu pelancong berpengalaman</strong> yang akan menemani sepanjang perjalanan (Mutawwif & Mutawwifah)",
+                "Kursus Umrah Intensif (sebelum keberangkatan)",
+                "Bimbingan Ibadah sepanjang Umrah",
+                "Troli bagasi, beg sandang, beg silang dan buku panduan Umrah"
+            ],
+            gallery: [
+                { src: "images/umrah_gallery/masjidQuba.jpg", name: "Masjid Quba", description: "Masjid pertama yang dibina oleh Nabi Muhammad (SAW)." },
+                { src: "images/umrah_gallery/madinah.png", name: "Madinah", description: "Kota yang diterangi dengan tapak suci kedua dalam Islam." },
+                { src: "images/umrah_gallery/JabalRahmah.jpg", name: "Jabal Rahmah", description: "Gunung Rahmat di Arafah dan tapak khutbah terakhir Nabi Muhammad." },
+                { src: "images/umrah_gallery/masjidNabawi.jpg", name: "Masjid Nabawi", description: "Masjid Nabi di Madinah serta mengandungi makam Nabi Muhammad." },
+            ]
+        },
+        japan: {
+            title: "Jelajahi Jepun: Lawatan Bunga Sakura dan Budaya",
+            intro: "Selami gabungan mempesona budaya tradisional dan keajaiban moden Jepun dengan tumpuan khas pada pengalaman mesra Muslim.",
+            image: "images/Japan.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel mesra Muslim terpilih",
+                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Tokyo, Kyoto, Osaka dan Nara.",
+                "<strong>Makanan</strong> yang disahkan atau ramah Muslim",
+                "<strong>Pemandu pelancong berpengalaman</strong> yang mesra Muslim",
+                "Pengangkutan awam yang efisien (termasuk Shinkansen/Kereta api laju)"
+            ],
+            gallery: [
+                { src: "images/japan_gallery/Fuji.jpg", name: "Gunung Fuji", description: "Gunung suci ikonik Jepun." },
+                { src: "images/japan_gallery/KyotoTemple.jpg", name: "Kuil Kinkaku-ji (Kyoto)", description: "Pavilion Emas dan kuil Buddha Zen yang menakjubkan." },
+                { src: "images/japan_gallery/Shibuya.jpg", name: "Lintasan Shibuya (Tokyo)", description: "Salah satu persimpangan paling sibuk di dunia." },
+                { src: "images/japan_gallery/Arashiyama.jpg", name: "Hutan Buluh Arashiyama (Kyoto)", description: "Hutan buluh yang tenang serta keajaiban alam." },
+            ]
+        },
+        korea: {
+            title: "Lawatan Musim Luruh Korea: Pengalaman Halal yang Indah",
+            intro: "Alami warna musim luruh yang meriah dan warisan budaya yang kaya di Korea Selatan dengan jadual perjalanan yang direka khas untuk pelancong Muslim.",
+            image: "images/Korea.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel selesa",
+                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Pulau Nami, Istana Gyeongbokgung, Menara Seoul dan banyak lagi",
+                "<strong>Makanan</strong> yang lazat dan pelbagai",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/korea_gallery/NamiIsland.jpg", name: "Pulau Nami", description: "Sebuah pulau berbentuk separuh bulan yang indah yang terkenal dengan keindahan semula jadi." },
+                { src: "images/korea_gallery/SeoulTower.jpg", name: "Menara N Seoul", description: "Mercu tanda ikonik yang menawarkan pemandangan panorama Seoul." },
+                { src: "images/korea_gallery/Gyeongbokgung.jpg", name: "Istana Gyeongbokgung", description: "Istana terbesar dari Lima Istana Besar yang dibina semasa Dinasti Joseon." },
+                { src: "images/korea_gallery/KoreanFood.jpg", name: "Masakan Halal Korea", description: "Menikmati hidangan halal yang lazat dan pelbagai di Korea." },
+            ]
+        },
+        turki: {
+            title: "Melancong ke Turki: Di Mana Timur Bertemu Barat",
+            intro: "Terokai landskap megah dan keajaiban purba Turki, sebuah negara yang kaya dengan sejarah Islam dan keindahan yang memukau.",
+            image: "images/Turki.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel-hotel berkualiti",
+                "<strong>Lawatan penuh ke tempat menarik</strong> di Istanbul (Hagia Sophia, Masjid Biru, Istana Topkapi), Cappadocia (Belon Udara Panas pilihan), Pamukkale, Ephesus dan Bursa.",
+                "<strong>Makanan</strong> tempatan yang otentik",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan domestik (penerbangan domestik/bas)"
+            ],
+            gallery: [
+                { src: "images/turki_gallery/Cappadocia.jpg", name: "Cappadocia", description: "Terkenal dengan formasi batuan 'cerobong pari-pari' yang unik dan menaiki belon udara panas." },
+                { src: "images/turki_gallery/HagiaSophia.jpg", name: "Hagia Sophia (Istanbul)", description: "Keajaiban seni bina yang hebat dan asal gereja." },
+                { src: "images/turki_gallery/BlueMosque.jpg", name: "Masjid Biru (Istanbul)", description: "Terkenal dengan jubin biru yang menakjubkan dan enam menara." },
+                { src: "images/turki_gallery/Pamukkale.jpg", name: "Pamukkale", description: "Teres air panas yang kaya dengan mineral putih." },
+            ]
+        },
+        jakarta: {
+            title: "Lawatan Bandar Jakarta & Pengalaman Budaya",
+            intro: "Temui ibu kota dinamik Indonesia, Jakarta iaitu sebuah bandar yang penuh dengan sejarah, seni bina moden dan kehidupan tempatan yang bersemangat dengan tumpuan pada tempat-tempat mesra Muslim.",
+            image: "images/Jakarta.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel-hotel terpilih",
+                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Monumen Nasional (Monas), Masjid Istiqlal, Kota Tua Jakarta dan pusat membeli-belah terkemuka.",
+                "<strong>Makanan</strong> tempatan yang pelbagai",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan persendirian sepanjang lawatan"
+            ],
+            gallery: [
+                { src: "images/jakarta_gallery/Monas.jpg", name: "Monas (Monumen Nasional)", description: "Simbol ikonik kemerdekaan Indonesia." },
+                { src: "images/jakarta_gallery/IstiqlalMosque.jpeg", name: "Masjid Istiqlal", description: "Masjid terbesar di Asia Tenggara." },
+                { src: "images/jakarta_gallery/KotaTua.jpg", name: "Kota Tua (Bandar Lama)", description: "Daerah kolonial bersejarah dengan muzium dan kafe." },
+                { src: "images/jakarta_gallery/JakartaFood.jpg", name: "Makanan Halal Indonesia", description: "Menikmati hidangan halal tradisional Indonesia." },
+            ]
+        },
+        vietnam: {
+            title: "Perjalanan Budaya & Pemandangan Vietnam",
+            intro: "Temui sejarah yang kaya dengan budaya bersemangat dan keindahan alam semula jadi Vietnam yang memukau. Jadual perjalanan yang merangkumi hidangan dan pengalaman mesra Muslim.",
+            image: "images/Vietnam.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel-hotel selesa",
+                "<strong>Lawatan penuh ke tempat menarik</strong> di Hanoi (Kawasan Lama, Tasik Hoan Kiem), Teluk Halong (pelayaran) dan Ho Chi Minh City (Terowong Cu Chi, Pasar Ben Thanh).",
+                "<strong>Makanan</strong> tempatan yang otentik",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan domestik (penerbangan domestik/bas)"
+            ],
+            gallery: [
+                { src: "images/vietnam_gallery/HalongBay.jpg", name: "Teluk Halong", description: "Tapak Warisan Dunia UNESCO yang terkenal dengan air zamrud dan pulau-pulau batu kapur yang menjulang tinggi." },
+                { src: "images/vietnam_gallery/HanoiOldQuarter.jpg", name: "Kawasan Lama Hanoi", description: "Jantung bersejarah Hanoi yang sibuk dengan pasar dan jalan-jalan purba." },
+                { src: "images/vietnam_gallery/BenThanhMarket.jpg", name: "Pasar Ben Thanh (Ho Chi Minh)", description: "Pasar yang meriah menawarkan barangan tempatan dan makanan jalanan." },
+                { src: "images/vietnam_gallery/CuChiTunnels.jpg", name: "Terowong Cu Chi", description: "Rangkaian bawah tanah yang rumit yang digunakan semasa Perang Vietnam." },
+            ]
+        },
+        thailand: {
+            title: "Lawatan Penerokaan Thailand: Kuil & Pulau Tropika",
+            intro: "Terokai pelbagai keajaiban Thailand dari jalan-jalan Bangkok yang sibuk hingga keindahan tenang pulaunya.",
+            image: "images/Thailand.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel-hotel berkualiti",
+                "<strong>Lawatan penuh ke tempat menarik</strong> di Bangkok (Grand Palace, pasar terapung), Phuket (pantai, pulau) dan Chiang Mai (kuil, gajah).",
+                "<strong>Makanan</strong> yang mudah didapati dan sedap",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan domestik (penerbangan domestik/bas)"
+            ],
+            gallery: [
+                { src: "images/thailand_gallery/BangkokTemple.jpg", name: "Wat Arun (Bangkok)", description: "Kuil Fajar dan kuil tepi sungai yang menakjubkan." },
+                { src: "images/thailand_gallery/PhuketBeach.jpeg", name: "Pantai Phuket", description: "Nikmati pantai yang indah dan perairan biru kehijauan." },
+                { src: "images/thailand_gallery/FloatMarket.jpg", name: "Pasar Terapung", description: "Alami perdagangan tradisional Thailand di atas air." },
+                { src: "images/thailand_gallery/ChiangMai.jpg", name: "Chiang Mai", description: "Terokai kuil-kuil purba dan tempat perlindungan gajah." },
+            ]
+        },
+        england: {
+            title: "Lawatan Warisan London & UK",
+            intro: "Temui mercu tanda ikonik dan sejarah kaya London dan sekitarnya. Menawarkan perjalanan budaya dengan pilihan untuk hidangan yang bersesuaian.",
+            image: "images/London.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel pusat bandar",
+                "<strong>Lawatan penuh ke tempat menarik</strong> di London (Big Ben, Tower Bridge, Muzium British, Istana Buckingham) dan pilihan ke bandar lain seperti Manchester atau Edinburgh.",
+                "Pilihan <strong>restoran</strong> yang pelbagai",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan awam (kereta api, bas) dan pengangkutan persendirian untuk lawatan tertentu"
+            ],
+            gallery: [
+                { src: "images/london_gallery/BigBen.jpg", name: "Big Ben", description: "Menara jam ikonik di sebelah Bangunan Parlimen." },
+                { src: "images/london_gallery/TowerBridge.jpg", name: "Tower Bridge", description: "Jambatan mercu tanda terkenal di atas Sungai Thames." },
+                { src: "images/london_gallery/BuckinghamPalace.jpg", name: "Istana Buckingham", description: "Kediaman rasmi Raja United Kingdom." },
+                { src: "images/london_gallery/LondonEye.jpg", name: "London Eye", description: "Roda Ferris gergasi di South Bank Sungai Thames." },
+            ]
+        },
+        // New tour data added below
+        batam: {
+            title: "Percutian Pulau Batam",
+            intro: "Temui pulau Batam yang meriah dan terkenal dengan pantai-pantai indah, membeli-belah bebas cukai dan hiburan.",
+            image: "images/Batam.jpeg",
+            packages: [
+                "<strong>Tiket feri pergi balik</strong>",
+                "<strong>Penginapan</strong> di resort atau hotel pilihan",
+                "<strong>Lawatan bandar</strong> termasuk Nagoya Hill dan Enggal Batam",
+                "<strong>Makanan</strong> tempatan yang lazat",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/batam_gallery/BatamBeach.jpg", name: "Pantai dan Pesisir Nongsa", description: "Bersantai di pantai berpasir Batam." },
+                { src: "images/batam_gallery/NagoyaHillShoppingMall.jpg", name: "Pusat Beli-belah Nagoya Hill", description: "Nikmati membeli-belah bebas cukai dan hiburan." }
+            ]
+        },
+        tanjung_pinang_bintan: {
+            title: "Percutian Tanjung Pinang & Bintan",
+            intro: "Alami keindahan tenang pantai-pantai bersih Bintan dan daya tarikan bersejarah Tanjung Pinang, Indonesia.",
+            image: "images/TanjungPinang.jpg",
+            packages: [
+                "<strong>Tiket feri pergi balik</strong>",
+                "<strong>Penginapan</strong> di resort disediakan",
+                "<strong>Lawatan tempat bersejarah</strong> seperti candi 1000 patung",
+                "<strong>Makanan</strong> yang lazat dan pelbagai",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/tanjungPinang_gallery/BintanBeach.jpg", name: "Pantai Bintan", description: "Pantai berpasir putih dan air jernih." },
+                { src: "images/tanjungPinang_gallery/PinangCity.jpg", name: "Bandar Tanjung Pinang", description: "Terokai tapak bersejarah ibu kota." }
+            ]
+        },
+        karimun_island: {
+            title: "Pengembaraan Pulau Karimun",
+            intro: "Temui keindahan alam semula jadi dan suasana tenang Pulau Karimun serta permata tersembunyi di Indonesia.",
+            image: "images/KarimunIsland.jpg",
+            packages: [
+                "<strong>Tiket feri pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel yang selesa",
+                "<strong>Aktiviti pantai</strong> seperti snorkeling dan menyelam",
+                "<strong>Makanan</strong> laut segar",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/karimun_gallery/TanjungGelam.jpg", name: "Pantai Tanjung Gelam", description: "Bersantai di pantai terpencil." },
+                { src: "images/karimun_gallery/karimunSnorkelling.jpg", name: "Snorkeling", description: "Temui kehidupan marin yang meriah." }
+            ]
+        },
+        sabah: {
+            title: "Terokai Sabah Yang Liar",
+            intro: "Jelajahi hutan hujan yang subur, gunung-ganang yang megah dan warisan budaya yang kaya di Sabah, Borneo Malaysia.",
+            image: "images/Sabah.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel dan resort",
+                "<strong>Lawatan ke Taman Negara Kinabalu</strong>seperti Taman Hidupan Liar Lok Kawi",
+                "<strong>Makanan</strong> tempatan disediakan",
+                "Pemandu pelancong berpengalaman",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/sabah_gallery/Kinabalu.jpg", name: "Gunung Kinabalu", description: "Puncak tertinggi di Malaysia." },
+                { src: "images/sabah_gallery/orangUtan.jpg", name: "Tempat Perlindungan Orangutan", description: "Temui orangutan ikonik." }
+            ]
+        },
+        sarawak: {
+            title: "Penemuan Budaya Sarawak",
+            intro: "Temui budaya asli dan keajaiban semula jadi Sarawak.",
+            image: "images/Sarawak.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel dan resort",
+                "<strong>Lawatan ke Tebingan Kuching</strong>, Kampung Budaya Sarawak dan Taman Negara Bako",
+                "<strong>Makanan</strong> tempatan",
+                "Pemandu pelancong berpengalaman",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/sarawak_gallery/SarawakCulturalVillage.jpg", name: "Kampung Budaya Sarawak", description: "Muzium hidup yang mempamerkan pelbagai kumpulan etnik Sarawak." },
+                { src: "images/sarawak_gallery/OrangutanSarawak.jpg", name: "Pusat Hidupan Liar Semenggoh", description: "Pusat rehabilitasi untuk orangutan separa liar." }
+            ]
+        },
+        langkawi: {
+            title: "Syurga Pulau Langkawi",
+            intro: "Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi dan membeli-belah bebas cukai.",
+            image: "images/Langkawi.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di resort pilihan",
+                "<strong>Lawatan ke Jambatan Gantung Langkawi</strong>, Underwater World Langkawi dan Dataran Helang",
+                "<strong>Pelbagai makanan</strong> yang lazat",
+                "Pemandu pelancong berpengalaman",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/langkawi_gallery/SkyBridge.jpg", name: "Jambatan Gantung Langkawi", description: "Jambatan pejalan kaki 660 meter di atas paras laut." },
+                { src: "images/langkawi_gallery/EagleSquare.jpg", name: "Dataran Helang", description: "Patung helang ikonik Langkawi." }
+            ]
+        },
+        hat_yai: {
+            title: "Keindahan Bandar Hat Yai",
+            intro: "Terokai pasar Hat Yai yang sibuk, kuil dan makanan jalanan yang lazat.",
+            image: "images/Hatyai.png",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel pusat bandar",
+                "<strong>Lawatan ke Wat Hat Yai Nai</strong> (Buddha Berbaring), Pasar Kim Yong dan Pasar Terapung (hujung minggu)",
+                "<strong>Makanan</strong> halal Thailand.",
+                "Pemandu pelancong berpengalaman",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/hatyai_gallery/HatyaiMarket.jpg", name: "Pasar Kim Yong", description: "Pasar yang sibuk untuk barangan dan makanan ringan tempatan." },
+                { src: "images/hatyai_gallery/SleepingBuddha.jpg", name: "Wat Hat Yai Nai", description: "Mempunyai tempat patung Buddha terbaring yang besar." }
+            ]
         }
-        // Corrected logic for showing no results message
-        if (<?php echo json_encode(empty($currentItems)); ?>) {
+    };
+
+
+    function populateDestinations() {
+        const destinations = new Set();
+        allTourCards.forEach(card => {
+            destinations.add(card.dataset.destination);
+        });
+        destinations.forEach(dest => {
+            const option = document.createElement('option');
+            option.value = dest;
+            option.textContent = dest;
+            destinationFilter.appendChild(option);
+        });
+    }
+
+    // Function to display tours based on current filters, search, and pagination
+    function displayTours() {
+        const selectedDestination = destinationFilter.value;
+        const selectedTopics = Array.from(topicCheckboxes)
+                                                .filter(checkbox => checkbox.checked)
+                                                .map(checkbox => checkbox.value);
+        const searchTerm = searchFilter.value.toLowerCase().trim(); // Get search term, convert to lowercase, and trim whitespace
+
+        filteredTourCards = Array.from(allTourCards).filter(card => {
+            const cardDestination = card.dataset.destination;
+            const cardTopics = card.dataset.topics ? card.dataset.topics.split(',') : [];
+            const cardTitle = tourData[card.dataset.id].title.toLowerCase();
+            const cardIntro = tourData[card.dataset.id].intro.toLowerCase();
+
+            const matchesDestination = selectedDestination === '' || cardDestination === selectedDestination;
+            const matchesTopics = selectedTopics.length === 0 || selectedTopics.every(topic => cardTopics.includes(topic));
+            const matchesSearch = searchTerm === '' || cardTitle.includes(searchTerm) || cardIntro.includes(searchTerm);
+
+            return matchesDestination && matchesTopics && matchesSearch;
+        });
+
+        // Hide all cards first
+        allTourCards.forEach(card => {
+            card.style.display = 'none';
+        });
+
+        // Handle "No results found" message
+        if (filteredTourCards.length === 0 && searchTerm !== '') {
             noResultsMessage.style.display = 'block';
         } else {
             noResultsMessage.style.display = 'none';
         }
-    });
-</script>
 
-<?php include "footer.php"; ?>
+        // Calculate start and end index for current page
+        const startIndex = (currentPage - 1) * toursPerPage;
+        const endIndex = startIndex + toursPerPage;
+
+        // Display only the cards for the current page
+        for (let i = startIndex; i < endIndex && i < filteredTourCards.length; i++) {
+            filteredTourCards[i].style.display = 'block';
+        }
+
+        setupPagination(); // Update pagination links after filtering and displaying tours
+    }
+
+    // Function to set up pagination links
+    function setupPagination() {
+        paginationContainer.innerHTML = ''; // Clear previous pagination links
+        const totalPages = Math.ceil(filteredTourCards.length / toursPerPage);
+
+        if (totalPages > 1) { // Only show pagination if there's more than one page
+            for (let i = 1; i <= totalPages; i++) {
+                const pageLink = document.createElement('a');
+                pageLink.href = '#';
+                pageLink.textContent = i;
+                if (i === currentPage) {
+                    pageLink.classList.add('active');
+                }
+                pageLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage = i;
+                    displayTours(); // Redisplay tours for the new page
+                });
+                paginationContainer.appendChild(pageLink);
+            }
+        }
+    }
+
+    // Event Listeners for filters
+    destinationFilter.addEventListener('change', () => {
+        currentPage = 1; // Reset to first page on filter change
+        displayTours();
+    });
+
+    topicCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            currentPage = 1; // Reset to first page on filter change
+            displayTours();
+        });
+    });
+
+    // Event Listener for the search button click
+    searchButton.addEventListener('click', () => {
+        currentPage = 1; // Reset to first page on search
+        displayTours();
+    });
+
+    // Event Listener for real-time search as user types (optional, remove if only button search is desired)
+    searchFilter.addEventListener('input', () => {
+        currentPage = 1;
+        displayTours();
+    });
+
+
+    function resetFilters() {
+        destinationFilter.value = '';
+        topicCheckboxes.forEach(checkbox => checkbox.checked = false);
+        searchFilter.value = ''; // Clear search input on reset
+        currentPage = 1; // Reset to first page
+        noResultsMessage.style.display = 'none'; // Hide no results message on reset
+        displayTours(); // Re-display all tours
+    }
+
+    // Modal functionality
+    allTourCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const tourId = card.dataset.id;
+            const tour = tourData[tourId];
+
+            if (tour) {
+                modalTourImage.src = tour.image;
+                modalTourTitle.textContent = tour.title;
+                modalTourIntro.textContent = tour.intro;
+
+                // Clear previous packages
+                modalPackageList.innerHTML = '';
+                tour.packages.forEach(pkg => {
+                    const li = document.createElement('li');
+                    li.innerHTML = pkg;
+                    modalPackageList.appendChild(li);
+                });
+
+                // Clear previous gallery items
+                modalGallery.innerHTML = '';
+                tour.gallery.forEach(item => {
+                    const galleryItemDiv = document.createElement('div');
+                    galleryItemDiv.classList.add('modal-gallery-item');
+
+                    const img = document.createElement('img');
+                    img.src = item.src;
+                    img.alt = item.name;
+                    galleryItemDiv.appendChild(img);
+
+                    const name = document.createElement('div');
+                    name.classList.add('name');
+                    name.textContent = item.name;
+                    galleryItemDiv.appendChild(name);
+
+                    const description = document.createElement('div');
+                    description.classList.add('description');
+                    description.textContent = item.description;
+                    galleryItemDiv.appendChild(description);
+
+                    modalGallery.appendChild(galleryItemDiv);
+                });
+
+                // Set inquire button link
+                modalInquireBtn.href = `contact.php?tour=${encodeURIComponent(tour.title)}`;
+
+                tourDetailModal.classList.add('active');
+            }
+        });
+    });
+
+    modalCloseBtn.addEventListener('click', () => {
+        tourDetailModal.classList.remove('active');
+    });
+
+    // Close modal if clicking outside content
+    tourDetailModal.addEventListener('click', (e) => {
+        if (e.target === tourDetailModal) {
+            tourDetailModal.classList.remove('active');
+        }
+    });
+
+    // Initial load
+    document.addEventListener('DOMContentLoaded', () => {
+        populateDestinations();
+        displayTours(); // Initial display and pagination setup
+    });
+
+</script>
 </body>
+<?php include "footer.php" ?>
 </html>
