@@ -363,10 +363,18 @@ label[for="searchFilter"] {
     .pagination a:hover:not(.active) {
         background-color: #ddd; /* Changed from #b62626 to #ddd for a distinct hover effect */
     }
+
+    .center-text {
+        text-align: center;
+        color:#b62626;
+    }
 </style>
 </head>
 <body>
 <?php include 'header.php'; ?>
+<section class="popular-destination">
+<h1 class="center-text">LAWATAN KAMI SEDIAKAN</h1>
+</section>
 
 <div class="filter-group">
     <h3><label for="searchFilter">Cari Destinasi:</label></h3>
