@@ -373,7 +373,7 @@ label[for="searchFilter"] {
 <body>
 <?php include 'header.php'; ?>
 <section class="popular-destination">
-<h1 class="center-text">LAWATAN UNTUK KORPORAT</h1>
+<h1 class="center-text">LAWATAN KHAS KORPORAT</h1>
 </section>
 
 <div class="filter-group">
