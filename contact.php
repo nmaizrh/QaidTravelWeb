@@ -94,6 +94,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             resize: vertical; /* Allow vertical resizing */
             min-height: 120px;
         }
+        /* Style for the button container to make them inline-block */
+        .form-buttons {
+            display: flex; /* Use flexbox for button alignment */
+            justify-content: flex-end; /* Align buttons to the right */
+            gap: 15px; /* Space between buttons */
+            margin-top: 20px; /* Add some space above the buttons */
+        }
         .contact-form button {
             background-color: #b62626;
             color: #fff;
@@ -104,8 +111,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            white-space: nowrap; /* Prevent button text from wrapping */
         }
         .contact-form button:hover {
+            background-color: #7c1919;
+        }
+        /* Style for the clear button specifically */
+        .contact-form .clear-button {
+            background-color: #d56a73ff; /* A neutral color for clear */
+        }
+        .contact-form .clear-button:hover {
             background-color: #7c1919;
         }
         .contact-info {
@@ -130,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="contact-form">
                 <?php echo $message; // Display only error messages here ?>
-                <form action="contact.php" method="POST">
+                <form id="contactForm" action="contact.php" method="POST">
                     <label for="name">Nama:</label>
                     <input type="text" id="name" name="name" required value="<?php echo $_POST['name'] ?? ''; ?>">
 
@@ -146,7 +161,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label for="message_content">Mesej:</label>
                     <textarea id="message_content" name="message" required><?php echo $_POST['message'] ?? ''; ?></textarea>
 
-                    <button type="submit">Hantar Mesej</button>
+                    <div class="form-buttons">
+                        <button type="button" class="clear-button" onclick="document.getElementById('contactForm').reset();">Kosongkan Borang</button>
+                        <button type="submit">Hantar Mesej</button>
+                    </div>
                 </form>
             </div>
         </section>
