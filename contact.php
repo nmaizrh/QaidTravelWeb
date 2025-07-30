@@ -4,7 +4,7 @@
 // Make sure db_connect.php is in the same directory as contact.php.
 include 'connect.php';
 
-$message = '';
+$message = ''; // This variable will no longer be used for success messages
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validation
     if (empty($name) || empty($email) || empty($phone) || empty($message_content)) {
+        // Error messages will still use the $message variable and be displayed inline
         $message = '<p style="color: red;">Sila isikan semua ruangan yang diperlukan.</p>';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $message = '<p style="color: red;">Sila masukkan alamat emel yang sah.</p>';
@@ -24,27 +25,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $message = '<p style="color: red;">Sila masukkan nombor telefon yang sah (7-15 digit sahaja, tanpa ruang atau simbol).</p>';
     } else {
         // The $conn object from db_connect.php is available here.
-        // It's good practice to ensure the connection is still valid, though db_connect.php uses die() on failure.
         if ($conn->connect_error) {
             $message = '<p style="color: red;">Gagal menyambung ke pangkalan data. Sila cuba lagi nanti. (' . $conn->connect_error . ')</p>';
         } else {
             // Prepare an SQL statement to insert data into the 'client' table.
-            // Ensure these column names ('name', 'email', 'phone', 'subject', 'message')
-            // exactly match the ones you defined in your 'client' table in phpMyAdmin.
             $stmt = $conn->prepare("INSERT INTO client (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)");
 
             if ($stmt === false) {
                 $message = '<p style="color: red;">Gagal menyediakan kenyataan: ' . $conn->error . '</p>';
             } else {
                 // Bind parameters to the prepared statement.
-                // 'sssss' indicates five string parameters.
                 $stmt->bind_param("sssss", $name, $email, $phone, $subject, $message_content);
 
                 // Execute the statement
                 if ($stmt->execute()) {
-                    $message = '<p style="color: green;">Terima kasih atas pertanyaan anda, ' . $name . '! Mesej anda telah dihantar dengan jayanya.</p>';
-                    // Clear form fields after successful submission to make the form ready for a new entry.
-                    $_POST = array();
+                    // *** MODIFIED: Display JavaScript alert for success ***
+                    echo '<script>';
+                    echo 'alert("Terima kasih atas pertanyaan anda, ' . addslashes($name) . '! Mesej anda telah dihantar dengan jayanya.");';
+                    echo 'window.location.href = "contact.php";'; // Redirects to clear form and message
+                    echo '</script>';
+                    exit(); // Stop script execution after sending the alert and redirecting
                 } else {
                     $message = '<p style="color: red;">Ralat menyimpan mesej anda: ' . $stmt->error . '</p>';
                 }
@@ -52,9 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Close the statement
                 $stmt->close();
             }
-            // The database connection ($conn) will automatically close when the script finishes.
-            // If you had more database operations later in the same script, you wouldn't close it here.
-            // $conn->close(); // Uncomment if you want to explicitly close it now.
         }
     }
 }
@@ -132,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </p>
 
             <div class="contact-form">
-                <?php echo $message; // Display success or error messages here ?>
+                <?php echo $message; // Display only error messages here ?>
                 <form action="contact.php" method="POST">
                     <label for="name">Nama:</label>
                     <input type="text" id="name" name="name" required value="<?php echo $_POST['name'] ?? ''; ?>">
