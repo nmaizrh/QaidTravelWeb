@@ -1,6 +1,9 @@
 <?php
+
 // In a real application, you would handle form submission here
 // e.g., send an email, save to database.
+
+include 'connect.php';
 
 $message = '';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
