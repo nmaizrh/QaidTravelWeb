@@ -754,7 +754,8 @@ label[for="searchFilter"] {
             ],
             gallery: [
                 { src: "images/tanjungPinang_gallery/BintanBeach.jpg", name: "Pantai Bintan", description: "Pantai berpasir putih dan air jernih." },
-                { src: "images/tanjungPinang_gallery/PinangCity.jpg", name: "Bandar Tanjung Pinang", description: "Terokai tapak bersejarah ibu kota." }
+                { src: "images/tanjungPinang_gallery/PinangCity.jpg", name: "Bandar Tanjung Pinang", description: "Terokai tapak bersejarah ibu kota." },
+                { src: "images/tanjungPinang_gallery/SultanMasjid.png", name: "Masjid Raya Sultan Riau", description: "Masjid bersejarah dengan seni bina Melayu yang indah di Pulau Penyengat." }
             ]
         },
         karimun_island: {
@@ -786,8 +787,9 @@ label[for="searchFilter"] {
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/sabah_gallery/Kinabalu.jpg", name: "Gunung Kinabalu", description: "Puncak tertinggi di Malaysia." },
-                { src: "images/sabah_gallery/orangUtan.jpg", name: "Tempat Perlindungan Orangutan", description: "Temui orangutan ikonik." }
+                { src: "images/sabah_gallery/Kinabalu.jpg", name: "Gunung Kinabalu", description: "Puncak tertinggi di Malaysia yang menjadi simbol Sabah dan tarikan utama buat pencinta alam dan pendaki." },
+                { src: "images/sabah_gallery/orangUtan.jpg", name: "Tempat Perlindungan Orangutan", description: "Peluang melihat orangutan dalam habitat semula jadi mereka dan memahami usaha pemuliharaan yang dijalankan."},
+                { src: "images/sabah_gallery/sipadan.jpg", name: "Pulau Sipadan", description: "Lokasi menyelam terbaik dunia yang mempesonakan dengan kehidupan marin yang kaya dan pelbagai."}
             ]
         },
         sarawak: {
@@ -821,7 +823,8 @@ label[for="searchFilter"] {
             ],
             gallery: [
                 { src: "images/langkawi_gallery/SkyBridge.jpg", name: "Jambatan Gantung Langkawi", description: "Jambatan pejalan kaki 660 meter di atas paras laut." },
-                { src: "images/langkawi_gallery/EagleSquare.jpg", name: "Dataran Helang", description: "Patung helang ikonik Langkawi." }
+                { src: "images/langkawi_gallery/EagleSquare.jpg", name: "Dataran Helang", description: "Patung helang ikonik Langkawi."},
+                { src: "images/langkawi_gallery/telaga.jpg", name: "Air Terjun Telaga Tujuh", description: "Air terjun tujuh peringkat yang mempesona dan dikelilingi oleh alam semula jadi yang menghijau."}
             ]
         },
         hat_yai: {
