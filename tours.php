@@ -823,7 +823,7 @@ label[for="searchFilter"] {
             ],
             gallery: [
                 { src: "images/langkawi_gallery/SkyBridge.jpg", name: "Jambatan Gantung Langkawi", description: "Jambatan pejalan kaki 660 meter di atas paras laut." },
-                { src: "images/langkawi_gallery/EagleSquare.jpg", name: "Dataran Helang", description: "Patung helang ikonik Langkawi."},
+                { src: "images/langkawi_gallery/EagleSquare.jpg", name: "Dataran Helang", description: "Dataran helang yang menjadi simbol ikonik Langkawi dan menjadi lokasi wajib bergambar."},
                 { src: "images/langkawi_gallery/telaga.jpg", name: "Air Terjun Telaga Tujuh", description: "Air terjun tujuh peringkat yang mempesona dan dikelilingi oleh alam semula jadi yang menghijau."}
             ]
         },
@@ -840,8 +840,8 @@ label[for="searchFilter"] {
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/hatyai_gallery/HatyaiMarket.jpg", name: "Pasar Kim Yong", description: "Pasar yang sibuk untuk barangan dan makanan ringan tempatan." },
-                { src: "images/hatyai_gallery/SleepingBuddha.jpg", name: "Wat Hat Yai Nai", description: "Mempunyai tempat patung Buddha terbaring yang besar." }
+                { src: "images/hatyai_gallery/kimyong.jpg", name: "Pasar Kim Yong", description: "Pasar yang sibuk untuk barangan dan makanan ringan tempatan." },
+                { src: "images/hatyai_gallery/WatHatYaiNai.jpg", name: "Wat Hat Yai Nai", description: "Mempunyai tempat patung Buddha terbaring yang besar." }
             ]
         }
     };
