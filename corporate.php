@@ -411,8 +411,8 @@ label[for="searchFilter"] {
             <div class="tour-card" data-id="umrah" data-destination="Umrah" data-topics="Culture">
                 <img src="images/Umrah.jpg" alt="Umrah"/>
                 <div class="info">
-                    <h4>Lawatan Korporat Melaka Bersejarah</h4>
-                    <p>Pakej eksklusif untuk delegasi korporat ke tapak warisan Melaka dengan kemudahan premium.</p>
+                    <h4>Perjalanan Umrah</h4>
+                    <p>Pakej Umrah lengkap dengan bimbingan keagamaan.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="japan" data-destination="Japan" data-topics="Food,Culture">
@@ -569,8 +569,8 @@ label[for="searchFilter"] {
     // 🌟 Define detailed tour data here 🌟
     // This can be fetched from a database in a more complex setup
     const tourData = {
-        Melaka: {
-            title: "Lawatan Korporat Melaka Bersejarah",
+        umrah: {
+            title: "Perjalanan Umrah",
             intro: "Mulakan perjalanan rohani yang diberkati ke Tanah Suci dengan pakej Umrah komprehensif Qaid Travel yang direka untuk keselesaan dan ketenangan fikiran.",
             image: "images/Umrah.jpg",
             packages: [
