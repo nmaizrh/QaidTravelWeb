@@ -373,7 +373,7 @@ label[for="searchFilter"] {
 <body>
 <?php include 'header.php'; ?>
 <section class="popular-destination">
-<h1 class="center-text"><strong>LAWATAN KHAS KORPORAT</strong></h1>
+<h1 class="center-text"><strong>LAWATAN KAMI SEDIAKAN</strong></h1>
 </section>
 
 <div class="filter-group">
@@ -387,7 +387,6 @@ label[for="searchFilter"] {
 <div class="tours-container">
     <div class="filter-panel">
         <h3>Filter</h3>
-
         <div class="filter-group">
             <label for="destination">Destinasi</label>
             <select id="destination">
@@ -408,55 +407,11 @@ label[for="searchFilter"] {
 
     <div style="display: flex; flex-direction: column; flex-grow: 1;">
         <div class="tour-list" id="tourList">
-            <div class="tour-card" data-id="umrah" data-destination="Umrah" data-topics="Culture">
-                <img src="images/Umrah.jpg" alt="Umrah"/>
+            <div class="tour-card" data-id="batam" data-destination="Batam" data-topics="Island,Nature">
+                <img src="images/Batam.jpeg" alt="Batam"/>
                 <div class="info">
-                    <h4>Perjalanan Umrah</h4>
-                    <p>Pakej Umrah lengkap dengan bimbingan keagamaan.</p>
-                </div>
-            </div>
-            <div class="tour-card" data-id="japan" data-destination="Japan" data-topics="Food,Culture">
-                <img src="images/Japan.jpg" alt="Japan"/>
-                <div class="info">
-                    <h4>Jelajahi Jepun</h4>
-                    <p>Lawati Kyoto dengan hidangan halal dan keindahan budaya.</p>
-                </div>
-            </div>
-            <div class="tour-card" data-id="korea" data-destination="Korea" data-topics="Culture,Nature">
-                <img src="images/Korea.jpg" alt="Korea"/>
-                <div class="info">
-                    <h4>Lawatan Musim Luruh Korea</h4>
-                    <p>Nikmati musim Korea dengan perjalanan kumpulan terpilih.</p>
-                </div>
-            </div>
-            <div class="tour-card" data-id="turki" data-destination="Turki" data-topics="Culture,Food">
-                <img src="images/Turki.jpg" alt="Turki"/>
-                <div class="info">
-                    <h4>Melancong ke Turki</h4>
-                    <p>Terokai Istanbul, Cappadocia, dan tapak bersejarah.</p>
-                </div>
-            </div>
-            <div class="tour-card" data-id="jakarta" data-destination="Jakarta" data-topics="Culture,Nature">
-                <img src="images/Jakarta.jpg" alt="Jakarta"/>
-                <div class="info">
-                    <h4>Lawatan Bandar Jakarta</h4>
-                    <p>Terokai budaya Jakarta yang bersemangat, mercu tanda, dan tarikan mesra halal.</p>
-                </div>
-            </div>
-            <div class="tour-card" data-id="vietnam" data-destination="Vietnam" data-topics="Nature,Food,Culture">
-                <img src="images/Vietnam.jpg" alt="Vietnam"/>
-                <div class="info">
-                    <h4>Perjalanan Budaya Vietnam</h4>
-                    <p>Temui warisan kaya Vietnam, pemandangan indah dan pengalaman mesra halal
-                        di seluruh Hanoi dan Ho Chi Minh City.</p>
-                </div>
-            </div>
-            <div class="tour-card" data-id="thailand" data-destination="Thailand" data-topics="Food,Culture">
-                <img src="images/Thailand.jpg" alt="Thailand"/>
-                <div class="info">
-                    <h4>Lawatan Penerokaan Thailand</h4>
-                    <p>Nikmati pasar yang sibuk, percutian pulau
-                        dan masakan mesra halal di Bangkok, Phuket, dan sekitarnya.</p>
+                    <h4>Percutian Pulau Batam</h4>
+                    <p>Temui pantai Batam, membeli-belah, dan kehidupan malam yang meriah.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="england" data-destination="England" data-topics="Food,Culture">
@@ -467,18 +422,25 @@ label[for="searchFilter"] {
                         pilihan mesra halal di sekitar bandar.</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="batam" data-destination="Batam" data-topics="Island,Nature">
-                <img src="images/Batam.jpeg" alt="Batam"/>
+            <div class="tour-card" data-id="hat_yai" data-destination="Hat Yai" data-topics="Culture,Food">
+                <img src="images/Hatyai.png" alt="Hat Yai"/>
                 <div class="info">
-                    <h4>Percutian Pulau Batam</h4>
-                    <p>Temui pantai Batam, membeli-belah, dan kehidupan malam yang meriah.</p>
+                    <h4>Keindahan Bandar Hat Yai</h4>
+                    <p>Terokai pasar Hat Yai yang sibuk, kuil, dan makanan jalanan yang lazat.</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="tanjung_pinang_bintan" data-destination="Tanjung Pinang Bintan" data-topics="Island,Nature">
-                <img src="images/TanjungPinang.jpg" alt="Tanjung Pinang Bintan"/>
+            <div class="tour-card" data-id="jakarta" data-destination="Jakarta" data-topics="Culture,Nature">
+                <img src="images/Jakarta.jpg" alt="Jakarta"/>
                 <div class="info">
-                    <h4>Percutian Tanjung Pinang & Bintan</h4>
-                    <p>Bersantai di pantai-pantai bersih Bintan dan terokai daya tarikan Tanjung Pinang.</p>
+                    <h4>Lawatan Bandar Jakarta</h4>
+                    <p>Terokai budaya Jakarta yang bersemangat, mercu tanda, dan tarikan mesra halal.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="japan" data-destination="Japan" data-topics="Food,Culture">
+                <img src="images/Japan.jpg" alt="Japan"/>
+                <div class="info">
+                    <h4>Jelajahi Jepun</h4>
+                    <p>Lawati Kyoto dengan hidangan halal dan keindahan budaya.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="karimun_island" data-destination="Karimun Island" data-topics="Island,Nature">
@@ -486,6 +448,20 @@ label[for="searchFilter"] {
                 <div class="info">
                     <h4>Pengembaraan Pulau Karimun</h4>
                     <p>Alami keindahan semula jadi yang belum terusik dan suasana tenang Pulau Karimun.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="korea" data-destination="Korea" data-topics="Culture,Nature">
+                <img src="images/Korea.jpg" alt="Korea"/>
+                <div class="info">
+                    <h4>Lawatan Musim Luruh Korea</h4>
+                    <p>Nikmati musim Korea dengan perjalanan kumpulan terpilih.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="langkawi" data-destination="Langkawi" data-topics="Island,Nature">
+                <img src="images/Langkawi.jpg" alt="Langkawi"/>
+                <div class="info">
+                    <h4>Syurga Pulau Langkawi</h4>
+                    <p>Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi, dan membeli-belah bebas cukai.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="sabah" data-destination="Sabah" data-topics="Nature,Culture">
@@ -502,18 +478,41 @@ label[for="searchFilter"] {
                     <p>Temui budaya asli dan keajaiban semula jadi Sarawak.</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="langkawi" data-destination="Langkawi" data-topics="Island,Nature">
-                <img src="images/Langkawi.jpg" alt="Langkawi"/>
+            <div class="tour-card" data-id="tanjung_pinang_bintan" data-destination="Tanjung Pinang Bintan" data-topics="Island,Nature">
+                <img src="images/TanjungPinang.jpg" alt="Tanjung Pinang Bintan"/>
                 <div class="info">
-                    <h4>Syurga Pulau Langkawi</h4>
-                    <p>Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi, dan membeli-belah bebas cukai.</p>
+                    <h4>Percutian Tanjung Pinang & Bintan</h4>
+                    <p>Bersantai di pantai-pantai bersih Bintan dan terokai daya tarikan Tanjung Pinang.</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="hat_yai" data-destination="Hat Yai" data-topics="Culture,Food">
-                <img src="images/Hatyai.png" alt="Hat Yai"/>
+            <div class="tour-card" data-id="thailand" data-destination="Thailand" data-topics="Food,Culture">
+                <img src="images/Thailand.jpg" alt="Thailand"/>
                 <div class="info">
-                    <h4>Keindahan Bandar Hat Yai</h4>
-                    <p>Terokai pasar Hat Yai yang sibuk, kuil, dan makanan jalanan yang lazat.</p>
+                    <h4>Lawatan Penerokaan Thailand</h4>
+                    <p>Nikmati pasar yang sibuk, percutian pulau
+                        dan masakan mesra halal di Bangkok, Phuket, dan sekitarnya.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="turki" data-destination="Turki" data-topics="Culture,Food">
+                <img src="images/Turki.jpg" alt="Turki"/>
+                <div class="info">
+                    <h4>Melancong ke Turki</h4>
+                    <p>Terokai Istanbul, Cappadocia, dan tapak bersejarah.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="umrah" data-destination="Umrah" data-topics="Culture">
+                <img src="images/Umrah.jpg" alt="Umrah"/>
+                <div class="info">
+                    <h4>Perjalanan Umrah</h4>
+                    <p>Pakej Umrah lengkap dengan bimbingan keagamaan.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="vietnam" data-destination="Vietnam" data-topics="Nature,Food,Culture">
+                <img src="images/Vietnam.jpg" alt="Vietnam"/>
+                <div class="info">
+                    <h4>Perjalanan Budaya Vietnam</h4>
+                    <p>Temui warisan kaya Vietnam, pemandangan indah dan pengalaman mesra halal
+                        di seluruh Hanoi dan Ho Chi Minh City.</p>
                 </div>
             </div>
         </div>
@@ -565,6 +564,8 @@ label[for="searchFilter"] {
     const toursPerPage = 6; // Number of tours to display per page
     let currentPage = 1;
     let filteredTourCards = []; // Stores the currently filtered tour cards
+
+    
 
     // 🌟 Define detailed tour data here 🌟
     // This can be fetched from a database in a more complex setup
@@ -738,7 +739,8 @@ label[for="searchFilter"] {
             ],
             gallery: [
                 { src: "images/batam_gallery/BatamBeach.jpg", name: "Pantai dan Pesisir Nongsa", description: "Bersantai di pantai berpasir Batam." },
-                { src: "images/batam_gallery/NagoyaHillShoppingMall.jpg", name: "Pusat Beli-belah Nagoya Hill", description: "Nikmati membeli-belah bebas cukai dan hiburan." }
+                { src: "images/batam_gallery/NagoyaHillShoppingMall.jpg", name: "Pusat Beli-belah Nagoya Hill", description: "Nikmati membeli-belah bebas cukai dan hiburan." },
+                { src: "images/batam_gallery/barelang.jpg", name: "Barelang Bridge", description: "Ikon terkenal di Batam yang menghubungkan beberapa pulau utama dan menawarkan pemandangan indah terutama saat matahari terbenam." }
             ]
         },
         tanjung_pinang_bintan: {
@@ -754,7 +756,8 @@ label[for="searchFilter"] {
             ],
             gallery: [
                 { src: "images/tanjungPinang_gallery/BintanBeach.jpg", name: "Pantai Bintan", description: "Pantai berpasir putih dan air jernih." },
-                { src: "images/tanjungPinang_gallery/PinangCity.jpg", name: "Bandar Tanjung Pinang", description: "Terokai tapak bersejarah ibu kota." }
+                { src: "images/tanjungPinang_gallery/PinangCity.jpg", name: "Bandar Tanjung Pinang", description: "Terokai tapak bersejarah ibu kota." },
+                { src: "images/tanjungPinang_gallery/SultanMasjid.png", name: "Masjid Raya Sultan Riau", description: "Masjid bersejarah dengan seni bina Melayu yang indah di Pulau Penyengat." }
             ]
         },
         karimun_island: {
@@ -770,7 +773,8 @@ label[for="searchFilter"] {
             ],
             gallery: [
                 { src: "images/karimun_gallery/TanjungGelam.jpg", name: "Pantai Tanjung Gelam", description: "Bersantai di pantai terpencil." },
-                { src: "images/karimun_gallery/karimunSnorkelling.jpg", name: "Snorkeling", description: "Temui kehidupan marin yang meriah." }
+                { src: "images/karimun_gallery/karimunSnorkelling.jpg", name: "Snorkeling", description: "Temui kehidupan marin yang meriah." },
+                { src: "images/karimun_gallery/masjidkarimun.jpg", name: "Masjid Baiturrahman", description: "Masjid utama di Pulau Karimun, Kepulauan Riau. Terkenal dengan reka bentuk moden dan menjadi pusat ibadah serta tumpuan umat Islam tempatan dan pelancong." }
             ]
         },
         sabah: {
@@ -786,8 +790,9 @@ label[for="searchFilter"] {
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/sabah_gallery/Kinabalu.jpg", name: "Gunung Kinabalu", description: "Puncak tertinggi di Malaysia." },
-                { src: "images/sabah_gallery/orangUtan.jpg", name: "Tempat Perlindungan Orangutan", description: "Temui orangutan ikonik." }
+                { src: "images/sabah_gallery/Kinabalu.jpg", name: "Gunung Kinabalu", description: "Puncak tertinggi di Malaysia yang menjadi simbol Sabah dan tarikan utama buat pencinta alam dan pendaki." },
+                { src: "images/sabah_gallery/orangUtan.jpg", name: "Tempat Perlindungan Orangutan", description: "Peluang melihat orangutan dalam habitat semula jadi mereka dan memahami usaha pemuliharaan yang dijalankan."},
+                { src: "images/sabah_gallery/sipadan.jpg", name: "Pulau Sipadan", description: "Lokasi menyelam terbaik dunia yang mempesonakan dengan kehidupan marin yang kaya dan pelbagai."}
             ]
         },
         sarawak: {
@@ -803,8 +808,9 @@ label[for="searchFilter"] {
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/sarawak_gallery/SarawakCulturalVillage.jpg", name: "Kampung Budaya Sarawak", description: "Muzium hidup yang mempamerkan pelbagai kumpulan etnik Sarawak." },
-                { src: "images/sarawak_gallery/OrangutanSarawak.jpg", name: "Pusat Hidupan Liar Semenggoh", description: "Pusat rehabilitasi untuk orangutan separa liar." }
+                { src: "images/sarawak_gallery/CulturalVillage.jpg", name: "Kampung Budaya Sarawak", description: "Muzium hidup yang mempamerkan pelbagai kumpulan etnik Sarawak." },
+                { src: "images/sarawak_gallery/muluCaves.jpeg", name: "Gua Mulu", description: "Gua batu kapur yang terkenal dengan formasi menakjubkan dan diiktiraf sebagai Tapak Warisan Dunia UNESCO." },
+                { src: "images/sarawak_gallery/pusatSemenggoh.jpg", name: "Pusat Hidupan Liar Semenggoh", description: "Pusat rehabilitasi untuk orangutan separa liar." }
             ]
         },
         langkawi: {
@@ -821,7 +827,8 @@ label[for="searchFilter"] {
             ],
             gallery: [
                 { src: "images/langkawi_gallery/SkyBridge.jpg", name: "Jambatan Gantung Langkawi", description: "Jambatan pejalan kaki 660 meter di atas paras laut." },
-                { src: "images/langkawi_gallery/EagleSquare.jpg", name: "Dataran Helang", description: "Patung helang ikonik Langkawi." }
+                { src: "images/langkawi_gallery/EagleSquare.jpg", name: "Dataran Helang", description: "Dataran helang yang menjadi simbol ikonik Langkawi dan menjadi lokasi wajib bergambar."},
+                { src: "images/langkawi_gallery/telaga.jpg", name: "Air Terjun Telaga Tujuh", description: "Air terjun tujuh peringkat yang mempesona dan dikelilingi oleh alam semula jadi yang menghijau."}
             ]
         },
         hat_yai: {
@@ -837,8 +844,9 @@ label[for="searchFilter"] {
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/hatyai_gallery/HatyaiMarket.jpg", name: "Pasar Kim Yong", description: "Pasar yang sibuk untuk barangan dan makanan ringan tempatan." },
-                { src: "images/hatyai_gallery/SleepingBuddha.jpg", name: "Wat Hat Yai Nai", description: "Mempunyai tempat patung Buddha terbaring yang besar." }
+                { src: "images/hatyai_gallery/kimyong.jpg", name: "Pasar Kim Yong", description: "Pasar yang sibuk untuk barangan dan makanan ringan tempatan." },
+                { src: "images/hatyai_gallery/WatHatYaiNai.jpg", name: "Wat Hat Yai Nai", description: "Mempunyai tempat patung Buddha terbaring yang besar." },
+                { src: "images/hatyai_gallery/central.jpg", name: "Central HatYai", description: "Pusat beli-belah moden yang terkenal di Hatyai yang menempatkan pelbagai jenama antarabangsa, restoran dan hiburan keluarga." }
             ]
         }
     };
@@ -856,6 +864,8 @@ label[for="searchFilter"] {
             destinationFilter.appendChild(option);
         });
     }
+
+    
 
     // Function to display tours based on current filters, search, and pagination
     function displayTours() {
