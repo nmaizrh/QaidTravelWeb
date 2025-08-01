@@ -740,7 +740,7 @@ label[for="searchFilter"] {
             gallery: [
                 { src: "images/batam_gallery/BatamBeach.jpg", name: "Pantai dan Pesisir Nongsa", description: "Bersantai di pantai berpasir Batam." },
                 { src: "images/batam_gallery/NagoyaHillShoppingMall.jpg", name: "Pusat Beli-belah Nagoya Hill", description: "Nikmati membeli-belah bebas cukai dan hiburan." },
-                { src: "images/batam_gallery/barelang.jpg", name: "Barelang Bridge", description: "Ikon terkenal di Batam yang menghubungkan beberapa pulau utama dan menawarkan pemandangan indah terutama saat matahari terbenam." }
+                { src: "images/batam_gallery/barelang.jpg", name: "Jambatan Barelang", description: "Ikon terkenal di Batam yang menghubungkan beberapa pulau utama dan menawarkan pemandangan indah terutama saat matahari terbenam." }
             ]
         },
         tanjung_pinang_bintan: {
