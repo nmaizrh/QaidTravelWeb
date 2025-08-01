@@ -387,7 +387,6 @@ label[for="searchFilter"] {
 <div class="tours-container">
     <div class="filter-panel">
         <h3>Filter</h3>
-
         <div class="filter-group">
             <label for="destination">Destinasi</label>
             <select id="destination">
@@ -408,6 +407,13 @@ label[for="searchFilter"] {
 
     <div style="display: flex; flex-direction: column; flex-grow: 1;">
         <div class="tour-list" id="tourList">
+            <div class="tour-card" data-id="batam" data-destination="Batam" data-topics="Island,Nature">
+                <img src="images/Batam.jpeg" alt="Batam"/>
+                <div class="info">
+                    <h4>Percutian Pulau Batam</h4>
+                    <p>Temui pantai Batam, membeli-belah, dan kehidupan malam yang meriah.</p>
+                </div>
+            </div>
             <div class="tour-card" data-id="umrah" data-destination="Umrah" data-topics="Culture">
                 <img src="images/Umrah.jpg" alt="Umrah"/>
                 <div class="info">
@@ -465,13 +471,6 @@ label[for="searchFilter"] {
                     <h4>Lawatan Warisan London</h4>
                     <p>Terokai Big Ben, Tower Bridge, dan sejarah British yang kaya dengan
                         pilihan mesra halal di sekitar bandar.</p>
-                </div>
-            </div>
-            <div class="tour-card" data-id="batam" data-destination="Batam" data-topics="Island,Nature">
-                <img src="images/Batam.jpeg" alt="Batam"/>
-                <div class="info">
-                    <h4>Percutian Pulau Batam</h4>
-                    <p>Temui pantai Batam, membeli-belah, dan kehidupan malam yang meriah.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="tanjung_pinang_bintan" data-destination="Tanjung Pinang Bintan" data-topics="Island,Nature">
@@ -565,6 +564,8 @@ label[for="searchFilter"] {
     const toursPerPage = 6; // Number of tours to display per page
     let currentPage = 1;
     let filteredTourCards = []; // Stores the currently filtered tour cards
+
+    
 
     // 🌟 Define detailed tour data here 🌟
     // This can be fetched from a database in a more complex setup
@@ -844,7 +845,8 @@ label[for="searchFilter"] {
             ],
             gallery: [
                 { src: "images/hatyai_gallery/kimyong.jpg", name: "Pasar Kim Yong", description: "Pasar yang sibuk untuk barangan dan makanan ringan tempatan." },
-                { src: "images/hatyai_gallery/WatHatYaiNai.jpg", name: "Wat Hat Yai Nai", description: "Mempunyai tempat patung Buddha terbaring yang besar." }
+                { src: "images/hatyai_gallery/WatHatYaiNai.jpg", name: "Wat Hat Yai Nai", description: "Mempunyai tempat patung Buddha terbaring yang besar." },
+                { src: "images/hatyai_gallery/central.jpg", name: "Central HatYai", description: "Pusat beli-belah moden yang terkenal di Hatyai yang menempatkan pelbagai jenama antarabangsa, restoran dan hiburan keluarga." }
             ]
         }
     };
@@ -862,6 +864,8 @@ label[for="searchFilter"] {
             destinationFilter.appendChild(option);
         });
     }
+
+    
 
     // Function to display tours based on current filters, search, and pagination
     function displayTours() {
