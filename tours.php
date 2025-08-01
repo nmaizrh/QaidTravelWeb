@@ -738,7 +738,8 @@ label[for="searchFilter"] {
             ],
             gallery: [
                 { src: "images/batam_gallery/BatamBeach.jpg", name: "Pantai dan Pesisir Nongsa", description: "Bersantai di pantai berpasir Batam." },
-                { src: "images/batam_gallery/NagoyaHillShoppingMall.jpg", name: "Pusat Beli-belah Nagoya Hill", description: "Nikmati membeli-belah bebas cukai dan hiburan." }
+                { src: "images/batam_gallery/NagoyaHillShoppingMall.jpg", name: "Pusat Beli-belah Nagoya Hill", description: "Nikmati membeli-belah bebas cukai dan hiburan." },
+                { src: "images/batam_gallery/barelang.jpg", name: "Barelang Bridge", description: "Ikon terkenal di Batam yang menghubungkan beberapa pulau utama dan menawarkan pemandangan indah terutama saat matahari terbenam." }
             ]
         },
         tanjung_pinang_bintan: {
@@ -771,7 +772,8 @@ label[for="searchFilter"] {
             ],
             gallery: [
                 { src: "images/karimun_gallery/TanjungGelam.jpg", name: "Pantai Tanjung Gelam", description: "Bersantai di pantai terpencil." },
-                { src: "images/karimun_gallery/karimunSnorkelling.jpg", name: "Snorkeling", description: "Temui kehidupan marin yang meriah." }
+                { src: "images/karimun_gallery/karimunSnorkelling.jpg", name: "Snorkeling", description: "Temui kehidupan marin yang meriah." },
+                { src: "images/karimun_gallery/masjidkarimun.jpg", name: "Masjid Baiturrahman", description: "Masjid utama di Pulau Karimun, Kepulauan Riau. Terkenal dengan reka bentuk moden dan menjadi pusat ibadah serta tumpuan umat Islam tempatan dan pelancong." }
             ]
         },
         sabah: {
@@ -805,8 +807,9 @@ label[for="searchFilter"] {
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/sarawak_gallery/SarawakCulturalVillage.jpg", name: "Kampung Budaya Sarawak", description: "Muzium hidup yang mempamerkan pelbagai kumpulan etnik Sarawak." },
-                { src: "images/sarawak_gallery/OrangutanSarawak.jpg", name: "Pusat Hidupan Liar Semenggoh", description: "Pusat rehabilitasi untuk orangutan separa liar." }
+                { src: "images/sarawak_gallery/CulturalVillage.jpg", name: "Kampung Budaya Sarawak", description: "Muzium hidup yang mempamerkan pelbagai kumpulan etnik Sarawak." },
+                { src: "images/sarawak_gallery/muluCaves.jpeg", name: "Gua Mulu", description: "Gua batu kapur yang terkenal dengan formasi menakjubkan dan diiktiraf sebagai Tapak Warisan Dunia UNESCO." },
+                { src: "images/sarawak_gallery/pusatSemenggoh.jpg", name: "Pusat Hidupan Liar Semenggoh", description: "Pusat rehabilitasi untuk orangutan separa liar." }
             ]
         },
         langkawi: {
