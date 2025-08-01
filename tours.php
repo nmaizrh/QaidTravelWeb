@@ -414,32 +414,19 @@ label[for="searchFilter"] {
                     <p>Temui pantai Batam, membeli-belah, dan kehidupan malam yang meriah.</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="umrah" data-destination="Umrah" data-topics="Culture">
-                <img src="images/Umrah.jpg" alt="Umrah"/>
+            <div class="tour-card" data-id="england" data-destination="England" data-topics="Food,Culture">
+                <img src="images/London.jpg" alt="England"/>
                 <div class="info">
-                    <h4>Perjalanan Umrah</h4>
-                    <p>Pakej Umrah lengkap dengan bimbingan keagamaan.</p>
+                    <h4>Lawatan Warisan London</h4>
+                    <p>Terokai Big Ben, Tower Bridge, dan sejarah British yang kaya dengan
+                        pilihan mesra halal di sekitar bandar.</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="japan" data-destination="Japan" data-topics="Food,Culture">
-                <img src="images/Japan.jpg" alt="Japan"/>
+            <div class="tour-card" data-id="hat_yai" data-destination="Hat Yai" data-topics="Culture,Food">
+                <img src="images/Hatyai.png" alt="Hat Yai"/>
                 <div class="info">
-                    <h4>Jelajahi Jepun</h4>
-                    <p>Lawati Kyoto dengan hidangan halal dan keindahan budaya.</p>
-                </div>
-            </div>
-            <div class="tour-card" data-id="korea" data-destination="Korea" data-topics="Culture,Nature">
-                <img src="images/Korea.jpg" alt="Korea"/>
-                <div class="info">
-                    <h4>Lawatan Musim Luruh Korea</h4>
-                    <p>Nikmati musim Korea dengan perjalanan kumpulan terpilih.</p>
-                </div>
-            </div>
-            <div class="tour-card" data-id="turki" data-destination="Turki" data-topics="Culture,Food">
-                <img src="images/Turki.jpg" alt="Turki"/>
-                <div class="info">
-                    <h4>Melancong ke Turki</h4>
-                    <p>Terokai Istanbul, Cappadocia, dan tapak bersejarah.</p>
+                    <h4>Keindahan Bandar Hat Yai</h4>
+                    <p>Terokai pasar Hat Yai yang sibuk, kuil, dan makanan jalanan yang lazat.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="jakarta" data-destination="Jakarta" data-topics="Culture,Nature">
@@ -449,35 +436,11 @@ label[for="searchFilter"] {
                     <p>Terokai budaya Jakarta yang bersemangat, mercu tanda, dan tarikan mesra halal.</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="vietnam" data-destination="Vietnam" data-topics="Nature,Food,Culture">
-                <img src="images/Vietnam.jpg" alt="Vietnam"/>
+            <div class="tour-card" data-id="japan" data-destination="Japan" data-topics="Food,Culture">
+                <img src="images/Japan.jpg" alt="Japan"/>
                 <div class="info">
-                    <h4>Perjalanan Budaya Vietnam</h4>
-                    <p>Temui warisan kaya Vietnam, pemandangan indah dan pengalaman mesra halal
-                        di seluruh Hanoi dan Ho Chi Minh City.</p>
-                </div>
-            </div>
-            <div class="tour-card" data-id="thailand" data-destination="Thailand" data-topics="Food,Culture">
-                <img src="images/Thailand.jpg" alt="Thailand"/>
-                <div class="info">
-                    <h4>Lawatan Penerokaan Thailand</h4>
-                    <p>Nikmati pasar yang sibuk, percutian pulau
-                        dan masakan mesra halal di Bangkok, Phuket, dan sekitarnya.</p>
-                </div>
-            </div>
-            <div class="tour-card" data-id="england" data-destination="England" data-topics="Food,Culture">
-                <img src="images/London.jpg" alt="England"/>
-                <div class="info">
-                    <h4>Lawatan Warisan London</h4>
-                    <p>Terokai Big Ben, Tower Bridge, dan sejarah British yang kaya dengan
-                        pilihan mesra halal di sekitar bandar.</p>
-                </div>
-            </div>
-            <div class="tour-card" data-id="tanjung_pinang_bintan" data-destination="Tanjung Pinang Bintan" data-topics="Island,Nature">
-                <img src="images/TanjungPinang.jpg" alt="Tanjung Pinang Bintan"/>
-                <div class="info">
-                    <h4>Percutian Tanjung Pinang & Bintan</h4>
-                    <p>Bersantai di pantai-pantai bersih Bintan dan terokai daya tarikan Tanjung Pinang.</p>
+                    <h4>Jelajahi Jepun</h4>
+                    <p>Lawati Kyoto dengan hidangan halal dan keindahan budaya.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="karimun_island" data-destination="Karimun Island" data-topics="Island,Nature">
@@ -485,6 +448,20 @@ label[for="searchFilter"] {
                 <div class="info">
                     <h4>Pengembaraan Pulau Karimun</h4>
                     <p>Alami keindahan semula jadi yang belum terusik dan suasana tenang Pulau Karimun.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="korea" data-destination="Korea" data-topics="Culture,Nature">
+                <img src="images/Korea.jpg" alt="Korea"/>
+                <div class="info">
+                    <h4>Lawatan Musim Luruh Korea</h4>
+                    <p>Nikmati musim Korea dengan perjalanan kumpulan terpilih.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="langkawi" data-destination="Langkawi" data-topics="Island,Nature">
+                <img src="images/Langkawi.jpg" alt="Langkawi"/>
+                <div class="info">
+                    <h4>Syurga Pulau Langkawi</h4>
+                    <p>Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi, dan membeli-belah bebas cukai.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="sabah" data-destination="Sabah" data-topics="Nature,Culture">
@@ -501,18 +478,41 @@ label[for="searchFilter"] {
                     <p>Temui budaya asli dan keajaiban semula jadi Sarawak.</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="langkawi" data-destination="Langkawi" data-topics="Island,Nature">
-                <img src="images/Langkawi.jpg" alt="Langkawi"/>
+            <div class="tour-card" data-id="tanjung_pinang_bintan" data-destination="Tanjung Pinang Bintan" data-topics="Island,Nature">
+                <img src="images/TanjungPinang.jpg" alt="Tanjung Pinang Bintan"/>
                 <div class="info">
-                    <h4>Syurga Pulau Langkawi</h4>
-                    <p>Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi, dan membeli-belah bebas cukai.</p>
+                    <h4>Percutian Tanjung Pinang & Bintan</h4>
+                    <p>Bersantai di pantai-pantai bersih Bintan dan terokai daya tarikan Tanjung Pinang.</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="hat_yai" data-destination="Hat Yai" data-topics="Culture,Food">
-                <img src="images/Hatyai.png" alt="Hat Yai"/>
+            <div class="tour-card" data-id="thailand" data-destination="Thailand" data-topics="Food,Culture">
+                <img src="images/Thailand.jpg" alt="Thailand"/>
                 <div class="info">
-                    <h4>Keindahan Bandar Hat Yai</h4>
-                    <p>Terokai pasar Hat Yai yang sibuk, kuil, dan makanan jalanan yang lazat.</p>
+                    <h4>Lawatan Penerokaan Thailand</h4>
+                    <p>Nikmati pasar yang sibuk, percutian pulau
+                        dan masakan mesra halal di Bangkok, Phuket, dan sekitarnya.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="turki" data-destination="Turki" data-topics="Culture,Food">
+                <img src="images/Turki.jpg" alt="Turki"/>
+                <div class="info">
+                    <h4>Melancong ke Turki</h4>
+                    <p>Terokai Istanbul, Cappadocia, dan tapak bersejarah.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="umrah" data-destination="Umrah" data-topics="Culture">
+                <img src="images/Umrah.jpg" alt="Umrah"/>
+                <div class="info">
+                    <h4>Perjalanan Umrah</h4>
+                    <p>Pakej Umrah lengkap dengan bimbingan keagamaan.</p>
+                </div>
+            </div>
+            <div class="tour-card" data-id="vietnam" data-destination="Vietnam" data-topics="Nature,Food,Culture">
+                <img src="images/Vietnam.jpg" alt="Vietnam"/>
+                <div class="info">
+                    <h4>Perjalanan Budaya Vietnam</h4>
+                    <p>Temui warisan kaya Vietnam, pemandangan indah dan pengalaman mesra halal
+                        di seluruh Hanoi dan Ho Chi Minh City.</p>
                 </div>
             </div>
         </div>
