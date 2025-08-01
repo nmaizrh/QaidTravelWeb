@@ -11,5 +11,5 @@
       <img src="images/Facebook.png" alt="Facebook">
     </a>
   </div>
-  <p>&copy; 2019-2025 Qaid Travel Sdn Bhd. All rights reserved.</p>
+  <p>&copy; 2019-2025 Qaid Travel Sdn Bhd. Semua hak terpelihara.</p>
 </footer>
