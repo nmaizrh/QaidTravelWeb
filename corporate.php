@@ -407,19 +407,18 @@ label[for="searchFilter"] {
 
     <div style="display: flex; flex-direction: column; flex-grow: 1;">
         <div class="tour-list" id="tourList">
-            <div class="tour-card" data-id="batam" data-destination="Batam" data-topics="Island,Nature">
-                <img src="images/Batam.jpeg" alt="Batam"/>
+            <div class="tour-card" data-id="newZealand" data-destination="newZealand" data-topics="Island,Nature">
+                <img src="images/NewZealand.jpg" alt="Batam"/>
                 <div class="info">
                     <h4>Lawatan Kerja ke New Zealand</h4>
                     <p>Lawatan bersama Majlis Perbandaran Alor Gajah (MPAG)</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="england" data-destination="England" data-topics="Food,Culture">
-                <img src="images/London.jpg" alt="England"/>
+            <div class="tour-card" data-id="newYork" data-destination="newYork" data-topics="Food,Culture">
+                <img src="images/London.jpg" alt="newYork"/>
                 <div class="info">
-                    <h4>Lawatan Warisan London</h4>
-                    <p>Terokai Big Ben, Tower Bridge, dan sejarah British yang kaya dengan
-                        pilihan mesra halal di sekitar bandar.</p>
+                    <h4>Lawatan ke New York</h4>
+                    <p>Perbadanan Ketua Negeri Melaka (CMI) dan Jabatan Kerja Raya Negeri Melaka (JKR)</p>
                 </div>
             </div>
             <div class="tour-card" data-id="hat_yai" data-destination="Hat Yai" data-topics="Culture,Food">
@@ -707,29 +706,29 @@ label[for="searchFilter"] {
             ]
         },
         england: {
-            title: "Lawatan Warisan London & UK",
-            intro: "Temui mercu tanda ikonik dan sejarah kaya London dan sekitarnya. Menawarkan perjalanan budaya dengan pilihan untuk hidangan yang bersesuaian.",
+            title: "Lawatan Kerja New York",
+            intro: "Alami kehebatan kota metropolitan New York melalui lawatan kerja dan lawatan ikonik seperti Statue of Liberty, Times Square dan pelbagai lagi.",
             image: "images/London.jpg",
             packages: [
-                "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel pusat bandar",
-                "<strong>Lawatan penuh ke tempat menarik</strong> di London (Big Ben, Tower Bridge, Muzium British, Istana Buckingham) dan pilihan ke bandar lain seperti Manchester atau Edinburgh.",
+                "<strong>Tiket penerbangan pergi balik</strong> Emirates Airlines (Transit Dubai)",
+                "<strong>Penginapan</strong> di AKA Times Square dan Aura Hotel Times Square",
+                "<strong>Lawatan kerja</strong> ke Acrow Corporation & Konsulat Malaysia di New York",
+                "<strong>Lawatan pelancongan</strong> termasuk Statue of Liberty, Times Square, Rockefeller Center",
                 "Pilihan <strong>restoran</strong> yang pelbagai",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
-                "Pengangkutan awam (kereta api, bas) dan pengangkutan persendirian untuk lawatan tertentu"
+                "Pengangkutan disediakan sepanjang program."
             ],
             gallery: [
-                { src: "images/london_gallery/BigBen.jpg", name: "Big Ben", description: "Menara jam ikonik di sebelah Bangunan Parlimen." },
-                { src: "images/london_gallery/TowerBridge.jpg", name: "Tower Bridge", description: "Jambatan mercu tanda terkenal di atas Sungai Thames." },
-                { src: "images/london_gallery/BuckinghamPalace.jpg", name: "Istana Buckingham", description: "Kediaman rasmi Raja United Kingdom." },
-                { src: "images/london_gallery/LondonEye.jpg", name: "London Eye", description: "Roda Ferris gergasi di South Bank Sungai Thames." },
+                { src: "images/london_gallery/BigBen.jpg", name: "Statue of Liberty", description: "Ikon kebebasan dan simbol terkenal Amerika Syarikat." },
+                { src: "images/london_gallery/TowerBridge.jpg", name: "Times Square", description: "Pusat hiburan dan cahaya neon di tengah bandar New York." },
+                { src: "images/london_gallery/BuckinghamPalace.jpg", name: "Brooklyn Bridge", description: "Jambatan ikonik yang menghubungkan Manhattan dan Brooklyn." },
             ]
         },
         // New tour data added below
         batam: {
             title: "Lawatan Kerja New Zealand",
             intro: "Terokai keindahan New Zealand dengan gabungan pemandangan semula jadi menakjubkan, budaya Maori yang unik dan pengalaman bandar moden dari Auckland hingga Queenstown.",
-            image: "images/Batam.jpeg",
+            image: "images/NewZ.jpg",
             packages: [
                 "<strong>Tiket penerbangan antarabangsa & domestik</strong>",
                 "<strong>Penginapan</strong> di hotel bertaraf 3–4 bintang",
