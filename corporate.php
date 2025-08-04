@@ -410,8 +410,8 @@ label[for="searchFilter"] {
             <div class="tour-card" data-id="batam" data-destination="Batam" data-topics="Island,Nature">
                 <img src="images/Batam.jpeg" alt="Batam"/>
                 <div class="info">
-                    <h4>Percutian Pulau Batam</h4>
-                    <p>Temui pantai Batam, membeli-belah, dan kehidupan malam yang meriah.</p>
+                    <h4>Lawatan Kerja ke New Zealand</h4>
+                    <p>Lawatan bersama Majlis Perbandaran Alor Gajah (MPAG)</p>
                 </div>
             </div>
             <div class="tour-card" data-id="england" data-destination="England" data-topics="Food,Culture">
@@ -727,20 +727,20 @@ label[for="searchFilter"] {
         },
         // New tour data added below
         batam: {
-            title: "Percutian Pulau Batam",
-            intro: "Temui pulau Batam yang meriah dan terkenal dengan pantai-pantai indah, membeli-belah bebas cukai dan hiburan.",
+            title: "Lawatan Kerja New Zealand",
+            intro: "Terokai keindahan New Zealand dengan gabungan pemandangan semula jadi menakjubkan, budaya Maori yang unik dan pengalaman bandar moden dari Auckland hingga Queenstown.",
             image: "images/Batam.jpeg",
             packages: [
-                "<strong>Tiket feri pergi balik</strong>",
-                "<strong>Penginapan</strong> di resort atau hotel pilihan",
-                "<strong>Lawatan bandar</strong> termasuk Nagoya Hill dan Enggal Batam",
-                "<strong>Makanan</strong> tempatan yang lazat",
-                "Pengangkutan disediakan"
+                "<strong>Tiket penerbangan antarabangsa & domestik</strong>",
+                "<strong>Penginapan</strong> di hotel bertaraf 3–4 bintang",
+                "<strong>Lawatan bandar dan semula jadi</strong> seperti Auckland Sky Tower, Milford Sound Cruise dan Hobbiton Village",
+                "<strong>Makanan</strong> halal disediakan termasuk buffet Maori Cultural Experienc",
+                "Pengangkutan disediakan sepanjang lawatan"
             ],
             gallery: [
-                { src: "images/batam_gallery/BatamBeach.jpg", name: "Pantai dan Pesisir Nongsa", description: "Bersantai di pantai berpasir Batam." },
-                { src: "images/batam_gallery/NagoyaHillShoppingMall.jpg", name: "Pusat Beli-belah Nagoya Hill", description: "Nikmati membeli-belah bebas cukai dan hiburan." },
-                { src: "images/batam_gallery/barelang.jpg", name: "Barelang Bridge", description: "Ikon terkenal di Batam yang menghubungkan beberapa pulau utama dan menawarkan pemandangan indah terutama saat matahari terbenam." }
+                { src: "images/batam_gallery/BatamBeach.jpg", name: "Auckland Sky Tower", description: "Nikmati pemandangan 360° bandar Auckland dari menara ikonik ini." },
+                { src: "images/batam_gallery/NagoyaHillShoppingMall.jpg", name: "Hobbiton Village", description: "Lawati lokasi penggambaran filem terkenal 'The Hobbit' dan 'The Lord of the Rings'" },
+                { src: "images/batam_gallery/barelang.jpg", name: "Milford Sound Cruise", description: "Pelayaran 2 jam melihat fjord, air terjun dan alam semula jadi yang memukau di South Island." }
             ]
         },
         tanjung_pinang_bintan: {
