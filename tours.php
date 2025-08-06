@@ -458,7 +458,7 @@ label[for="searchFilter"] {
                 </div>
             </div>
             <div class="tour-card" data-id="kotakinabaluKundasang" data-destination="Kota Kinabalu & Kundasang" data-topics="Nature,Culture,Highlands">
-                <img src="images/Kotakinabalu.jpg" alt="Kota Kinabalu & Kundasang"/>
+                <img src="images/Kinabalu.jpg" alt="Kota Kinabalu & Kundasang"/>
                 <div class="info">
                     <h4>Lawatan Kota Kinabalu & Kundasang</h4>
                     <p>Rasai keindahan alam semula jadi serta suasana tanah tinggi yang nyaman dan warisan budaya di Sabah.</p>
@@ -468,7 +468,7 @@ label[for="searchFilter"] {
                 <img src="images/Langkawi.jpg" alt="Langkawi"/>
                 <div class="info">
                     <h4>Syurga Pulau Langkawi</h4>
-                    <p>Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi, dan membeli-belah bebas cukai.</p>
+                    <p>Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi dan membeli-belah bebas cukai.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="semporna" data-destination="Semporna" data-topics="Island,Marine,Nature">
@@ -790,7 +790,7 @@ label[for="searchFilter"] {
         kotakinabaluKundasang: {
             title: "Lawatan Indah ke Kota Kinabalu & Kundasang",
             intro: "Alami keindahan semula jadi Sabah dari pantai yang memukau di Kota Kinabalu ke udara sejuk tanah tinggi Kundasang yang menenangkan.",
-            image: "images/Kotakinabalu.jpg",
+            image: "images/Kinabalu.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel atau resort di Kota Kinabalu dan Kundasang",
