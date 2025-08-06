@@ -459,18 +459,18 @@
                     <p>Lawatan bersama Unit Dewan dan MMKN Melaka</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="korea" data-destination="Korea" data-topics="Culture,Nature">
-                <img src="images/Korea.jpg" alt="Korea"/>
+            <div class="tour-card" data-id="shanghai" data-destination="Shanghai" data-topics="Culture,Nature">
+                <img src="images/Shanghai.jpg" alt="Shanghai"/>
                 <div class="info">
-                    <h4>Lawatan Musim Luruh Korea</h4>
-                    <p>Nikmati musim Korea dengan perjalanan kumpulan terpilih.</p>
+                    <h4>Lawatan Kerja Rasmi ke Shanghai Sempena Autoshow Shanghai 2025</h4>
+                    <p>Lawatan bersama Perbadanan Melaka (MCORP)</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="langkawi" data-destination="Langkawi" data-topics="Island,Nature">
-                <img src="images/Langkawi.jpg" alt="Langkawi"/>
+            <div class="tour-card" data-id="germany" data-destination="Germany" data-topics="Island,Nature">
+                <img src="images/Germany.jpg" alt="Germany"/>
                 <div class="info">
-                    <h4>Syurga Pulau Langkawi</h4>
-                    <p>Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi, dan membeli-belah bebas cukai.</p>
+                    <h4>Lawatan Korporat ke Germany-Netherlands</h4>
+                    <p>Lawatan bersama Melaka ICT Holdings, Perbadanan Muzium Melaka dan Putra Specialist Hospital</p>
                 </div>
             </div>
             <div class="tour-card" data-id="sabah" data-destination="Sabah" data-topics="Nature,Culture">
@@ -487,11 +487,11 @@
                     <p>Temui budaya asli dan keajaiban semula jadi Sarawak.</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="tanjung_pinang_bintan" data-destination="Tanjung Pinang Bintan" data-topics="Island,Nature">
-                <img src="images/TanjungPinang.jpg" alt="Tanjung Pinang Bintan"/>
+            <div class="tour-card" data-id="bintan" data-destination="Bintan" data-topics="Island,Nature">
+                <img src="images/Bintan.jpg" alt="Bintan"/>
                 <div class="info">
-                    <h4>Percutian Tanjung Pinang & Bintan</h4>
-                    <p>Bersantai di pantai-pantai bersih Bintan dan terokai daya tarikan Tanjung Pinang.</p>
+                    <h4>Lawatan Korporat ke Bintan</h4>
+                    <p>Lawatan bersama Majlis Pengetua Sekolah Malaysia (Cawangan Melaka)</p>
                 </div>
             </div>
             <div class="tour-card" data-id="thailand" data-destination="Thailand" data-topics="Food,Culture">
@@ -618,23 +618,23 @@
                 { src: "images/japan_gallery/Arashiyama.jpg", name: "Hutan Buluh Arashiyama - Kyoto", description: "Hutan buluh yang tenang serta keajaiban alam." }
             ]
         },
-        korea: {
-            title: "Lawatan Musim Luruh Korea: Pengalaman Halal yang Indah",
-            intro: "Alami warna musim luruh yang meriah dan warisan budaya yang kaya di Korea Selatan dengan jadual perjalanan yang direka khas untuk pelancong Muslim.",
-            image: "images/Korea.jpg",
+        shanghai: {
+            title: "Lawatan Korporat ke Shanghai: Autoshow 2025",
+            intro: "Alami pameran automotif antarabangsa terbesar sambil meneroka inovasi dan teknologi terkini di Shanghai.",
+            image: "images/Shanghai.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel selesa",
-                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Pulau Nami, Istana Gyeongbokgung, Menara Seoul dan banyak lagi",
-                "<strong>Makanan</strong> yang lazat dan pelbagai",
-                "<strong>Pemandu pelancong berpengalaman</strong>",
-                "Pengangkutan disediakan"
+                "<strong>Penginapan</strong> di hotel bertaraf antarabangsa",
+                "<strong>Akses ke Shanghai Autoshow 2025</strong> termasuk pameran teknologi dan forum industri",
+                "<strong>Lawatan ke tempat menarik</strong> seperti The Bund, Oriental Pearl Tower dan kawasan membeli-belah Nanjing Road",
+                "<strong>Makanan</strong> tempatan dan halal tersedia",
+                "Pengangkutan persendirian sepanjang lawatan"
             ],
             gallery: [
-                { src: "images/korea_gallery/NamiIsland.jpg", name: "Pulau Nami", description: "Sebuah pulau berbentuk separuh bulan yang indah yang terkenal dengan keindahan semula jadi." },
-                { src: "images/korea_gallery/SeoulTower.jpg", name: "Menara N Seoul", description: "Mercu tanda ikonik yang menawarkan pemandangan panorama Seoul." },
-                { src: "images/korea_gallery/Gyeongbokgung.jpg", name: "Istana Gyeongbokgung", description: "Istana terbesar dari Lima Istana Besar yang dibina semasa Dinasti Joseon." },
-                { src: "images/korea_gallery/KoreanFood.jpg", name: "Masakan Halal Korea", description: "Menikmati hidangan halal yang lazat dan pelbagai di Korea." },
+                { src: "images/shanghai_gallery/NamiIsland.jpg", name: "Pulau Nami", description: "Sebuah pulau berbentuk separuh bulan yang indah yang terkenal dengan keindahan semula jadi." },
+                { src: "images/shanghai_gallery/SeoulTower.jpg", name: "Menara N Seoul", description: "Mercu tanda ikonik yang menawarkan pemandangan panorama Seoul." },
+                { src: "images/shanghai_gallery/Gyeongbokgung.jpg", name: "Istana Gyeongbokgung", description: "Istana terbesar dari Lima Istana Besar yang dibina semasa Dinasti Joseon." },
+                { src: "images/shanghai_gallery/KoreanFood.jpg", name: "Masakan Halal Korea", description: "Menikmati hidangan halal yang lazat dan pelbagai di Korea." },
             ]
         },
         turki: {
@@ -752,10 +752,10 @@
                 { src: "images/batam_gallery/barelang.jpg", name: "Jambatan Barelang", description: "Ikon terkenal di Batam yang menghubungkan beberapa pulau utama dan menawarkan pemandangan indah terutama saat matahari terbenam." }
             ]
         },
-        tanjung_pinang_bintan: {
+        bintan: {
             title: "Percutian Tanjung Pinang & Bintan",
             intro: "Alami keindahan tenang pantai-pantai bersih Bintan dan daya tarikan bersejarah Tanjung Pinang, Indonesia.",
-            image: "images/TanjungPinang.jpg",
+            image: "images/Bintan.jpg",
             packages: [
                 "<strong>Tiket feri pergi balik</strong>",
                 "<strong>Penginapan</strong> di resort disediakan",
@@ -842,22 +842,22 @@
                 { src: "images/sarawak_gallery/pusatSemenggoh.jpg", name: "Pusat Hidupan Liar Semenggoh", description: "Pusat rehabilitasi untuk orangutan separa liar." }
             ]
         },
-        langkawi: {
-            title: "Syurga Pulau Langkawi",
-            intro: "Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi dan membeli-belah bebas cukai.",
-            image: "images/Langkawi.jpg",
+        germany: {
+            title: "Lawatan Korporat Eropah: Germany & Netherlands",
+            intro: "Terokai keindahan budaya, seni bina klasik dan suasana moden di Jerman dan Belanda dalam lawatan yang penuh pengalaman bermakna.",
+            image: "images/Germany.jpg",
             packages: [
-                "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di resort pilihan",
-                "<strong>Lawatan ke Jambatan Gantung Langkawi</strong>, Underwater World Langkawi dan Dataran Helang",
-                "<strong>Pelbagai makanan</strong> yang lazat",
+                "<strong>Tiket penerbangan antarabangsa pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel bertaraf antarabangsa",
+                "<strong>Lawatan ke lokasi ikonik</strong> seperti Brandenburg Gate, Cologne Cathedral, Zaanse Schans dan Amsterdam Canal Cruise",
+                "<strong>Makanan</strong> tempatan dan halal tersedia",
                 "Pemandu pelancong berpengalaman",
-                "Pengangkutan disediakan"
+                "Pengangkutan persendirian sepanjang lawatan"
             ],
             gallery: [
-                { src: "images/langkawi_gallery/SkyBridge.jpg", name: "Jambatan Gantung Langkawi", description: "Jambatan pejalan kaki 660 meter di atas paras laut." },
-                { src: "images/langkawi_gallery/EagleSquare.jpg", name: "Dataran Helang", description: "Dataran helang yang menjadi simbol ikonik Langkawi dan menjadi lokasi wajib bergambar."},
-                { src: "images/langkawi_gallery/telaga.jpg", name: "Air Terjun Telaga Tujuh", description: "Air terjun tujuh peringkat yang mempesona dan dikelilingi oleh alam semula jadi yang menghijau."}
+                { src: "images/germany_gallery/SkyBridge.jpg", name: "Jambatan Gantung Langkawi", description: "Jambatan pejalan kaki 660 meter di atas paras laut." },
+                { src: "images/germany_gallery/EagleSquare.jpg", name: "Dataran Helang", description: "Dataran helang yang menjadi simbol ikonik Langkawi dan menjadi lokasi wajib bergambar."},
+                { src: "images/germany_gallery/telaga.jpg", name: "Air Terjun Telaga Tujuh", description: "Air terjun tujuh peringkat yang mempesona dan dikelilingi oleh alam semula jadi yang menghijau."}
             ]
         },
         hat_yai: {
