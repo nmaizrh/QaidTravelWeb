@@ -612,10 +612,10 @@ label[for="searchFilter"] {
                 "Pengangkutan awam yang efisien (termasuk Shinkansen/Kereta api laju)"
             ],
             gallery: [
-                { src: "images/japan_gallery/Fuji.jpg", name: "Gunung Fuji", description: "Gunung suci ikonik Jepun." },
-                { src: "images/japan_gallery/KyotoTemple.jpg", name: "Kuil Kinkaku-ji (Kyoto)", description: "Pavilion Emas dan kuil Buddha Zen yang menakjubkan." },
-                { src: "images/japan_gallery/Shibuya.jpg", name: "Lintasan Shibuya (Tokyo)", description: "Salah satu persimpangan paling sibuk di dunia." },
-                { src: "images/japan_gallery/Arashiyama.jpg", name: "Hutan Buluh Arashiyama (Kyoto)", description: "Hutan buluh yang tenang serta keajaiban alam." },
+                { src: "images/japan_gallery/Kobe.png", name: "Kobe Harborland - Kobe", description: "Kawasan pelabuhan moden dengan pemandangan malam yang menakjubkan, pusat beli-belah dan tempat santai tepi laut." },
+                { src: "images/japan_gallery/KyotoTemple.jpg", name: "Kuil Kinkaku-ji - Kyoto", description: "Pavilion Emas dan kuil Buddha Zen yang menakjubkan." },
+                { src: "images/japan_gallery/universal.jpg", name: "Universal Studio Japan - Osaka", description: "Taman tema popular dengan tarikan filem terkenal, pertunjukan langsung dan pengalaman hiburan untuk semua peringkat umur." },
+                { src: "images/japan_gallery/Arashiyama.jpg", name: "Hutan Buluh Arashiyama - Kyoto", description: "Hutan buluh yang tenang serta keajaiban alam." }
             ]
         },
         korea: {
