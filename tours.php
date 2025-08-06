@@ -59,6 +59,10 @@
         color: #b62626;
     }
 
+    .filter-group label[for="searchFilter"] {
+        color: black !important;
+    }
+
     .filter-group {
         margin-bottom: 20px;
     }
@@ -423,6 +427,13 @@
                     <p>Temui pantai Batam, membeli-belah, dan kehidupan malam yang meriah.</p>
                 </div>
             </div>
+            <div class="tour-card" data-id="bangkok" data-destination="Bangkok" data-topics="Culture,Shopping,City">
+                <img src="images/Bangkok.jpg" alt="Bangkok"/>
+                <div class="info">
+                    <h4>Percutian Menarik ke Bangkok</h4>
+                    <p>Alami keunikan budaya Thai, syurga membeli-belah dan destinasi pelancongan popular di Bangkok.</p>
+                </div>
+            </div>
             <div class="tour-card" data-id="england" data-destination="England" data-topics="Food,Culture">
                 <img src="images/London.jpg" alt="England"/>
                 <div class="info">
@@ -683,6 +694,26 @@
                 // Bandung Places
                 { src: "images/jakarta_gallery/KawahPutih.jpg", name: "Kawah Putih", description: "Tasik kawah berwarna putih kehijauan yang menakjubkan di puncak gunung Bandung." },
                 { src: "images/jakarta_gallery/Farmhouse.jpg", name: "Farmhouse Lembang", description: "Tarikan keluarga dengan suasana desa Eropah serta haiwan jinak dan spot bergambar menarik." }
+            ]
+        },
+        bangkok: {
+            title: "Percutian Menarik ke Bangkok",
+            intro: "Alami keunikan budaya Thai, pasar malam yang meriah, makanan halal yang lazat serta destinasi pelancongan popular di Bangkok.",
+            image: "images/Bangkok.jpg", 
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel pilihan di Bangkok",
+                "<strong>Lawatan ke mercu tanda utama</strong> seperti Wat Phra Chetuphon (Wat Pho), Grand Palace, dan Asiatique The Riverfront",
+                "<strong>Aktiviti membeli-belah</strong> di Chatuchak Weekend Market dan MBK Center",
+                "<strong>Makanan</strong> halal dan tempatan disediakan",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan persendirian sepanjang lawatan"
+            ],
+            gallery: [
+                { src: "images/bangkok_gallery/BeeFarm.jpg", name: "Bee Farm", description: "Pelajari proses penghasilan madu dan produk berasaskan lebah." },
+                { src: "images/bangkok_gallery/ICONSIAM.jpg", name: "ICONSIAM", description: "Pusat beli-belah mewah di tepi sungai dengan pelbagai jenama antarabangsa." },
+                { src: "images/bangkok_gallery/WatArun.jpg", name: "Wat Arun", description: "Kuil terkenal dengan seni bina indah di tebing Sungai Chao Phraya." },
+                { src: "images/bangkok_gallery/ErawadeeHerb.jpeg", name: "Erawadee Herb Shop", description: "Kedai ubatan tradisional Thailand yang popular dalam kalangan pelancong." }
             ]
         },
         vietnam: {
