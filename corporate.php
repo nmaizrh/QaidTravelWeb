@@ -198,6 +198,10 @@
         background-color: #8e1d1d;
     }
 
+    .filter-group label[for="searchFilter"] {
+        color: black !important;
+    }
+
     .filter-group select {
         width: 100%;
         padding: 10px;
