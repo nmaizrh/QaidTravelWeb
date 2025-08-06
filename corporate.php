@@ -439,7 +439,7 @@ label[for="searchFilter"] {
                 <img src="images/Japan.jpg" alt="Japan"/>
                 <div class="info">
                     <h4>Jelajahi Jepun</h4>
-                    <p>Lawati Kyoto dengan hidangan halal dan keindahan budaya.</p>
+                    <p>Lawatan bersama Perbadanan Ketua Negeri Melaka (CMI)</p>
                 </div>
             </div>
             <div class="tour-card" data-id="karimun_island" data-destination="Karimun Island" data-topics="Island,Nature">
