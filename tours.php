@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
 <style>
     /* Existing CSS from your file */
-        body {
+    body {
         font-family: 'Segoe UI', sans-serif;
         margin: 0;
         padding: 0;
@@ -63,79 +63,78 @@
         margin-bottom: 20px;
     }
 
- .filter-group label {
-     display: block;
-     margin-bottom: 10px;
+    .filter-group label {
+        display: block;
+        margin-bottom: 10px;
     }
 
-.filter-group #searchFilter { /* Targeting the search input itself */
-    padding: 8px 12px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 2px solid #b62626; /* Matches your select border color */
-    background-color: #fff;
-    color: #333; /* Color of the text typed inside the search box */
-    width: 1000px; /* Adjust width as needed */
-    max-width: 100%; /* Ensure it's responsive */
-    box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.search-btn {
-    background-color: #b62626; /* Matches your primary red color */
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-left: 10px; /* Space from the input field */
-}
-
-.search-btn:hover {
-    background-color: #7c1919; /* Darker red on hover */
-    transform: scale(1.02);
-}
-
-/* Responsive adjustments for the filter group with the button */
-@media (max-width: 768px) {
-    .filter-group {
-        flex-direction: column; /* Stack label, input, and button on small screens */
-        align-items: flex-start;
-        gap: 5px;
+    .filter-group #searchFilter { /* Targeting the search input itself */
+        padding: 8px 12px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 2px solid #b62626; /* Matches your select border color */
+        background-color: #fff;
+        color: #333; /* Color of the text typed inside the search box */
+        width: 92%; /* Changed to 100% for responsiveness */
+        max-width: 100%; /* Ensure it's responsive */
+        box-sizing: border-box;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .filter-group .search-btn {
-        margin-top: 10px; /* Space from input when stacked */
-        margin-left: 0; /* Remove left margin when stacked */
-        width: 100%; /* Full width button on small screens */
+    .search-btn {
+        background-color: #b62626; /* Matches your primary red color */
+        color: #fff;
+        padding: 10px 15px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin-left: 10px; /* Space from the input field */
     }
-}
 
-.filter-group #searchFilter:focus {
-    outline: none;
-    border-color: #5d0c0c;
-    box-shadow: 0 0 5px rgba(182, 38, 38, 0.5);
-}
-
-/* Specific styling for the search input's LABEL */
-label[for="searchFilter"] {
-    color: white; /* Explicitly set the search label text to white */
-    /* You can add or override other properties here if needed for just this label */
-}
-
-/* Responsive adjustments for the search filter */
-@media (max-width: 768px) {
-    .filter-group {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
+    .search-btn:hover {
+        background-color: #7c1919; /* Darker red on hover */
+        transform: scale(1.02);
     }
-    .filter-group #searchFilter {
-        width: 100%;
+
+    /* Responsive adjustments for the filter group with the button */
+    @media (max-width: 768px) {
+        .filter-group {
+            flex-direction: column; /* Stack label, input, and button on small screens */
+            align-items: flex-start;
+            gap: 5px;
+        }
+
+        .filter-group .search-btn {
+            margin-top: 10px; /* Space from input when stacked */
+            margin-left: 0; /* Remove left margin when stacked */
+            width: 100%; /* Full width button on small screens */
+        }
     }
-}
+
+    .filter-group #searchFilter:focus {
+        outline: none;
+        border-color: #5d0c0c;
+        box-shadow: 0 0 5px rgba(182, 38, 38, 0.5);
+    }
+
+    /* Specific styling for the search input's LABEL */
+    label[for="searchFilter"] {
+        color: #333; /* Changed to dark color for readability */
+    }
+
+    /* Responsive adjustments for the search filter */
+    @media (max-width: 768px) {
+        .filter-group {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+        }
+        .filter-group #searchFilter {
+            width: 100%;
+        }
+    }
 
     @media (max-width: 900px) {
         .tours-container {
@@ -332,7 +331,7 @@ label[for="searchFilter"] {
         color: #666;
     }
 
-    /* --- Pagination Styles --- */
+    /* --- Pagination Styles (Updated to match corporate.php) --- */
     .pagination {
         display: flex;
         justify-content: center;
@@ -340,28 +339,38 @@ label[for="searchFilter"] {
         margin-top: 40px;
         padding: 10px;
         background-color: transparent;
+        box-shadow: none; /* Removed shadow for a cleaner look */
         border-radius: 8px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
 
     .pagination a {
-        color: #ffffff;
+        color: #333; /* Darker text color */
         padding: 8px 16px;
         text-decoration: none;
         transition: background-color 0.3s;
         border-radius: 5px;
         margin: 0 5px;
         font-weight: bold;
+        border: 1px solid #ddd; /* Added a subtle border */
     }
 
     .pagination a.active {
         background-color: #b62626;
         color: white;
-        border-radius: 5px;
+        border-color: #b62626; /* Match border color to background */
     }
 
     .pagination a:hover:not(.active) {
-        background-color: #ddd; /* Changed from #b62626 to #ddd for a distinct hover effect */
+        background-color: #f0f0f0; /* Light grey hover background */
+        color: #b62626; /* Red text on hover */
+    }
+
+    .pagination a.disabled {
+        color: #ccc;
+        pointer-events: none; /* Disable clicking */
+        cursor: default;
+        background-color: #f9f9f9;
+        border-color: #eee;
     }
 
     .center-text {
@@ -379,7 +388,7 @@ label[for="searchFilter"] {
 <div class="filter-group">
     <h3><label for="searchFilter">Cari Destinasi:</label></h3>
 <input type="text" id="searchFilter" placeholder="Sila cari destinasi yang anda ingin lawati..." />
-<button id="searchButton" class="search-btn">Cari</button> <div id="noResultsMessage" style="display: none; text-align: center; color: #ffffffff; margin-top: 20px; font-weight: bold;">
+<button id="searchButton" class="search-btn">Cari</button> <div id="noResultsMessage" style="display: none; text-align: center; color: #333; margin-top: 20px; font-weight: bold;">
     Tiada destinasi ditemui untuk carian anda.
 </div>
 </div>
@@ -536,11 +545,11 @@ label[for="searchFilter"] {
         
         <h4>Pakej yang Kami Sediakan:</h4>
         <ul id="modalPackageList" class="modal-package-list">
-            </ul>
+        </ul>
 
         <h4>Galeri:</h4>
         <div id="modalGallery" class="modal-gallery">
-            </div>
+        </div>
 
         <div class="show-all-container" style="margin-top: 30px;">
             <a href="contact.php" class="show-all-btn" id="modalInquireBtn">Inquire About This Tour</a>
@@ -551,7 +560,7 @@ label[for="searchFilter"] {
 <script>
     const destinationFilter = document.getElementById('destination');
     const topicCheckboxes = document.querySelectorAll('.filter-group input[type="checkbox"]');
-    const allTourCards = document.querySelectorAll('.tour-card'); // Use a new name for the original list
+    const allTourCards = document.querySelectorAll('.tour-card');
     const paginationContainer = document.getElementById('pagination');
 
     // Modal Elements
@@ -564,15 +573,13 @@ label[for="searchFilter"] {
     const modalGallery = document.getElementById('modalGallery');
     const modalInquireBtn = document.getElementById('modalInquireBtn');
     const searchFilter = document.getElementById('searchFilter');
-    const searchButton = document.getElementById('searchButton'); // Get the new search button
+    const searchButton = document.getElementById('searchButton');
     const noResultsMessage = document.getElementById('noResultsMessage');
 
     // Pagination variables
-    const toursPerPage = 6; // Number of tours to display per page
+    const toursPerPage = 6;
     let currentPage = 1;
-    let filteredTourCards = []; // Stores the currently filtered tour cards
-
-    
+    let filteredTourCards = [];
 
     // 🌟 Define detailed tour data here 🌟
     // This can be fetched from a database in a more complex setup
@@ -615,7 +622,7 @@ label[for="searchFilter"] {
                 { src: "images/japan_gallery/Kobe.png", name: "Kobe Harborland - Kobe", description: "Kawasan pelabuhan moden dengan pemandangan malam yang menakjubkan, pusat beli-belah dan tempat santai tepi laut." },
                 { src: "images/japan_gallery/KyotoTemple.jpg", name: "Kuil Kinkaku-ji - Kyoto", description: "Pavilion Emas dan kuil Buddha Zen yang menakjubkan." },
                 { src: "images/japan_gallery/universal.jpg", name: "Universal Studio Japan - Osaka", description: "Taman tema popular dengan tarikan filem terkenal, pertunjukan langsung dan pengalaman hiburan untuk semua peringkat umur." },
-                { src: "images/japan_gallery/Arashiyama.jpg", name: "Hutan Buluh Arashiyama - Kyoto", description: "Hutan buluh yang tenang serta keajaiban alam." }
+                { src: "images/japan_gallery/Arashiyama.jpg", name: "Hutan Buluh Arashiyama - Kyoto", description: "Hutan buluh yang tenang serta keajaiban alam." },
             ]
         },
         korea: {
@@ -659,7 +666,7 @@ label[for="searchFilter"] {
         jakartaBandung: {
             title: "Lawatan Menarik ke Jakarta & Bandung",
             intro: "Alami keunikan gabungan kota metropolitan Jakarta dan suasana tenang Bandung yang penuh dengan sejarah, budaya tempatan dan tarikan mesra Muslim termasuk tempat membeli-belah dan keindahan alam semula jadi.",
-            image: "images/semporna.jpg",
+            image: "images/Jakarta.jpg", 
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel pilihan di Jakarta & Bandung",
@@ -735,7 +742,6 @@ label[for="searchFilter"] {
                 { src: "images/london_gallery/LondonEye.jpg", name: "London Eye", description: "Roda Ferris gergasi di South Bank Sungai Thames." },
             ]
         },
-        // New tour data added below
         batam: {
             title: "Percutian Pulau Batam",
             intro: "Temui pulau Batam yang meriah dan terkenal dengan pantai-pantai indah, membeli-belah bebas cukai dan hiburan.",
@@ -838,9 +844,9 @@ label[for="searchFilter"] {
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/sarawak_gallery/CulturalVillage.jpg", name: "Kampung Budaya Sarawak", description: "Muzium hidup yang mempamerkan pelbagai kumpulan etnik Sarawak." },
+                { src: "images/sarawak_gallery/culturalvillage.jpg", name: "Kampung Budaya Sarawak", description: "Muzium hidup yang mempamerkan pelbagai kumpulan etnik Sarawak." },
                 { src: "images/sarawak_gallery/muluCaves.jpeg", name: "Gua Mulu", description: "Gua batu kapur yang terkenal dengan formasi menakjubkan dan diiktiraf sebagai Tapak Warisan Dunia UNESCO." },
-                { src: "images/sarawak_gallery/pusatSemenggoh.jpg", name: "Pusat Hidupan Liar Semenggoh", description: "Pusat rehabilitasi untuk orangutan separa liar." }
+                { src: "images/sarawak_gallery/semenggoh.jpg", name: "Pusat Hidupan Liar Semenggoh", description: "Pusat rehabilitasi untuk orangutan separa liar." }
             ]
         },
         langkawi: {
@@ -856,8 +862,8 @@ label[for="searchFilter"] {
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/langkawi_gallery/SkyBridge.jpg", name: "Jambatan Gantung Langkawi", description: "Jambatan pejalan kaki 660 meter di atas paras laut." },
-                { src: "images/langkawi_gallery/EagleSquare.jpg", name: "Dataran Helang", description: "Dataran helang yang menjadi simbol ikonik Langkawi dan menjadi lokasi wajib bergambar."},
+                { src: "images/langkawi_gallery/skybridge.jpg", name: "Jambatan Gantung Langkawi", description: "Jambatan pejalan kaki 660 meter di atas paras laut." },
+                { src: "images/langkawi_gallery/eaglesquare.jpg", name: "Dataran Helang", description: "Dataran helang yang menjadi simbol ikonik Langkawi dan menjadi lokasi wajib bergambar."},
                 { src: "images/langkawi_gallery/telaga.jpg", name: "Air Terjun Telaga Tujuh", description: "Air terjun tujuh peringkat yang mempesona dan dikelilingi oleh alam semula jadi yang menghijau."}
             ]
         },
@@ -878,24 +884,91 @@ label[for="searchFilter"] {
                 { src: "images/hatyai_gallery/WatHatYaiNai.jpg", name: "Wat Hat Yai Nai", description: "Mempunyai tempat patung Buddha terbaring yang besar." },
                 { src: "images/hatyai_gallery/central.jpg", name: "Central HatYai", description: "Pusat beli-belah moden yang terkenal di Hatyai yang menempatkan pelbagai jenama antarabangsa, restoran dan hiburan keluarga." }
             ]
+        },
+        newYork: {
+            title: "Lawatan Kerja New York",
+            intro: "Alami kehebatan kota metropolitan New York melalui lawatan kerja dan lawatan ikonik seperti Statue of Liberty, Times Square dan pelbagai lagi.",
+            image: "images/NewYork.jpeg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong> Emirates Airlines (Transit Dubai)",
+                "<strong>Penginapan</strong> di AKA Times Square dan Aura Hotel Times Square",
+                "<strong>Lawatan kerja</strong> ke Acrow Corporation & Konsulat Malaysia di New York",
+                "<strong>Lawatan pelancongan</strong> termasuk Statue of Liberty, Times Square, Rockefeller Center",
+                "Pilihan <strong>restoran</strong> yang pelbagai",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan disediakan sepanjang program."
+            ],
+            gallery: [
+                { src: "images/newyork_gallery/statueofliberty.jpg", name: "Statue of Liberty", description: "Ikon kebebasan dan simbol terkenal Amerika Syarikat." },
+                { src: "images/newyork_gallery/timessquare.jpg", name: "Times Square", description: "Pusat hiburan dan cahaya neon di tengah bandar New York." },
+                { src: "images/newyork_gallery/brooklynbridge.jpg", name: "Brooklyn Bridge", description: "Jambatan ikonik yang menghubungkan Manhattan dan Brooklyn." },
+                { src: "images/newyork_gallery/centralpark.jpg", name: "Central Park", description: "Taman bandar yang luas di tengah Manhattan." },
+            ]
+        },
+        newZealand: {
+            title: "Lawatan Kerja New Zealand",
+            intro: "Terokai keindahan New Zealand dengan gabungan pemandangan semula jadi menakjubkan, budaya Maori yang unik dan pengalaman bandar moden dari Auckland hingga Queenstown.",
+            image: "images/NewZealand.jpg",
+            packages: [
+                "<strong>Tiket penerbangan antarabangsa & domestik</strong>",
+                "<strong>Penginapan</strong> di hotel bertaraf 3–4 bintang",
+                "<strong>Lawatan bandar dan semula jadi</strong> seperti Auckland Sky Tower, Milford Sound Cruise dan Hobbiton Village",
+                "<strong>Makanan</strong> halal disediakan termasuk buffet Maori Cultural Experienc",
+                "Pengangkutan disediakan sepanjang lawatan"
+            ],
+            gallery: [
+                { src: "images/newzealand_gallery/aucklandskytower.jpg", name: "Auckland Sky Tower", description: "Nikmati pemandangan 360° bandar Auckland dari menara ikonik ini." },
+                { src: "images/newzealand_gallery/hobbiton.jpg", name: "Hobbiton Village", description: "Lawati lokasi penggambaran filem terkenal 'The Hobbit' dan 'The Lord of the Rings'" },
+                { src: "images/newzealand_gallery/milfordsound.jpg", name: "Milford Sound Cruise", description: "Pelayaran 2 jam melihat fjord, air terjun dan alam semula jadi yang memukau di South Island." },
+                { src: "images/newzealand_gallery/queenstown.jpg", name: "Queenstown", description: "Pusat pengembaraan dengan pemandangan gunung dan tasik yang menakjubkan." }
+            ]
+        },
+        barbados: {
+            title: "Lawatan Korporat ke Barbados",
+            intro: "Alami keindahan pulau tropika Barbados dengan suasana profesional yang sesuai untuk lawatan korporat, rangkaian perniagaan dan relaksasi pantai.",
+            image: "images/barbados.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel bertaraf antarabangsa",
+                "<strong>Lawatan lawatan rasmi dan rangkaian profesional</strong> dengan agensi atau syarikat tempatan",
+                "<strong>Aktiviti santai</strong> seperti lawatan ke pantai dan mercu tanda ikonik",
+                "<strong>Makanan</strong> tempatan dan antarabangsa disediakan",
+                "Pengangkutan persendirian sepanjang lawatan"
+            ],
+            gallery: [
+                { src: "images/barbados_gallery/crane_beach.jpg", name: "Crane Beach", description: "Terkenal dengan pasir merah jambu dan air biru." },
+                { src: "images/barbados_gallery/bridgetown.jpg", name: "Bridgetown", description: "Ibu kota bersejarah dengan seni bina kolonial yang menawan." },
+                { src: "images/barbados_gallery/harrison_cave.jpg", name: "Harrison's Cave", description: "Sistem gua batu kapur yang menakjubkan." }
+            ]
         }
     };
 
-
-    function populateDestinations() {
+    // Function to populate and sort the destination dropdown
+    function populateDestinationFilter() {
         const destinations = new Set();
         allTourCards.forEach(card => {
-            destinations.add(card.dataset.destination);
+            // Ensure data-destination is consistently capitalized for sorting
+            const destination = card.dataset.destination;
+            if (destination) {
+                destinations.add(destination);
+            }
         });
-        destinations.forEach(dest => {
+
+        // Convert the Set to an Array and sort it alphabetically
+        const sortedDestinations = Array.from(destinations).sort((a, b) => a.localeCompare(b, 'ms')); // 'ms' for Malay locale
+
+        // Clear existing options, but keep the default one if it exists, or add it.
+        // Ensure the default "Semua Destinasi" is always first.
+        destinationFilter.innerHTML = '<option value="">Semua Destinasi</option>';
+
+        // Add the sorted, unique destinations to the dropdown
+        sortedDestinations.forEach(destination => {
             const option = document.createElement('option');
-            option.value = dest;
-            option.textContent = dest;
+            option.value = destination;
+            option.textContent = destination;
             destinationFilter.appendChild(option);
         });
     }
-
-    
 
     // Function to display tours based on current filters, search, and pagination
     function displayTours() {
@@ -903,13 +976,20 @@ label[for="searchFilter"] {
         const selectedTopics = Array.from(topicCheckboxes)
                                                 .filter(checkbox => checkbox.checked)
                                                 .map(checkbox => checkbox.value);
-        const searchTerm = searchFilter.value.toLowerCase().trim(); // Get search term, convert to lowercase, and trim whitespace
+        const searchTerm = searchFilter.value.toLowerCase().trim();
 
         filteredTourCards = Array.from(allTourCards).filter(card => {
             const cardDestination = card.dataset.destination;
             const cardTopics = card.dataset.topics ? card.dataset.topics.split(',') : [];
-            const cardTitle = tourData[card.dataset.id].title.toLowerCase();
-            const cardIntro = tourData[card.dataset.id].intro.toLowerCase();
+            
+            // Ensure tourData[card.dataset.id] exists before accessing its properties
+            const tourDetail = tourData[card.dataset.id];
+            if (!tourDetail) {
+                console.warn(`Tour data not found for ID: ${card.dataset.id}`);
+                return false; // Exclude card if its data is missing
+            }
+            const cardTitle = tourDetail.title.toLowerCase();
+            const cardIntro = tourDetail.intro.toLowerCase();
 
             const matchesDestination = selectedDestination === '' || cardDestination === selectedDestination;
             const matchesTopics = selectedTopics.length === 0 || selectedTopics.every(topic => cardTopics.includes(topic));
@@ -942,13 +1022,37 @@ label[for="searchFilter"] {
         setupPagination(); // Update pagination links after filtering and displaying tours
     }
 
-    // Function to set up pagination links
+    // Function to set up pagination links (updated to match corporate.php)
     function setupPagination() {
         paginationContainer.innerHTML = ''; // Clear previous pagination links
         const totalPages = Math.ceil(filteredTourCards.length / toursPerPage);
+        const maxPageLinks = 5; // The maximum number of page links to show at once
 
-        if (totalPages > 1) { // Only show pagination if there's more than one page
-            for (let i = 1; i <= totalPages; i++) {
+        if (totalPages > 1) {
+            // Create 'Previous' link
+            const prevLink = document.createElement('a');
+            prevLink.href = '#';
+            prevLink.textContent = 'Sebelum';
+            if (currentPage === 1) {
+                prevLink.classList.add('disabled');
+            } else {
+                prevLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage--;
+                    displayTours();
+                });
+            }
+            paginationContainer.appendChild(prevLink);
+
+            // Logic to show a limited number of page links
+            let startPage = Math.max(1, currentPage - Math.floor(maxPageLinks / 2));
+            let endPage = Math.min(totalPages, startPage + maxPageLinks - 1);
+
+            if (endPage - startPage + 1 < maxPageLinks) {
+                startPage = Math.max(1, endPage - maxPageLinks + 1);
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
                 const pageLink = document.createElement('a');
                 pageLink.href = '#';
                 pageLink.textContent = i;
@@ -958,10 +1062,25 @@ label[for="searchFilter"] {
                 pageLink.addEventListener('click', (e) => {
                     e.preventDefault();
                     currentPage = i;
-                    displayTours(); // Redisplay tours for the new page
+                    displayTours();
                 });
                 paginationContainer.appendChild(pageLink);
             }
+
+            // Create 'Next' link
+            const nextLink = document.createElement('a');
+            nextLink.href = '#';
+            nextLink.textContent = 'Seterusnya';
+            if (currentPage === totalPages) {
+                nextLink.classList.add('disabled');
+            } else {
+                nextLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage++;
+                    displayTours();
+                });
+            }
+            paginationContainer.appendChild(nextLink);
         }
     }
 
@@ -1064,7 +1183,7 @@ label[for="searchFilter"] {
 
     // Initial load
     document.addEventListener('DOMContentLoaded', () => {
-        populateDestinations();
+        populateDestinationFilter();
         displayTours(); // Initial display and pagination setup
     });
 
