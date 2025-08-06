@@ -434,6 +434,13 @@
                     <p>Alami keunikan budaya Thai, syurga membeli-belah dan destinasi pelancongan popular di Bangkok.</p>
                 </div>
             </div>
+            <div class="tour-card" data-id="danang" data-destination="Danang" data-topics="Culture,City">
+                <img src="images/danang.jpg" alt="Danang"/>
+                <div class="info">
+                    <h4>Lawatan Budaya & Alam ke Da Nang</h4>
+                    <p>Terokai keindahan bandar pesisir Vietnam ini yang terkenal dengan pantai cantik, jambatan ikonik dan warisan budaya yang memukau.</p>
+                </div>
+            </div>
             <div class="tour-card" data-id="england" data-destination="England" data-topics="Food,Culture">
                 <img src="images/London.jpg" alt="England"/>
                 <div class="info">
@@ -916,60 +923,23 @@
                 { src: "images/hatyai_gallery/central.jpg", name: "Central HatYai", description: "Pusat beli-belah moden yang terkenal di Hatyai yang menempatkan pelbagai jenama antarabangsa, restoran dan hiburan keluarga." }
             ]
         },
-        newYork: {
-            title: "Lawatan Kerja New York",
-            intro: "Alami kehebatan kota metropolitan New York melalui lawatan kerja dan lawatan ikonik seperti Statue of Liberty, Times Square dan pelbagai lagi.",
-            image: "images/NewYork.jpeg",
-            packages: [
-                "<strong>Tiket penerbangan pergi balik</strong> Emirates Airlines (Transit Dubai)",
-                "<strong>Penginapan</strong> di AKA Times Square dan Aura Hotel Times Square",
-                "<strong>Lawatan kerja</strong> ke Acrow Corporation & Konsulat Malaysia di New York",
-                "<strong>Lawatan pelancongan</strong> termasuk Statue of Liberty, Times Square, Rockefeller Center",
-                "Pilihan <strong>restoran</strong> yang pelbagai",
-                "<strong>Pemandu pelancong berpengalaman</strong>",
-                "Pengangkutan disediakan sepanjang program."
-            ],
-            gallery: [
-                { src: "images/newyork_gallery/statueofliberty.jpg", name: "Statue of Liberty", description: "Ikon kebebasan dan simbol terkenal Amerika Syarikat." },
-                { src: "images/newyork_gallery/timessquare.jpg", name: "Times Square", description: "Pusat hiburan dan cahaya neon di tengah bandar New York." },
-                { src: "images/newyork_gallery/brooklynbridge.jpg", name: "Brooklyn Bridge", description: "Jambatan ikonik yang menghubungkan Manhattan dan Brooklyn." },
-                { src: "images/newyork_gallery/centralpark.jpg", name: "Central Park", description: "Taman bandar yang luas di tengah Manhattan." },
-            ]
-        },
-        newZealand: {
-            title: "Lawatan Kerja New Zealand",
-            intro: "Terokai keindahan New Zealand dengan gabungan pemandangan semula jadi menakjubkan, budaya Maori yang unik dan pengalaman bandar moden dari Auckland hingga Queenstown.",
-            image: "images/NewZealand.jpg",
-            packages: [
-                "<strong>Tiket penerbangan antarabangsa & domestik</strong>",
-                "<strong>Penginapan</strong> di hotel bertaraf 3–4 bintang",
-                "<strong>Lawatan bandar dan semula jadi</strong> seperti Auckland Sky Tower, Milford Sound Cruise dan Hobbiton Village",
-                "<strong>Makanan</strong> halal disediakan termasuk buffet Maori Cultural Experienc",
-                "Pengangkutan disediakan sepanjang lawatan"
-            ],
-            gallery: [
-                { src: "images/newzealand_gallery/aucklandskytower.jpg", name: "Auckland Sky Tower", description: "Nikmati pemandangan 360° bandar Auckland dari menara ikonik ini." },
-                { src: "images/newzealand_gallery/hobbiton.jpg", name: "Hobbiton Village", description: "Lawati lokasi penggambaran filem terkenal 'The Hobbit' dan 'The Lord of the Rings'" },
-                { src: "images/newzealand_gallery/milfordsound.jpg", name: "Milford Sound Cruise", description: "Pelayaran 2 jam melihat fjord, air terjun dan alam semula jadi yang memukau di South Island." },
-                { src: "images/newzealand_gallery/queenstown.jpg", name: "Queenstown", description: "Pusat pengembaraan dengan pemandangan gunung dan tasik yang menakjubkan." }
-            ]
-        },
-        barbados: {
-            title: "Lawatan Korporat ke Barbados",
-            intro: "Alami keindahan pulau tropika Barbados dengan suasana profesional yang sesuai untuk lawatan korporat, rangkaian perniagaan dan relaksasi pantai.",
-            image: "images/barbados.jpg",
+        danang: {
+            title: "Lawatan Budaya & Alam Semula Jadi ke Da Nang",
+            intro: "Terokai Da Nang, bandar pesisir Vietnam yang menakjubkan dengan keindahan alam, budaya unik, dan tarikan ikonik seperti Golden Bridge dan Marble Mountains.",
+            image: "images/danang.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel bertaraf antarabangsa",
-                "<strong>Lawatan lawatan rasmi dan rangkaian profesional</strong> dengan agensi atau syarikat tempatan",
-                "<strong>Aktiviti santai</strong> seperti lawatan ke pantai dan mercu tanda ikonik",
-                "<strong>Makanan</strong> tempatan dan antarabangsa disediakan",
+                "<strong>Penginapan</strong> di hotel selesa di pusat bandar atau berhampiran pantai",
+                "<strong>Lawatan ke tarikan utama</strong> seperti Golden Bridge, Marble Mountains dan Dragon Bridge",
+                "<strong>Aktiviti santai</strong> di pantai My Khe dan perkampungan budaya",
+                "<strong>Makanan</strong> tempatan dan halal disediakan",
                 "Pengangkutan persendirian sepanjang lawatan"
             ],
             gallery: [
-                { src: "images/barbados_gallery/crane_beach.jpg", name: "Crane Beach", description: "Terkenal dengan pasir merah jambu dan air biru." },
-                { src: "images/barbados_gallery/bridgetown.jpg", name: "Bridgetown", description: "Ibu kota bersejarah dengan seni bina kolonial yang menawan." },
-                { src: "images/barbados_gallery/harrison_cave.jpg", name: "Harrison's Cave", description: "Sistem gua batu kapur yang menakjubkan." }
+                { src: "images/danang_gallery/MyKheBeach.jpg", name: "Pantai My Khe", description: "Pantai yang terkenal dengan pasir putih halus dan ombak yang sesuai untuk aktiviti berenang dan sukan air." },
+                { src: "images/danang_gallery/CamThanh.jpg", name: "Kampung Kelapa Cam Thanh", description: "Kampung tradisional dengan pengalaman menaiki sampan buluh melalui hutan bakau kelapa air." },
+                { src: "images/danang_gallery/HoiAn.jpg", name: "Bandar Lama Hoi An", description: "Tapak Warisan Dunia UNESCO yang menampilkan seni bina kolonial, kedai-kedai kraf dan suasana bersejarah." },
+                { src: "images/danang_gallery/MinhMang.jpg", name: "Makam Minh Mang", description: "Kompleks makam bersejarah dengan seni bina klasik dan landskap yang tenang di Hue berhampiran Da Nang." }
             ]
         }
     };
