@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
 <style>
     /* Existing CSS from your file */
-        body {
+    body {
         font-family: 'Segoe UI', sans-serif;
         margin: 0;
         padding: 0;
@@ -63,79 +63,78 @@
         margin-bottom: 20px;
     }
 
- .filter-group label {
-     display: block;
-     margin-bottom: 10px;
+    .filter-group label {
+        display: block;
+        margin-bottom: 10px;
     }
 
-.filter-group #searchFilter { /* Targeting the search input itself */
-    padding: 8px 12px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 2px solid #b62626; /* Matches your select border color */
-    background-color: #fff;
-    color: #333; /* Color of the text typed inside the search box */
-    width: 1000px; /* Adjust width as needed */
-    max-width: 100%; /* Ensure it's responsive */
-    box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.search-btn {
-    background-color: #b62626; /* Matches your primary red color */
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-left: 10px; /* Space from the input field */
-}
-
-.search-btn:hover {
-    background-color: #7c1919; /* Darker red on hover */
-    transform: scale(1.02);
-}
-
-/* Responsive adjustments for the filter group with the button */
-@media (max-width: 768px) {
-    .filter-group {
-        flex-direction: column; /* Stack label, input, and button on small screens */
-        align-items: flex-start;
-        gap: 5px;
+    .filter-group #searchFilter { /* Targeting the search input itself */
+        padding: 8px 12px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 2px solid #b62626; /* Matches your select border color */
+        background-color: #fff;
+        color: #333; /* Color of the text typed inside the search box */
+        width: 92%; /* Changed to 100% for responsiveness */
+        max-width: 100%; /* Ensure it's responsive */
+        box-sizing: border-box;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .filter-group .search-btn {
-        margin-top: 10px; /* Space from input when stacked */
-        margin-left: 0; /* Remove left margin when stacked */
-        width: 100%; /* Full width button on small screens */
+    .search-btn {
+        background-color: #b62626; /* Matches your primary red color */
+        color: #fff;
+        padding: 10px 15px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin-left: 10px; /* Space from the input field */
     }
-}
 
-.filter-group #searchFilter:focus {
-    outline: none;
-    border-color: #5d0c0c;
-    box-shadow: 0 0 5px rgba(182, 38, 38, 0.5);
-}
-
-/* Specific styling for the search input's LABEL */
-label[for="searchFilter"] {
-    color: white; /* Explicitly set the search label text to white */
-    /* You can add or override other properties here if needed for just this label */
-}
-
-/* Responsive adjustments for the search filter */
-@media (max-width: 768px) {
-    .filter-group {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
+    .search-btn:hover {
+        background-color: #7c1919; /* Darker red on hover */
+        transform: scale(1.02);
     }
-    .filter-group #searchFilter {
-        width: 100%;
+
+    /* Responsive adjustments for the filter group with the button */
+    @media (max-width: 768px) {
+        .filter-group {
+            flex-direction: column; /* Stack label, input, and button on small screens */
+            align-items: flex-start;
+            gap: 5px;
+        }
+
+        .filter-group .search-btn {
+            margin-top: 10px; /* Space from input when stacked */
+            margin-left: 0; /* Remove left margin when stacked */
+            width: 100%; /* Full width button on small screens */
+        }
     }
-}
+
+    .filter-group #searchFilter:focus {
+        outline: none;
+        border-color: #5d0c0c;
+        box-shadow: 0 0 5px rgba(182, 38, 38, 0.5);
+    }
+
+    /* Specific styling for the search input's LABEL */
+    label[for="searchFilter"] {
+        color: #333; /* Changed to dark color for readability */
+    }
+
+    /* Responsive adjustments for the search filter */
+    @media (max-width: 768px) {
+        .filter-group {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+        }
+        .filter-group #searchFilter {
+            width: 100%;
+        }
+    }
 
     @media (max-width: 900px) {
         .tours-container {
@@ -332,7 +331,7 @@ label[for="searchFilter"] {
         color: #666;
     }
 
-    /* --- Pagination Styles --- */
+    /* --- Pagination Styles (Copied from tours.php and adjusted) --- */
     .pagination {
         display: flex;
         justify-content: center;
@@ -341,27 +340,37 @@ label[for="searchFilter"] {
         padding: 10px;
         background-color: transparent;
         border-radius: 8px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        box-shadow: none; /* Removed shadow for a cleaner look */
     }
 
     .pagination a {
-        color: #ffffff;
+        color: #333; /* Darker text color */
         padding: 8px 16px;
         text-decoration: none;
         transition: background-color 0.3s;
         border-radius: 5px;
         margin: 0 5px;
         font-weight: bold;
+        border: 1px solid #ddd; /* Added a subtle border */
     }
 
     .pagination a.active {
         background-color: #b62626;
         color: white;
-        border-radius: 5px;
+        border-color: #b62626; /* Match border color to background */
     }
 
     .pagination a:hover:not(.active) {
-        background-color: #ddd; /* Changed from #b62626 to #ddd for a distinct hover effect */
+        background-color: #f0f0f0; /* Light grey hover background */
+        color: #b62626; /* Red text on hover */
+    }
+
+    .pagination a.disabled {
+        color: #ccc;
+        pointer-events: none; /* Disable clicking */
+        cursor: default;
+        background-color: #f9f9f9;
+        border-color: #eee;
     }
 
     .center-text {
@@ -379,7 +388,7 @@ label[for="searchFilter"] {
 <div class="filter-group">
     <h3><label for="searchFilter">Cari Destinasi:</label></h3>
 <input type="text" id="searchFilter" placeholder="Sila cari destinasi yang anda ingin lawati..." />
-<button id="searchButton" class="search-btn">Cari</button> <div id="noResultsMessage" style="display: none; text-align: center; color: #ffffffff; margin-top: 20px; font-weight: bold;">
+<button id="searchButton" class="search-btn">Cari</button> <div id="noResultsMessage" style="display: none; text-align: center; color: #333; margin-top: 20px; font-weight: bold;">
     Tiada destinasi ditemui untuk carian anda.
 </div>
 </div>
@@ -390,7 +399,7 @@ label[for="searchFilter"] {
         <div class="filter-group">
             <label for="destination">Destinasi</label>
             <select id="destination">
-                <option value="">Semua Destinasi</option>
+                <!-- Options will be populated by JavaScript -->
             </select>
         </div>
 
@@ -407,15 +416,16 @@ label[for="searchFilter"] {
 
     <div style="display: flex; flex-direction: column; flex-grow: 1;">
         <div class="tour-list" id="tourList">
-            <div class="tour-card" data-id="newZealand" data-destination="newZealand" data-topics="Island,Nature">
-                <img src="images/NewZealand.jpg" alt="Batam"/>
+            <!-- Tour cards are dynamically displayed by JavaScript -->
+            <div class="tour-card" data-id="newZealand" data-destination="New Zealand" data-topics="Island,Nature">
+                <img src="images/NewZealand.jpg" alt="New Zealand"/>
                 <div class="info">
                     <h4>Lawatan Kerja ke New Zealand</h4>
                     <p>Lawatan bersama Majlis Perbandaran Alor Gajah (MPAG)</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="newYork" data-destination="newYork" data-topics="Food,Culture">
-                <img src="images/NewYork.jpeg" alt="newYork"/>
+            <div class="tour-card" data-id="newYork" data-destination="New York" data-topics="Food,Culture">
+                <img src="images/NewYork.jpeg" alt="New York"/>
                 <div class="info">
                     <h4>Lawatan ke New York</h4>
                     <p>Lawatan bersama Perbadanan Ketua Negeri Melaka (CMI) dan Jabatan Kerja Raya Negeri Melaka (JKR)</p>
@@ -442,11 +452,11 @@ label[for="searchFilter"] {
                     <p>Lawatan bersama Perbadanan Ketua Negeri Melaka (CMI)</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="karimun_island" data-destination="Karimun Island" data-topics="Island,Nature">
-                <img src="images/KarimunIsland.jpg" alt="Karimun Island"/>
+            <div class="tour-card" data-id="barbados" data-destination="Barbados" data-topics="Culture,Nature">
+                <img src="images/barbados.jpg" alt="Barbados"/>
                 <div class="info">
-                    <h4>Pengembaraan Pulau Karimun</h4>
-                    <p>Alami keindahan semula jadi yang belum terusik dan suasana tenang Pulau Karimun.</p>
+                    <h4>Lawatan Korporat ke Barbados</h4>
+                    <p>Lawatan bersama Unit Dewan dan MMKN Melaka</p>
                 </div>
             </div>
             <div class="tour-card" data-id="korea" data-destination="Korea" data-topics="Culture,Nature">
@@ -528,11 +538,11 @@ label[for="searchFilter"] {
         
         <h4>Pakej yang Kami Sediakan:</h4>
         <ul id="modalPackageList" class="modal-package-list">
-            </ul>
+        </ul>
 
         <h4>Galeri:</h4>
         <div id="modalGallery" class="modal-gallery">
-            </div>
+        </div>
 
         <div class="show-all-container" style="margin-top: 30px;">
             <a href="contact.php" class="show-all-btn" id="modalInquireBtn">Inquire About This Tour</a>
@@ -543,7 +553,7 @@ label[for="searchFilter"] {
 <script>
     const destinationFilter = document.getElementById('destination');
     const topicCheckboxes = document.querySelectorAll('.filter-group input[type="checkbox"]');
-    const allTourCards = document.querySelectorAll('.tour-card'); // Use a new name for the original list
+    const allTourCards = document.querySelectorAll('.tour-card');
     const paginationContainer = document.getElementById('pagination');
 
     // Modal Elements
@@ -556,15 +566,13 @@ label[for="searchFilter"] {
     const modalGallery = document.getElementById('modalGallery');
     const modalInquireBtn = document.getElementById('modalInquireBtn');
     const searchFilter = document.getElementById('searchFilter');
-    const searchButton = document.getElementById('searchButton'); // Get the new search button
+    const searchButton = document.getElementById('searchButton');
     const noResultsMessage = document.getElementById('noResultsMessage');
 
     // Pagination variables
-    const toursPerPage = 6; // Number of tours to display per page
+    const toursPerPage = 6;
     let currentPage = 1;
-    let filteredTourCards = []; // Stores the currently filtered tour cards
-
-    
+    let filteredTourCards = [];
 
     // 🌟 Define detailed tour data here 🌟
     // This can be fetched from a database in a more complex setup
@@ -604,10 +612,10 @@ label[for="searchFilter"] {
                 "Pengangkutan awam yang efisien (termasuk Shinkansen/Kereta api laju)"
             ],
             gallery: [
-                { src: "images/japan_gallery/Fuji.jpg", name: "Gunung Fuji", description: "Gunung suci ikonik Jepun." },
-                { src: "images/japan_gallery/KyotoTemple.jpg", name: "Kuil Kinkaku-ji (Kyoto)", description: "Pavilion Emas dan kuil Buddha Zen yang menakjubkan." },
-                { src: "images/japan_gallery/Shibuya.jpg", name: "Lintasan Shibuya (Tokyo)", description: "Salah satu persimpangan paling sibuk di dunia." },
-                { src: "images/japan_gallery/Arashiyama.jpg", name: "Hutan Buluh Arashiyama (Kyoto)", description: "Hutan buluh yang tenang serta keajaiban alam." },
+                { src: "images/japan_gallery/Kobe.png", name: "Kobe Harborland - Kobe", description: "Kawasan pelabuhan moden dengan pemandangan malam yang menakjubkan, pusat beli-belah dan tempat santai tepi laut." },
+                { src: "images/japan_gallery/KyotoTemple.jpg", name: "Kuil Kinkaku-ji - Kyoto", description: "Pavilion Emas dan kuil Buddha Zen yang menakjubkan." },
+                { src: "images/japan_gallery/universal.jpg", name: "Universal Studio Japan - Osaka", description: "Taman tema popular dengan tarikan filem terkenal, pertunjukan langsung dan pengalaman hiburan untuk semua peringkat umur." },
+                { src: "images/japan_gallery/Arashiyama.jpg", name: "Hutan Buluh Arashiyama - Kyoto", description: "Hutan buluh yang tenang serta keajaiban alam." }
             ]
         },
         korea: {
@@ -630,41 +638,44 @@ label[for="searchFilter"] {
             ]
         },
         turki: {
-            title: "Lawatan ke Istanbul",
+            title: "Melancong ke Turki: Di Mana Timur Bertemu Barat",
             intro: "Terokai landskap megah dan keajaiban purba Turki, sebuah negara yang kaya dengan sejarah Islam dan keindahan yang memukau.",
-            image: "images/Istanbul.jpg",
+            image: "images/Turki.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel CVK Park Bosphorus",
-                "<strong>Lawatan penuh ke tempat menarik</strong> di Istanbul (Masjid Hagia Sophia, The Roman Hippodrome, Masjid Biru, Pierre Lotti Hill dan Istinye Park).",
-                "<strong>Makanan</strong> tengah hari dan malam di restoran seperti Saray Fish Restaurant, Dubb Inn Kebab Restaurant dan Botudo Kebab.",
-                "<strong>Pemandu pelancong berbahasa Inggeris</strong>.",
-                "Pengangkutan bas dan kereta di Istanbul."
+                "<strong>Penginapan</strong> di hotel-hotel berkualiti",
+                "<strong>Lawatan penuh ke tempat menarik</strong> di Istanbul (Hagia Sophia, Masjid Biru, Istana Topkapi), Cappadocia (Belon Udara Panas pilihan), Pamukkale, Ephesus dan Bursa.",
+                "<strong>Makanan</strong> tempatan yang otentik",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan domestik (penerbangan domestik/bas)"
             ],
             gallery: [
-                { src: "images/turki_gallery/Cappadocia.jpg", name: "Istinye Park", description: "Terkenal dengan formasi batuan 'cerobong pari-pari' yang unik dan menaiki belon udara panas." },
-                { src: "images/turki_gallery/HagiaSophia.jpg", name: "Masjid Hagia Sophia", description: "Keajaiban seni bina yang hebat dan asal gereja." },
-                { src: "images/turki_gallery/BlueMosque.jpg", name: "Masjid Biru", description: "Terkenal dengan jubin biru yang menakjubkan dan enam menara." },
-                { src: "images/turki_gallery/Pamukkale.jpg", name: "Ortakoy Street", description: "Teres air panas yang kaya dengan mineral putih." },
+                { src: "images/turki_gallery/Cappadocia.jpg", name: "Cappadocia", description: "Terkenal dengan formasi batuan 'cerobong pari-pari' yang unik dan menaiki belon udara panas." },
+                { src: "images/turki_gallery/HagiaSophia.jpg", name: "Hagia Sophia (Istanbul)", description: "Keajaiban seni bina yang hebat dan asal gereja." },
+                { src: "images/turki_gallery/BlueMosque.jpg", name: "Masjid Biru (Istanbul)", description: "Terkenal dengan jubin biru yang menakjubkan dan enam menara." },
+                { src: "images/turki_gallery/Pamukkale.jpg", name: "Pamukkale", description: "Teres air panas yang kaya dengan mineral putih." },
             ]
         },
-        jakarta: {
-            title: "Lawatan Bandar Jakarta & Pengalaman Budaya",
-            intro: "Temui ibu kota dinamik Indonesia, Jakarta iaitu sebuah bandar yang penuh dengan sejarah, seni bina moden dan kehidupan tempatan yang bersemangat dengan tumpuan pada tempat-tempat mesra Muslim.",
-            image: "images/Jakarta.jpg",
+        jakartaBandung: {
+            title: "Lawatan Menarik ke Jakarta & Bandung",
+            intro: "Alami keunikan gabungan kota metropolitan Jakarta dan suasana tenang Bandung yang penuh dengan sejarah, budaya tempatan dan tarikan mesra Muslim termasuk tempat membeli-belah dan keindahan alam semula jadi.",
+            image: "images/Jakarta.jpg", // Changed to a more appropriate image for Jakarta & Bandung
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel-hotel terpilih",
-                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Monumen Nasional (Monas), Masjid Istiqlal, Kota Tua Jakarta dan pusat membeli-belah terkemuka.",
-                "<strong>Makanan</strong> tempatan yang pelbagai",
+                "<strong>Penginapan</strong> di hotel pilihan di Jakarta & Bandung",
+                "<strong>Lawatan ke mercu tanda utama</strong> seperti Monumen Nasional (Monas), Masjid Istiqlal, Kota Tua Jakarta, Gedung Sate dan Kawah Putih",
+                "<strong>Aktiviti membeli-belah</strong> di pusat fesyen seperti Pasar Baru, Cihampelas  dan Factory Outlet Bandung",
+                "<strong>Makanan</strong> tempatan dan halal disediakan",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan persendirian sepanjang lawatan"
             ],
             gallery: [
-                { src: "images/jakarta_gallery/Monas.jpg", name: "Monas (Monumen Nasional)", description: "Simbol ikonik kemerdekaan Indonesia." },
-                { src: "images/jakarta_gallery/IstiqlalMosque.jpeg", name: "Masjid Istiqlal", description: "Masjid terbesar di Asia Tenggara." },
-                { src: "images/jakarta_gallery/KotaTua.jpg", name: "Kota Tua (Bandar Lama)", description: "Daerah kolonial bersejarah dengan muzium dan kafe." },
-                { src: "images/jakarta_gallery/JakartaFood.jpg", name: "Makanan Halal Indonesia", description: "Menikmati hidangan halal tradisional Indonesia." },
+                { src: "images/jakarta_gallery/Monas.jpg", name: "Monas (Monumen Nasional)", description: "Simbol ikonik kemerdekaan Indonesia yang terletak di pusat Jakarta." },
+                { src: "images/jakarta_gallery/IstiqlalMosque.jpeg", name: "Masjid Istiqlal", description: "Masjid terbesar di Asia Tenggara yang menjadi kebanggaan umat Islam di Indonesia." },
+            
+                // Bandung Places
+                { src: "images/jakarta_gallery/KawahPutih.jpg", name: "Kawah Putih", description: "Tasik kawah berwarna putih kehijauan yang menakjubkan di puncak gunung Bandung." },
+                { src: "images/jakarta_gallery/Farmhouse.jpg", name: "Farmhouse Lembang", description: "Tarikan keluarga dengan suasana desa Eropah serta haiwan jinak dan spot bergambar menarik." }
             ]
         },
         vietnam: {
@@ -705,41 +716,40 @@ label[for="searchFilter"] {
                 { src: "images/thailand_gallery/ChiangMai.jpg", name: "Chiang Mai", description: "Terokai kuil-kuil purba dan tempat perlindungan gajah." },
             ]
         },
-        newYork: {
-            title: "Lawatan Kerja New York",
-            intro: "Alami kehebatan kota metropolitan New York melalui lawatan kerja dan lawatan ikonik seperti Statue of Liberty, Times Square dan pelbagai lagi.",
-            image: "images/NewYork.jpeg",
+        england: {
+            title: "Lawatan Warisan London & UK",
+            intro: "Temui mercu tanda ikonik dan sejarah kaya London dan sekitarnya. Menawarkan perjalanan budaya dengan pilihan untuk hidangan yang bersesuaian.",
+            image: "images/London.jpg",
             packages: [
-                "<strong>Tiket penerbangan pergi balik</strong> Emirates Airlines (Transit Dubai)",
-                "<strong>Penginapan</strong> di AKA Times Square dan Aura Hotel Times Square",
-                "<strong>Lawatan kerja</strong> ke Acrow Corporation & Konsulat Malaysia di New York",
-                "<strong>Lawatan pelancongan</strong> termasuk Statue of Liberty, Times Square, Rockefeller Center",
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel pusat bandar",
+                "<strong>Lawatan penuh ke tempat menarik</strong> di London (Big Ben, Tower Bridge, Muzium British, Istana Buckingham) dan pilihan ke bandar lain seperti Manchester atau Edinburgh.",
                 "Pilihan <strong>restoran</strong> yang pelbagai",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
-                "Pengangkutan disediakan sepanjang program."
+                "Pengangkutan awam (kereta api, bas) dan pengangkutan persendirian untuk lawatan tertentu"
             ],
             gallery: [
-                { src: "images/london_gallery/BigBen.jpg", name: "Statue of Liberty", description: "Ikon kebebasan dan simbol terkenal Amerika Syarikat." },
-                { src: "images/london_gallery/TowerBridge.jpg", name: "Times Square", description: "Pusat hiburan dan cahaya neon di tengah bandar New York." },
-                { src: "images/london_gallery/BuckinghamPalace.jpg", name: "Brooklyn Bridge", description: "Jambatan ikonik yang menghubungkan Manhattan dan Brooklyn." }
+                { src: "images/london_gallery/BigBen.jpg", name: "Big Ben", description: "Menara jam ikonik di sebelah Bangunan Parlimen." },
+                { src: "images/london_gallery/TowerBridge.jpg", name: "Tower Bridge", description: "Jambatan mercu tanda terkenal di atas Sungai Thames." },
+                { src: "images/london_gallery/BuckinghamPalace.jpg", name: "Istana Buckingham", description: "Kediaman rasmi Raja United Kingdom." },
+                { src: "images/london_gallery/LondonEye.jpg", name: "London Eye", description: "Roda Ferris gergasi di South Bank Sungai Thames." },
             ]
         },
-        // New tour data added below
-        newZealand: {
-            title: "Lawatan Kerja New Zealand",
-            intro: "Terokai keindahan New Zealand dengan gabungan pemandangan semula jadi menakjubkan, budaya Maori yang unik dan pengalaman bandar moden dari Auckland hingga Queenstown.",
-            image: "images/NewZ.jpg",
+        batam: {
+            title: "Percutian Pulau Batam",
+            intro: "Temui pulau Batam yang meriah dan terkenal dengan pantai-pantai indah, membeli-belah bebas cukai dan hiburan.",
+            image: "images/Batam.jpeg",
             packages: [
-                "<strong>Tiket penerbangan antarabangsa & domestik</strong>",
-                "<strong>Penginapan</strong> di hotel bertaraf 3–4 bintang",
-                "<strong>Lawatan bandar dan semula jadi</strong> seperti Auckland Sky Tower, Milford Sound Cruise dan Hobbiton Village",
-                "<strong>Makanan</strong> halal disediakan termasuk buffet Maori Cultural Experienc",
-                "Pengangkutan disediakan sepanjang lawatan"
+                "<strong>Tiket feri pergi balik</strong>",
+                "<strong>Penginapan</strong> di resort atau hotel pilihan",
+                "<strong>Lawatan bandar</strong> termasuk Nagoya Hill dan Enggal Batam",
+                "<strong>Makanan</strong> tempatan yang lazat",
+                "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/batam_gallery/BatamBeach.jpg", name: "Auckland Sky Tower", description: "Nikmati pemandangan 360° bandar Auckland dari menara ikonik ini." },
-                { src: "images/batam_gallery/NagoyaHillShoppingMall.jpg", name: "Hobbiton Village", description: "Lawati lokasi penggambaran filem terkenal 'The Hobbit' dan 'The Lord of the Rings'" },
-                { src: "images/batam_gallery/barelang.jpg", name: "Milford Sound Cruise", description: "Pelayaran 2 jam melihat fjord, air terjun dan alam semula jadi yang memukau di South Island." }
+                { src: "images/batam_gallery/BatamBeach.jpg", name: "Pantai dan Pesisir Nongsa", description: "Bersantai di pantai berpasir Batam." },
+                { src: "images/batam_gallery/NagoyaHillShoppingMall.jpg", name: "Pusat Beli-belah Nagoya Hill", description: "Nikmati membeli-belah bebas cukai dan hiburan." },
+                { src: "images/batam_gallery/barelang.jpg", name: "Jambatan Barelang", description: "Ikon terkenal di Batam yang menghubungkan beberapa pulau utama dan menawarkan pemandangan indah terutama saat matahari terbenam." }
             ]
         },
         tanjung_pinang_bintan: {
@@ -776,22 +786,42 @@ label[for="searchFilter"] {
                 { src: "images/karimun_gallery/masjidkarimun.jpg", name: "Masjid Baiturrahman", description: "Masjid utama di Pulau Karimun, Kepulauan Riau. Terkenal dengan reka bentuk moden dan menjadi pusat ibadah serta tumpuan umat Islam tempatan dan pelancong." }
             ]
         },
-        sabah: {
-            title: "Terokai Sabah Yang Liar",
-            intro: "Jelajahi hutan hujan yang subur, gunung-ganang yang megah dan warisan budaya yang kaya di Sabah, Borneo Malaysia.",
-            image: "images/Sabah.jpg",
+        kotakinabaluKundasang: {
+            title: "Lawatan Indah ke Kota Kinabalu & Kundasang",
+            intro: "Alami keindahan semula jadi Sabah dari pantai yang memukau di Kota Kinabalu ke udara sejuk tanah tinggi Kundasang yang menenangkan.",
+            image: "images/Kinabalu.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel dan resort",
-                "<strong>Lawatan ke Taman Negara Kinabalu</strong>seperti Taman Hidupan Liar Lok Kawi",
-                "<strong>Makanan</strong> tempatan disediakan",
-                "Pemandu pelancong berpengalaman",
-                "Pengangkutan disediakan"
+                "<strong>Penginapan</strong> di hotel atau resort di Kota Kinabalu dan Kundasang",
+                "<strong>Lawatan ke tempat ikonik</strong> seperti Masjid Bandaraya, Desa Dairy Farm dan Kundasang War Memorial",
+                "<strong>Aktiviti alam semula jadi</strong> seperti melawat Taman Negara Kinabalu dan pekan Nabalu",
+                "<strong>Makanan</strong> tempatan dan halal disediakan",
+                "Pengangkutan persendirian disediakan sepanjang lawatan"
             ],
             gallery: [
-                { src: "images/sabah_gallery/Kinabalu.jpg", name: "Gunung Kinabalu", description: "Puncak tertinggi di Malaysia yang menjadi simbol Sabah dan tarikan utama buat pencinta alam dan pendaki." },
-                { src: "images/sabah_gallery/orangUtan.jpg", name: "Tempat Perlindungan Orangutan", description: "Peluang melihat orangutan dalam habitat semula jadi mereka dan memahami usaha pemuliharaan yang dijalankan."},
-                { src: "images/sabah_gallery/sipadan.jpg", name: "Pulau Sipadan", description: "Lokasi menyelam terbaik dunia yang mempesonakan dengan kehidupan marin yang kaya dan pelbagai."}
+                { src: "images/kotaKundasang_gallery/masjidBandaraya.jpg", name: "Masjid Bandaraya Kota Kinabalu", description: "Masjid terapung yang menjadi simbol ikonik di Kota Kinabalu dengan latar laut yang menakjubkan." },
+                { src: "images/kotaKundasang_gallery/desaDairy.jpg", name: "Desa Dairy Farm", description: "Ladang tenusu di Kundasang dengan pemandangan seperti New Zealand dan peluang bergambar menarik." },
+                { src: "images/kotaKundasang_gallery/kundasangWarMemorial.jpg", name: "Kundasang War Memorial", description: "Tapak bersejarah untuk memperingati wira perang dan pemandangan taman yang tenang." },
+                { src: "images/kotaKundasang_gallery/pekanNabalu.jpg", name: "Pekan Nabalu", description: "Perhentian terkenal di Kundasang dengan pemandangan Gunung Kinabalu serta gerai kraftangan dan makanan tempatan." }
+            ]
+        },
+        semporna: {
+            title: "Terokai Keindahan Semporna",
+            intro: "Alami keindahan laut biru kristal, pulau-pulau tropika dan kehidupan laut yang menakjubkan di Semporna, Sabah.",
+            image: "images/Semporna.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di resort atau chalet tepi laut",
+                "<strong>Aktiviti lawatan pulau</strong> ke Timba-Timba, Egang-Egang dan pulau sekitarnya",
+                "<strong>Snorkelling & aktiviti laut</strong> di lokasi terumbu karang terbaik",
+                "<strong>Makanan</strong> halal tempatan disediakan",
+                "Pemandu pelancong berpengalaman",
+                "Pengangkutan darat dan bot disediakan"
+            ],
+            gallery: [
+                { src: "images/sabah_gallery/timbatimba.jpg", name: "Pulau Timba-Timba", description: "Pulau tropika yang terkenal dengan pasir putih lembut dan perairan jernih serta sesuai untuk bergambar dan snorkeling." },
+                { src: "images/sabah_gallery/egang.jpg", name: "Pulau Egang Egang", description: "Pulau yang damai dengan pemandangan laut yang indah, lokasi santai dan bergambar menarik di atas jeti panjang."},
+                { src: "images/sabah_gallery/snorkelling.jpg", name: "Snorkelling di Semporna", description: "Aktiviti utama di Semporna dengan pemandangan terumbu karang yang mempesona dan hidupan laut yang pelbagai."}
             ]
         },
         sarawak: {
@@ -847,24 +877,183 @@ label[for="searchFilter"] {
                 { src: "images/hatyai_gallery/WatHatYaiNai.jpg", name: "Wat Hat Yai Nai", description: "Mempunyai tempat patung Buddha terbaring yang besar." },
                 { src: "images/hatyai_gallery/central.jpg", name: "Central HatYai", description: "Pusat beli-belah moden yang terkenal di Hatyai yang menempatkan pelbagai jenama antarabangsa, restoran dan hiburan keluarga." }
             ]
+        },
+        newYork: { // Corrected gallery image paths and descriptions for New York
+            title: "Lawatan Kerja New York",
+            intro: "Alami kehebatan kota metropolitan New York melalui lawatan kerja dan lawatan ikonik seperti Statue of Liberty, Times Square dan pelbagai lagi.",
+            image: "images/NewYork.jpeg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong> Emirates Airlines (Transit Dubai)",
+                "<strong>Penginapan</strong> di AKA Times Square dan Aura Hotel Times Square",
+                "<strong>Lawatan kerja</strong> ke Acrow Corporation & Konsulat Malaysia di New York",
+                "<strong>Lawatan pelancongan</strong> termasuk Statue of Liberty, Times Square, Rockefeller Center",
+                "Pilihan <strong>restoran</strong> yang pelbagai",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan disediakan sepanjang program."
+            ],
+            gallery: [
+                { src: "images/newyork_gallery/statueofliberty.jpg", name: "Statue of Liberty", description: "Ikon kebebasan dan simbol terkenal Amerika Syarikat." },
+                { src: "images/newyork_gallery/timessquare.jpg", name: "Times Square", description: "Pusat hiburan dan cahaya neon di tengah bandar New York." },
+                { src: "images/newyork_gallery/brooklynbridge.jpg", name: "Brooklyn Bridge", description: "Jambatan ikonik yang menghubungkan Manhattan dan Brooklyn." },
+                { src: "images/newyork_gallery/centralpark.jpg", name: "Central Park", description: "Taman bandar yang luas di tengah Manhattan." },
+            ]
+        },
+        newZealand: { // Corrected gallery image paths and descriptions for New Zealand
+            title: "Lawatan Kerja New Zealand",
+            intro: "Terokai keindahan New Zealand dengan gabungan pemandangan semula jadi menakjubkan, budaya Maori yang unik dan pengalaman bandar moden dari Auckland hingga Queenstown.",
+            image: "images/NewZealand.jpg", // Corrected image path
+            packages: [
+                "<strong>Tiket penerbangan antarabangsa & domestik</strong>",
+                "<strong>Penginapan</strong> di hotel bertaraf 3–4 bintang",
+                "<strong>Lawatan bandar dan semula jadi</strong> seperti Auckland Sky Tower, Milford Sound Cruise dan Hobbiton Village",
+                "<strong>Makanan</strong> halal disediakan termasuk buffet Maori Cultural Experienc",
+                "Pengangkutan disediakan sepanjang lawatan"
+            ],
+            gallery: [
+                { src: "images/newzealand_gallery/aucklandskytower.jpg", name: "Auckland Sky Tower", description: "Nikmati pemandangan 360° bandar Auckland dari menara ikonik ini." },
+                { src: "images/newzealand_gallery/hobbiton.jpg", name: "Hobbiton Village", description: "Lawati lokasi penggambaran filem terkenal 'The Hobbit' dan 'The Lord of the Rings'" },
+                { src: "images/newzealand_gallery/milfordsound.jpg", name: "Milford Sound Cruise", description: "Pelayaran 2 jam melihat fjord, air terjun dan alam semula jadi yang memukau di South Island." },
+                { src: "images/newzealand_gallery/queenstown.jpg", name: "Queenstown", description: "Pusat pengembaraan dengan pemandangan gunung dan tasik yang menakjubkan." }
+            ]
+        },
+        barbados: { // Corrected gallery image paths and descriptions for Barbados
+            title: "Lawatan Korporat ke Barbados", // Added title for Barbados
+            intro: "Alami keindahan pulau tropika Barbados dengan suasana profesional yang sesuai untuk lawatan korporat, rangkaian perniagaan dan relaksasi pantai.",
+            image: "images/barbados.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel bertaraf antarabangsa",
+                "<strong>Lawatan lawatan rasmi dan rangkaian profesional</strong> dengan agensi atau syarikat tempatan",
+                "<strong>Aktiviti santai</strong> seperti lawatan ke pantai dan mercu tanda ikonik",
+                "<strong>Makanan</strong> tempatan dan antarabangsa disediakan",
+                "Pengangkutan persendirian sepanjang lawatan"
+            ],
+            gallery: [
+                { src: "images/barbados_gallery/crane_beach.jpg", name: "Crane Beach", description: "Terkenal dengan pasir merah jambu dan air biru." },
+                { src: "images/barbados_gallery/bridgetown.jpg", name: "Bridgetown", description: "Ibu kota bersejarah dengan seni bina kolonial yang menawan." },
+                { src: "images/barbados_gallery/harrison_cave.jpg", name: "Harrison's Cave", description: "Sistem gua batu kapur yang menakjubkan." }
+            ]
+        },
+        sabah: { // Corrected gallery image paths and descriptions for Sabah
+            title: "Terokai Sabah Yang Liar",
+            intro: "Jelajahi hutan hujan yang subur, gunung-ganang yang megah dan warisan budaya yang kaya di Sabah, Borneo Malaysia.",
+            image: "images/Sabah.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel dan resort",
+                "<strong>Lawatan ke Taman Negara Kinabalu</strong>seperti Taman Hidupan Liar Lok Kawi",
+                "<strong>Makanan</strong> tempatan disediakan",
+                "Pemandu pelancong berpengalaman",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/sabah_gallery/kinabalu.jpg", name: "Gunung Kinabalu", description: "Puncak tertinggi di Malaysia yang menjadi simbol Sabah dan tarikan utama buat pencinta alam dan pendaki." },
+                { src: "images/sabah_gallery/orangUtan.jpg", name: "Tempat Perlindungan Orangutan", description: "Peluang melihat orangutan dalam habitat semula jadi mereka dan memahami usaha pemuliharaan yang dijalankan."},
+                { src: "images/sabah_gallery/sipadan.jpg", name: "Pulau Sipadan", description: "Lokasi menyelam terbaik dunia yang mempesonakan dengan kehidupan marin yang kaya dan pelbagai."}
+            ]
+        },
+        sarawak: { // Corrected gallery image paths and descriptions for Sarawak
+            title: "Penemuan Budaya Sarawak",
+            intro: "Temui budaya asli dan keajaiban semula jadi Sarawak.",
+            image: "images/Sarawak.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel dan resort",
+                "<strong>Lawatan ke Tebingan Kuching</strong>, Kampung Budaya Sarawak dan Taman Negara Bako",
+                "<strong>Makanan</strong> tempatan",
+                "Pemandu pelancong berpengalaman",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/sarawak_gallery/culturalvillage.jpg", name: "Kampung Budaya Sarawak", description: "Muzium hidup yang mempamerkan pelbagai kumpulan etnik Sarawak." },
+                { src: "images/sarawak_gallery/muluCaves.jpeg", name: "Gua Mulu", description: "Gua batu kapur yang terkenal dengan formasi menakjubkan dan diiktiraf sebagai Tapak Warisan Dunia UNESCO." },
+                { src: "images/sarawak_gallery/semenggoh.jpg", name: "Pusat Hidupan Liar Semenggoh", description: "Pusat rehabilitasi untuk orangutan separa liar." }
+            ]
+        },
+        langkawi: { // Corrected gallery image paths and descriptions for Langkawi
+            title: "Syurga Pulau Langkawi",
+            intro: "Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi dan membeli-belah bebas cukai.",
+            image: "images/Langkawi.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di resort pilihan",
+                "<strong>Lawatan ke Jambatan Gantung Langkawi</strong>, Underwater World Langkawi dan Dataran Helang",
+                "<strong>Pelbagai makanan</strong> yang lazat",
+                "Pemandu pelancong berpengalaman",
+                "Pengangkutan disediakan"
+            ],
+            gallery: [
+                { src: "images/langkawi_gallery/skybridge.jpg", name: "Jambatan Gantung Langkawi", description: "Jambatan pejalan kaki 660 meter di atas paras laut." },
+                { src: "images/langkawi_gallery/eaglesquare.jpg", name: "Dataran Helang", description: "Dataran helang yang menjadi simbol ikonik Langkawi dan menjadi lokasi wajib bergambar."},
+                { src: "images/langkawi_gallery/telaga.jpg", name: "Air Terjun Telaga Tujuh", description: "Air terjun tujuh peringkat yang mempesona dan dikelilingi oleh alam semula jadi yang menghijau."}
+            ]
+        },
+        kotakinabaluKundasang: { // Added missing tourData for kotakinabaluKundasang
+            title: "Lawatan Indah ke Kota Kinabalu & Kundasang",
+            intro: "Alami keindahan semula jadi Sabah dari pantai yang memukau di Kota Kinabalu ke udara sejuk tanah tinggi Kundasang yang menenangkan.",
+            image: "images/Kinabalu.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel atau resort di Kota Kinabalu dan Kundasang",
+                "<strong>Lawatan ke tempat ikonik</strong> seperti Masjid Bandaraya, Desa Dairy Farm dan Kundasang War Memorial",
+                "<strong>Aktiviti alam semula jadi</strong> seperti melawat Taman Negara Kinabalu dan pekan Nabalu",
+                "<strong>Makanan</strong> tempatan dan halal disediakan",
+                "Pengangkutan persendirian disediakan sepanjang lawatan"
+            ],
+            gallery: [
+                { src: "images/kotaKundasang_gallery/masjidBandaraya.jpg", name: "Masjid Bandaraya Kota Kinabalu", description: "Masjid terapung yang menjadi simbol ikonik di Kota Kinabalu dengan latar laut yang menakjubkan." },
+                { src: "images/kotaKundasang_gallery/desaDairy.jpg", name: "Desa Dairy Farm", description: "Ladang tenusu di Kundasang dengan pemandangan seperti New Zealand dan peluang bergambar menarik." },
+                { src: "images/kotaKundasang_gallery/kundasangWarMemorial.jpg", name: "Kundasang War Memorial", description: "Tapak bersejarah untuk memperingati wira perang dan pemandangan taman yang tenang." },
+                { src: "images/kotaKundasang_gallery/pekanNabalu.jpg", name: "Pekan Nabalu", description: "Perhentian terkenal di Kundasang dengan pemandangan Gunung Kinabalu serta gerai kraftangan dan makanan tempatan." }
+            ]
+        },
+        semporna: { // Added missing tourData for semporna
+            title: "Terokai Keindahan Semporna",
+            intro: "Alami keindahan laut biru kristal, pulau-pulau tropika dan kehidupan laut yang menakjubkan di Semporna, Sabah.",
+            image: "images/Semporna.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di resort atau chalet tepi laut",
+                "<strong>Aktiviti lawatan pulau</strong> ke Timba-Timba, Egang-Egang dan pulau sekitarnya",
+                "<strong>Snorkelling & aktiviti laut</strong> di lokasi terumbu karang terbaik",
+                "<strong>Makanan</strong> halal tempatan disediakan",
+                "Pemandu pelancong berpengalaman",
+                "Pengangkutan darat dan bot disediakan"
+            ],
+            gallery: [
+                { src: "images/sabah_gallery/timbatimba.jpg", name: "Pulau Timba-Timba", description: "Pulau tropika yang terkenal dengan pasir putih lembut dan perairan jernih serta sesuai untuk bergambar dan snorkeling." },
+                { src: "images/sabah_gallery/egang.jpg", name: "Pulau Egang Egang", description: "Pulau yang damai dengan pemandangan laut yang indah, lokasi santai dan bergambar menarik di atas jeti panjang."},
+                { src: "images/sabah_gallery/snorkelling.jpg", name: "Snorkelling di Semporna", description: "Aktiviti utama di Semporna dengan pemandangan terumbu karang yang mempesona dan hidupan laut yang pelbagai."}
+            ]
         }
     };
 
-
-    function populateDestinations() {
+    // Function to populate and sort the destination dropdown
+    function populateDestinationFilter() {
         const destinations = new Set();
         allTourCards.forEach(card => {
-            destinations.add(card.dataset.destination);
+            // Ensure data-destination is consistently capitalized for sorting
+            const destination = card.dataset.destination;
+            if (destination) {
+                destinations.add(destination);
+            }
         });
-        destinations.forEach(dest => {
+
+        // Convert the Set to an Array and sort it alphabetically
+        const sortedDestinations = Array.from(destinations).sort((a, b) => a.localeCompare(b, 'ms')); // 'ms' for Malay locale
+
+        // Clear existing options, but keep the default one if it exists, or add it.
+        // Ensure the default "Semua Destinasi" is always first.
+        destinationFilter.innerHTML = '<option value="">Semua Destinasi</option>';
+
+        // Add the sorted, unique destinations to the dropdown
+        sortedDestinations.forEach(destination => {
             const option = document.createElement('option');
-            option.value = dest;
-            option.textContent = dest;
+            option.value = destination;
+            option.textContent = destination;
             destinationFilter.appendChild(option);
         });
     }
-
-    
 
     // Function to display tours based on current filters, search, and pagination
     function displayTours() {
@@ -872,13 +1061,20 @@ label[for="searchFilter"] {
         const selectedTopics = Array.from(topicCheckboxes)
                                                 .filter(checkbox => checkbox.checked)
                                                 .map(checkbox => checkbox.value);
-        const searchTerm = searchFilter.value.toLowerCase().trim(); // Get search term, convert to lowercase, and trim whitespace
+        const searchTerm = searchFilter.value.toLowerCase().trim();
 
         filteredTourCards = Array.from(allTourCards).filter(card => {
             const cardDestination = card.dataset.destination;
             const cardTopics = card.dataset.topics ? card.dataset.topics.split(',') : [];
-            const cardTitle = tourData[card.dataset.id].title.toLowerCase();
-            const cardIntro = tourData[card.dataset.id].intro.toLowerCase();
+            
+            // Ensure tourData[card.dataset.id] exists before accessing its properties
+            const tourDetail = tourData[card.dataset.id];
+            if (!tourDetail) {
+                console.warn(`Tour data not found for ID: ${card.dataset.id}`);
+                return false; // Exclude card if its data is missing
+            }
+            const cardTitle = tourDetail.title.toLowerCase();
+            const cardIntro = tourDetail.intro.toLowerCase();
 
             const matchesDestination = selectedDestination === '' || cardDestination === selectedDestination;
             const matchesTopics = selectedTopics.length === 0 || selectedTopics.every(topic => cardTopics.includes(topic));
@@ -911,13 +1107,37 @@ label[for="searchFilter"] {
         setupPagination(); // Update pagination links after filtering and displaying tours
     }
 
-    // Function to set up pagination links
+    // Function to set up pagination links (updated like tours.php)
     function setupPagination() {
         paginationContainer.innerHTML = ''; // Clear previous pagination links
         const totalPages = Math.ceil(filteredTourCards.length / toursPerPage);
+        const maxPageLinks = 5; // The maximum number of page links to show at once
 
-        if (totalPages > 1) { // Only show pagination if there's more than one page
-            for (let i = 1; i <= totalPages; i++) {
+        if (totalPages > 1) {
+            // Create 'Previous' link
+            const prevLink = document.createElement('a');
+            prevLink.href = '#';
+            prevLink.textContent = 'Sebelum';
+            if (currentPage === 1) {
+                prevLink.classList.add('disabled');
+            } else {
+                prevLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage--;
+                    displayTours();
+                });
+            }
+            paginationContainer.appendChild(prevLink);
+
+            // Logic to show a limited number of page links
+            let startPage = Math.max(1, currentPage - Math.floor(maxPageLinks / 2));
+            let endPage = Math.min(totalPages, startPage + maxPageLinks - 1);
+
+            if (endPage - startPage + 1 < maxPageLinks) {
+                startPage = Math.max(1, endPage - maxPageLinks + 1);
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
                 const pageLink = document.createElement('a');
                 pageLink.href = '#';
                 pageLink.textContent = i;
@@ -927,10 +1147,25 @@ label[for="searchFilter"] {
                 pageLink.addEventListener('click', (e) => {
                     e.preventDefault();
                     currentPage = i;
-                    displayTours(); // Redisplay tours for the new page
+                    displayTours();
                 });
                 paginationContainer.appendChild(pageLink);
             }
+
+            // Create 'Next' link
+            const nextLink = document.createElement('a');
+            nextLink.href = '#';
+            nextLink.textContent = 'Seterusnya';
+            if (currentPage === totalPages) {
+                nextLink.classList.add('disabled');
+            } else {
+                nextLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage++;
+                    displayTours();
+                });
+            }
+            paginationContainer.appendChild(nextLink);
         }
     }
 
@@ -1033,7 +1268,7 @@ label[for="searchFilter"] {
 
     // Initial load
     document.addEventListener('DOMContentLoaded', () => {
-        populateDestinations();
+        populateDestinationFilter(); // Use the corrected populate function
         displayTours(); // Initial display and pagination setup
     });
 
