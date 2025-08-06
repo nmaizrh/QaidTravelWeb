@@ -415,10 +415,10 @@ label[for="searchFilter"] {
                 </div>
             </div>
             <div class="tour-card" data-id="newYork" data-destination="newYork" data-topics="Food,Culture">
-                <img src="images/London.jpg" alt="newYork"/>
+                <img src="images/NewYork.jpeg" alt="newYork"/>
                 <div class="info">
                     <h4>Lawatan ke New York</h4>
-                    <p>Perbadanan Ketua Negeri Melaka (CMI) dan Jabatan Kerja Raya Negeri Melaka (JKR)</p>
+                    <p>Lawatan bersama Perbadanan Ketua Negeri Melaka (CMI) dan Jabatan Kerja Raya Negeri Melaka (JKR)</p>
                 </div>
             </div>
             <div class="tour-card" data-id="hat_yai" data-destination="Hat Yai" data-topics="Culture,Food">
@@ -493,10 +493,10 @@ label[for="searchFilter"] {
                 </div>
             </div>
             <div class="tour-card" data-id="turki" data-destination="Turki" data-topics="Culture,Food">
-                <img src="images/Turki.jpg" alt="Turki"/>
+                <img src="images/Istanbul.jpg" alt="Turki"/>
                 <div class="info">
-                    <h4>Melancong ke Turki</h4>
-                    <p>Terokai Istanbul, Cappadocia, dan tapak bersejarah.</p>
+                    <h4>Lawatan ke Istanbul, Turki</h4>
+                    <p>Alami keindahan sejarah dan budaya Islam di Istanbul.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="umrah" data-destination="Umrah" data-topics="Culture">
@@ -630,22 +630,22 @@ label[for="searchFilter"] {
             ]
         },
         turki: {
-            title: "Melancong ke Turki: Di Mana Timur Bertemu Barat",
+            title: "Lawatan ke Istanbul",
             intro: "Terokai landskap megah dan keajaiban purba Turki, sebuah negara yang kaya dengan sejarah Islam dan keindahan yang memukau.",
-            image: "images/Turki.jpg",
+            image: "images/Istanbul.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel-hotel berkualiti",
-                "<strong>Lawatan penuh ke tempat menarik</strong> di Istanbul (Hagia Sophia, Masjid Biru, Istana Topkapi), Cappadocia (Belon Udara Panas pilihan), Pamukkale, Ephesus dan Bursa.",
-                "<strong>Makanan</strong> tempatan yang otentik",
-                "<strong>Pemandu pelancong berpengalaman</strong>",
-                "Pengangkutan domestik (penerbangan domestik/bas)"
+                "<strong>Penginapan</strong> di hotel CVK Park Bosphorus",
+                "<strong>Lawatan penuh ke tempat menarik</strong> di Istanbul (Masjid Hagia Sophia, The Roman Hippodrome, Masjid Biru, Pierre Lotti Hill dan Istinye Park).",
+                "<strong>Makanan</strong> tengah hari dan malam di restoran seperti Saray Fish Restaurant, Dubb Inn Kebab Restaurant dan Botudo Kebab.",
+                "<strong>Pemandu pelancong berbahasa Inggeris</strong>.",
+                "Pengangkutan bas dan kereta di Istanbul."
             ],
             gallery: [
-                { src: "images/turki_gallery/Cappadocia.jpg", name: "Cappadocia", description: "Terkenal dengan formasi batuan 'cerobong pari-pari' yang unik dan menaiki belon udara panas." },
-                { src: "images/turki_gallery/HagiaSophia.jpg", name: "Hagia Sophia (Istanbul)", description: "Keajaiban seni bina yang hebat dan asal gereja." },
-                { src: "images/turki_gallery/BlueMosque.jpg", name: "Masjid Biru (Istanbul)", description: "Terkenal dengan jubin biru yang menakjubkan dan enam menara." },
-                { src: "images/turki_gallery/Pamukkale.jpg", name: "Pamukkale", description: "Teres air panas yang kaya dengan mineral putih." },
+                { src: "images/turki_gallery/Cappadocia.jpg", name: "Istinye Park", description: "Terkenal dengan formasi batuan 'cerobong pari-pari' yang unik dan menaiki belon udara panas." },
+                { src: "images/turki_gallery/HagiaSophia.jpg", name: "Masjid Hagia Sophia", description: "Keajaiban seni bina yang hebat dan asal gereja." },
+                { src: "images/turki_gallery/BlueMosque.jpg", name: "Masjid Biru", description: "Terkenal dengan jubin biru yang menakjubkan dan enam menara." },
+                { src: "images/turki_gallery/Pamukkale.jpg", name: "Ortakoy Street", description: "Teres air panas yang kaya dengan mineral putih." },
             ]
         },
         jakarta: {
@@ -705,10 +705,10 @@ label[for="searchFilter"] {
                 { src: "images/thailand_gallery/ChiangMai.jpg", name: "Chiang Mai", description: "Terokai kuil-kuil purba dan tempat perlindungan gajah." },
             ]
         },
-        england: {
+        newYork: {
             title: "Lawatan Kerja New York",
             intro: "Alami kehebatan kota metropolitan New York melalui lawatan kerja dan lawatan ikonik seperti Statue of Liberty, Times Square dan pelbagai lagi.",
-            image: "images/London.jpg",
+            image: "images/NewYork.jpeg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong> Emirates Airlines (Transit Dubai)",
                 "<strong>Penginapan</strong> di AKA Times Square dan Aura Hotel Times Square",
@@ -721,11 +721,11 @@ label[for="searchFilter"] {
             gallery: [
                 { src: "images/london_gallery/BigBen.jpg", name: "Statue of Liberty", description: "Ikon kebebasan dan simbol terkenal Amerika Syarikat." },
                 { src: "images/london_gallery/TowerBridge.jpg", name: "Times Square", description: "Pusat hiburan dan cahaya neon di tengah bandar New York." },
-                { src: "images/london_gallery/BuckinghamPalace.jpg", name: "Brooklyn Bridge", description: "Jambatan ikonik yang menghubungkan Manhattan dan Brooklyn." },
+                { src: "images/london_gallery/BuckinghamPalace.jpg", name: "Brooklyn Bridge", description: "Jambatan ikonik yang menghubungkan Manhattan dan Brooklyn." }
             ]
         },
         // New tour data added below
-        batam: {
+        newZealand: {
             title: "Lawatan Kerja New Zealand",
             intro: "Terokai keindahan New Zealand dengan gabungan pemandangan semula jadi menakjubkan, budaya Maori yang unik dan pengalaman bandar moden dari Auckland hingga Queenstown.",
             image: "images/NewZ.jpg",
