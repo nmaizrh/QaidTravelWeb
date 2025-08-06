@@ -429,11 +429,11 @@ label[for="searchFilter"] {
                     <p>Terokai pasar Hat Yai yang sibuk, kuil, dan makanan jalanan yang lazat.</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="jakarta" data-destination="Jakarta" data-topics="Culture,Nature">
-                <img src="images/Jakarta.jpg" alt="Jakarta"/>
+            <div class="tour-card" data-id="jakartaBandung" data-destination="Jakarta & Bandung" data-topics="Culture,Nature,Shopping">
+                <img src="images/Jakarta.jpg" alt="Jakarta & Bandung"/>
                 <div class="info">
-                    <h4>Lawatan Bandar Jakarta</h4>
-                    <p>Terokai budaya Jakarta yang bersemangat, mercu tanda, dan tarikan mesra halal.</p>
+                    <h4>Lawatan Menarik ke Jakarta & Bandung</h4>
+                    <p>Alami gabungan budaya kota moden Jakarta dan keindahan semula jadi serta syurga membeli-belah di Bandung.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="japan" data-destination="Japan" data-topics="Food,Culture">
@@ -457,6 +457,13 @@ label[for="searchFilter"] {
                     <p>Nikmati musim Korea dengan perjalanan kumpulan terpilih.</p>
                 </div>
             </div>
+            <div class="tour-card" data-id="kotakinabaluKundasang" data-destination="Kota Kinabalu & Kundasang" data-topics="Nature,Culture,Highlands">
+                <img src="images/Kotakinabalu.jpg" alt="Kota Kinabalu & Kundasang"/>
+                <div class="info">
+                    <h4>Lawatan Kota Kinabalu & Kundasang</h4>
+                    <p>Rasai keindahan alam semula jadi serta suasana tanah tinggi yang nyaman dan warisan budaya di Sabah.</p>
+                </div>
+            </div>
             <div class="tour-card" data-id="langkawi" data-destination="Langkawi" data-topics="Island,Nature">
                 <img src="images/Langkawi.jpg" alt="Langkawi"/>
                 <div class="info">
@@ -464,11 +471,11 @@ label[for="searchFilter"] {
                     <p>Nikmati pantai Langkawi yang menakjubkan, keajaiban geologi, dan membeli-belah bebas cukai.</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="sabah" data-destination="Sabah" data-topics="Nature,Culture">
-                <img src="images/Sabah.jpg" alt="Sabah"/>
+            <div class="tour-card" data-id="semporna" data-destination="Semporna" data-topics="Island,Marine,Nature">
+                <img src="images/semporna.jpg" alt="Semporna"/>
                 <div class="info">
-                    <h4>Terokai Sabah Yang Liar</h4>
-                    <p>Jelajahi hutan hujan, gunung-ganang dan warisan budaya yang kaya di Sabah.</p>
+                    <h4>Terokai Keindahan Semporna</h4>
+                    <p>Alami keajaiban pulau tropika, aktiviti snorkeling dan panorama laut yang memukau di Semporna.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="sarawak" data-destination="Sarawak" data-topics="Nature,Culture">
@@ -649,23 +656,26 @@ label[for="searchFilter"] {
                 { src: "images/turki_gallery/Pamukkale.jpg", name: "Pamukkale", description: "Teres air panas yang kaya dengan mineral putih." },
             ]
         },
-        jakarta: {
-            title: "Lawatan Bandar Jakarta & Pengalaman Budaya",
-            intro: "Temui ibu kota dinamik Indonesia, Jakarta iaitu sebuah bandar yang penuh dengan sejarah, seni bina moden dan kehidupan tempatan yang bersemangat dengan tumpuan pada tempat-tempat mesra Muslim.",
-            image: "images/Jakarta.jpg",
+        jakartaBandung: {
+            title: "Lawatan Menarik ke Jakarta & Bandung",
+            intro: "Alami keunikan gabungan kota metropolitan Jakarta dan suasana tenang Bandung yang penuh dengan sejarah, budaya tempatan dan tarikan mesra Muslim termasuk tempat membeli-belah dan keindahan alam semula jadi.",
+            image: "images/semporna.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel-hotel terpilih",
-                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Monumen Nasional (Monas), Masjid Istiqlal, Kota Tua Jakarta dan pusat membeli-belah terkemuka.",
-                "<strong>Makanan</strong> tempatan yang pelbagai",
+                "<strong>Penginapan</strong> di hotel pilihan di Jakarta & Bandung",
+                "<strong>Lawatan ke mercu tanda utama</strong> seperti Monumen Nasional (Monas), Masjid Istiqlal, Kota Tua Jakarta, Gedung Sate dan Kawah Putih",
+                "<strong>Aktiviti membeli-belah</strong> di pusat fesyen seperti Pasar Baru, Cihampelas  dan Factory Outlet Bandung",
+                "<strong>Makanan</strong> tempatan dan halal disediakan",
                 "<strong>Pemandu pelancong berpengalaman</strong>",
                 "Pengangkutan persendirian sepanjang lawatan"
             ],
             gallery: [
-                { src: "images/jakarta_gallery/Monas.jpg", name: "Monas (Monumen Nasional)", description: "Simbol ikonik kemerdekaan Indonesia." },
-                { src: "images/jakarta_gallery/IstiqlalMosque.jpeg", name: "Masjid Istiqlal", description: "Masjid terbesar di Asia Tenggara." },
-                { src: "images/jakarta_gallery/KotaTua.jpg", name: "Kota Tua (Bandar Lama)", description: "Daerah kolonial bersejarah dengan muzium dan kafe." },
-                { src: "images/jakarta_gallery/JakartaFood.jpg", name: "Makanan Halal Indonesia", description: "Menikmati hidangan halal tradisional Indonesia." },
+                { src: "images/jakarta_gallery/Monas.jpg", name: "Monas (Monumen Nasional)", description: "Simbol ikonik kemerdekaan Indonesia yang terletak di pusat Jakarta." },
+                { src: "images/jakarta_gallery/IstiqlalMosque.jpeg", name: "Masjid Istiqlal", description: "Masjid terbesar di Asia Tenggara yang menjadi kebanggaan umat Islam di Indonesia." },
+            
+                // Bandung Places
+                { src: "images/jakarta_gallery/KawahPutih.jpg", name: "Kawah Putih", description: "Tasik kawah berwarna putih kehijauan yang menakjubkan di puncak gunung Bandung." },
+                { src: "images/jakarta_gallery/Farmhouse.jpg", name: "Farmhouse Lembang", description: "Tarikan keluarga dengan suasana desa Eropah serta haiwan jinak dan spot bergambar menarik." }
             ]
         },
         vietnam: {
@@ -777,22 +787,42 @@ label[for="searchFilter"] {
                 { src: "images/karimun_gallery/masjidkarimun.jpg", name: "Masjid Baiturrahman", description: "Masjid utama di Pulau Karimun, Kepulauan Riau. Terkenal dengan reka bentuk moden dan menjadi pusat ibadah serta tumpuan umat Islam tempatan dan pelancong." }
             ]
         },
-        sabah: {
-            title: "Terokai Sabah Yang Liar",
-            intro: "Jelajahi hutan hujan yang subur, gunung-ganang yang megah dan warisan budaya yang kaya di Sabah, Borneo Malaysia.",
-            image: "images/Sabah.jpg",
+        kotakinabaluKundasang: {
+            title: "Lawatan Indah ke Kota Kinabalu & Kundasang",
+            intro: "Alami keindahan semula jadi Sabah dari pantai yang memukau di Kota Kinabalu ke udara sejuk tanah tinggi Kundasang yang menenangkan.",
+            image: "images/Kotakinabalu.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel dan resort",
-                "<strong>Lawatan ke Taman Negara Kinabalu</strong>seperti Taman Hidupan Liar Lok Kawi",
-                "<strong>Makanan</strong> tempatan disediakan",
-                "Pemandu pelancong berpengalaman",
-                "Pengangkutan disediakan"
+                "<strong>Penginapan</strong> di hotel atau resort di Kota Kinabalu dan Kundasang",
+                "<strong>Lawatan ke tempat ikonik</strong> seperti Masjid Bandaraya, Desa Dairy Farm dan Kundasang War Memorial",
+                "<strong>Aktiviti alam semula jadi</strong> seperti melawat Taman Negara Kinabalu dan pekan Nabalu",
+                "<strong>Makanan</strong> tempatan dan halal disediakan",
+                "Pengangkutan persendirian disediakan sepanjang lawatan"
             ],
             gallery: [
-                { src: "images/sabah_gallery/Kinabalu.jpg", name: "Gunung Kinabalu", description: "Puncak tertinggi di Malaysia yang menjadi simbol Sabah dan tarikan utama buat pencinta alam dan pendaki." },
-                { src: "images/sabah_gallery/orangUtan.jpg", name: "Tempat Perlindungan Orangutan", description: "Peluang melihat orangutan dalam habitat semula jadi mereka dan memahami usaha pemuliharaan yang dijalankan."},
-                { src: "images/sabah_gallery/sipadan.jpg", name: "Pulau Sipadan", description: "Lokasi menyelam terbaik dunia yang mempesonakan dengan kehidupan marin yang kaya dan pelbagai."}
+                { src: "images/kotaKundasang_gallery/masjidBandaraya.jpg", name: "Masjid Bandaraya Kota Kinabalu", description: "Masjid terapung yang menjadi simbol ikonik di Kota Kinabalu dengan latar laut yang menakjubkan." },
+                { src: "images/kotaKundasang_gallery/desaDairy.jpg", name: "Desa Dairy Farm", description: "Ladang tenusu di Kundasang dengan pemandangan seperti New Zealand dan peluang bergambar menarik." },
+                { src: "images/kotaKundasang_gallery/kundasangWarMemorial.jpg", name: "Kundasang War Memorial", description: "Tapak bersejarah untuk memperingati wira perang dan pemandangan taman yang tenang." },
+                { src: "images/kotaKundasang_gallery/pekanNabalu.jpg", name: "Pekan Nabalu", description: "Perhentian terkenal di Kundasang dengan pemandangan Gunung Kinabalu serta gerai kraftangan dan makanan tempatan." }
+            ]
+        },
+        semporna: {
+            title: "Terokai Keindahan Semporna",
+            intro: "Alami keindahan laut biru kristal, pulau-pulau tropika dan kehidupan laut yang menakjubkan di Semporna, Sabah.",
+            image: "images/Semporna.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di resort atau chalet tepi laut",
+                "<strong>Aktiviti lawatan pulau</strong> ke Timba-Timba, Egang-Egang dan pulau sekitarnya",
+                "<strong>Snorkelling & aktiviti laut</strong> di lokasi terumbu karang terbaik",
+                "<strong>Makanan</strong> halal tempatan disediakan",
+                "Pemandu pelancong berpengalaman",
+                "Pengangkutan darat dan bot disediakan"
+            ],
+            gallery: [
+                { src: "images/sabah_gallery/timbatimba.jpg", name: "Pulau Timba-Timba", description: "Pulau tropika yang terkenal dengan pasir putih lembut dan perairan jernih serta sesuai untuk bergambar dan snorkeling." },
+                { src: "images/sabah_gallery/egang.jpg", name: "Pulau Egang Egang", description: "Pulau yang damai dengan pemandangan laut yang indah, lokasi santai dan bergambar menarik di atas jeti panjang."},
+                { src: "images/sabah_gallery/snorkelling.jpg", name: "Snorkelling di Semporna", description: "Aktiviti utama di Semporna dengan pemandangan terumbu karang yang mempesona dan hidupan laut yang pelbagai."}
             ]
         },
         sarawak: {
