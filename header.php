@@ -10,7 +10,7 @@
     <style>
         /* New styling for the header to use the image as a background */
         header {
-            /* Use the uploaded image as the background */
+            /* Menggunakan imej yang betul sebagai latar belakang */
             background-image: url('images/QaidHeader.png');
             background-size: cover;
             background-position: center;
@@ -30,7 +30,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(180, 169, 169, 0.4); /* Dark overlay */
+            background-color: rgba(255, 255, 255, 0.2); /* Menjadikan overlay lebih cerah */
             z-index: 1;
         }
 
@@ -41,6 +41,9 @@
         }
 
         .logo-box {
+            background-color: rgba(255, 255, 255, 0.9); /* Latar belakang putih dengan sedikit ketelusan */
+            border: 2px solid #b41b1b; /* Border merah */
+            border-radius: 10px; /* Rounded corners */
             position: absolute; /* Tetapkan posisi logo secara mutlak */
             top: 20px; /* Jarak dari atas */
             left: 50%;
@@ -50,25 +53,45 @@
         .logo-box img {
             width: auto;
             height: 100px; /* Adjust height as needed */
+            transform: translateY(8%);
         }
 
         .welcome-box {
-            margin-bottom: 60px;
-            padding: 15px;
+            /* Mengubah gaya untuk membuat kotak putih */
+            background-color: rgba(255, 255, 255, 0.9); /* Latar belakang putih dengan sedikit ketelusan */
+            border: 2px solid #b41b1b; /* Border merah */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px;
+            margin: 20px auto; /* Pusatkan kotak */
+            max-width: 50%; /* Lebar maksimum */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         
         .welcome-box h1 {
             font-size: 2.5rem;
             margin: 0;
-            text-shadow: 2px 2px 4px rgba(105, 45, 45, 0.7);
+            color: #b41b1b; /* Warna teks merah */
+            text-shadow: none; /* Buang text-shadow */
         }
 
         .welcome-box p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin: 5px 0 0;
+            color: #b41b1b; /* Warna teks merah */
+            text-shadow: none; /* Buang text-shadow */
         }
 
-        /* Navigation styling */
+        /* Navigation styling with a box background */
+        nav {
+            background-color: rgba(180, 27, 27, 0.9); /* Warna latar belakang navigasi yang sesuai */
+            border: 2px solid #b41b1b; /* Border merah yang sama dengan welcome box */
+            border-radius: 10px; /* Rounded corners */
+            padding: 10px 0;
+            margin: 20px auto;
+            max-width: 80%; /* Lebar maksimum */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
         nav ul {
             list-style: none;
             padding: 0;
@@ -116,8 +139,7 @@
 <body>
     <header>
         <div class="logo-box">
-            <!-- Ruang untuk logo Qaid anda -->
-            <img src="images/QaidTravel.png" alt="Qaid Travel Logo" width="250" height="100" />
+            <img src="images/QaidTravel2.png" alt="Qaid Travel Logo" width="250" height="100" />
         </div>
         <div class="welcome-box">
             <h1>Selamat Datang ke Qaid Travel</h1>
