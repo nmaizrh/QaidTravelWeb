@@ -20,6 +20,7 @@
             text-align: center;
             position: relative; /* Needed for the overlay */
             padding-top: 150px; /* Menambah ruang di bahagian atas untuk logo */
+            
         }
         
         /* Create a semi-transparent overlay for better text readability */
@@ -32,6 +33,7 @@
             height: 100%;
             background-color: rgba(255, 255, 255, 0.2); /* Menjadikan overlay lebih cerah */
             z-index: 1;
+
         }
 
         /* Ensure all content is on top of the overlay */
