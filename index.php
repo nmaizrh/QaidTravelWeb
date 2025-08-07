@@ -35,7 +35,8 @@
 </section>
 
 <section class="intro">
-  <p>Sejak 2019, kami telah menjadi rakan kongsi pelancongan mesra Muslim anda yang dipercayai. Biarkan kami merealisasikan impian perjalanan anda dari Umrah hingga pengembaraan global.</p>
+  <p>Sejak 2019 kami telah menjadi rakan kongsi pelancongan mesra Muslim anda yang dipercayai. Kami komited dalam membantu anda merealisasikan impian
+    dalam menjelajah destinasi dunia dengan penuh keyakinan dan keselesaan.</p>
 </section>
 
 <section class="popular-destination">
