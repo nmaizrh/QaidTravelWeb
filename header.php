@@ -11,7 +11,7 @@
         /* New styling for the header to use the image as a background */
         header {
             /* Use the uploaded image as the background */
-            background-image: url('images/QAIDHEADER.png');
+            background-image: url('images/QaidHeader.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
