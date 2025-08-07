@@ -100,7 +100,10 @@
             display: flex;
             justify-content: center;
             gap: 20px;
+            margin-bottom: 10px;
         }
+
+        
 
         nav a {
             color: #fff;
