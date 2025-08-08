@@ -5,7 +5,7 @@
       <img src="images/Instagram.png" alt="Instagram">
     </a>
     <a href="https://www.tiktok.com/@qaidtravel_" target="_blank">
-      <img src="images/Tiktok.png" alt="TikTok">
+      <img src="images/TikTok.png" alt="TikTok">
     </a>
     <a href="https://www.facebook.com/profile.php?id=100095111277390" target="_blank">
       <img src="images/Facebook.png" alt="Facebook">
