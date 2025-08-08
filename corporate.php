@@ -759,7 +759,7 @@
         bintan: {
             title: "Percutian Tanjung Pinang & Bintan",
             intro: "Alami keindahan tenang pantai-pantai bersih Bintan dan daya tarikan bersejarah Tanjung Pinang, Indonesia.",
-            image: "images/Bintan.jpg",
+            image: "images/bintan1.jpg",
             packages: [
                 "<strong>Tiket feri pergi balik</strong>",
                 "<strong>Penginapan</strong> di resort disediakan",
@@ -1121,7 +1121,7 @@
             // Create 'Previous' link
             const prevLink = document.createElement('a');
             prevLink.href = '#';
-            prevLink.textContent = 'Sebelum';
+            prevLink.textContent = '<';
             if (currentPage === 1) {
                 prevLink.classList.add('disabled');
             } else {
@@ -1159,7 +1159,7 @@
             // Create 'Next' link
             const nextLink = document.createElement('a');
             nextLink.href = '#';
-            nextLink.textContent = 'Seterusnya';
+            nextLink.textContent = '>';
             if (currentPage === totalPages) {
                 nextLink.classList.add('disabled');
             } else {
