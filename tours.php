@@ -1033,7 +1033,7 @@
             // Create 'Previous' link
             const prevLink = document.createElement('a');
             prevLink.href = '#';
-            prevLink.textContent = 'Sebelum';
+            prevLink.textContent = '<';
             if (currentPage === 1) {
                 prevLink.classList.add('disabled');
             } else {
@@ -1071,7 +1071,7 @@
             // Create 'Next' link
             const nextLink = document.createElement('a');
             nextLink.href = '#';
-            nextLink.textContent = 'Seterusnya';
+            nextLink.textContent = '>';
             if (currentPage === totalPages) {
                 nextLink.classList.add('disabled');
             } else {
