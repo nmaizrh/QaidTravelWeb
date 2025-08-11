@@ -1410,19 +1410,221 @@
     // Other functions (filtering, pagination, hero slider, etc.) remain unchanged
     const tours = Object.keys(tourData).map(key => ({ ...tourData[key], id: key }));
     function displayTours(tourArray, page) {
-        // ... (existing code for displayTours)
+        const selectedDestination = destinationFilter.value;
+        const selectedTopics = Array.from(topicCheckboxes)
+                                                .filter(checkbox => checkbox.checked)
+                                                .map(checkbox => checkbox.value);
+        const searchTerm = searchFilter.value.toLowerCase().trim();
+
+        filteredTourCards = Array.from(allTourCards).filter(card => {
+            const cardDestination = card.dataset.destination;
+            const cardTopics = card.dataset.topics ? card.dataset.topics.split(',') : [];
+            
+            // Ensure tourData[card.dataset.id] exists before accessing its properties
+            const tourDetail = tourData[card.dataset.id];
+            if (!tourDetail) {
+                console.warn(`Tour data not found for ID: ${card.dataset.id}`);
+                return false; // Exclude card if its data is missing
+            }
+            const cardTitle = tourDetail.title.toLowerCase();
+            const cardIntro = tourDetail.intro.toLowerCase();
+
+            const matchesDestination = selectedDestination === '' || cardDestination === selectedDestination;
+            const matchesTopics = selectedTopics.length === 0 || selectedTopics.every(topic => cardTopics.includes(topic));
+            const matchesSearch = searchTerm === '' || cardTitle.includes(searchTerm) || cardIntro.includes(searchTerm);
+
+            return matchesDestination && matchesTopics && matchesSearch;
+        });
+
+        // Hide all cards first
+        allTourCards.forEach(card => {
+            card.style.display = 'none';
+        });
+
+        // Handle "No results found" message
+        if (filteredTourCards.length === 0 && searchTerm !== '') {
+            noResultsMessage.style.display = 'block';
+        } else {
+            noResultsMessage.style.display = 'none';
+        }
+
+        // Calculate start and end index for current page
+        const startIndex = (currentPage - 1) * toursPerPage;
+        const endIndex = startIndex + toursPerPage;
+
+        // Display only the cards for the current page
+        for (let i = startIndex; i < endIndex && i < filteredTourCards.length; i++) {
+            filteredTourCards[i].style.display = 'block';
+        }
+
+        setupPagination();
     }
 
     function setupPagination(tourArray) {
-        // ... (existing code for setupPagination)
+        paginationContainer.innerHTML = ''; // Clear previous pagination links
+        const totalPages = Math.ceil(filteredTourCards.length / toursPerPage);
+        const maxPageLinks = 5; // The maximum number of page links to show at once
+
+        if (totalPages > 1) {
+            // Create 'Previous' link
+            const prevLink = document.createElement('a');
+            prevLink.href = '#';
+            prevLink.textContent = '<';
+            if (currentPage === 1) {
+                prevLink.classList.add('disabled');
+            } else {
+                prevLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage--;
+                    displayTours();
+                });
+            }
+            paginationContainer.appendChild(prevLink);
+
+            // Logic to show a limited number of page links
+            let startPage = Math.max(1, currentPage - Math.floor(maxPageLinks / 2));
+            let endPage = Math.min(totalPages, startPage + maxPageLinks - 1);
+
+            if (endPage - startPage + 1 < maxPageLinks) {
+                startPage = Math.max(1, endPage - maxPageLinks + 1);
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                const pageLink = document.createElement('a');
+                pageLink.href = '#';
+                pageLink.textContent = i;
+                if (i === currentPage) {
+                    pageLink.classList.add('active');
+                }
+                pageLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage = i;
+                    displayTours();
+                });
+                paginationContainer.appendChild(pageLink);
+            }
+
+            // Create 'Next' link
+            const nextLink = document.createElement('a');
+            nextLink.href = '#';
+            nextLink.textContent = '>';
+            if (currentPage === totalPages) {
+                nextLink.classList.add('disabled');
+            } else {
+                nextLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage++;
+                    displayTours();
+                });
+            }
+            paginationContainer.appendChild(nextLink);
+        }
     }
+
+    // Event Listeners for filters
+    destinationFilter.addEventListener('change', () => {
+        currentPage = 1; // Reset to first page on filter change
+        displayTours();
+    });
+
+    topicCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            currentPage = 1; // Reset to first page on filter change
+            displayTours();
+        });
+    });
+
+    // Event Listener for the search button click
+    searchButton.addEventListener('click', () => {
+        currentPage = 1; // Reset to first page on search
+        displayTours();
+    });
+
+    // Event Listener for real-time search as user types (optional, remove if only button search is desired)
+    searchFilter.addEventListener('input', () => {
+        currentPage = 1;
+        displayTours();
+    });
 
     function filterAndSearch() {
         // ... (existing code for filterAndSearch)
     }
     function resetFilters() {
-        // ... (existing code for resetFilters)
+        destinationFilter.value = '';
+        topicCheckboxes.forEach(checkbox => checkbox.checked = false);
+        searchFilter.value = ''; // Clear search input on reset
+        currentPage = 1; // Reset to first page
+        noResultsMessage.style.display = 'none'; // Hide no results message on reset
+        displayTours(); // Re-display all tours
     }
+
+    // Modal functionality
+    allTourCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const tourId = card.dataset.id;
+            const tour = tourData[tourId];
+
+            if (tour) {
+                modalTourImage.src = tour.image;
+                modalTourTitle.textContent = tour.title;
+                modalTourIntro.textContent = tour.intro;
+
+                // Clear previous packages
+                modalPackageList.innerHTML = '';
+                tour.packages.forEach(pkg => {
+                    const li = document.createElement('li');
+                    li.innerHTML = pkg;
+                    modalPackageList.appendChild(li);
+                });
+
+                // Clear previous gallery items
+                modalGallery.innerHTML = '';
+                tour.gallery.forEach(item => {
+                    const galleryItemDiv = document.createElement('div');
+                    galleryItemDiv.classList.add('modal-gallery-item');
+
+                    const img = document.createElement('img');
+                    img.src = item.src;
+                    img.alt = item.name;
+                    galleryItemDiv.appendChild(img);
+
+                    const name = document.createElement('div');
+                    name.classList.add('name');
+                    name.textContent = item.name;
+                    galleryItemDiv.appendChild(name);
+
+                    const description = document.createElement('div');
+                    description.classList.add('description');
+                    description.textContent = item.description;
+                    galleryItemDiv.appendChild(description);
+
+                    modalGallery.appendChild(galleryItemDiv);
+                });
+
+                // Set inquire button link
+                modalInquireBtn.href = `contact.php?tour=${encodeURIComponent(tour.title)}`;
+
+                tourDetailModal.classList.add('active');
+            }
+        });
+    });
+
+    modalCloseBtn.addEventListener('click', () => {
+        tourDetailModal.classList.remove('active');
+    });
+
+    // Close modal if clicking outside content
+    tourDetailModal.addEventListener('click', (e) => {
+        if (e.target === tourDetailModal) {
+            tourDetailModal.classList.remove('active');
+        }
+    });
+
+    // Initial load
+    document.addEventListener('DOMContentLoaded', () => {
+        populateDestinationFilter();
+        displayTours(); // Initial display and pagination setup
+    });
 
     // Modal close functionality
     modalCloseBtn.addEventListener('click', () => {
