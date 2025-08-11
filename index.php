@@ -152,23 +152,23 @@
         ]
         },
         japan: {
-        title: "Temui Jepun: Lawatan Bunga Sakura & Budaya",
-        intro: "Benamkan diri anda dalam gabungan budaya tradisional dan keajaiban moden Jepun yang menawan, dengan tumpuan khusus kepada pengalaman mesra Muslim.",
-        image: "images/Japan.jpg",
-        packages: [
-            "<strong>Tiket penerbangan pergi balik</strong>",
-            "<strong>Penginapan</strong> di hotel Muslim-friendly terpilih",
-            "<strong>Lawatan penuh ke tempat menarik</strong> seperti Tokyo, Kyoto, Osaka, dan Nara.",
-            "<strong>Makanan halal</strong> yang disahkan atau ramah Muslim",
-            "<strong>Pemandu pelancong berpengalaman</strong> yang mesra Muslim",
-            "Pengangkutan awam yang efisien (termasuk Shinkansen/Bullet train)"
-        ],
-        gallery: [
-            { src: "images/japan_gallery/Fuji.jpg", name: "Gunung Fuji", description: "Gunung suci ikonik Jepun." },
-            { src: "images/japan_gallery/KyotoTemple.jpg", name: "Kuil Kinkaku-ji (Kyoto)", description: "Pavilion Emas, sebuah kuil Buddha Zen yang menakjubkan." },
-            { src: "images/japan_gallery/Shibuya.jpg", name: "Persimpangan Shibuya (Tokyo)", description: "Salah satu persimpangan paling sibuk di dunia." },
-            { src: "images/japan_gallery/Arashiyama.jpg", name: "Hutan Buluh Arashiyama (Kyoto)", description: "Hutan buluh yang tenang, keajaiban alam." },
-        ]
+            title: "Jelajahi Jepun: Lawatan Bunga Sakura dan Budaya",
+            intro: "Selami gabungan mempesona budaya tradisional dan keajaiban moden Jepun dengan tumpuan khas pada pengalaman mesra Muslim.",
+            image: "images/Japan.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel mesra Muslim terpilih",
+                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Tokyo, Kyoto, Osaka dan Nara.",
+                "<strong>Makanan</strong> yang disahkan atau ramah Muslim",
+                "<strong>Pemandu pelancong berpengalaman</strong> yang mesra Muslim",
+                "Pengangkutan awam yang efisien (termasuk Shinkansen/Kereta api laju)"
+            ],
+            gallery: [
+                { src: "images/japan_gallery/Kobe.png", name: "Kobe Harborland - Kobe", description: "Kawasan pelabuhan moden dengan pemandangan malam yang menakjubkan, pusat beli-belah dan tempat santai tepi laut." },
+                { src: "images/japan_gallery/KyotoTemple.jpg", name: "Kuil Kinkaku-ji - Kyoto", description: "Pavilion Emas dan kuil Buddha Zen yang menakjubkan." },
+                { src: "images/japan_gallery/universal.jpg", name: "Universal Studio Japan - Osaka", description: "Taman tema popular dengan tarikan filem terkenal, pertunjukan langsung dan pengalaman hiburan untuk semua peringkat umur." },
+                { src: "images/japan_gallery/Arashiyama.jpg", name: "Hutan Buluh Arashiyama - Kyoto", description: "Hutan buluh yang tenang serta keajaiban alam." },
+            ]
         },
         korea: {
         title: "Lawatan Musim Luruh Korea: Pengalaman Pemandangan Indah",
