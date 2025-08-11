@@ -553,7 +553,7 @@
         <div class="filter-group">
             <label for="destination">Destinasi</label>
             <select id="destination">
-                <!-- Options will be populated by JavaScript -->
+                <option value="">Semua Destinasi</option>
             </select>
         </div>
 
@@ -709,6 +709,7 @@
     const topicCheckboxes = document.querySelectorAll('.filter-group input[type="checkbox"]');
     const allTourCards = document.querySelectorAll('.tour-card');
     const paginationContainer = document.getElementById('pagination');
+
     // Modal Elements
     const tourDetailModal = document.getElementById('tourDetailModal');
     const modalCloseBtn = tourDetailModal.querySelector('.modal-close-btn');
@@ -1458,6 +1459,32 @@
         }
 
         setupPagination();
+    }
+
+    function populateDestinationFilter() {
+        const destinations = new Set();
+        allTourCards.forEach(card => {
+            // Ensure data-destination is consistently capitalized for sorting
+            const destination = card.dataset.destination;
+            if (destination) {
+                destinations.add(destination);
+            }
+        });
+
+        // Convert the Set to an Array and sort it alphabetically
+        const sortedDestinations = Array.from(destinations).sort((a, b) => a.localeCompare(b, 'ms')); // 'ms' for Malay locale
+
+        // Clear existing options, but keep the default one if it exists, or add it.
+        // Ensure the default "Semua Destinasi" is always first.
+        destinationFilter.innerHTML = '<option value="">Semua Destinasi</option>';
+
+        // Add the sorted, unique destinations to the dropdown
+        sortedDestinations.forEach(destination => {
+            const option = document.createElement('option');
+            option.value = destination;
+            option.textContent = destination;
+            destinationFilter.appendChild(option);
+        });
     }
 
     function setupPagination(tourArray) {
