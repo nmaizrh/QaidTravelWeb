@@ -631,7 +631,7 @@
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel mesra Muslim terpilih",
-                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Tokyo, Kyoto, Osaka dan Nara.",
+                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Kyoto, Osaka dan Kobe.",
                 "<strong>Makanan</strong> yang disahkan atau ramah Muslim",
                 "<strong>Pemandu pelancong berpengalaman</strong> yang mesra Muslim",
                 "Pengangkutan awam yang efisien (termasuk Shinkansen/Kereta api laju)"
