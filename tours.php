@@ -787,13 +787,13 @@
             packages: [
                 "<strong>Tiket feri pergi balik</strong>",
                 "<strong>Penginapan</strong> di resort atau hotel pilihan",
-                "<strong>Lawatan bandar</strong> termasuk Nagoya Hill dan Enggal Batam",
+                "<strong>Lawatan</strong> ke tempat ikonik seperti Jambatan Barelang, Masjid Agung Batam dan Mercu Tanda “Welcome to Batam”",
                 "<strong>Makanan</strong> tempatan yang lazat",
                 "Pengangkutan disediakan"
             ],
             gallery: [
-                { src: "images/batam_gallery/BatamBeach.jpg", name: "Pantai dan Pesisir Nongsa", description: "Bersantai di pantai berpasir Batam." },
-                { src: "images/batam_gallery/NagoyaHillShoppingMall.jpg", name: "Pusat Beli-belah Nagoya Hill", description: "Nikmati membeli-belah bebas cukai dan hiburan." },
+                { src: "images/batam_gallery/welcomeBatam.jpg", name: "Mercu Tanda “Welcome to Batam”", description: "Mercu tanda yang terkenal di Batam dan tempat bergambar yang wajib untuk para pelancong yang melancong ke Batam." },
+                { src: "images/batam_gallery/MasjidBatam.jpg", name: "Masjid Agung Batam", description: "Masjid megah yang cantik dengan seni bina moden bercirikan Islam, dikelilingi lanskap yang indah serta mempunyai suasana yang tenang dan damai untuk para pengunjung." },
                 { src: "images/batam_gallery/barelang.jpg", name: "Jambatan Barelang", description: "Ikon terkenal di Batam yang menghubungkan beberapa pulau utama dan menawarkan pemandangan indah terutama saat matahari terbenam." }
             ]
         },
