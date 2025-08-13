@@ -60,7 +60,7 @@
     }
 
     .filter-group label[for="searchFilter"] {
-        color: black !important;
+        color: white !important;
     }
 
     .filter-group {
