@@ -1253,45 +1253,41 @@ $currentTours = array_slice(array_keys($tourData), $start, $toursPerPage);
                 },
             ]
         },
-        korea: {
-            title: "Lawatan Korporat ke Korea",
-            intro: "Alami keunikan gabungan budaya pop moden dan warisan bersejarah Korea.",
+       korea: {
+            intro: "Alami gabungan unik sejarah, budaya dan inovasi moden di Korea Selatan. Lawatan ini menawarkan pakej yang komprehensif untuk menerokai bandar-bandar yang dinamik dan landskap yang tenang, sambil menikmati pengalaman mesra halal.",
             image: "images/Korea1.jpg",
             packages: [
-                "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel bertaraf antarabangsa",
-                "<strong>Lawatan ke tempat menarik</strong> seperti Nami Island, Menara N Seoul dan Istana Gyeongbokgung",
-                "<strong>Makanan</strong> halal tersedia",
-                "<strong>Pemandu pelancong berpengalaman</strong>",
-                "Pengangkutan persendirian sepanjang lawatan"
+                "<strong>Pengangkutan</strong> pergi balik dari Malaysia",
+                "<strong>Penginapan</strong> di hotel pilihan",
+                "<strong>Lawatan ke tempat-tempat menarik</strong> seperti Gyeongbokgung Palace, Namsan Seoul Tower dan Myeongdong",
+                "<strong>Makanan</strong> tempatan dan halal",
+                "Pemandu pelancong berpengalaman"
             ],
             gallery: [
                 {
-                    name: "Pulau Nami",
-                    images: [
-                        { src: "images/korea_gallery/NamiIsland.jpg", description: "Sebuah pulau berbentuk separuh bulan yang indah yang terkenal dengan keindahan semula jadi." }
-                    ]
-                },
-                {
-                    name: "Menara N Seoul",
-                    images: [
-                        { src: "images/korea_gallery/SeoulTower.jpg", description: "Mercu tanda ikonik yang menawarkan pemandangan panorama Seoul." }
-                    ]
-                },
-                {
                     name: "Istana Gyeongbokgung",
                     images: [
-                        { src: "images/korea_gallery/Gyeongbokgung.jpg", description: "Istana terbesar dari Lima Istana Besar yang dibina semasa Dinasti Joseon." }
+                        { src: "images/koreaC_gallery/istana1.jpg", description: "" },
+                        { src: "images/koreaC_gallery/istana.jpg", description: "" },
+                        { src: "images/koreaC_gallery/istana2.jpg", description: "" },
+                        { src: "images/koreaC_gallery/istana3.jpg", description: "" }
                     ]
                 },
                 {
-                    name: "Masakan Halal Korea",
+                    name: "Pulau Nami",
                     images: [
-                        { src: "images/korea_gallery/KoreanFood.jpg", description: "Menikmati hidangan halal yang lazat dan pelbagai di Korea." }
+                        { src: "images/koreaC_gallery/nami.jpg", description: "" }
                     ]
                 },
+                {
+                    name: "Menara Namsan",
+                    images: [
+                        { src: "images/koreaC_gallery/namsan.jpg", description: "" }
+                    ]
+                }
             ]
         },
+
        newZealand: {
             title: "Lawatan Kerja ke New Zealand",
             intro: "Alami landskap New Zealand yang menakjubkan dan kenali budaya uniknya. Pakej lawatan kerja korporat ini dirancang untuk inspirasi dan pembangunan pasukan.",
