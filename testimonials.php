@@ -3,37 +3,37 @@
 // In a real application, this data would likely come from a database.
 $testimonials = [
     [
-        'name' => 'Ahmad bin Abdullah',
+        'name' => 'Nama',
         'quote' => 'Perjalanan Umrah bersama Qaid Travel adalah pengalaman yang sangat bermakna dan lancar. Segala urusan diuruskan dengan sempurna, dari penginapan hingga bimbingan ibadah. Sangat disyorkan!',
         'date' => '15 Januari 2024',
         'rating' => 5 // Out of 5
     ],
     [
-        'name' => 'Siti Nurhaliza',
+        'name' => 'Nama',
         'quote' => 'Lawatan ke Jepun dengan Qaid Travel sungguh menakjubkan! Pilihan makanan halal yang banyak dan pemandu pelancong yang berpengetahuan menjadikan perjalanan ini sangat menyeronokkan dan mudah untuk kami sekeluarga.',
         'date' => '28 Disember 2023',
         'rating' => 5
     ],
     [
-        'name' => 'Encik Tan',
+        'name' => 'Nama',
         'quote' => 'Saya sangat kagum dengan pakej Korporat ke Melaka. Pengurusan acara yang profesional, kemudahan yang mewah, dan lawatan yang teratur. Pasti akan menggunakan perkhidmatan Qaid Travel lagi untuk acara syarikat kami.',
         'date' => '10 Mac 2024',
         'rating' => 5
     ],
     [
-        'name' => 'Puan Lim',
+        'name' => 'Nama',
         'quote' => 'Percutian ke Langkawi anjuran Qaid Travel memang syurga! Pantai yang indah, aktiviti yang menyeronokkan, dan penginapan yang selesa. Anak-anak saya sangat gembira.',
         'date' => '5 Februari 2024',
         'rating' => 4
     ],
     [
-        'name' => 'Dr. Amir Hamzah',
+        'name' => 'Nama',
         'quote' => 'Sebagai seorang yang mementingkan aspek mesra Muslim, Qaid Travel memenuhi semua jangkaan saya. Dari solat hingga makanan, semuanya diuruskan dengan teliti. Terima kasih!',
         'date' => '20 November 2023',
         'rating' => 5
     ],
     [
-        'name' => 'Cik Sofia',
+        'name' => 'Nama',
         'quote' => 'Lawatan ke Korea semasa musim luruh sangat cantik. Pemandangan yang menakjubkan dan pengalaman budaya yang mendalam. Walaupun ada sedikit kelewatan, pasukan Qaid Travel menguruskannya dengan baik.',
         'date' => '12 Oktober 2023',
         'rating' => 4
