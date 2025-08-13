@@ -199,7 +199,7 @@
     }
 
     .filter-group label[for="searchFilter"] {
-        color: black !important;
+        color: white !important;
     }
 
     .filter-group select {
@@ -585,11 +585,11 @@
                     <p>Lawatan bersama Perbadanan Ketua Negeri Melaka (CMI) dan Jabatan Kerja Raya Negeri Melaka (JKR)</p>
                 </div>
             </div>
-            <div class="tour-card" data-id="hat_yai" data-destination="Hat Yai" data-topics="Culture,Food">
-                <img src="images/Hatyai.png" alt="Hat Yai"/>
+            <div class="tour-card" data-id="korea" data-destination="Korea" data-topics="Culture,Food">
+                <img src="images/Korea1.jpg" alt="Korea"/>
                 <div class="info">
-                    <h4>Keindahan Bandar Hat Yai</h4>
-                    <p>Terokai pasar Hat Yai yang sibuk, kuil, dan makanan jalanan yang lazat.</p>
+                    <h4>Lawatan Korporat ke Korea</h4>
+                    <p>Lawatan bersama Perbadanan Ketua Negeri Melaka (CMI).</p>
                 </div>
             </div>
             <div class="tour-card" data-id="jakarta" data-destination="Jakarta" data-topics="Culture,Nature">
@@ -1228,34 +1228,36 @@
                 }
             ]
         },
-        hat_yai: {
-            title: "Keindahan Bandar Hat Yai",
-            intro: "Terokai kehidupan bandar Hat Yai yang sibuk, kuil yang indah dan nikmati makanan jalanan yang lazat. Pakej ini adalah untuk pengalaman yang santai dan menarik.",
-            image: "images/Hatyai.png",
+        korea: {
+            intro: "Alami gabungan unik sejarah, budaya, dan inovasi moden di Korea Selatan. Lawatan ini menawarkan pakej yang komprehensif untuk menerokai bandar-bandar yang dinamik dan landskap yang tenang, sambil menikmati pengalaman mesra halal.",
+            image: "images/Korea1.jpg",
             packages: [
-                "<strong>Pengangkutan</strong> pergi balik dari Melaka",
+                "<strong>Pengangkutan</strong> pergi balik dari Malaysia",
                 "<strong>Penginapan</strong> di hotel pilihan",
-                "<strong>Lawatan ke tempat-tempat menarik</strong> seperti Four Face Buddha, Samila Beach dan Floating Market",
+                "<strong>Lawatan ke tempat-tempat menarik</strong> seperti Gyeongbokgung Palace, Namsan Seoul Tower dan Myeongdong",
                 "<strong>Makanan</strong> tempatan dan halal",
                 "Pemandu pelancong berpengalaman"
             ],
             gallery: [
                 {
-                    name: "Pasar Terapung Khlong Hae",
+                    name: "Istana Gyeongbokgung",
                     images: [
-                        { src: "images/hatyai_gallery/FloatingMarket.jpg", description: "Pasar yang unik dengan makanan yang dijual di atas bot." }
+                        { src: "images/koreaC_gallery/istana1.jpg", description: "" },
+                        { src: "images/koreaC_gallery/istana.jpg", description: "" },
+                        { src: "images/koreaC_gallery/istana2.jpg", description: "" },
+                        { src: "images/koreaC_gallery/istana3.jpg", description: "" }
                     ]
                 },
                 {
-                    name: "Four Face Buddha",
+                    name: "Pulau Nami",
                     images: [
-                        { src: "images/hatyai_gallery/fourFaceBuddha.jpg", description: "Kuil Buddha dengan empat muka yang menjadi tumpuan pelancong." }
+                        { src: "images/koreaC_gallery/nami.jpg", description: "" }
                     ]
                 },
                 {
-                    name: "Pantai Samila (Songkhla)",
+                    name: "Menara Namsan",
                     images: [
-                        { src: "images/hatyai_gallery/hatYaiBeach.jpg", description: "Pantai yang terkenal dengan patung Mermaid Emas." }
+                        { src: "images/koreaC_gallery/namsan.jpg", description: "" }
                     ]
                 }
             ]
