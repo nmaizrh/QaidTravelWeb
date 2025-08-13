@@ -1,3 +1,35 @@
+<?php include 'header.php'; ?>
+<?php
+// Pagination variables
+$toursPerPage = 6;
+$tourData = [
+    // This is where your tour data would be fetched from a database in a real application.
+    // For this example, we'll use a placeholder to calculate total pages.
+    'newZealand' => ['title' => 'Lawatan Kerja ke New Zealand'],
+    'newYork' => ['title' => 'Lawatan ke New York'],
+    'korea' => ['title' => 'Lawatan Korporat ke Korea'],
+    'jakarta' => ['title' => 'Lawatan Bandar Jakarta'],
+    'japan' => ['title' => 'Jelajahi Jepun'],
+    'barbados' => ['title' => 'Lawatan Korporat ke Barbados'],
+    'shanghai' => ['title' => 'Lawatan Kerja Rasmi ke Shanghai'],
+    'germany' => ['title' => 'Lawatan Korporat ke Germany-Netherlands'],
+    'sabah' => ['title' => 'Terokai Sabah Yang Liar'],
+    'sarawak' => ['title' => 'Penemuan Budaya Sarawak'],
+    'bintan' => ['title' => 'Lawatan Korporat ke Bintan'],
+    'thailand' => ['title' => 'Lawatan Penerokaan Thailand'],
+    'turki' => ['title' => 'Lawatan ke Istanbul, Turki'],
+    'umrah' => ['title' => 'Perjalanan Umrah'],
+    'vietnam' => ['title' => 'Perjalanan Budaya Vietnam']
+];
+
+$totalTours = count($tourData);
+$totalPages = ceil($totalTours / $toursPerPage);
+$currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$start = ($currentPage - 1) * $toursPerPage;
+
+$currentTours = array_slice(array_keys($tourData), $start, $toursPerPage);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +43,7 @@
         font-family: 'Segoe UI', sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f0f0f0; /* Keeping the light grey background from previous step */
+        background-color: #cb4646; /* Keeping the light grey background from previous step */
     }
 
     .tour-list {
@@ -23,11 +55,16 @@
     }
 
     .tour-card {
-        flex-basis: calc(33.333% - 20px); /* Preferred width for 3 cards per row */
-        flex-grow: 0;   /* Changed from 1 to 0: Prevents cards from growing and filling extra space */
-        flex-shrink: 0; /* Prevents cards from shrinking */
-        max-width: 350px; /* Caps the maximum width of a single card, adjust as needed */
-        background-color: #fff; /* Keeping cards white as they are content containers */
+        flex-basis: calc(33.333% - 20px);
+        /* Preferred width for 3 cards per row */
+        flex-grow: 0;
+        /* Changed from 1 to 0: Prevents cards from growing and filling extra space */
+        flex-shrink: 0;
+        /* Prevents cards from shrinking */
+        max-width: 350px;
+        /* Caps the maximum width of a single card, adjust as needed */
+        background-color: #fff;
+        /* Keeping cards white as they are content containers */
         border-radius: 10px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         overflow: hidden;
@@ -45,8 +82,10 @@
     }
 
     .filter-panel {
-        flex-shrink: 0; /* Prevents the filter panel from shrinking */
-        width: 320px; /* Fixed width for the filter box */
+        flex-shrink: 0;
+        /* Prevents the filter panel from shrinking */
+        width: 320px;
+        /* Fixed width for the filter box */
         padding: 25px;
         border: 2px solid #ddd;
         border-radius: 10px;
@@ -75,14 +114,17 @@
         border: 2px solid #b62626; /* Matches your select border color */
         background-color: #fff;
         color: #333; /* Color of the text typed inside the search box */
-        width: 92%; /* Changed to 100% for responsiveness */
-        max-width: 100%; /* Ensure it's responsive */
+        width: 92%;
+        /* Changed to 100% for responsiveness */
+        max-width: 100%;
+        /* Ensure it's responsive */
         box-sizing: border-box;
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .search-btn {
-        background-color: #b62626; /* Matches your primary red color */
+        background-color: #b62626;
+        /* Matches your primary red color */
         color: #fff;
         padding: 10px 15px;
         font-size: 1rem;
@@ -90,26 +132,32 @@
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s ease, transform 0.2s ease;
-        margin-left: 10px; /* Space from the input field */
+        margin-left: 10px;
+        /* Space from the input field */
     }
 
     .search-btn:hover {
-        background-color: #7c1919; /* Darker red on hover */
+        background-color: #7c1919;
+        /* Darker red on hover */
         transform: scale(1.02);
     }
 
     /* Responsive adjustments for the filter group with the button */
     @media (max-width: 768px) {
         .filter-group {
-            flex-direction: column; /* Stack label, input, and button on small screens */
+            flex-direction: column;
+            /* Stack label, input, and button on small screens */
             align-items: flex-start;
             gap: 5px;
         }
 
         .filter-group .search-btn {
-            margin-top: 10px; /* Space from input when stacked */
-            margin-left: 0; /* Remove left margin when stacked */
-            width: 100%; /* Full width button on small screens */
+            margin-top: 10px;
+            /* Space from input when stacked */
+            margin-left: 0;
+            /* Remove left margin when stacked */
+            width: 100%;
+            /* Full width button on small screens */
         }
     }
 
@@ -121,7 +169,8 @@
 
     /* Specific styling for the search input's LABEL */
     label[for="searchFilter"] {
-        color: #333; /* Changed to dark color for readability */
+        color: #333;
+        /* Changed to dark color for readability */
     }
 
     /* Responsive adjustments for the search filter */
@@ -138,23 +187,29 @@
 
     @media (max-width: 900px) {
         .tours-container {
-            flex-direction: column; /* Stack filter and tour list on smaller screens */
+            flex-direction: column;
+            /* Stack filter and tour list on smaller screens */
             align-items: center;
         }
         .filter-panel {
-            width: 100%; /* Make filter panel full width */
+            width: 100%;
+            /* Make filter panel full width */
             margin-bottom: 30px;
         }
         .tour-card {
-            flex-basis: calc(50% - 20px); /* For screens up to 900px, display 2 cards per row */
-            max-width: 450px; /* Adjust max-width for single card in 2-column layout */
+            flex-basis: calc(50% - 20px);
+            /* For screens up to 900px, display 2 cards per row */
+            max-width: 450px;
+            /* Adjust max-width for single card in 2-column layout */
         }
     }
 
     @media (max-width: 600px) {
         .tour-card {
-            flex-basis: 100%; /* For screens up to 600px, display 1 card per row */
-            max-width: unset; /* Remove max-width when card should take full available width */
+            flex-basis: 100%;
+            /* For screens up to 600px, display 1 card per row */
+            max-width: unset;
+            /* Remove max-width when card should take full available width */
         }
     }
 
@@ -246,7 +301,8 @@
         max-width: 800px;
         width: 90%;
         max-height: 90vh; /* Limit height to viewport */
-        overflow-y: auto; /* Enable scrolling for long content */
+        overflow-y: auto;
+        /* Enable scrolling for long content */
         position: relative;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         transform: translateY(20px);
@@ -293,14 +349,18 @@
         margin-left: 20px;
     }
     .modal-package-list strong {
-        color: #b62626; /* Highlight package points */
+        color: #b62626;
+        /* Highlight package points */
     }
 
     /* Updated Gallery Styles */
     .modal-gallery {
-        display: flex; /* Changed to flexbox */
-        flex-direction: column; /* Stack items vertically */
-        gap: 20px; /* Increased gap between items */
+        display: flex;
+        /* Changed to flexbox */
+        flex-direction: column;
+        /* Stack items vertically */
+        gap: 20px;
+        /* Increased gap between items */
         margin-top: 20px;
     }
     
@@ -312,17 +372,24 @@
         text-align: center;
         background-color: #f9f9f9;
         border-radius: 8px;
-        padding: 15px; /* Increased padding */
+        padding: 15px;
+        /* Increased padding */
         box-shadow: 0 1px 5px rgba(0,0,0,0.05);
     }
     .modal-gallery-item img {
-        width: auto; /* Allow image to scale */
-        max-width: 100%; /* Ensure image doesn't overflow container */
-        height: auto; /* Allow image to scale */
-        max-height: 300px; /* Set a max height for larger display */
-        object-fit: contain; /* Ensure image is fully visible without cropping */
+        width: auto;
+        /* Allow image to scale */
+        max-width: 100%;
+        /* Ensure image doesn't overflow container */
+        height: auto;
+        /* Allow image to scale */
+        max-height: 300px;
+        /* Set a max height for larger display */
+        object-fit: contain;
+        /* Ensure image is fully visible without cropping */
         border-radius: 5px;
-        margin-bottom: 10px; /* Increased margin */
+        margin-bottom: 10px;
+        /* Increased margin */
     }
     .modal-gallery-item .name {
         font-weight: bold;
@@ -331,7 +398,8 @@
         margin-bottom: 5px;
     }
     .modal-gallery-item .description {
-        font-size: 0.9em; /* Slightly larger font */
+        font-size: 0.9em;
+        /* Slightly larger font */
         color: #666;
     }
 
@@ -344,18 +412,21 @@
         padding: 10px;
         background-color: transparent;
         border-radius: 8px;
-        box-shadow: none; /* Removed shadow for a cleaner look */
+        box-shadow: none;
+        /* Removed shadow for a cleaner look */
     }
 
     .pagination a {
-        color: #333; /* Darker text color */
+        color: #333;
+        /* Darker text color */
         padding: 8px 16px;
         text-decoration: none;
         transition: background-color 0.3s;
         border-radius: 5px;
         margin: 0 5px;
         font-weight: bold;
-        border: 1px solid #ddd; /* Added a subtle border */
+        border: 1px solid #ddd;
+        /* Added a subtle border */
     }
 
     .pagination a.active {
@@ -365,8 +436,10 @@
     }
 
     .pagination a:hover:not(.active) {
-        background-color: #f0f0f0; /* Light grey hover background */
-        color: #b62626; /* Red text on hover */
+        background-color: #f0f0f0;
+        /* Light grey hover background */
+        color: #b62626;
+        /* Red text on hover */
     }
 
     .pagination a.disabled {
@@ -392,7 +465,8 @@
 
 .hero-slide {
     display: none;
-    height: 500px; /* Adjust height as needed */
+    height: 500px;
+    /* Adjust height as needed */
     background-size: cover;
     background-position: center;
     position: relative;
@@ -521,7 +595,8 @@
         padding-top: 10px;
     }
     .gallery-images-container img {
-        max-height: 200px; /* Adjust as needed */
+        max-height: 200px;
+        /* Adjust as needed */
         width: auto;
         border-radius: 5px;
         box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -534,7 +609,6 @@
 </style>
 </head>
 <body>
-<?php include 'header.php'; ?>
 <section class="popular-destination">
 <h1 class="center-text"><strong>LAWATAN KHAS KORPORAT</strong></h1>
 </section>
@@ -570,7 +644,6 @@
 
     <div style="display: flex; flex-direction: column; flex-grow: 1;">
         <div class="tour-list" id="tourList">
-            <!-- Tour cards are dynamically displayed by JavaScript -->
             <div class="tour-card" data-id="newZealand" data-destination="New Zealand" data-topics="Island,Nature">
                 <img src="images/NewZealand.jpg" alt="New Zealand"/>
                 <div class="info">
@@ -709,7 +782,6 @@
     const topicCheckboxes = document.querySelectorAll('.filter-group input[type="checkbox"]');
     const allTourCards = document.querySelectorAll('.tour-card');
     const paginationContainer = document.getElementById('pagination');
-
     // Modal Elements
     const tourDetailModal = document.getElementById('tourDetailModal');
     const modalCloseBtn = tourDetailModal.querySelector('.modal-close-btn');
@@ -722,12 +794,11 @@
     const searchFilter = document.getElementById('searchFilter');
     const searchButton = document.getElementById('searchButton');
     const noResultsMessage = document.getElementById('noResultsMessage');
-
     // Pagination variables
     const toursPerPage = 6;
     let currentPage = 1;
     let filteredTourCards = [];
-
+    
     // 🌟 Define detailed tour data here 🌟
     // This can be fetched from a database in a more complex setup
     const tourData = {
@@ -821,9 +892,8 @@
                 "<strong>Penginapan</strong> di hotel bertaraf antarabangsa",
                 "<strong>Akses ke Shanghai Autoshow 2025</strong> termasuk pameran teknologi dan forum industri",
                 "<strong>Lawatan ke tempat menarik</strong> seperti The Bund, Oriental Pearl Tower dan kawasan membeli-belah Nanjing Road",
-                "<strong>Makanan</strong> tempatan dan halal tersedia",
-                "Pengangkutan persendirian sepanjang lawatan"
-            ],
+                "<strong>Makanan</strong>"
+                ],
             gallery: [
                 {
                     name: "Pulau Nami",
@@ -1098,52 +1168,131 @@
                     ]
                 },
                 {
-                    name: "Bandar Tanjung Pinang",
+                    name: "Candi 1000 Patung",
                     images: [
-                        { src: "images/tanjungPinang_gallery/PinangCity.jpg", description: "Terokai tapak bersejarah ibu kota." }
+                        { src: "images/tanjungPinang_gallery/1000statues.jpeg", description: "Kuil unik yang mengandungi beribu-ribu patung yang melambangkan kebudayaan." }
                     ]
                 },
                 {
-                    name: "Masjid Raya Sultan Riau",
+                    name: "Pasar Tanjung Pinang",
                     images: [
-                        { src: "images/tanjungPinang_gallery/SultanMasjid.png", description: "Masjid bersejarah dengan seni bina Melayu yang indah di Pulau Penyengat." }
+                        { src: "images/tanjungPinang_gallery/tanjungPinangMarket.jpg", description: "Terokai suasana pasar tempatan dan beli-belah." }
+                    ]
+                },
+                {
+                    name: "Pulau Penyengat",
+                    images: [
+                        { src: "images/tanjungPinang_gallery/penyengatIsland.jpg", description: "Pulau bersejarah dengan masjid dan makam diraja." }
                     ]
                 }
             ]
         },
-        karimun_island: {
-            title: "Pengembaraan Pulau Karimun Jawa",
-            intro: "Terokai keindahan kepulauan Karimun Jawa dengan pantai-pantai yang bersih, air laut yang jernih dan aktiviti snorkeling yang menarik.",
-            image: "images/karimun.jpeg",
+        sarawak: {
+            title: "Penemuan Budaya Sarawak",
+            intro: "Temui budaya asli dan keajaiban semula jadi Sarawak.",
+            image: "images/Sarawak.jpg",
             packages: [
-                "<strong>Tiket feri pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel atau homestay pilihan",
-                "<strong>Aktiviti snorkeling dan island hopping</strong>",
-                "<strong>Pakej makanan lengkap</strong>",
-                "Pengangkutan disediakan"
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel selesa",
+                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Kampung Budaya Sarawak, Taman Negara Bako, dan Muzium Kucing",
+                "<strong>Makanan</strong> tradisional Sarawak",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan persendirian"
             ],
             gallery: [
                 {
-                    name: "Pantai Karimun Jawa",
+                    name: "Kampung Budaya Sarawak",
                     images: [
-                        { src: "images/karimun_gallery/KarimunBeach.jpg", description: "Bersantai di pantai putih yang indah." }
+                        { src: "images/sarawak_gallery/SarawakCulturalVillage.jpg", description: "Muzium hidup yang mempamerkan pelbagai budaya etnik Sarawak." }
                     ]
                 },
                 {
-                    name: "Snorkeling",
+                    name: "Taman Negara Bako",
                     images: [
-                        { src: "images/karimun_gallery/KarimunJawa.jpg", description: "Alami keindahan terumbu karang di bawah laut." }
+                        { src: "images/sarawak_gallery/BakoNationalPark.jpeg", description: "Taman negara tertua di Sarawak, terkenal dengan pelbagai hidupan liar." }
                     ]
                 },
                 {
-                    name: "Aktiviti Air",
+                    name: "Sungai Sarawak",
                     images: [
-                        { src: "images/karimun_gallery/Snorkeling.jpg", description: "Menyelam dan berenang bersama ikan-ikan kecil." }
+                        { src: "images/sarawak_gallery/SarawakRiver.jpg", description: "Perjalanan bot menyusuri sungai Sarawak, melihat buaya." }
                     ]
-                }
+                },
             ]
         },
-        newZealand: {
+        sabah: {
+            title: "Terokai Sabah Yang Liar",
+            intro: "Jelajahi hutan hujan, gunung-ganang dan warisan budaya yang kaya di Sabah.",
+            image: "images/Sabah.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel selesa",
+                "<strong>Lawatan penuh ke tempat menarik</strong> seperti Taman Negara Kinabalu, Pulau Sapi, dan Pasar Malam Kota Kinabalu",
+                "<strong>Makanan</strong> tempatan Sabah",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan persendirian"
+            ],
+            gallery: [
+                {
+                    name: "Taman Negara Kinabalu",
+                    images: [
+                        { src: "images/sabah_gallery/MountKinabalu.jpg", description: "Tapak Warisan Dunia UNESCO dengan Gunung Kinabalu sebagai tarikan utama." }
+                    ]
+                },
+                {
+                    name: "Pulau Sapi",
+                    images: [
+                        { src: "images/sabah_gallery/SapiIsland.jpg", description: "Pulau yang terkenal dengan aktiviti snorkeling, menyelam, dan pantai berpasir putih." }
+                    ]
+                },
+                {
+                    name: "Pasar Malam Kota Kinabalu",
+                    images: [
+                        { src: "images/sabah_gallery/KKNightMarket.jpg", description: "Pasar yang meriah, menawarkan makanan laut segar dan hidangan tempatan." }
+                    ]
+                },
+            ]
+        },
+        korea: {
+            title: "Lawatan Korporat ke Korea",
+            intro: "Alami keunikan gabungan budaya pop moden dan warisan bersejarah Korea.",
+            image: "images/Korea1.jpg",
+            packages: [
+                "<strong>Tiket penerbangan pergi balik</strong>",
+                "<strong>Penginapan</strong> di hotel bertaraf antarabangsa",
+                "<strong>Lawatan ke tempat menarik</strong> seperti Nami Island, Menara N Seoul dan Istana Gyeongbokgung",
+                "<strong>Makanan</strong> halal tersedia",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan persendirian sepanjang lawatan"
+            ],
+            gallery: [
+                {
+                    name: "Pulau Nami",
+                    images: [
+                        { src: "images/korea_gallery/NamiIsland.jpg", description: "Sebuah pulau berbentuk separuh bulan yang indah yang terkenal dengan keindahan semula jadi." }
+                    ]
+                },
+                {
+                    name: "Menara N Seoul",
+                    images: [
+                        { src: "images/korea_gallery/SeoulTower.jpg", description: "Mercu tanda ikonik yang menawarkan pemandangan panorama Seoul." }
+                    ]
+                },
+                {
+                    name: "Istana Gyeongbokgung",
+                    images: [
+                        { src: "images/korea_gallery/Gyeongbokgung.jpg", description: "Istana terbesar dari Lima Istana Besar yang dibina semasa Dinasti Joseon." }
+                    ]
+                },
+                {
+                    name: "Masakan Halal Korea",
+                    images: [
+                        { src: "images/korea_gallery/KoreanFood.jpg", description: "Menikmati hidangan halal yang lazat dan pelbagai di Korea." }
+                    ]
+                },
+            ]
+        },
+       newZealand: {
             title: "Lawatan Kerja ke New Zealand",
             intro: "Alami landskap New Zealand yang menakjubkan dan kenali budaya uniknya. Pakej lawatan kerja korporat ini dirancang untuk inspirasi dan pembangunan pasukan.",
             image: "images/NewZealand.jpg",
@@ -1195,467 +1344,274 @@
                 },
             ]
         },
+
         newYork: {
             title: "Lawatan ke New York",
-            intro: "Temui The Big Apple, pusat kewangan, budaya dan media global. Pakej lawatan ini menggabungkan mercu tanda ikonik dan peluang rangkaian korporat.",
+            intro: "Terokai bandar yang tidak pernah tidur, dari mercu tanda ikonik hingga kebudayaan yang pelbagai.",
             image: "images/NewYork.jpeg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di Manhattan",
-                "<strong>Lawatan ke mercu tanda utama</strong> seperti Statue of Liberty, Empire State Building, Times Square dan Central Park.",
-                "<strong>Sesi rangkaian korporat</strong> dengan industri-industri utama",
-                "Pengangkutan persendirian",
-                "<strong>Makanan</strong> tempatan dan halal"
+                "<strong>Penginapan</strong> di hotel bertaraf antarabangsa",
+                "<strong>Lawatan ke tempat menarik</strong> seperti Times Square, Patung Liberty, dan Central Park",
+                "<strong>Makanan</strong> yang mudah didapati",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan persendirian sepanjang lawatan"
             ],
             gallery: [
-                {
-                    name: "Statue of Liberty",
-                    images: [
-                        { src: "images/newyork_gallery/StatueOfLiberty.jpg", description: "Mercu tanda kebebasan yang ikonik." }
-                    ]
-                },
                 {
                     name: "Times Square",
                     images: [
-                        { src: "images/newyork_gallery/TimesSquare.jpg", description: "Kawasan komersial yang terkenal dengan papan iklan digitalnya yang besar." }
+                        { src: "images/newYork_gallery/timesSquare.jpg", description: "Persimpangan utama di Manhattan yang terkenal dengan papan iklan digital gergasi." }
                     ]
                 },
-                {
-                    name: "Central Park",
-                    images: [
-                        { src: "images/newyork_gallery/CentralPark.jpg", description: "Taman awam di tengah Manhattan." }
-                    ]
-                }
             ]
         },
-        korea: {
-            intro: "Alami gabungan unik sejarah, budaya, dan inovasi moden di Korea Selatan. Lawatan ini menawarkan pakej yang komprehensif untuk menerokai bandar-bandar yang dinamik dan landskap yang tenang, sambil menikmati pengalaman mesra halal.",
-            image: "images/Korea1.jpg",
-            packages: [
-                "<strong>Pengangkutan</strong> pergi balik dari Malaysia",
-                "<strong>Penginapan</strong> di hotel pilihan",
-                "<strong>Lawatan ke tempat-tempat menarik</strong> seperti Gyeongbokgung Palace, Namsan Seoul Tower dan Myeongdong",
-                "<strong>Makanan</strong> tempatan dan halal",
-                "Pemandu pelancong berpengalaman"
-            ],
-            gallery: [
-                {
-                    name: "Istana Gyeongbokgung",
-                    images: [
-                        { src: "images/koreaC_gallery/istana1.jpg", description: "" },
-                        { src: "images/koreaC_gallery/istana.jpg", description: "" },
-                        { src: "images/koreaC_gallery/istana2.jpg", description: "" },
-                        { src: "images/koreaC_gallery/istana3.jpg", description: "" }
-                    ]
-                },
-                {
-                    name: "Pulau Nami",
-                    images: [
-                        { src: "images/koreaC_gallery/nami.jpg", description: "" }
-                    ]
-                },
-                {
-                    name: "Menara Namsan",
-                    images: [
-                        { src: "images/koreaC_gallery/namsan.jpg", description: "" }
-                    ]
-                }
-            ]
-        },
-        sabah: {
-            title: "Terokai Sabah Yang Liar",
-            intro: "Jelajahi hutan hujan yang tebal, gunung-ganang yang megah dan warisan budaya yang kaya di Sabah. Pakej pengembaraan ini menjanjikan pengalaman yang tidak dapat dilupakan.",
-            image: "images/Sabah.jpg",
+        barbados: {
+            title: "Lawatan Korporat ke Barbados",
+            intro: "Alami percutian yang mewah di pulau Caribbean, dikelilingi oleh pantai berpasir putih dan air laut yang jernih.",
+            image: "images/barbados.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel atau resort pilihan",
-                "<strong>Pendakian Gunung Kinabalu</strong> (pilihan)",
-                "<strong>Pakej menyelam</strong> di Semporna (pilihan)",
-                "Pemandu pelancong berpengalaman"
+                "<strong>Penginapan</strong> di resort 5 bintang",
+                "<strong>Lawatan ke tempat menarik</strong> seperti pantai, gua dan tempat bersejarah",
+                "<strong>Makanan</strong> yang mudah didapati",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan persendirian sepanjang lawatan"
             ],
             gallery: [
                 {
-                    name: "Gunung Kinabalu",
+                    name: "Barbados",
                     images: [
-                        { src: "images/sabah_gallery/MountKinabalu.jpg", description: "Gunung tertinggi di Malaysia dan sebahagian dari Tapak Warisan Dunia UNESCO." }
+                        { src: "images/barbados_gallery/barbados1.jpg", description: "Pemandangan pantai yang indah." }
                     ]
                 },
-                {
-                    name: "Semporna",
-                    images: [
-                        { src: "images/sabah_gallery/Semporna.jpg", description: "Terkenal dengan pulau-pulau yang indah dan lokasi menyelam bertaraf dunia." }
-                    ]
-                },
-                {
-                    name: "Kampung Budaya Monsopiad",
-                    images: [
-                        { src: "images/sabah_gallery/SabahCultural.jpg", description: "Terokai budaya dan sejarah warisan Kadazan-Dusun." }
-                    ]
-                }
             ]
         },
-        sarawak: {
-            title: "Penemuan Budaya Sarawak",
-            intro: "Temui budaya asli dan keajaiban semula jadi Sarawak. Pakej ini akan membawa anda ke dalam dunia yang penuh dengan sejarah, tradisi dan keunikan alam semula jadi.",
-            image: "images/Sarawak.jpg",
-            packages: [
-                "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel atau resort pilihan",
-                "<strong>Lawatan ke Kampung Budaya Sarawak</strong>",
-                "<strong>Pengalaman menaiki bot</strong> di Sungai Sarawak",
-                "Pemandu pelancong berpengalaman"
-            ],
-            gallery: [
-                {
-                    name: "Kampung Budaya Sarawak",
-                    images: [
-                        { src: "images/sarawak_gallery/SarawakCulturalVillage.jpg", description: "Muzium hidup yang menampilkan pelbagai budaya etnik Sarawak." }
-                    ]
-                },
-                {
-                    name: "Bandar Kuching",
-                    images: [
-                        { src: "images/sarawak_gallery/Kuching.jpg", description: "Terokai bandar Kuching yang bersih, aman dan penuh dengan tarikan." }
-                    ]
-                },
-                {
-                    name: "Sungai Sarawak",
-                    images: [
-                        { src: "images/sarawak_gallery/SarawakRiver.jpg", description: "Nikmati pemandangan indah sambil menaiki bot menyusuri sungai." }
-                    ]
-                }
-            ]
-        },
-        germany: {
+        germanyNetherlands: {
             title: "Lawatan Korporat ke Germany-Netherlands",
-            intro: "Melawat ke Jerman dan Belanda untuk meneroka teknologi dan budaya Eropah. Pakej lawatan ini menggabungkan seminar korporat dengan lawatan ke tempat-tempat menarik.",
+            intro: "Terokai budaya, sejarah dan seni bina yang kaya di Jerman dan Belanda. Lawatan kerja yang merangkumi pameran teknologi dan forum industri.",
             image: "images/Germany.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
-                "<strong>Penginapan</strong> di hotel terpilih",
-                "<strong>Sesi rangkaian korporat</strong> dengan syarikat-syarikat tempatan",
-                "<strong>Lawatan ke tempat-tempat ikonik</strong> seperti Brandenburg Gate, Rijksmuseum dan Keukenhof",
-                "Pengangkutan persendirian",
-                "<strong>Makanan</strong> tempatan dan halal"
+                "<strong>Penginapan</strong> di hotel bertaraf antarabangsa",
+                "<strong>Lawatan ke pameran teknologi</strong> dan forum industri",
+                "<strong>Lawatan ke tempat menarik</strong> di bandar utama seperti Berlin dan Amsterdam",
+                "<strong>Makanan</strong> yang mudah didapati",
+                "<strong>Pemandu pelancong berpengalaman</strong>",
+                "Pengangkutan persendirian sepanjang lawatan"
             ],
             gallery: [
                 {
-                    name: "Brandenburg Gate (Berlin)",
+                    name: "Pemandangan Germany-Netherlands",
                     images: [
-                        { src: "images/germany_gallery/BerlinGate.jpg", description: "Simbol perpaduan Jerman yang ikonik." }
+                        { src: "images/germany_gallery/germany1.jpg", description: "Pemandangan indah di Jerman dan Belanda." }
                     ]
                 },
-                {
-                    name: "Amsterdam",
-                    images: [
-                        { src: "images/germany_gallery/Amsterdam.jpg", description: "Terkenal dengan terusan yang indah dan rumah-rumah yang unik." }
-                    ]
-                },
-                {
-                    name: "Taman Bunga Keukenhof",
-                    images: [
-                        { src: "images/germany_gallery/Keukenhof.jpg", description: "Taman bunga yang terbesar di dunia dengan pelbagai jenis bunga tulip." }
-                    ]
-                }
             ]
-        }
+        },
     };
     
-    // Function to open the tour detail modal
-    function openModal(tourId) {
+    // Function to render the tour cards
+    function renderTourCards() {
+        const tourList = document.getElementById('tourList');
+        tourList.innerHTML = '';
+        
+        const startIndex = (currentPage - 1) * toursPerPage;
+        const endIndex = startIndex + toursPerPage;
+        const toursToDisplay = filteredTourCards.slice(startIndex, endIndex);
+
+        if (toursToDisplay.length === 0) {
+            noResultsMessage.style.display = 'block';
+        } else {
+            noResultsMessage.style.display = 'none';
+        }
+
+        toursToDisplay.forEach(tour => {
+            tourList.appendChild(tour);
+        });
+
+        renderPagination();
+    }
+    
+    // Function to render the pagination links
+    function renderPagination() {
+        paginationContainer.innerHTML = '';
+        const totalPages = Math.ceil(filteredTourCards.length / toursPerPage);
+    
+        if (totalPages > 1) {
+            // Previous button
+            const prevLink = document.createElement('a');
+            prevLink.href = "#";
+            prevLink.innerHTML = "&laquo; Prev";
+            prevLink.onclick = (e) => {
+                e.preventDefault();
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderTourCards();
+                }
+            };
+            if (currentPage === 1) {
+                prevLink.classList.add('disabled');
+            }
+            paginationContainer.appendChild(prevLink);
+    
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                const pageLink = document.createElement('a');
+                pageLink.href = "#";
+                pageLink.innerHTML = i;
+                pageLink.onclick = (e) => {
+                    e.preventDefault();
+                    currentPage = i;
+                    renderTourCards();
+                };
+                if (i === currentPage) {
+                    pageLink.classList.add('active');
+                }
+                paginationContainer.appendChild(pageLink);
+            }
+    
+            // Next button
+            const nextLink = document.createElement('a');
+            nextLink.href = "#";
+            nextLink.innerHTML = "Next &raquo;";
+            nextLink.onclick = (e) => {
+                e.preventDefault();
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderTourCards();
+                }
+            };
+            if (currentPage === totalPages) {
+                nextLink.classList.add('disabled');
+            }
+            paginationContainer.appendChild(nextLink);
+        }
+    }
+    
+    // Initial call to render tours and pagination
+    function initializeTours() {
+        filteredTourCards = Array.from(allTourCards);
+        renderTourCards();
+    }
+    
+    // Call the initialize function on page load
+    window.onload = initializeTours;
+    
+    // Filter logic
+    function filterTours() {
+        const selectedDestination = destinationFilter.value;
+        const selectedTopics = Array.from(topicCheckboxes)
+            .filter(cb => cb.checked)
+            .map(cb => cb.value);
+        const searchQuery = searchFilter.value.toLowerCase().trim();
+        
+        filteredTourCards = Array.from(allTourCards).filter(card => {
+            const cardDestination = card.getAttribute('data-destination');
+            const cardTopics = card.getAttribute('data-topics').split(',');
+            const cardTitle = card.querySelector('h4').textContent.toLowerCase();
+            const cardDescription = card.querySelector('p').textContent.toLowerCase();
+            
+            const matchesDestination = selectedDestination === '' || cardDestination === selectedDestination;
+            const matchesTopics = selectedTopics.length === 0 || selectedTopics.some(topic => cardTopics.includes(topic));
+            const matchesSearch = searchQuery === '' || cardTitle.includes(searchQuery) || cardDescription.includes(searchQuery);
+            
+            return matchesDestination && matchesTopics && matchesSearch;
+        });
+
+        currentPage = 1;
+        renderTourCards();
+    }
+
+    // Reset filters and show all tours
+    function resetFilters() {
+        destinationFilter.value = "";
+        topicCheckboxes.forEach(cb => cb.checked = false);
+        searchFilter.value = "";
+        initializeTours();
+    }
+
+    // Populate the destination filter dropdown
+    function populateDestinationFilter() {
+        const destinations = new Set();
+        allTourCards.forEach(card => {
+            destinations.add(card.getAttribute('data-destination'));
+        });
+        
+        destinations.forEach(dest => {
+            const option = document.createElement('option');
+            option.value = dest;
+            option.textContent = dest;
+            destinationFilter.appendChild(option);
+        });
+    }
+
+    // Event Listeners for filtering
+    destinationFilter.addEventListener('change', filterTours);
+    topicCheckboxes.forEach(cb => cb.addEventListener('change', filterTours));
+    searchButton.addEventListener('click', filterTours);
+    searchFilter.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            filterTours();
+        }
+    });
+
+    populateDestinationFilter();
+
+    // MODAL functionality
+    const showModal = (tourId) => {
         const tour = tourData[tourId];
         if (tour) {
             modalTourImage.src = tour.image;
             modalTourTitle.textContent = tour.title;
             modalTourIntro.textContent = tour.intro;
-            modalInquireBtn.href = `contact.php?tour=${tourId}`;
 
-            // Populate packages
-            modalPackageList.innerHTML = '';
+            // Packages
+            modalPackageList.innerHTML = "";
             tour.packages.forEach(pkg => {
                 const li = document.createElement('li');
                 li.innerHTML = pkg;
                 modalPackageList.appendChild(li);
             });
 
-            // Populate the gallery dynamically
-            modalGallery.innerHTML = ''; // Clear previous gallery content
-            if (tour.gallery && tour.gallery.length > 0) {
-                tour.gallery.forEach(location => {
-                    // Create a section for each location
-                    const locationSection = document.createElement('div');
-                    locationSection.classList.add('gallery-location-section');
-
-                    const locationTitle = document.createElement('h5');
-                    locationTitle.textContent = location.name;
-                    locationSection.appendChild(locationTitle);
-
-                    const imagesContainer = document.createElement('div');
-                    imagesContainer.classList.add('gallery-images-container');
-
-                    location.images.forEach(image => {
-                        const imgElement = document.createElement('img');
-                        imgElement.src = image.src;
-                        imgElement.alt = image.description;
-                        imagesContainer.appendChild(imgElement);
-                    });
-
-                    locationSection.appendChild(imagesContainer);
-                    modalGallery.appendChild(locationSection);
+            // Gallery
+            modalGallery.innerHTML = "";
+            tour.gallery.forEach(location => {
+                const section = document.createElement('div');
+                section.classList.add('gallery-location-section');
+                
+                const h5 = document.createElement('h5');
+                h5.textContent = location.name;
+                section.appendChild(h5);
+                
+                const imagesContainer = document.createElement('div');
+                imagesContainer.classList.add('gallery-images-container');
+                
+                location.images.forEach(img => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = img.src;
+                    imgElement.alt = img.description;
+                    imagesContainer.appendChild(imgElement);
                 });
-            }
+                
+                section.appendChild(imagesContainer);
+                modalGallery.appendChild(section);
+            });
 
-            // Display modal
+            // Set inquire button link
+            modalInquireBtn.href = `contact.php?tour=${tourId}`;
+
             tourDetailModal.classList.add('active');
         }
-    }
-    
-    // Other functions (filtering, pagination, hero slider, etc.) remain unchanged
-    const tours = Object.keys(tourData).map(key => ({ ...tourData[key], id: key }));
-    function displayTours(tourArray, page) {
-        const selectedDestination = destinationFilter.value;
-        const selectedTopics = Array.from(topicCheckboxes)
-                                                .filter(checkbox => checkbox.checked)
-                                                .map(checkbox => checkbox.value);
-        const searchTerm = searchFilter.value.toLowerCase().trim();
+    };
 
-        filteredTourCards = Array.from(allTourCards).filter(card => {
-            const cardDestination = card.dataset.destination;
-            const cardTopics = card.dataset.topics ? card.dataset.topics.split(',') : [];
-            
-            // Ensure tourData[card.dataset.id] exists before accessing its properties
-            const tourDetail = tourData[card.dataset.id];
-            if (!tourDetail) {
-                console.warn(`Tour data not found for ID: ${card.dataset.id}`);
-                return false; // Exclude card if its data is missing
-            }
-            const cardTitle = tourDetail.title.toLowerCase();
-            const cardIntro = tourDetail.intro.toLowerCase();
-
-            const matchesDestination = selectedDestination === '' || cardDestination === selectedDestination;
-            const matchesTopics = selectedTopics.length === 0 || selectedTopics.every(topic => cardTopics.includes(topic));
-            const matchesSearch = searchTerm === '' || cardTitle.includes(searchTerm) || cardIntro.includes(searchTerm);
-
-            return matchesDestination && matchesTopics && matchesSearch;
-        });
-
-        // Hide all cards first
-        allTourCards.forEach(card => {
-            card.style.display = 'none';
-        });
-
-        // Handle "No results found" message
-        if (filteredTourCards.length === 0 && searchTerm !== '') {
-            noResultsMessage.style.display = 'block';
-        } else {
-            noResultsMessage.style.display = 'none';
-        }
-
-        // Calculate start and end index for current page
-        const startIndex = (currentPage - 1) * toursPerPage;
-        const endIndex = startIndex + toursPerPage;
-
-        // Display only the cards for the current page
-        for (let i = startIndex; i < endIndex && i < filteredTourCards.length; i++) {
-            filteredTourCards[i].style.display = 'block';
-        }
-
-        setupPagination();
-    }
-
-    function populateDestinationFilter() {
-        const destinations = new Set();
-        allTourCards.forEach(card => {
-            // Ensure data-destination is consistently capitalized for sorting
-            const destination = card.dataset.destination;
-            if (destination) {
-                destinations.add(destination);
-            }
-        });
-
-        // Convert the Set to an Array and sort it alphabetically
-        const sortedDestinations = Array.from(destinations).sort((a, b) => a.localeCompare(b, 'ms')); // 'ms' for Malay locale
-
-        // Clear existing options, but keep the default one if it exists, or add it.
-        // Ensure the default "Semua Destinasi" is always first.
-        destinationFilter.innerHTML = '<option value="">Semua Destinasi</option>';
-
-        // Add the sorted, unique destinations to the dropdown
-        sortedDestinations.forEach(destination => {
-            const option = document.createElement('option');
-            option.value = destination;
-            option.textContent = destination;
-            destinationFilter.appendChild(option);
-        });
-    }
-
-    function setupPagination(tourArray) {
-        paginationContainer.innerHTML = ''; // Clear previous pagination links
-        const totalPages = Math.ceil(filteredTourCards.length / toursPerPage);
-        const maxPageLinks = 5; // The maximum number of page links to show at once
-
-        if (totalPages > 1) {
-            // Create 'Previous' link
-            const prevLink = document.createElement('a');
-            prevLink.href = '#';
-            prevLink.textContent = '<';
-            if (currentPage === 1) {
-                prevLink.classList.add('disabled');
-            } else {
-                prevLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    currentPage--;
-                    displayTours();
-                });
-            }
-            paginationContainer.appendChild(prevLink);
-
-            // Logic to show a limited number of page links
-            let startPage = Math.max(1, currentPage - Math.floor(maxPageLinks / 2));
-            let endPage = Math.min(totalPages, startPage + maxPageLinks - 1);
-
-            if (endPage - startPage + 1 < maxPageLinks) {
-                startPage = Math.max(1, endPage - maxPageLinks + 1);
-            }
-
-            for (let i = startPage; i <= endPage; i++) {
-                const pageLink = document.createElement('a');
-                pageLink.href = '#';
-                pageLink.textContent = i;
-                if (i === currentPage) {
-                    pageLink.classList.add('active');
-                }
-                pageLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    currentPage = i;
-                    displayTours();
-                });
-                paginationContainer.appendChild(pageLink);
-            }
-
-            // Create 'Next' link
-            const nextLink = document.createElement('a');
-            nextLink.href = '#';
-            nextLink.textContent = '>';
-            if (currentPage === totalPages) {
-                nextLink.classList.add('disabled');
-            } else {
-                nextLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    currentPage++;
-                    displayTours();
-                });
-            }
-            paginationContainer.appendChild(nextLink);
-        }
-    }
-
-    // Event Listeners for filters
-    destinationFilter.addEventListener('change', () => {
-        currentPage = 1; // Reset to first page on filter change
-        displayTours();
-    });
-
-    topicCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-            currentPage = 1; // Reset to first page on filter change
-            displayTours();
-        });
-    });
-
-    // Event Listener for the search button click
-    searchButton.addEventListener('click', () => {
-        currentPage = 1; // Reset to first page on search
-        displayTours();
-    });
-
-    // Event Listener for real-time search as user types (optional, remove if only button search is desired)
-    searchFilter.addEventListener('input', () => {
-        currentPage = 1;
-        displayTours();
-    });
-
-    function filterAndSearch() {
-        // ... (existing code for filterAndSearch)
-    }
-    function resetFilters() {
-        destinationFilter.value = '';
-        topicCheckboxes.forEach(checkbox => checkbox.checked = false);
-        searchFilter.value = ''; // Clear search input on reset
-        currentPage = 1; // Reset to first page
-        noResultsMessage.style.display = 'none'; // Hide no results message on reset
-        displayTours(); // Re-display all tours
-    }
-
-    // Modal functionality
     allTourCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const tourId = card.dataset.id;
-            const tour = tourData[tourId];
-
-            if (tour) {
-                modalTourImage.src = tour.image;
-                modalTourTitle.textContent = tour.title;
-                modalTourIntro.textContent = tour.intro;
-
-                // Clear previous packages
-                modalPackageList.innerHTML = '';
-                tour.packages.forEach(pkg => {
-                    const li = document.createElement('li');
-                    li.innerHTML = pkg;
-                    modalPackageList.appendChild(li);
-                });
-
-                // Clear previous gallery items
-                modalGallery.innerHTML = '';
-                tour.gallery.forEach(item => {
-                    const galleryItemDiv = document.createElement('div');
-                    galleryItemDiv.classList.add('modal-gallery-item');
-
-                    const img = document.createElement('img');
-                    img.src = item.src;
-                    img.alt = item.name;
-                    galleryItemDiv.appendChild(img);
-
-                    const name = document.createElement('div');
-                    name.classList.add('name');
-                    name.textContent = item.name;
-                    galleryItemDiv.appendChild(name);
-
-                    const description = document.createElement('div');
-                    description.classList.add('description');
-                    description.textContent = item.description;
-                    galleryItemDiv.appendChild(description);
-
-                    modalGallery.appendChild(galleryItemDiv);
-                });
-
-                // Set inquire button link
-                modalInquireBtn.href = `contact.php?tour=${encodeURIComponent(tour.title)}`;
-
-                tourDetailModal.classList.add('active');
-            }
+        card.addEventListener('click', (e) => {
+            const tourId = card.getAttribute('data-id');
+            showModal(tourId);
         });
     });
 
-    modalCloseBtn.addEventListener('click', () => {
-        tourDetailModal.classList.remove('active');
-    });
-
-    // Close modal if clicking outside content
-    tourDetailModal.addEventListener('click', (e) => {
-        if (e.target === tourDetailModal) {
-            tourDetailModal.classList.remove('active');
-        }
-    });
-
-    // Initial load
-    document.addEventListener('DOMContentLoaded', () => {
-        populateDestinationFilter();
-        displayTours(); // Initial display and pagination setup
-    });
-
-    // Modal close functionality
     modalCloseBtn.addEventListener('click', () => {
         tourDetailModal.classList.remove('active');
     });
@@ -1665,51 +1621,6 @@
             tourDetailModal.classList.remove('active');
         }
     });
-    
-    // Event listeners
-    searchButton.addEventListener('click', filterAndSearch);
-    searchFilter.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            filterAndSearch();
-        }
-    });
-
-    allTourCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const tourId = card.dataset.id;
-            openModal(tourId);
-        });
-    });
-
-    // Hero Slider (existing code)
-    let slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("hero-slide");
-        let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active-dot", "");
-        }
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active-dot";
-    }
-
 </script>
 </body>
-<?php include "footer.php" ?>
 </html>
