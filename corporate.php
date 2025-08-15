@@ -38,14 +38,14 @@ $currentTours = array_slice(array_keys($tourData), $start, $toursPerPage);
     <title>Tours | Qaid Travel</title>
     <link rel="stylesheet" href="style.css" />
 <style>
-    /* New styling for the header to use the image as a background */
+/* New styling for the header to use the image as a background */
         header {
             /* Menggunakan imej yang betul sebagai latar belakang */
             background-image: url('images/QAIDHEADER.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            color: #fff;
+            color: #ffff;
             padding: 20px;
             text-align: center;
             position: relative; /* Needed for the overlay */
@@ -133,8 +133,6 @@ $currentTours = array_slice(array_keys($tourData), $start, $toursPerPage);
             margin-bottom: 10px;
         }
 
-        
-
         nav a {
             color: #fff;
             text-decoration: none;
@@ -169,575 +167,584 @@ $currentTours = array_slice(array_keys($tourData), $start, $toursPerPage);
                 top: 10px;
             }
         }
-    /* Existing CSS from your file */
-    body {
-        font-family: 'Segoe UI', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #cb4646; /* Keeping the light grey background from previous step */
-    }
 
-    .tour-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        justify-content: flex-start; /* Ensures cards are aligned to the left */
-        flex-grow: 1;
-    }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #cb4646; /* Keeping the light grey background from previous step */
+}
 
-    .tour-card {
-        flex-basis: calc(33.333% - 20px);
-        /* Preferred width for 3 cards per row */
-        flex-grow: 0;
-        /* Changed from 1 to 0: Prevents cards from growing and filling extra space */
-        flex-shrink: 0;
-        /* Prevents cards from shrinking */
-        max-width: 350px;
-        /* Caps the maximum width of a single card, adjust as needed */
-        background-color: #fff;
-        /* Keeping cards white as they are content containers */
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        overflow: hidden;
-        transition: transform 0.3s;
-        cursor: pointer;
-    }
+.tour-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: flex-start; /* Ensures cards are aligned to the left */
+    flex-grow: 1;
+}
 
-    .tours-container {
-        display: flex;
-        padding: 40px;
-        gap: 30px;
-        max-width: 1200px; /* Sets the maximum width of the main content area */
-        margin: auto;
-        align-items: flex-start;
-    }
-
-    .filter-panel {
-        flex-shrink: 0;
-        /* Prevents the filter panel from shrinking */
-        width: 320px;
-        /* Fixed width for the filter box */
-        padding: 25px;
-        border: 2px solid #ddd;
-        border-radius: 10px;
-        background-color: #fafafa;
-        box-sizing: border-box;
-    }
-
-    .filter-panel h3 {
-        margin-top: 0;
-        color: #b62626;
-    }
-
-    .filter-group {
-        margin-bottom: 20px;
-    }
-
-    .filter-group label {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .filter-group #searchFilter { /* Targeting the search input itself */
-        padding: 8px 12px;
-        font-size: 1rem;
-        border-radius: 5px;
-        border: 2px solid #b62626; /* Matches your select border color */
-        background-color: #fff;
-        color: #333; /* Color of the text typed inside the search box */
-        width: 92%;
-        /* Changed to 100% for responsiveness */
-        max-width: 100%;
-        /* Ensure it's responsive */
-        box-sizing: border-box;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .search-btn {
-        background-color: #b62626;
-        /* Matches your primary red color */
-        color: #fff;
-        padding: 10px 15px;
-        font-size: 1rem;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-        margin-left: 10px;
-        /* Space from the input field */
-    }
-
-    .search-btn:hover {
-        background-color: #7c1919;
-        /* Darker red on hover */
-        transform: scale(1.02);
-    }
-
-    /* Responsive adjustments for the filter group with the button */
-    @media (max-width: 768px) {
-        .filter-group {
-            flex-direction: column;
-            /* Stack label, input, and button on small screens */
-            align-items: flex-start;
-            gap: 5px;
-        }
-
-        .filter-group .search-btn {
-            margin-top: 10px;
-            /* Space from input when stacked */
-            margin-left: 0;
-            /* Remove left margin when stacked */
-            width: 100%;
-            /* Full width button on small screens */
-        }
-    }
-
-    .filter-group #searchFilter:focus {
-        outline: none;
-        border-color: #5d0c0c;
-        box-shadow: 0 0 5px rgba(182, 38, 38, 0.5);
-    }
-
-    /* Specific styling for the search input's LABEL */
-    label[for="searchFilter"] {
-        color: #333;
-        /* Changed to dark color for readability */
-    }
-
-    /* Responsive adjustments for the search filter */
-    @media (max-width: 768px) {
-        .filter-group {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 5px;
-        }
-        .filter-group #searchFilter {
-            width: 100%;
-        }
-    }
-
-    @media (max-width: 900px) {
-        .tours-container {
-            flex-direction: column;
-            /* Stack filter and tour list on smaller screens */
-            align-items: center;
-        }
-        .filter-panel {
-            width: 100%;
-            /* Make filter panel full width */
-            margin-bottom: 30px;
-        }
-        .tour-card {
-            flex-basis: calc(50% - 20px);
-            /* For screens up to 900px, display 2 cards per row */
-            max-width: 450px;
-            /* Adjust max-width for single card in 2-column layout */
-        }
-    }
-
-    @media (max-width: 600px) {
-        .tour-card {
-            flex-basis: 100%;
-            /* For screens up to 600px, display 1 card per row */
-            max-width: unset;
-            /* Remove max-width when card should take full available width */
-        }
-    }
-
-    .tour-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .tour-card img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-    }
-
-    .tour-card .info {
-        padding: 15px;
-    }
-
-    .tour-card h4 {
-        color: #b62626;
-        margin: 0 0 10px;
-    }
-
-    .tour-card p {
-        font-size: 0.9rem;
-        color: #555;
-    }
-
-    .show-all-btn {
-        display: block;
-        margin-top: 20px;
-        padding: 10px 20px;
-        background-color: #b62626;
-        color: #fff;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        text-align: center;
-    }
-
-    .show-all-btn:hover {
-        background-color: #8e1d1d;
-    }
-
-    .filter-group label[for="searchFilter"] {
-        color: white !important;
-    }
-
-    .filter-group select {
-        width: 100%;
-        padding: 10px;
-        font-size: 1rem;
-        box-sizing: border-box;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-        min-width: 100%;
-    }
-
-    .filter-group select,
-    .filter-group input[type="checkbox"] {
-        margin-right: 8px;
-    }
-
-    /* --- Modal Styles --- */
-    .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-    .modal-overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .modal-content {
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 10px;
-        max-width: 800px;
-        width: 90%;
-        max-height: 90vh; /* Limit height to viewport */
-        overflow-y: auto;
-        /* Enable scrolling for long content */
-        position: relative;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        transform: translateY(20px);
-        transition: transform 0.3s ease;
-    }
-
-    .modal-overlay.active .modal-content {
-        transform: translateY(0);
-    }
-
-    .modal-close-btn {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: none;
-        border: none;
-        font-size: 1.8rem;
-        cursor: pointer;
-        color: #888;
-    }
-
-    .modal-close-btn:hover {
-        color: #333;
-    }
-
-    .modal-content h3 {
-        color: #b62626;
-        margin-top: 0;
-        font-size: 1.8rem;
-    }
-
-    .modal-image {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 8px;
-        margin-bottom: 20px;
-    }
-
-    .modal-package-list li {
-        margin-bottom: 8px;
-        line-height: 1.5;
-        list-style: disc; /* Or your preferred list style */
-        margin-left: 20px;
-    }
-    .modal-package-list strong {
-        color: #b62626;
-        /* Highlight package points */
-    }
-
-    /* Updated Gallery Styles */
-    .modal-gallery {
-        display: flex;
-        /* Changed to flexbox */
-        flex-direction: column;
-        /* Stack items vertically */
-        gap: 20px;
-        /* Increased gap between items */
-        margin-top: 20px;
-    }
-    
-    /* Styles for the new gallery item structure */
-    .modal-gallery-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        background-color: #f9f9f9;
-        border-radius: 8px;
-        padding: 15px;
-        /* Increased padding */
-        box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-    }
-    .modal-gallery-item img {
-        width: auto;
-        /* Allow image to scale */
-        max-width: 100%;
-        /* Ensure image doesn't overflow container */
-        height: auto;
-        /* Allow image to scale */
-        max-height: 300px;
-        /* Set a max height for larger display */
-        object-fit: contain;
-        /* Ensure image is fully visible without cropping */
-        border-radius: 5px;
-        margin-bottom: 10px;
-        /* Increased margin */
-    }
-    .modal-gallery-item .name {
-        font-weight: bold;
-        color: #333;
-        font-size: 1.1em; /* Slightly larger font */
-        margin-bottom: 5px;
-    }
-    .modal-gallery-item .description {
-        font-size: 0.9em;
-        /* Slightly larger font */
-        color: #666;
-    }
-
-    /* --- Pagination Styles (Copied from tours.php and adjusted) --- */
-    .pagination {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 40px;
-        padding: 10px;
-        background-color: transparent;
-        border-radius: 8px;
-        box-shadow: none;
-        /* Removed shadow for a cleaner look */
-    }
-
-    .pagination a {
-        color: #333;
-        /* Darker text color */
-        padding: 8px 16px;
-        text-decoration: none;
-        transition: background-color 0.3s;
-        border-radius: 5px;
-        margin: 0 5px;
-        font-weight: bold;
-        border: 1px solid #ddd;
-        /* Added a subtle border */
-    }
-
-    .pagination a.active {
-        background-color: #b62626;
-        color: white;
-        border-color: #b62626; /* Match border color to background */
-    }
-
-    .pagination a:hover:not(.active) {
-        background-color: #f0f0f0;
-        /* Light grey hover background */
-        color: #b62626;
-        /* Red text on hover */
-    }
-
-    .pagination a.disabled {
-        color: #ccc;
-        pointer-events: none; /* Disable clicking */
-        cursor: default;
-        background-color: #f9f9f9;
-        border-color: #eee;
-    }
-
-    .center-text {
-        text-align: center;
-        color:#b62626;
-    }
-
-    /* Hero Slider Styles */
-.hero-slider-container {
-    position: relative;
-    max-width: 100%;
+.tour-card {
+    flex-basis: calc(33.333% - 20px);
+    /* Preferred width for 3 cards per row */
+    flex-grow: 0;
+    /* Changed from 1 to 0: Prevents cards from growing and filling extra space */
+    flex-shrink: 0;
+    /* Prevents cards from shrinking */
+    max-width: 350px;
+    /* Caps the maximum width of a single card, adjust as needed */
+    background-color: #ffff;
+    /* Keeping cards white as they are content containers */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     overflow: hidden;
-    margin-bottom: 40px; /* Space below the slider */
+    transition: transform 0.3s;
+    cursor: pointer;
 }
 
-.hero-slide {
-    display: none;
-    height: 500px;
-    /* Adjust height as needed */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    color: white;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    animation: fadeEffect 1.5s; /* Fade in animation */
+.tours-container {
+    display: flex;
+    padding: 40px;
+    gap: 30px;
+    max-width: 1200px; /* Sets the maximum width of the main content area */
+    margin: auto;
+    align-items: flex-start;
 }
 
-.hero-slide.active {
+.filter-panel {
+    flex-shrink: 0;
+    /* Prevents the filter panel from shrinking */
+    width: 320px;
+    /* Fixed width for the filter box */
+    padding: 25px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #ffff;
+    box-sizing: border-box;
+}
+
+.filter-panel h3 {
+    margin-top: 0;
+    color: #b62626;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group label {
     display: block;
-}
-
-.hero-caption {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    width: 80%;
-}
-
-.hero-caption h2 {
-    font-size: 3rem;
     margin-bottom: 10px;
 }
 
+.filter-group #searchFilter { /* Targeting the search input itself */
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 2px solid #b62626; /* Matches your select border color */
+    background-color: #fff;
+    color: #333; /* Color of the text typed inside the search box */
+    width: 92%;
+    /* Changed to 100% for responsiveness */
+    max-width: 100%;
+    /* Ensure it's responsive */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-btn {
+    background-color: #b62626;
+    /* Matches your primary red color */
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 10px;
+}
+
+.search-btn:hover {
+    background-color: #7c1919;
+    /* Darker red on hover */
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+.filter-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.filter-group .search-btn {
+    margin-top: 10px;
+    margin-left: 0;
+    width: 100%;
+}
+}
+
+.filter-group #searchFilter:focus {
+    outline: none;
+    border-color: #5d0c0c;
+    box-shadow: 0 0 5px rgba(182, 38, 38, 0.5);
+}
+
+label[for="searchFilter"] {
+    color: #333;
+}
+
+/* Responsive adjustments for the search filter */
+@media (max-width: 768px) {
+.filter-group {
+flex-direction: column;
+align-items: flex-start;
+gap: 5px;
+}
+
+.filter-group #searchFilter {
+width: 100%;
+}
+}
+
+@media (max-width: 900px) {
+.tours-container {
+flex-direction: column;
+/* Stack filter and tour list on smaller screens */
+align-items: center;
+}
+
+.filter-panel {
+width: 100%;
+/* Make filter panel full width */
+margin-bottom: 30px;
+}
+
+.tour-card {
+flex-basis: calc(50% - 20px);
+/* For screens up to 900px, display 2 cards per row */
+max-width: 450px;
+/* Adjust max-width for single card in 2-column layout */
+}
+}
+
+@media (max-width: 600px) {
+.tour-card {
+flex-basis: 100%;
+/* For screens up to 600px, display 1 card per row */
+max-width: unset;
+/* Remove max-width when card should take full available width */
+}
+}
+
+.tour-card:hover {
+transform: translateY(-5px);
+}
+
+.tour-card img {
+width: 100%;
+height: 180px;
+object-fit: cover;
+}
+
+.tour-card .info {
+padding: 15px;
+}
+
+.tour-card h4 {
+color: #b62626;
+margin: 0 0 10px;
+}
+
+.tour-card p {
+font-size: 0.9rem;
+color: #555;
+}
+
+.show-all-btn {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #b62626;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.show-all-btn:hover {
+background-color: #8e1d1d;
+}
+
+.filter-group label[for="searchFilter"] {
+color: white !important;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    min-width: 100%;
+}
+
+.filter-group select,
+.filter-group input[type="checkbox"] {
+margin-right: 8px;
+}
+
+/* --- Modal Styles --- */
+.modal-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1000;
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+opacity: 1;
+visibility: visible;
+}
+
+.modal-content {
+background-color: #fff;
+padding: 30px;
+border-radius: 10px;
+max-width: 800px;
+width: 90%;
+max-height: 90vh; /* Limit height to viewport */
+overflow-y: auto;
+/* Enable scrolling for long content */
+position: relative;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+transform: translateY(20px);
+transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+transform: translateY(0);
+}
+
+.modal-close-btn {
+position: absolute;
+top: 15px;
+right: 15px;
+background: none;
+border: none;
+font-size: 1.8rem;
+cursor: pointer;
+color: #888;
+}
+
+.modal-close-btn:hover {
+color: #333;
+}
+
+.modal-content h3 {
+color: #b62626;
+margin-top: 0;
+font-size: 1.8rem;
+}
+
+.modal-image {
+width: 100%;
+height: 250px;
+object-fit: cover;
+border-radius: 8px;
+margin-bottom: 20px;
+}
+
+.modal-package-list li {
+margin-bottom: 8px;
+line-height: 1.5;
+list-style: disc; /* Or your preferred list style */
+margin-left: 20px;
+}
+
+.modal-package-list strong {
+color: #b62626;
+/* Highlight package points */
+}
+
+/* Updated Gallery Styles */
+.modal-gallery {
+display: flex;
+/* Changed to flexbox */
+flex-direction: column;
+/* Stack items vertically */
+gap: 20px;
+/* Increased gap between items */
+margin-top: 20px;
+}
+
+/* Styles for the new gallery item structure */
+.modal-gallery-item {
+ display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+background-color: #f9f9f9;
+border-radius: 8px;
+padding: 15px;
+/* Increased padding */
+box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+
+.modal-gallery-item img {
+width: auto;
+/* Allow image to scale */
+max-width: 100%;
+/* Ensure image doesn't overflow container */
+height: auto;
+/* Allow image to scale */
+max-height: 300px;
+/* Set a max height for larger display */
+object-fit: contain;
+/* Ensure image is fully visible without cropping */
+border-radius: 5px;
+margin-bottom: 10px;
+/* Increased margin */
+}
+
+.modal-gallery-item .name {
+font-weight: bold;
+color: #333;
+font-size: 1.1em; /* Slightly larger font */
+margin-bottom: 5px;
+}
+
+.modal-gallery-item .description {
+font-size: 0.9em;
+/* Slightly larger font */
+color: #666;
+}
+
+/* --- Pagination Styles (Copied from tours.php and adjusted) --- */
+.pagination {
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 40px;
+padding: 10px;
+background-color: transparent;
+border-radius: 8px;
+box-shadow: none;
+/* Removed shadow for a cleaner look */
+}
+
+.pagination a {
+color: #333;
+/* Darker text color */
+padding: 8px 16px;
+text-decoration: none;
+transition: background-color 0.3s;
+border-radius: 5px;
+margin: 0 5px;
+font-weight: bold;
+border: 1px solid #ddd;
+/* Added a subtle border */
+}
+
+.pagination a.active {
+background-color: #b62626;
+color: white;
+border-color: #b62626; /* Match border color to background */
+}
+
+.pagination a:hover:not(.active) {
+background-color: #f0f0f0;
+/* Light grey hover background */
+color: #b62626;
+/* Red text on hover */
+}
+
+.pagination a.disabled {
+color: #ccc;
+pointer-events: none; /* Disable clicking */
+cursor: default;
+background-color: #f9f9f9;
+border-color: #eee;
+}
+
+.center-text {
+text-align: center;
+color:#b62626;
+}
+
+
+/* Hero Slider Styles */
+
+.hero-slider-container {
+position: relative;
+max-width: 100%;
+overflow: hidden;
+margin-bottom: 40px; /* Space below the slider */
+}
+
+.hero-slide {
+display: none;
+height: 500px;
+/* Adjust height as needed */
+background-size: cover;
+background-position: center;
+position: relative;
+color: white;
+text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+animation: fadeEffect 1.5s; /* Fade in animation */
+}
+
+.hero-slide.active {
+display: block;
+}
+
+.hero-caption {
+position: absolute;
+bottom: 50px;
+left: 50%;
+transform: translateX(-50%);
+text-align: center;
+width: 80%;
+}
+
+.hero-caption h2 {
+font-size: 3rem;
+margin-bottom: 10px;
+}
+
 .hero-caption p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: auto;
+font-size: 1.2rem;
+max-width: 600px;
+margin: auto;
 }
 
 /* Navigation arrows */
 .hero-prev, .hero-next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    -webkit-user-select: none;
-    background-color: rgba(0,0,0,0.5);
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+padding: 16px;
+margin-top: -22px;
+color: white;
+font-weight: bold;
+font-size: 20px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+-webkit-user-select: none;
+background-color: rgba(0,0,0,0.5);
 }
 
 .hero-next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+right: 0;
+border-radius: 3px 0 0 3px;
 }
 
 .hero-prev:hover, .hero-next:hover {
-    background-color: rgba(0,0,0,0.8);
+background-color: rgba(0,0,0,0.8);
 }
 
-/* Dots */
 .hero-dots {
-    text-align: center;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+text-align: center;
+position: absolute;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
 }
 
 .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: rgba(255,255,255,0.5);
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
+cursor: pointer;
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: rgba(255,255,255,0.5);
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
 }
 
 .active-dot, .dot:hover {
-    background-color: #ffffff;
+background-color: #ffffff;
 }
 
 /* Animations */
 @keyframes fadeEffect {
-  from {opacity: 0.4}
-  to {opacity: 1}
+from {opacity: 0.4}
+to {opacity: 1}
 }
 
 /* Mobile responsive styles */
 @media (max-width: 768px) {
-  .hero-slide {
-    height: 300px;
-  }
-  .hero-caption h2 {
-    font-size: 2rem;
-  }
-  .hero-caption p {
-    font-size: 1rem;
-  }
+.hero-slide {
+height: 300px;
 }
 
- .modal-gallery {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        margin-top: 20px;
-    }
-    .gallery-location-section {
-        background-color: #f9f9f9;
-        border-radius: 8px;
-        padding: 15px;
-        box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-    }
-    .gallery-location-section h5 {
-        margin-top: 0;
-        font-size: 1.2em;
-        color: #007bff;
-        border-bottom: 2px solid #e0e0e0;
-        padding-bottom: 5px;
-    }
-    .gallery-images-container {
-        display: flex;
-        overflow-x: auto;
-        gap: 10px;
-        padding-top: 10px;
-    }
-    .gallery-images-container img {
-        max-height: 200px;
-        /* Adjust as needed */
-        width: auto;
-        border-radius: 5px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        cursor: pointer;
-        transition: transform 0.2s ease;
-    }
-    .gallery-images-container img:hover {
-        transform: scale(1.05);
-    }
+.hero-caption h2 {
+font-size: 2rem;
+}
+
+.hero-caption p {
+font-size: 1rem;
+}
+}
+
+.modal-gallery {
+display: flex;
+flex-direction: column;
+gap: 20px;
+margin-top: 20px;
+}
+
+.gallery-location-section {
+background-color: #f9f9f9;
+border-radius: 8px;
+padding: 15px;
+box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+
+.gallery-location-section h5 {
+margin-top: 0;
+font-size: 1.2em;
+color: #007bff;
+border-bottom: 2px solid #e0e0e0;
+padding-bottom: 5px;
+}
+
+.gallery-images-container {
+display: flex;
+overflow-x: auto;
+gap: 10px;
+padding-top: 10px;
+}
+
+.gallery-images-container img {
+max-height: 200px;
+/* Adjust as needed */
+width: auto;
+border-radius: 5px;
+box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+cursor: pointer;
+transition: transform 0.2s ease;
+}
+
+.gallery-images-container img:hover {
+transform: scale(1.05);
+}
+
 </style>
+
 </head>
 <body>
 <section class="popular-destination">
