@@ -780,7 +780,7 @@ transform: scale(1.05);
             </div>
 
         <div class="show-all-container" style="margin-top: 30px;">
-            <a href="contact.php" class="show-all-btn" id="modalInquireBtn">Saya berminat dengan pakej ini.</a>
+            <a href="contact.php" class="show-all-btn" id="modalInquireBtn">Saya berminat dengan pakej ini</a>
         </div>
     </div>
 </div>
