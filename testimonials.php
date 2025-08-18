@@ -116,7 +116,7 @@ $testimonials = [
 
 <main>
     <section>
-        <h2 class="section-title">Testimoni Pelanggan Kami</h2>
+        <h2 class="section-title">Testimoni Pelanggan Qaid Travel</h2>
         <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #333;">
             Dengar apa kata pelanggan kami tentang pengalaman perjalanan mereka bersama Qaid Travel.
         </p>
