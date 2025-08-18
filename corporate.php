@@ -21,14 +21,12 @@ $tourData = [
     'umrah' => ['title' => 'Perjalanan Umrah'],
     'vietnam' => ['title' => 'Perjalanan Budaya Vietnam']
 ];
-
 $totalTours = count($tourData);
 $totalPages = ceil($totalTours / $toursPerPage);
 $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $start = ($currentPage - 1) * $toursPerPage;
 
 $currentTours = array_slice(array_keys($tourData), $start, $toursPerPage);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,8 +46,10 @@ $currentTours = array_slice(array_keys($tourData), $start, $toursPerPage);
             color: #ffff;
             padding: 20px;
             text-align: center;
-            position: relative; /* Needed for the overlay */
-            padding-top: 150px; /* Menambah ruang di bahagian atas untuk logo */
+            position: relative;
+            /* Needed for the overlay */
+            padding-top: 150px;
+            /* Menambah ruang di bahagian atas untuk logo */
             
         }
         
@@ -61,10 +61,10 @@ $currentTours = array_slice(array_keys($tourData), $start, $toursPerPage);
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.2); /* Menjadikan overlay lebih cerah */
+            background-color: rgba(255, 255, 255, 0.2);
+            /* Menjadikan overlay lebih cerah */
             z-index: 1;
-
-        }
+            }
 
         /* Ensure all content is on top of the overlay */
         .logo-box, .welcome-box, nav {
@@ -73,13 +73,19 @@ $currentTours = array_slice(array_keys($tourData), $start, $toursPerPage);
         }
 
         .logo-box {
-            background-color: rgba(255, 255, 255, 0.9); /* Latar belakang putih dengan sedikit ketelusan */
-            border: 2px solid #b41b1b; /* Border merah */
-            border-radius: 10px; /* Rounded corners */
-            position: absolute; /* Tetapkan posisi logo secara mutlak */
-            top: 20px; /* Jarak dari atas */
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Latar belakang putih dengan sedikit ketelusan */
+            border: 2px solid #b41b1b;
+            /* Border merah */
+            border-radius: 10px;
+            /* Rounded corners */
+            position: absolute;
+            /* Tetapkan posisi logo secara mutlak */
+            top: 20px;
+            /* Jarak dari atas */
             left: 50%;
-            transform: translateX(-50%); /* Pusatkan logo */
+            transform: translateX(-50%);
+            /* Pusatkan logo */
         }
 
         .logo-box img {
@@ -90,12 +96,17 @@ $currentTours = array_slice(array_keys($tourData), $start, $toursPerPage);
 
         .welcome-box {
             /* Mengubah gaya untuk membuat kotak putih */
-            background-color: rgba(255, 255, 255, 0.9); /* Latar belakang putih dengan sedikit ketelusan */
-            border: 2px solid #b41b1b; /* Border merah */
-            border-radius: 10px; /* Rounded corners */
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Latar belakang putih dengan sedikit ketelusan */
+            border: 2px solid #b41b1b;
+            /* Border merah */
+            border-radius: 10px;
+            /* Rounded corners */
             padding: 20px;
-            margin: 20px auto; /* Pusatkan kotak */
-            max-width: 50%; /* Lebar maksimum */
+            margin: 20px auto;
+            /* Pusatkan kotak */
+            max-width: 50%;
+            /* Lebar maksimum */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         
@@ -103,21 +114,26 @@ $currentTours = array_slice(array_keys($tourData), $start, $toursPerPage);
             font-size: 2.5rem;
             margin: 0;
             color: #b41b1b; /* Warna teks merah */
-            text-shadow: none; /* Buang text-shadow */
+            text-shadow: none;
+            /* Buang text-shadow */
         }
 
         .welcome-box p {
             font-size: 1rem;
             margin: 5px 0 0;
             color: #b41b1b; /* Warna teks merah */
-            text-shadow: none; /* Buang text-shadow */
+            text-shadow: none;
+            /* Buang text-shadow */
         }
 
         /* Navigation styling with a box background */
         nav {
-            background-color: rgba(180, 27, 27, 0.9); /* Warna latar belakang navigasi yang sesuai */
-            border: 2px solid #b41b1b; /* Border merah yang sama dengan welcome box */
-            border-radius: 10px; /* Rounded corners */
+            background-color: rgba(180, 27, 27, 0.9);
+            /* Warna latar belakang navigasi yang sesuai */
+            border: 2px solid #b41b1b;
+            /* Border merah yang sama dengan welcome box */
+            border-radius: 10px;
+            /* Rounded corners */
             padding: 10px 0;
             margin: 20px auto;
             max-width: 80%; /* Lebar maksimum */
@@ -161,7 +177,8 @@ $currentTours = array_slice(array_keys($tourData), $start, $toursPerPage);
                 gap: 10px;
             }
             header {
-                padding-top: 100px; /* Menyesuaikan padding untuk peranti mudah alih */
+                padding-top: 100px;
+                /* Menyesuaikan padding untuk peranti mudah alih */
             }
             .logo-box {
                 top: 10px;
@@ -205,106 +222,10 @@ body {
     display: flex;
     padding: 40px;
     gap: 30px;
-    max-width: 1200px; /* Sets the maximum width of the main content area */
+    max-width: 1200px;
+    /* Sets the maximum width of the main content area */
     margin: auto;
     align-items: flex-start;
-}
-
-.filter-panel {
-    flex-shrink: 0;
-    /* Prevents the filter panel from shrinking */
-    width: 320px;
-    /* Fixed width for the filter box */
-    padding: 25px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    background-color: #ffff;
-    box-sizing: border-box;
-}
-
-.filter-panel h3 {
-    margin-top: 0;
-    color: #b62626;
-}
-
-.filter-group {
-    margin-bottom: 20px;
-}
-
-.filter-group label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.filter-group #searchFilter { /* Targeting the search input itself */
-    padding: 8px 12px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 2px solid #b62626; /* Matches your select border color */
-    background-color: #fff;
-    color: #333; /* Color of the text typed inside the search box */
-    width: 92%;
-    /* Changed to 100% for responsiveness */
-    max-width: 100%;
-    /* Ensure it's responsive */
-    box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.search-btn {
-    background-color: #b62626;
-    /* Matches your primary red color */
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-left: 10px;
-}
-
-.search-btn:hover {
-    background-color: #7c1919;
-    /* Darker red on hover */
-    transform: scale(1.02);
-}
-
-@media (max-width: 768px) {
-.filter-group {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-}
-
-.filter-group .search-btn {
-    margin-top: 10px;
-    margin-left: 0;
-    width: 100%;
-}
-}
-
-.filter-group #searchFilter:focus {
-    outline: none;
-    border-color: #5d0c0c;
-    box-shadow: 0 0 5px rgba(182, 38, 38, 0.5);
-}
-
-label[for="searchFilter"] {
-    color: #333;
-}
-
-/* Responsive adjustments for the search filter */
-@media (max-width: 768px) {
-.filter-group {
-flex-direction: column;
-align-items: flex-start;
-gap: 5px;
-}
-
-.filter-group #searchFilter {
-width: 100%;
-}
 }
 
 @media (max-width: 900px) {
@@ -313,13 +234,6 @@ flex-direction: column;
 /* Stack filter and tour list on smaller screens */
 align-items: center;
 }
-
-.filter-panel {
-width: 100%;
-/* Make filter panel full width */
-margin-bottom: 30px;
-}
-
 .tour-card {
 flex-basis: calc(50% - 20px);
 /* For screens up to 900px, display 2 cards per row */
@@ -375,25 +289,6 @@ color: #555;
 
 .show-all-btn:hover {
 background-color: #8e1d1d;
-}
-
-.filter-group label[for="searchFilter"] {
-color: white !important;
-}
-
-.filter-group select {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    box-sizing: border-box;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    min-width: 100%;
-}
-
-.filter-group select,
-.filter-group input[type="checkbox"] {
-margin-right: 8px;
 }
 
 /* --- Modal Styles --- */
@@ -469,7 +364,8 @@ margin-bottom: 20px;
 .modal-package-list li {
 margin-bottom: 8px;
 line-height: 1.5;
-list-style: disc; /* Or your preferred list style */
+list-style: disc;
+/* Or your preferred list style */
 margin-left: 20px;
 }
 
@@ -560,7 +456,8 @@ border: 1px solid #ddd;
 .pagination a.active {
 background-color: #b62626;
 color: white;
-border-color: #b62626; /* Match border color to background */
+border-color: #b62626;
+/* Match border color to background */
 }
 
 .pagination a:hover:not(.active) {
@@ -590,7 +487,8 @@ color:#b62626;
 position: relative;
 max-width: 100%;
 overflow: hidden;
-margin-bottom: 40px; /* Space below the slider */
+margin-bottom: 40px;
+/* Space below the slider */
 }
 
 .hero-slide {
@@ -751,35 +649,7 @@ transform: scale(1.05);
 <h1 class="center-text"><strong>LAWATAN KHAS KORPORAT</strong></h1>
 </section>
 
-<div class="filter-group">
-    <h3><label for="searchFilter">Cari Destinasi:</label></h3>
-<input type="text" id="searchFilter" placeholder="Sila cari destinasi yang anda ingin lawati..." />
-<button id="searchButton" class="search-btn">Cari</button> <div id="noResultsMessage" style="display: none; text-align: center; color: #333; margin-top: 20px; font-weight: bold;">
-    Tiada destinasi ditemui untuk carian anda.
-</div>
-</div>
-
 <div class="tours-container">
-    <div class="filter-panel">
-        <h3>Filter</h3>
-        <div class="filter-group">
-            <label for="destination">Destinasi</label>
-            <select id="destination">
-                <option value="">Semua Destinasi</option>
-            </select>
-        </div>
-
-        <div class="filter-group">
-            <h4>Topik</h4>
-            <label><input type="checkbox" value="Culture"> Budaya & Warisan</label>
-            <label><input type="checkbox" value="Nature"> Alam Semula Jadi & Pengembaraan</label>
-            <label><input type="checkbox" value="Food"> Makanan & Minuman</label>
-            <label><input type="checkbox" value="Island"> Pulau & Pantai</label>
-        </div>
-
-        <button class="show-all-btn" onclick="resetFilters()">Tunjuk Semua</button>
-    </div>
-
     <div style="display: flex; flex-direction: column; flex-grow: 1;">
         <div class="tour-list" id="tourList">
             <div class="tour-card" data-id="newZealand" data-destination="New Zealand" data-topics="Island,Nature">
@@ -910,14 +780,12 @@ transform: scale(1.05);
             </div>
 
         <div class="show-all-container" style="margin-top: 30px;">
-            <a href="contact.php" class="show-all-btn" id="modalInquireBtn">Inquire About This Tour</a>
+            <a href="contact.php" class="show-all-btn" id="modalInquireBtn">Saya berminat dengan pakej ini.</a>
         </div>
     </div>
 </div>
 
 <script>
-    const destinationFilter = document.getElementById('destination');
-    const topicCheckboxes = document.querySelectorAll('.filter-group input[type="checkbox"]');
     const allTourCards = document.querySelectorAll('.tour-card');
     const paginationContainer = document.getElementById('pagination');
     // Modal Elements
@@ -929,9 +797,6 @@ transform: scale(1.05);
     const modalPackageList = document.getElementById('modalPackageList');
     const modalGallery = document.getElementById('modalGallery');
     const modalInquireBtn = document.getElementById('modalInquireBtn');
-    const searchFilter = document.getElementById('searchFilter');
-    const searchButton = document.getElementById('searchButton');
-    const noResultsMessage = document.getElementById('noResultsMessage');
     // Pagination variables
     const toursPerPage = 6;
     let currentPage = 1;
@@ -1544,176 +1409,30 @@ transform: scale(1.05);
             ]
         },
     };
-    
-    // Function to render the tour cards
-    function renderTourCards() {
-        const tourList = document.getElementById('tourList');
-        tourList.innerHTML = '';
-        
-        const startIndex = (currentPage - 1) * toursPerPage;
-        const endIndex = startIndex + toursPerPage;
-        const toursToDisplay = filteredTourCards.slice(startIndex, endIndex);
 
-        if (toursToDisplay.length === 0) {
-            noResultsMessage.style.display = 'block';
-        } else {
-            noResultsMessage.style.display = 'none';
-        }
-
-        toursToDisplay.forEach(tour => {
-            tourList.appendChild(tour);
-        });
-
-        renderPagination();
-    }
-    
-    // Function to render the pagination links
-    function renderPagination() {
-        paginationContainer.innerHTML = '';
-        const totalPages = Math.ceil(filteredTourCards.length / toursPerPage);
-    
-        if (totalPages > 1) {
-            // Previous button
-            const prevLink = document.createElement('a');
-            prevLink.href = "#";
-            prevLink.innerHTML = "&laquo; Prev";
-            prevLink.onclick = (e) => {
-                e.preventDefault();
-                if (currentPage > 1) {
-                    currentPage--;
-                    renderTourCards();
-                }
-            };
-            if (currentPage === 1) {
-                prevLink.classList.add('disabled');
-            }
-            paginationContainer.appendChild(prevLink);
-    
-            // Page numbers
-            for (let i = 1; i <= totalPages; i++) {
-                const pageLink = document.createElement('a');
-                pageLink.href = "#";
-                pageLink.innerHTML = i;
-                pageLink.onclick = (e) => {
-                    e.preventDefault();
-                    currentPage = i;
-                    renderTourCards();
-                };
-                if (i === currentPage) {
-                    pageLink.classList.add('active');
-                }
-                paginationContainer.appendChild(pageLink);
-            }
-    
-            // Next button
-            const nextLink = document.createElement('a');
-            nextLink.href = "#";
-            nextLink.innerHTML = "Next &raquo;";
-            nextLink.onclick = (e) => {
-                e.preventDefault();
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    renderTourCards();
-                }
-            };
-            if (currentPage === totalPages) {
-                nextLink.classList.add('disabled');
-            }
-            paginationContainer.appendChild(nextLink);
-        }
-    }
-    
-    // Initial call to render tours and pagination
-    function initializeTours() {
-        filteredTourCards = Array.from(allTourCards);
-        renderTourCards();
-    }
-    
-    // Call the initialize function on page load
-    window.onload = initializeTours;
-    
-    // Filter logic
-    function filterTours() {
-        const selectedDestination = destinationFilter.value;
-        const selectedTopics = Array.from(topicCheckboxes)
-            .filter(cb => cb.checked)
-            .map(cb => cb.value);
-        const searchQuery = searchFilter.value.toLowerCase().trim();
-        
-        filteredTourCards = Array.from(allTourCards).filter(card => {
-            const cardDestination = card.getAttribute('data-destination');
-            const cardTopics = card.getAttribute('data-topics').split(',');
-            const cardTitle = card.querySelector('h4').textContent.toLowerCase();
-            const cardDescription = card.querySelector('p').textContent.toLowerCase();
-            
-            const matchesDestination = selectedDestination === '' || cardDestination === selectedDestination;
-            const matchesTopics = selectedTopics.length === 0 || selectedTopics.some(topic => cardTopics.includes(topic));
-            const matchesSearch = searchQuery === '' || cardTitle.includes(searchQuery) || cardDescription.includes(searchQuery);
-            
-            return matchesDestination && matchesTopics && matchesSearch;
-        });
-
-        currentPage = 1;
-        renderTourCards();
-    }
-
-    // Reset filters and show all tours
-    function resetFilters() {
-        destinationFilter.value = "";
-        topicCheckboxes.forEach(cb => cb.checked = false);
-        searchFilter.value = "";
-        initializeTours();
-    }
-
-    // Populate the destination filter dropdown
-    function populateDestinationFilter() {
-        const destinations = new Set();
-        allTourCards.forEach(card => {
-            destinations.add(card.getAttribute('data-destination'));
-        });
-        
-        destinations.forEach(dest => {
-            const option = document.createElement('option');
-            option.value = dest;
-            option.textContent = dest;
-            destinationFilter.appendChild(option);
-        });
-    }
-
-    // Event Listeners for filtering
-    destinationFilter.addEventListener('change', filterTours);
-    topicCheckboxes.forEach(cb => cb.addEventListener('change', filterTours));
-    searchButton.addEventListener('click', filterTours);
-    searchFilter.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            filterTours();
-        }
-    });
-
-    populateDestinationFilter();
-
-    // MODAL functionality
-    const showModal = (tourId) => {
+    function showModal(tourId) {
         const tour = tourData[tourId];
+
         if (tour) {
-            modalTourImage.src = tour.image;
             modalTourTitle.textContent = tour.title;
             modalTourIntro.textContent = tour.intro;
+            modalTourImage.src = tour.image;
+            modalTourImage.alt = tour.title;
 
-            // Packages
-            modalPackageList.innerHTML = "";
+            // Clear previous packages
+            modalPackageList.innerHTML = '';
             tour.packages.forEach(pkg => {
                 const li = document.createElement('li');
                 li.innerHTML = pkg;
                 modalPackageList.appendChild(li);
             });
 
-            // Gallery
-            modalGallery.innerHTML = "";
+            // Clear previous gallery
+            modalGallery.innerHTML = '';
             tour.gallery.forEach(location => {
                 const section = document.createElement('div');
                 section.classList.add('gallery-location-section');
-                
+
                 const h5 = document.createElement('h5');
                 h5.textContent = location.name;
                 section.appendChild(h5);
@@ -1755,6 +1474,8 @@ transform: scale(1.05);
             tourDetailModal.classList.remove('active');
         }
     });
+
+    
 </script>
 </body>
 </html>
