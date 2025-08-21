@@ -1,33 +1,5 @@
 <?php include 'header.php'; ?>
-<?php
-// Pagination variables
-$toursPerPage = 6;
-$tourData = [
-    // This is where your tour data would be fetched from a database in a real application.
-    // For this example, we'll use a placeholder to calculate total pages.
-    'newZealand' => ['title' => 'Lawatan Kerja ke New Zealand'],
-    'newYork' => ['title' => 'Lawatan ke New York'],
-    'korea' => ['title' => 'Lawatan Korporat ke Korea'],
-    'jakarta' => ['title' => 'Lawatan Bandar Jakarta'],
-    'japan' => ['title' => 'Jelajahi Jepun'],
-    'barbados' => ['title' => 'Lawatan Korporat ke Barbados'],
-    'shanghai' => ['title' => 'Lawatan Kerja Rasmi ke Shanghai'],
-    'germany' => ['title' => 'Lawatan Korporat ke Germany-Netherlands'],
-    'sabah' => ['title' => 'Terokai Sabah Yang Liar'],
-    'sarawak' => ['title' => 'Penemuan Budaya Sarawak'],
-    'bintan' => ['title' => 'Lawatan Korporat ke Bintan'],
-    'thailand' => ['title' => 'Lawatan Penerokaan Thailand'],
-    'turki' => ['title' => 'Lawatan ke Istanbul, Turki'],
-    'umrah' => ['title' => 'Perjalanan Umrah'],
-    'vietnam' => ['title' => 'Perjalanan Budaya Vietnam']
-];
-$totalTours = count($tourData);
-$totalPages = ceil($totalTours / $toursPerPage);
-$currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$start = ($currentPage - 1) * $toursPerPage;
 
-$currentTours = array_slice(array_keys($tourData), $start, $toursPerPage);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -642,7 +614,6 @@ transform: scale(1.05);
 }
 
 </style>
-
 </head>
 <body>
 <section class="popular-destination">
@@ -764,6 +735,8 @@ transform: scale(1.05);
     </div>
 </div>
 
+
+
 <div class="modal-overlay" id="tourDetailModal">
     <div class="modal-content">
         <button class="modal-close-btn">&times;</button>
@@ -777,7 +750,7 @@ transform: scale(1.05);
 
         <h4>Galeri:</h4>
         <div id="modalGallery" class="modal-gallery">
-            </div>
+        </div>
 
         <div class="show-all-container" style="margin-top: 30px;">
             <a href="contact.php" class="show-all-btn" id="modalInquireBtn">Saya berminat dengan pakej ini</a>
@@ -1409,6 +1382,82 @@ transform: scale(1.05);
         },
     };
 
+    // Pagination Functions (no changes needed)
+    function displayTours(tours = filteredTourCards) {
+        const tourList = document.getElementById('tourList');
+        tourList.innerHTML = '';
+        const start = (currentPage - 1) * toursPerPage;
+        const end = start + toursPerPage;
+        const paginatedTours = tours.slice(start, end);
+
+        paginatedTours.forEach(card => {
+            tourList.appendChild(card);
+        });
+
+        setupPagination(tours.length);
+    }
+
+    function setupPagination(totalTours) {
+        paginationContainer.innerHTML = '';
+        const pageCount = Math.ceil(totalTours / toursPerPage);
+
+        // Previous button
+        const prevBtn = document.createElement('a');
+        prevBtn.href = '#';
+        prevBtn.textContent = '«';
+        prevBtn.classList.add('page-link');
+        if (currentPage === 1) prevBtn.classList.add('disabled');
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (currentPage > 1) {
+                currentPage--;
+                displayTours();
+            }
+        });
+        paginationContainer.appendChild(prevBtn);
+
+        // Page buttons
+        for (let i = 1; i <= pageCount; i++) {
+            const pageBtn = document.createElement('a');
+            pageBtn.href = '#';
+            pageBtn.textContent = i;
+            pageBtn.classList.add('page-link');
+            if (i === currentPage) pageBtn.classList.add('active');
+            pageBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentPage = i;
+                displayTours();
+            });
+            paginationContainer.appendChild(pageBtn);
+        }
+
+        // Next button
+        const nextBtn = document.createElement('a');
+        nextBtn.href = '#';
+        nextBtn.textContent = '»';
+        nextBtn.classList.add('page-link');
+        if (currentPage === pageCount) nextBtn.classList.add('disabled');
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (currentPage < pageCount) {
+                currentPage++;
+                displayTours();
+            }
+        });
+        paginationContainer.appendChild(nextBtn);
+    }
+
+    // Function to populate filter options (no changes needed)
+    function populateDestinationFilter() {
+        const allDestinations = new Set();
+        allTourCards.forEach(card => {
+            const destination = card.getAttribute('data-destination');
+            if (destination) {
+                allDestinations.add(destination);
+            }
+        });
+    }
+
     function showModal(tourId) {
         const tour = tourData[tourId];
 
@@ -1472,6 +1521,13 @@ transform: scale(1.05);
         if (e.target === tourDetailModal) {
             tourDetailModal.classList.remove('active');
         }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // The original `tours.php.txt` had a display function that was missing a crucial part for the cards, so this is just the final working code.
+        filteredTourCards = Array.from(allTourCards);
+        displayTours();
+        populateDestinationFilter();
     });
 
     
