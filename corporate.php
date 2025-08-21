@@ -676,8 +676,8 @@ transform: scale(1.05);
             <div class="tour-card" data-id="jakarta" data-destination="Jakarta" data-topics="Culture,Nature">
                 <img src="images/Jakarta.jpg" alt="Jakarta"/>
                 <div class="info">
-                    <h4>Lawatan Bandar Jakarta</h4>
-                    <p>Terokai budaya Jakarta yang bersemangat, mercu tanda, dan tarikan mesra halal.</p>
+                    <h4>Lawatan Korporat ke Jakarta</h4>
+                    <p>Lawatan bersama Pusat Zakat Melaka.</p>
                 </div>
             </div>
             <div class="tour-card" data-id="japan" data-destination="Japan" data-topics="Food,Culture">
@@ -963,9 +963,9 @@ transform: scale(1.05);
                 },
             ]
         },
-        jakartaBandung: {
-            title: "Lawatan Menarik ke Jakarta & Bandung",
-            intro: "Alami keunikan gabungan kota metropolitan Jakarta dan suasana tenang Bandung yang penuh dengan sejarah, budaya tempatan dan tarikan mesra Muslim termasuk tempat membeli-belah dan keindahan alam semula jadi.",
+        jakarta: {
+            title: "Lawatan Korporat ke Jakarta",
+            intro: "Lawatan bersama Pusat Zakat Melaka",
             image: "images/Jakarta.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
@@ -978,27 +978,27 @@ transform: scale(1.05);
             ],
             gallery: [
                 {
-                    name: "Monas (Monumen Nasional)",
+                    name: "Emte Highland Resort",
                     images: [
-                        { src: "images/jakarta_gallery/Monas.jpg", description: "Simbol ikonik kemerdekaan Indonesia yang terletak di pusat Jakarta." }
+                        { src: "images/jakartaC_gallery/j.jpg", description: "" },
+                        { src: "images/jakartaC_gallery/j1.jpg", description: "" },
+                        { src: "images/jakartaC_gallery/j2.jpg", description: "" }
                     ]
                 },
                 {
-                    name: "Masjid Istiqlal",
+                    name: "Kartika Sari",
                     images: [
-                        { src: "images/jakarta_gallery/IstiqlalMosque.jpeg", description: "Masjid terbesar di Asia Tenggara yang menjadi kebanggaan umat Islam di Indonesia." }
+                        { src: "images/jakartaC_gallery/k.jpg", description: "" },
+                        { src: "images/jakartaC_gallery/k2.jpg", description: "" },
+                        { src: "images/jakartaC_gallery/k1.jpg", description: "" }
                     ]
                 },
                 {
                     name: "Kawah Putih",
                     images: [
-                        { src: "images/jakarta_gallery/KawahPutih.jpg", description: "Tasik kawah berwarna putih kehijauan yang menakjubkan di puncak gunung Bandung." }
-                    ]
-                },
-                {
-                    name: "Farmhouse Lembang",
-                    images: [
-                        { src: "images/jakarta_gallery/Farmhouse.jpg", description: "Tarikan keluarga dengan suasana desa Eropah serta haiwan jinak dan spot bergambar menarik." }
+                        { src: "images/jakartaC_gallery/kp1.jpg", description: "Tasik kawah berwarna putih kehijauan yang menakjubkan di puncak gunung Bandung." },
+                        { src: "images/jakarta_gallery/KawahPutih.jpg", description: "Tasik kawah berwarna putih kehijauan yang menakjubkan di puncak gunung Bandung." },
+                        { src: "images/jakartaC_gallery/kp2.jpg", description: "Tasik kawah berwarna putih kehijauan yang menakjubkan di puncak gunung Bandung." },
                     ]
                 }
             ]
@@ -1294,7 +1294,7 @@ transform: scale(1.05);
        newZealand: {
             title: "Lawatan Kerja ke New Zealand",
             intro: "Alami landskap New Zealand yang menakjubkan dan kenali budaya uniknya. Pakej lawatan kerja korporat ini dirancang untuk inspirasi dan pembangunan pasukan.",
-            image: "images/NewZealand.jpg",
+            image: "images/NewZ.jpg",
             packages: [
                 "<strong>Tiket penerbangan pergi balik</strong>",
                 "<strong>Penginapan</strong> di hotel pilihan",
@@ -1305,8 +1305,7 @@ transform: scale(1.05);
             ],
             gallery: [
                 {
-                    name: "Sky Tower",
-                    location_description: "Menara ikonik di Auckland, menawarkan pemandangan panorama bandar",
+                    name: "Sky Tower: Menara ikonik di Auckland, menawarkan pemandangan panorama bandar.",
                     images: [
                         { src: "images/newzealandC_gallery/sky.jpg", description: "" },
                         { src: "images/newzealandC_gallery/sky1.jpg", description: "" },
@@ -1315,7 +1314,7 @@ transform: scale(1.05);
                     ]
                 },
                 {
-                    name: "Hobbiton Village",
+                    name: "Hobbiton Village: Melangkah ke dunia fantasi The Lord of the Rings. Terokai set penggambaran yang menawan.",
                     images: [
                         { src: "images/newzealandC_gallery/hob.jpg", description: "Ibu negara New Zealand dengan pemandangan pelabuhan yang indah dan persekitaran yang berbukit." },
                         { src: "images/newzealandC_gallery/hob1.jpg", description: "Pemandangan bandar Wellington dari atas." },
@@ -1324,7 +1323,7 @@ transform: scale(1.05);
                     ]
                 },
                 {
-                    name: "Auckland Harbour",
+                    name: "Auckland Harbour: Terokai bandar terbesar di New Zealand, yang terkenal dengan pemandangan pelabuhan yang indah.",
                     images: [
                         { src: "images/newzealandC_gallery/harb1.jpg", description: "Fjord yang menakjubkan di Taman Negara Fiordland, terkenal dengan air terjun dan pemandangan semula jadi." },
                         { src: "images/newzealandC_gallery/harb2.jpg", description: "Fjord yang menakjubkan di Taman Negara Fiordland, terkenal dengan air terjun dan pemandangan semula jadi." },
